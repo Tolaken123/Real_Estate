@@ -16,7 +16,7 @@
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="#">TOLA</a>
+          <a class="nav-link" href="/login">TOLA</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">DUONG</a>
