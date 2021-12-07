@@ -97,6 +97,16 @@
     </div>
   </div>
 </div>
+<form action="#" method='get'>
+@csrf
+  <div class="text-gray-400 focus-within:text-gray-600 ...">
+    <div class="...">
+    <input type='text' name="name"class="focus:ring-2 focus:ring-blue-600 " >
+      <svg fill="currentColor"></svg>
+    </div>
+    <input class="focus:ring-2 focus:ring-gray-300 ...">
+  </div>
+</form>
 
 </body>
 </html>

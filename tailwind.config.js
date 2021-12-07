@@ -9,7 +9,11 @@ module.exports = {
     extend: {},
   },
   variants: {
-    extend: {},
+    extend: {
+      backgroundcolor:['even'],
+      maxHeight: ['focus'],
+      scale: ['focus-within'],
+    },
   },
   plugins: [],
 }
