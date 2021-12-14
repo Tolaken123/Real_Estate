@@ -1,7 +1,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
-      <img src="{{ asset('vendors/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+    <a href="#" class="brand-link">
+      <img src="{{ asset('vendors/dist/img/camrealestatelogo.png')}}" alt="camrealestate" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">CamRealEstate</span>
     </a>
 
@@ -28,7 +28,7 @@
             <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                Starter Pages
+                Property
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -51,7 +51,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Simple Link
+                Setting
                 <span class="right badge badge-danger">New</span>
               </p>
             </a>
