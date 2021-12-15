@@ -18,15 +18,16 @@
           <table class="table table-striped projects">
               <thead>
                   <tr>
-                      <th style="width: 1%">
-                          #
+                  <th style="width: 30%">
+                          Team Members
+                      </th>
+                  <th style="width: 1%">
+                          All
                       </th>
                       <th style="width: 20%">
                           Project Name
                       </th>
-                      <th style="width: 30%">
-                          Team Members
-                      </th>
+                     
                       <th>
                           Project Progress
                       </th>
@@ -39,8 +40,15 @@
               </thead>
               <tbody>
                   <tr>
+                  <td>
+                          <ul class="list-inline">
+                              <li class="list-inline-item">
+                                  <img alt="Avatar" class="table-avatar" src="{{('vendors/dist/img/avatar.png')}}">
+                              </li>
+                          </ul>
+                      </td>
                       <td>
-                          #
+                         1
                       </td>
                       <td>
                           <a>
@@ -51,25 +59,8 @@
                               Created 01.01.2019
                           </small>
                       </td>
-                      <td>
-                          <ul class="list-inline">
-                              <li class="list-inline-item">
-                                  <img alt="Avatar" class="table-avatar" src="{{('vendors/dist/img/avatar.png')}}">
-                              </li>
-                          </ul>
-                      </td>
-                      <td class="project_progress">
-                          <div class="progress progress-sm">
-                              <div class="progress-bar bg-green" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" style="width: 57%">
-                              </div>
-                          </div>
-                          <small>
-                              57% Complete
-                          </small>
-                      </td>
-                      <td class="project-state">
-                          <span class="badge badge-success">Success</span>
-                      </td>
+                      
+                
                       <td class="project-actions text-right">
                           <a class="btn btn-primary btn-sm" href="#">
                               <i class="fas fa-folder">
