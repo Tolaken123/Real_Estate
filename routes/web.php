@@ -1,7 +1,9 @@
 <?php
 namespace App\Http\Controllers\HomeController;
-use Illuminate\Support\Facades\Route;
 
+use Illuminate\Foundation\Auth\User;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserAuth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,6 +24,5 @@ Route::get('/login', function () {
 Route::get('/', function () {
     return view('Home.admin');
 });
-Route::get('/', function () {
-    return view('Home.login');
-});
+Route::post('user',[UserAuth::class,'userlogin']);
+Route::view("login",'login');
