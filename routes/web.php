@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Noted: Here we create route to test your view then comment it . 
+
 Route::get('/test', function () {
     return view('Home.homepage');
 });
@@ -22,6 +24,9 @@ Route::get('/login', function () {
 Route::get('/', function () {
     return view('Home.admin');
 });
-Route::get('/', function () {
-    return view('Home.login');
-});
+// Route::get('/', function () {
+//     return view('Home.login');
+// });
+// Route::get('/', function () {
+//     return view('Home.verify');
+// });

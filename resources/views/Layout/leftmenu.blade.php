@@ -24,35 +24,62 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+               <li class="nav-item">
+            <a href="#" class="nav-link">
+            <i class="fas fa-home"></i>
               <p>
-                Property
+                Properties
+              </p>
+            </a>
+          </li>
+               <li class="nav-item menu-close">
+            <a href="#" class="nav-link ">
+            <i class="fas fa-cog"></i>
+              <p>
+                Setting
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link active">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Active Page</p>
+                <a href="#" class="nav-link ">
+                <i class="fas fa-map-marker-alt"></i>
+                  <p>Location</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Inactive Page</p>
+                <i class="nav-icon fas fa-th"></i>
+                  <p>Categories</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                <i class="fas fa-building"></i>
+                  <p>Facilities</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                <i class="fas fa-user-lock"></i>
+                  <p>Permissions</p>
                 </a>
               </li>
             </ul>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+            <i class="fas fa-user"></i>
               <p>
-                Setting
-                <span class="right badge badge-danger">New</span>
+                Account
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+            <i class="fas fa-sign-out-alt"></i>
+              <p>
+                Logout
               </p>
             </a>
           </li>

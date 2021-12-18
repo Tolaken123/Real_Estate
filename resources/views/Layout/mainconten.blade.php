@@ -19,20 +19,18 @@
               <thead>
                   <tr>
                   <th style="width: 30%">
-                          Team Members
-                      </th>
-                  <th style="width: 1%">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
                           All
                       </th>
                       <th style="width: 20%">
-                          Project Name
+                          Type
                       </th>
                      
                       <th>
-                          Project Progress
+                          MonthlyRental
                       </th>
-                      <th style="width: 8%" class="text-center">
-                          Status
+                      <th style="width: 30%" class="text-center">
+                         Sale Price 
                       </th>
                       <th style="width: 20%">
                       </th>
@@ -41,9 +39,21 @@
               <tbody>
                   <tr>
                   <td>
-                          <ul class="list-inline">
+                    <ul class="list-inline">
+                          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                          <p>11</p>
                               <li class="list-inline-item">
-                                  <img alt="Avatar" class="table-avatar" src="{{('vendors/dist/img/avatar.png')}}">
+                                  <img style="max-width:100px" src="{{('vendors/dist/img/home.jpg')}}"><br>
+                        <a class="btn btn-info btn-sm" href="#">
+                          <i class="fas fa-history"></i>
+                              </i>
+                              History
+                          </a>
+                          <a class="btn btn-primary btn-sm" href="#">
+                              <i class="fas fa-pencil-alt">
+                              </i>
+                              Edit
+                          </a>
                               </li>
                           </ul>
                       </td>
@@ -52,25 +62,21 @@
                       </td>
                       <td>
                           <a>
-                              AdminLTE v3
+                              5000$
                           </a>
                           <br/>
-                          <small>
-                              Created 01.01.2019
-                          </small>
+                         
                       </td>
-                      
-                
                       <td class="project-actions text-right">
-                          <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
+                          <a class="btn btn-success btn-sm" href="#">
+                          <i class="fas fa-location-arrow"></i>
                               </i>
-                              View
+                              Activate
                           </a>
-                          <a class="btn btn-info btn-sm" href="#">
-                              <i class="fas fa-pencil-alt">
+                          <a class="btn btn-warning btn-sm" href="#">
+                          <i class="fas fa-calendar-times"></i>
                               </i>
-                              Edit
+                              Deactivate
                           </a>
                           <a class="btn btn-danger btn-sm" href="#">
                               <i class="fas fa-trash">

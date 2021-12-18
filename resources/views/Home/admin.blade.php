@@ -10,7 +10,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <title> {{ config('app.name', 'realestate')}}</title>
 
   <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <link rel="stylesheet" href="{{ asset ('vendors/https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback')}}">
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="{{ asset('vendors/plugins/fontawesome-free/css/all.min.css') }}">
   <!-- Theme style -->
@@ -24,7 +24,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- /.navbar -->
   @include('layout.mainconten')
   <!-- Main Sidebar Container -->
-  @include('layout.rightmenu')
+  @include('layout.leftmenu')
 
   <!-- Content Wrapper. Contains page content -->
   
