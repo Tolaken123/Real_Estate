@@ -33,6 +33,7 @@
                          Sale Price 
                       </th>
                       <th style="width: 20%">
+                      Action
                       </th>
                   </tr>
               </thead>
@@ -64,8 +65,13 @@
                           <a>
                               5000$
                           </a>
-                          <br/>
-                         
+
+                      </td>
+                      <td>
+                          <a>
+                              5000$
+                          </a>
+
                       </td>
                       <td class="project-actions text-right">
                           <a class="btn btn-success btn-sm" href="#">
@@ -88,6 +94,7 @@
               </tbody>
           </table>
         </div>
+        
         <!-- /.card-body -->
       </div>
       <!-- /.card -->

@@ -32,3 +32,6 @@ Route::get('/', function () {
  Route::get('/', function () {
     return view('Home.verify');
 });
+Route::get('/', function () {
+    return view('Home.propertyform');
+});
