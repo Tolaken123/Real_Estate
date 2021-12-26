@@ -25,7 +25,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   @include('layout.leftmenu')
   <!-- /.navbar -->
-  
+  <div class="card card-outline-primary">
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -39,37 +39,65 @@ scratch. This page gets rid of all links and provides the needed markup only.
     </section>
 
     <!-- Main content -->
+    <ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="#"><i class="fa fa-fw fa-edit"></i>Page1</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#"><i class="fa fa-sliders fa-sliders-h"></i>Page2</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#"><i class="fa fa-fw fa-image"></i>Page3</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+  </li>
+</ul>
  
     <section class="content">
     <form>
+  <div class="card-body">
     <div class="form-group">
-        <label for="example-text-input" class="form-control-label">Text</label>
-        <input class="form-control" type="text" value="John Snow" id="example-text-input">
+        <label for="example-text-input" class="form-control-label"><i class="fa fa-id-card"></i>LandLord/Owner Name</label>
+        <input class="form-control" type="text" value=" " id="example-text-input​">
     </div>
     <div class="form-group">
-        <label for="example-search-input" class="form-control-label">Search</label>
-        <input class="form-control" type="search" value="Tell me your secret ..." id="example-search-input">
+        <label for="example-tel-input" class="form-control-label">Phone Number</label>
+        <input class="form-control" type="tel" value=" " id="example-tel-input">
     </div>
     <div class="form-group">
         <label for="example-email-input" class="form-control-label">Email</label>
-        <input class="form-control" type="email" value="argon@example.com" id="example-email-input">
+        <input class="form-control" type="email" value="chhornhey@admin.com" id="example-email-input">
     </div>
     <div class="form-group">
-        <label for="example-url-input" class="form-control-label">URL</label>
-        <input class="form-control" type="url" value="https://www.creative-tim.com" id="example-url-input">
+        <label for="example-number-input" class="form-control-label">House No.</label>
+        <input class="form-control" type="text" value="" id="example-number-input">
     </div>
     <div class="form-group">
-        <label for="example-tel-input" class="form-control-label">Phone</label>
-        <input class="form-control" type="tel" value="40-(770)-888-444" id="example-tel-input">
+        <label for="example-number-input" class="form-control-label">Street No.</label>
+        <input class="form-control" type="text" value="" id="example-number-input">
     </div>
     <div class="form-group">
-        <label for="example-password-input" class="form-control-label">Password</label>
-        <input class="form-control" type="password" value="password" id="example-password-input">
+        <label for="example-number-input" class="form-control-label">Tourist Spot/Landmarks</label>
+        <input class="form-control" type="text" value="" id="example-number-input">
     </div>
     <div class="form-group">
-        <label for="example-number-input" class="form-control-label">Number</label>
-        <input class="form-control" type="number" value="23" id="example-number-input">
+        <label for="example-number-input" class="form-control-label">Nearby Hospital/Pharmacy</label>
+        <input class="form-control" type="text" value="" id="example-number-input">
     </div>
+    <div class="form-group">
+        <label for="example-number-input" class="form-control-label">Nearby Bank/School/Others</label>
+        <input class="form-control" type="text" value="" id="example-number-input">
+    </div>
+    <div class="form-group">
+        <label for="example-number-input" class="form-control-label">Nearby Mall/Shopping Place</label>
+        <input class="form-control"  type="text" value="" id="example-number-input">
+    </div>
+    <div class="form-group">
+        <label for="example-number-input" class="form-control-label">Nearby Cafe/Restaurant</label>
+        <input class="form-control"  type="text" value="" id="example-number-input">
+    </div>
+   
     <div class="form-group">
         <label for="example-datetime-local-input" class="form-control-label">Datetime</label>
         <input class="form-control" type="datetime-local" value="2018-11-23T10:30:00" id="example-datetime-local-input">
@@ -90,9 +118,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <label for="example-time-input" class="form-control-label">Time</label>
         <input class="form-control" type="time" value="10:30:00" id="example-time-input">
     </div>
+   
 </form>
     </section>
     </div>
+        </div>
     <!-- /.content -->
 
   <!-- Main Footer -->
