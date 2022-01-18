@@ -17,21 +17,22 @@ use App\Http\Controllers\UserAuth;
 
 // Noted: Here we create route to test your view then comment it . 
 
-Route::get('/test', function () {
-    return view('Home.homepage');
+
+Route::get('/', function () {
+    return view('Layout.index');
 });
 Route::get('/login', function () {
     return view('login');
 });
-Route::get('/', function () {
+Route::get('/home/admin', function () {
     return view('Home.admin');
 });
-Route::get('/', function () {
-    return view('Home.login');
- });
- Route::get('/', function () {
+ Route::get('/home/verify', function () {
     return view('Home.verify');
 });
-Route::get('/', function () {
+Route::get('/home/prooerty', function () {
     return view('Home.propertyform');
+});
+Route::get('/home/homepage', function () {
+    return view('Home.homepage');
 });
