@@ -39,7 +39,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     </section>
 
     <!-- Main content -->
-    <ul class="nav nav-tabs">
+    <!-- <ul class="nav nav-tabs">
   <li class="nav-item">
     <a class="nav-link active" aria-current="page" href="#"><i class="fa fa-fw fa-edit"></i>Page1</a>
   </li>
@@ -52,7 +52,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <li class="nav-item">
     <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
   </li>
-</ul>
+</ul> -->
  
     <section class="content">
     <form>
