@@ -14,7 +14,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="mynavbar">
-      <ul class="navbar-nav nav-pills nav-justified me-auto">
+      <ul class="navbar-nav nav-pills me-auto">
         <li class="nav-item">
           <a class="nav-link active" href="javascript:void(0)">Home</a>
         </li>
