@@ -9,14 +9,14 @@
 <body>
 <nav class="navbar navbar-expand-sm navbar-dark  bg-success">
   <div class="container-fluid">
-    <a class="navbar-brand" href="javascript:void(0)">RealEstate</a>
+    <a class="navbar-brand" href="javascript:void(0)"><img src="\img\logo.png" alt="" width="40px" height="40px"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="mynavbar">
-      <ul class="navbar-nav me-auto">
+      <ul class="navbar-nav nav-pills nav-justified me-auto">
         <li class="nav-item">
-          <a class="nav-link" href="javascript:void(0)">Home</a>
+          <a class="nav-link active" href="javascript:void(0)">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="javascript:void(0)">Properties</a>
