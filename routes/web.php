@@ -17,6 +17,7 @@ use App\Http\Controllers\PropertiesController;
 
 // Noted: Here we create route to test your view then comment it . 
 
+<<<<<<< HEAD
 Route::get('/',function(){
     return view('welcome');
 });
@@ -39,3 +40,24 @@ Route::get('/home', [HomeController::class,'index'])->name('home');
 // Route::get('livewire',function(){
 //     return view('livewire.index');
 // });
+=======
+
+Route::get('/', function () {
+    return view('Layout.index');
+});
+Route::get('/login', function () {
+    return view('login');
+});
+Route::get('/home/admin', function () {
+    return view('Home.admin');
+});
+ Route::get('/home/verify', function () {
+    return view('Home.verify');
+});
+Route::get('/home/prooerty', function () {
+    return view('Home.propertyform');
+});
+Route::get('/home/homepage', function () {
+    return view('Home.homepage');
+});
+>>>>>>> ccd4644d8ad92030184905a1a7c08d8a4fcc7e05
