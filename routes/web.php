@@ -1,9 +1,9 @@
 <?php
-namespace App\Http\Controllers\HomeController;
-
-use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserAuth;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PropertiesController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,21 +17,25 @@ use App\Http\Controllers\UserAuth;
 
 // Noted: Here we create route to test your view then comment it . 
 
-Route::get('/test', function () {
-    return view('Home.homepage');
+Route::get('/',function(){
+    return view('welcome');
 });
-Route::get('/login', function () {
-    return view('login');
-});
-Route::get('/', function () {
-    return view('Home.admin');
-});
-Route::get('/', function () {
-    return view('Home.login');
- });
- Route::get('/', function () {
-    return view('Home.verify');
-});
-Route::get('/', function () {
-    return view('Home.propertyform');
-});
+
+
+Route::group(['prefix' => 'admin','namespace' => 'Admin','as' => 'admin.','middleware' => 'auth'], function () {});
+  
+        //  Route::resource('/properties','Properties');
+      Route::get('/',function(){
+        return view('layouts.include.admin');
+    });
+
+Route::get('/propertie',[PropertiesController::class,'index']);
+   
+Auth::routes();
+Route::get('admin/properties', [PropertiesController::class,'index']);
+
+Route::get('/home', [HomeController::class,'index'])->name('home');
+
+// Route::get('livewire',function(){
+//     return view('livewire.index');
+// });

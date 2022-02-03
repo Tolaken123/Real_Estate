@@ -11,7 +11,11 @@
       <div class="card">
         <div class="card-header">
 
-          <button type="button" class="btn btn-primary">New Property</button>
+          <button type="button" class="btn btn-primary">
+          <link class="hide-line" href="#">
+          New Property
+          </a>
+          </button>
           </div>
         </div>
         <div class="card-body p-0">

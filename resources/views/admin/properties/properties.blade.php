@@ -1,29 +1,13 @@
-<!DOCTYPE html>
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> {{ config('app.name', 'realestate')}}</title>
 
-  <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="{{ asset ('vendors/https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback')}}">
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="{{ asset('vendors/plugins/fontawesome-free/css/all.min.css')}}">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="{{ asset('vendors/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('vendors/dist/css/adminlte.min.css') }}">
-</head>
+@extends('layouts.app')
+@section('content')
 <body class="hold-transition light-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
   
     <!-- Navbar -->
-    @include('layout.topnavbar')
+    {{-- @include('layout.topnavbar')
 
-  @include('layout.leftmenu')
+  @include('layout.leftmenu') --}}
   <!-- /.navbar -->
   <div class="card card-outline-primary">
   <div class="content-wrapper">
@@ -55,7 +39,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 </ul>
  
     <section class="content">
-    <form>
+    <form action="#" method="POST">
+    @csrf
   <div class="card-body">
     <div class="form-group">
         <label for="example-text-input" class="form-control-label"><i class="fa fa-id-card"></i>LandLord/Owner Name</label>
@@ -126,18 +111,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- /.content -->
 
   <!-- Main Footer -->
-  @include('layout.footer')
+  {{-- @include('layout.footer') --}}
   <!-- /.content-wrapper -->
 
 <!-- REQUIRED SCRIPTS -->
         </div>
 <!-- jQuery -->
-<script src="{{ asset('vendors/plugins/jquery/jquery.min.js') }}"></script>
-<!-- overlayScrollbars -->
-<script src="{{ asset('vendors/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
-<!-- Bootstrap 4 -->
-<script src="{{ asset('vendors/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-<!-- AdminLTE App -->
-<script src="{{ asset('vendors/dist/js/adminlte.min.js') }}"></script>
+
 </body>
-</html>
+@endsection

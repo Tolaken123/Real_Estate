@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- {{-- <!DOCTYPE html>
 <!--
 This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
@@ -28,7 +28,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   @include('layout.leftmenu')
 
   <!-- Content Wrapper. Contains page content -->
-  
+  @yield('content')
   <!-- Main Footer -->
   @include('layout.footer')
 </div>
@@ -43,4 +43,27 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- AdminLTE App -->
 <script src="{{ asset('vendors/dist/js/adminlte.min.js') }}"></script>
 </body>
-</html>
+</html> --}}
+ @include('layouts.include.link')
+<div class="hold-transition light-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+    <div class="wrapper">
+          {{-- navbar --}}
+          @include('layouts.include.topnavbar')
+          <!-- sidebar -->
+          @include('layouts.include.sidebar')
+        
+          
+           <div class="containner">
+           @yield('content')
+           @include('layouts.include.mainconten') 
+           </div>
+          <!-- Main Sidebar Container -->
+          <!-- Content Wrapper. Contains page content -->
+          <!-- Main Footer -->
+          @include('layouts.include.footer')
+    </div>
+</div>
+{{-- script --}}
+@include('layouts.include.script')
+
+

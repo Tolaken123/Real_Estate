@@ -8,6 +8,9 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
+<nav>
+
+</nav>
 <div class="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4">
   <div class="flex-shrink-0">
     <img class="h-12 w-12" src="{{asset('/img/chat.png')}}" alt="ChitChat Logo">

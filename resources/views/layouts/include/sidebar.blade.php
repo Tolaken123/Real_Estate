@@ -13,7 +13,8 @@
           <img src="{{ asset('vendors/dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Chhorn Hey</a>
+          <a href="#" class="d-block">Admin</a>
+          {{-- {{ Auth::user()->name }} --}}
         </div>
       </div>
 
@@ -76,12 +77,15 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
-            <i class="fas fa-sign-out-alt"></i>
-              <p>
-                Logout
-              </p>
-            </a>
+           <a class="nav-link" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }} 
+          <i class="fas fa-sign-out-alt"></i>
+ <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+   @csrf
+ </form>
+          </a>
           </li>
         </ul>
       </nav>
