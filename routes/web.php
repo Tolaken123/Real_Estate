@@ -17,15 +17,12 @@ use App\Http\Controllers\PropertiesController;
 
 // Noted: Here we create route to test your view then comment it . 
 
-<<<<<<< HEAD
 Route::get('/',function(){
     return view('welcome');
 });
 
 
 Route::group(['prefix' => 'admin','namespace' => 'Admin','as' => 'admin.','middleware' => 'auth'], function () {});
-  
-        //  Route::resource('/properties','Properties');
       Route::get('/',function(){
         return view('layouts.include.admin');
     });
@@ -40,9 +37,8 @@ Route::get('/home', [HomeController::class,'index'])->name('home');
 // Route::get('livewire',function(){
 //     return view('livewire.index');
 // });
-=======
 
-Route::get('/', function () {
+Route::get('/nav', function () {
     return view('Layout.index');
 });
 Route::get('/login', function () {
@@ -60,4 +56,3 @@ Route::get('/home/prooerty', function () {
 Route::get('/home/homepage', function () {
     return view('Home.homepage');
 });
->>>>>>> ccd4644d8ad92030184905a1a7c08d8a4fcc7e05
