@@ -2,7 +2,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\PropertiesController;
+use App\Http\Controllers\Admin\PropertiesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,15 +22,19 @@ Route::get('/',function(){
 });
 
 
-Route::group(['prefix' => 'admin','namespace' => 'Admin','as' => 'admin.','middleware' => 'auth'], function () {});
-      Route::get('/',function(){
-        return view('layouts.include.admin');
-    });
+Route::group(['prefix' => 'admin','namespace' => 'Admin','as' => 'admin.','middleware' => 'auth'], function () {
+    Route::get('/',function(){return view('layouts.include.admin');});
+    Route::resource('/properties','PropertiesController');
+    
+});
+     
 
-Route::get('/propertie',[PropertiesController::class,'index']);
+
+
+//Route::get('/propertie',[PropertiesController::class,'index']);
    
 Auth::routes();
-Route::get('admin/properties', [PropertiesController::class,'index']);
+//Route::get('admin/properties', [PropertiesController::class,'index']);
 
 Route::get('/home', [HomeController::class,'index'])->name('home');
 
@@ -40,9 +44,6 @@ Route::get('/home', [HomeController::class,'index'])->name('home');
 
 Route::get('/nav', function () {
     return view('Layout.index');
-});
-Route::get('/login', function () {
-    return view('login');
 });
 Route::get('/home/admin', function () {
     return view('Home.admin');
