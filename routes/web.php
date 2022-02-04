@@ -55,5 +55,5 @@ Route::get('/home/prooerty', function () {
     return view('Home.propertyform');
 });
 Route::get('/home/homepage', function () {
-    return view('Home.homepage');
+    return view('fonte.homepage');
 });
