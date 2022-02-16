@@ -19,6 +19,8 @@
           </div>
         </div>
         <div class="card-body p-0">
+  <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-offset="0" class="scrollspy-example" tabindex="0">
+
           <table class="table table-striped projects">
               <thead>
                   <tr>
@@ -562,6 +564,7 @@
     
     <!-- /.content -->
   </div>
+</div>
   <!-- /.content-wrapper -->
 
   

@@ -1,9 +1,12 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+
 use App\Http\Controllers\Controller;
 use Facade\FlareClient\View;
 use Illuminate\Http\Request;
+use App\Models\properties;
+use PhpParser\Builder\Property;
 
 class PropertiesController extends Controller
 {
@@ -35,7 +38,44 @@ class PropertiesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'name'=>'required',
+            'phone'=>'required',
+            'email'=>'required',
+            'house'=>'required',
+            'street'=>'required',
+            'tourist'=>'required',
+            'hospital'=>'required',
+            'bank'=>'required',
+            'shopping'=>'required',
+            'resturant'=>'required',
+            'datetime'=>'required',
+            'date'=>'required',
+            'month'=>'required',
+            'week'=>'required',
+            'time'=>'required'
+
+        ]);
+     $properties=new properties();
+     $properties->name=$request->name;
+     $properties->phone=$request->phone;
+     $properties->email=$request->email;
+     $properties->house=$request->input('house');
+     $properties->street=$request->input('street');
+     $properties->tourist=$request->input('tourist');
+     $properties->hospital=$request->input('hospital');
+     $properties->bank=$request->input('bank');
+     $properties->shopping=$request->input('shopping');
+     $properties->resturant=$request->input('resturant');
+     $properties->datetime=$request->datetime;
+     $properties->date=$request->date;
+     $properties->month=$request->input('month');
+     $properties->week=$request->input('week');
+     $properties->time=$request->time;
+     $properties->save();
+    // dd($properties);
+     return redirect('/admin/properties')->with('Properties','Create proprties is Successful');
+
     }
 
     /**

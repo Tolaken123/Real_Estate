@@ -4,11 +4,12 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Home</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-     
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
 
         <!-- Styles -->
         <style>
@@ -21,24 +22,81 @@
             }
         </style>
     </head>
-    <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
+    <body >
+       
+        <nav class="navbar navbar-expand-md navbar-light bg-success" >
+            {{-- <div class="container-fluid"> --}}
+        
+              <a class="navbar-brand" href="javascript:void(0)"><img src="\img\logo.png" alt="" width="40px" height="40px"></a>
+              <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="navbar-nav nav-pills me-auto">
+                  <li class="nav-item">
+                    <a class="nav-link   btn btn-outline-primary" href="javascript:void(0)">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link btn btn-outline-warning" href="javascript:void(0)">Properties</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link  btn btn-outline-dark" href="javascript:void(0)">Commercial</a>
+                  </li>
+                  <li class="nav-item ">
+                    <a class="nav-link  btn btn-outline-warning" href="javascript:void(0)">Areas</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link  btn btn-outline-warning" href="javascript:void(0)">Resources</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link  btn btn-outline-warning" href="javascript:void(0)">Hot Properties!!</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link  btn btn-outline-warning" href="javascript:void(0)">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link  btn btn-outline-warning" href="javascript:void(0)">Contact</a>
+                  </li>
+                  <li class="nav-item">
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-          
+                  @if (Route::has('login'))
+                  {{-- <div > --}}
+                </li>   {{-- class="hidden fixed top-0 right-0 px-6 py-4 sm:block" --}}
+                      
+                      @auth
+                          <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
+                      @else
+                      <li class="nav-item">
+                          
+                          <a href="{{ route('login') }}" class= "nav-link active m-1">Log in</a>
+                          {{-- class="text-sm text-gray-700 dark:text-gray-500 underline" --}}
+                      </li>
+                      <li class="nav-item">
+                          @if (Route::has('register'))
+                              <a href="{{ route('register') }}" class= "nav-link active m-1">Register</a>
+                          @endif
+                      @endauth
+                  {{-- </div> --}}
+              @endif
+  
+                </ul>
+                {{-- <div> --}}
+                   
+                  
+                    {{-- </div> --}}
+                    {{-- class="d-flex" --}}
+                <form class="d-flex" >
+                    {{-- class="d-flex" --}}
+                  <input  type="text" class="form-control me-2" placeholder="Search">
+                  {{-- class="form-control me-2" --}}
+                  <button class="btn btn-primary" type="button">Search</button>
+                </form>
+              </div>
             </div>
+            {{-- <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0"> --}}
         </div>
+    </button>
+    </nav>
+
     </body>
 </html>

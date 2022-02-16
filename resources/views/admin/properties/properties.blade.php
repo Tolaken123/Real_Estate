@@ -39,71 +39,82 @@
 </ul> -->
  
     <section class="content">
-    <form action="#" method="POST">
+      @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+    <form action="/admin/properties" method="POST">
     @csrf
   <div class="card-body">
     <div class="form-group">
         <label for="example-text-input" class="form-control-label"><i class="fa fa-id-card"></i>LandLord/Owner Name</label>
-        <input class="form-control" type="text" value=" " id="example-text-input​">
+        <input class="form-control" type="text" value=" " id="example-text-input​" name="name">
     </div>
     <div class="form-group">
         <label for="example-tel-input" class="form-control-label">Phone Number</label>
-        <input class="form-control" type="tel" value=" " id="example-tel-input">
+        <input class="form-control" type="tel" value=" " id="example-tel-input" name="phone">
     </div>
     <div class="form-group">
         <label for="example-email-input" class="form-control-label">Email</label>
-        <input class="form-control" type="email" value="chhornhey@admin.com" id="example-email-input">
+        <input class="form-control" type="email" value="chhornhey@admin.com" id="example-email-input" name="email">
     </div>
     <div class="form-group">
         <label for="example-number-input" class="form-control-label">House No.</label>
-        <input class="form-control" type="text" value="" id="example-number-input">
+        <input class="form-control" type="text" value="" id="example-number-input"name="house">
     </div>
     <div class="form-group">
         <label for="example-number-input" class="form-control-label">Street No.</label>
-        <input class="form-control" type="text" value="" id="example-number-input">
+        <input class="form-control" type="text" value="" id="example-number-input" name="street">
     </div>
     <div class="form-group">
         <label for="example-number-input" class="form-control-label">Tourist Spot/Landmarks</label>
-        <input class="form-control" type="text" value="" id="example-number-input">
+        <input class="form-control" type="text" value="" id="example-number-input" name="tourist">
     </div>
     <div class="form-group">
         <label for="example-number-input" class="form-control-label">Nearby Hospital/Pharmacy</label>
-        <input class="form-control" type="text" value="" id="example-number-input">
+        <input class="form-control" type="text" value="" id="example-number-input" name="hospital">
     </div>
     <div class="form-group">
         <label for="example-number-input" class="form-control-label">Nearby Bank/School/Others</label>
-        <input class="form-control" type="text" value="" id="example-number-input">
+        <input class="form-control" type="text" value="" id="example-number-input" name="bank">
     </div>
     <div class="form-group">
         <label for="example-number-input" class="form-control-label">Nearby Mall/Shopping Place</label>
-        <input class="form-control"  type="text" value="" id="example-number-input">
+        <input class="form-control"  type="text" value="" id="example-number-input" name="shopping">
     </div>
     <div class="form-group">
         <label for="example-number-input" class="form-control-label">Nearby Cafe/Restaurant</label>
-        <input class="form-control"  type="text" value="" id="example-number-input">
+        <input class="form-control"  type="text" value="" id="example-number-input" name="resturant">
     </div>
    
     <div class="form-group">
         <label for="example-datetime-local-input" class="form-control-label">Datetime</label>
-        <input class="form-control" type="datetime-local" value="2018-11-23T10:30:00" id="example-datetime-local-input">
+        <input class="form-control" type="datetime-local" value="2018-11-23T10:30:00" id="example-datetime-local-input" name="datetime">
     </div>
     <div class="form-group">
         <label for="example-date-input" class="form-control-label">Date</label>
-        <input class="form-control" type="date" value="2018-11-23" id="example-date-input">
+        <input class="form-control" type="date" value="2018-11-23" id="example-date-input" name="date">
     </div>
     <div class="form-group">
         <label for="example-month-input" class="form-control-label">Month</label>
-        <input class="form-control" type="month" value="2018-11" id="example-month-input">
+        <input class="form-control" type="month" value="2018-11" id="example-month-input" name="month">
     </div>
     <div class="form-group">
         <label for="example-week-input" class="form-control-label">Week</label>
-        <input class="form-control" type="week" value="2018-W23" id="example-week-input">
+        <input class="form-control" type="week" value="2018-W23" id="example-week-input" name="week">
     </div>
     <div class="form-group">
         <label for="example-time-input" class="form-control-label">Time</label>
-        <input class="form-control" type="time" value="10:30:00" id="example-time-input">
+        <input class="form-control" type="time" value="10:30:00" id="example-time-input" name="time">
     </div>
-   
+     <a href='/admin'> 
+      <button type="submit" class="btn btn-success">Create New</button>
+      </a>
 </form>
     </section>
     </div>

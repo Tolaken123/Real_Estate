@@ -24,9 +24,14 @@ Route::get('/',function(){
 
 Route::group(['prefix' => 'admin','namespace' => 'Admin','as' => 'admin.','middleware' => 'auth'], function () {
     Route::get('/',function(){return view('layouts.include.admin');});
-    Route::resource('/properties','PropertiesController');
+    //Route::resource('/properties','PropertiesController');
+    Route::get('/properties', [PropertiesController::class,'create'])->name('Create');
+    Route::post('/properties', [PropertiesController::class,'store'])->name('Store');
+    Route::get('/properties/index', [PropertiesController::class,'index'])->name('index');
     
 });
+
+
      
 
 
@@ -34,16 +39,16 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','as' => 'admin.','middl
 //Route::get('/propertie',[PropertiesController::class,'index']);
    
 Auth::routes();
-//Route::get('admin/properties', [PropertiesController::class,'index']);
+
 
 Route::get('/home', [HomeController::class,'index'])->name('home');
 
-// Route::get('livewire',function(){
-//     return view('livewire.index');
-// });
+Route::get('/livewire',function(){
+    return view('livewire.index');
+});
 
 Route::get('/nav', function () {
-    return view('Layout.index');
+    return view('fonte.index');
 });
 Route::get('/home/admin', function () {
     return view('Home.admin');
@@ -51,9 +56,5 @@ Route::get('/home/admin', function () {
  Route::get('/home/verify', function () {
     return view('Home.verify');
 });
-Route::get('/home/prooerty', function () {
-    return view('Home.propertyform');
-});
 Route::get('/home/homepage', function () {
-    return view('fonte.homepage');
 });

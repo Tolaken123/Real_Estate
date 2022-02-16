@@ -13,8 +13,8 @@
           <img src="{{ asset('vendors/dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Admin</a>
-          {{-- {{ Auth::user()->name }} --}}
+          <a href="#" class="d-block">{{ Auth::user()->name }} </a>
+          
         </div>
       </div>
 
@@ -26,7 +26,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="/admin/properties" class="nav-link">
             <i class="fas fa-home"></i>
               <p>
                 Properties
