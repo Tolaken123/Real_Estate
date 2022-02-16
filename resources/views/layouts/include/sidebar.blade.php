@@ -30,8 +30,77 @@
             <i class="fas fa-home"></i>
               <p>
                 Properties
+                <!-- add new -->
+                <i class="right fas fa-angle-left"></i>
               </p>
             </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link ">
+                <i class="fas fa-home"></i>
+                  <p>For Sell</p>
+                </a>
+                    <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="#" class="nav-link ">
+                    <!-- <i class="fas fa-map-marker-alt"></i> -->
+                      <p>Land </p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                    <!-- <i class="nav-icon fas fa-th"></i> -->
+                      <p>Shop</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                    <!-- <i class="fas fa-building"></i> -->
+                      <p>Houses</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                    <!-- <i class="fas fa-user-lock"></i> -->
+                      <p>Wherhouse</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-th"></i>
+                  <p>For Rent</p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="#" class="nav-link ">
+                    <!-- <i class="fas fa-map-marker-alt"></i> -->
+                      <p>Room </p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                    <!-- <i class="nav-icon fas fa-th"></i> -->
+                      <p>Shop</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                    <!-- <i class="fas fa-building"></i> -->
+                      <p>Houses</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                    <!-- <i class="fas fa-user-lock"></i> -->
+                      <p>Wherhouse</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
+            </ul>
           </li>
           <li class="nav-item menu-close">
             <a href="#" class="nav-link ">
