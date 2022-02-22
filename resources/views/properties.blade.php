@@ -11,43 +11,18 @@
   <!-- /.navbar -->
   
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-
-    <!-- Main content -->
-    <!-- <ul class="nav nav-tabs">
-  <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="#"><i class="fa fa-fw fa-edit"></i>Page1</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#"><i class="fa fa-sliders fa-sliders-h"></i>Page2</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#"><i class="fa fa-fw fa-image"></i>Page3</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-  </li>
-</ul> -->
-  <!-- SELECT2 EXAMPLE -->
-    <div class="card w-50">
+    <div class="card w-70">
     <div class="card card-default">
           <div class="card-header">
             <h3 class="card-title">Property Information</h3>
-
-            <div class="card-tools">
-              <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                <i class="fas fa-minus"></i>
-              </button>
-              <button type="button" class="btn btn-tool" data-card-widget="remove">
-                <i class="fas fa-times"></i>
-              </button>
-            </div>
           </div>
           <!-- /.card-header -->
-          
+         <form> 
           <div class="card-body">
             <div class="row">
-              <div class="col-md-10">
+              
+          </div>
+          <div class="col-md-10">
                 <div class="form-group">
                   <label>Property Type</label>
                   <select class="form-control select2" style="width: 100%;">
@@ -61,7 +36,6 @@
                   </select>
                 </div>
             </div>
-          </div>
           <div class="col-md-10">
           <div class="form-group">
           <div class="form-group">
@@ -125,12 +99,12 @@
         <label for="example-number-input" class="form-control-label">How far from Restaurant?</label>
         <input class="form-control"  type="text" value="" id="example-number-input" name="resturant">
     </div>
-   
-    
-    </div>
+</div> 
+
      <a href='#'> 
       <button type="submit" class="btn btn-success">Submit</button>
       </a>
+      
 </form>
     </section>
     </div>
