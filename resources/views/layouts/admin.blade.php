@@ -1,4 +1,4 @@
-{{-- {{-- <!DOCTYPE html>
+ <!DOCTYPE html>
 <!--
 This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
@@ -25,10 +25,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- /.navbar -->
   @include('layouts.mainconten')
   <!-- Main Sidebar Container -->
+<<<<<<< HEAD
   @include('layouts.leftmenu')
+=======
+  @include('layouts.sidebar')
+>>>>>>> fffd5261f06b15205046cdde504588644f1f4825
 
   <!-- Content Wrapper. Contains page content -->
-  @yield('content')
+  {{-- @yield('content') --}}
   <!-- Main Footer -->
   @include('layouts.footer')
 </div>
@@ -43,27 +47,27 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- AdminLTE App -->
 <script src="{{ asset('vendors/dist/js/adminlte.min.js') }}"></script>
 </body>
-</html> --}}
- @include('layouts.include.link')
-<div class="hold-transition light-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+</html>
+ {{-- @include('layouts.link')
+ <div class="hold-transition light-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
     <div class="wrapper">
           {{-- navbar --}}
-          @include('layouts.include.topnavbar')
+          {{-- @include('layouts.topnavbar') --}}
           <!-- sidebar -->
-          @include('layouts.include.sidebar')
+          {{-- @include('layouts.sidebar') --}}
         
           
-           <div class="containner">
-           @yield('content')
-           @include('layouts.include.mainconten') 
-           </div>
+           {{-- <div class="containner"> --}}
+           {{-- @yield('content') --}}
+           {{-- @include('layouts.mainconten')  --}}
+           {{-- </div> --}}
           <!-- Main Sidebar Container -->
           <!-- Content Wrapper. Contains page content -->
           <!-- Main Footer -->
-          @include('layouts.include.footer')
-    </div>
-</div>
+          {{-- @include('layouts.footer') --}}
+    {{-- </div> --}}
+{{-- </div> --}}
 {{-- script --}}
-@include('layouts.include.script')
-
+{{-- @include('layouts.script') --}}
+ 
 
