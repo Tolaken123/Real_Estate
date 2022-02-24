@@ -48,9 +48,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <div class="hold-transition light-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
     <div class="wrapper">
           {{-- navbar --}}
-          @include('layouts.include.topnavbar')
+          @include('layouts.topnavbar')
           <!-- sidebar -->
-          @include('layouts.include.sidebar')
+          @include('layouts.sidebar')
         
           
            <div class="containner">

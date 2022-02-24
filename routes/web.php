@@ -43,7 +43,7 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','as' => 'admin.','middl
 Auth::routes();
 
 
-// Route::get('/home', [HomeController::class,'index'])->name('home');
+ Route::get('/home', [HomeController::class,'index'])->name('home');
 
 // Route::get('/livewire',function(){
 //     return view('livewire.index');
