@@ -34,7 +34,10 @@
               <div class="collapse navbar-collapse" id="mynavbar">
                 <ul class="navbar-nav nav-pills me-auto">
                   <li class="nav-item">
-                    <a class="nav-link   btn btn-outline-primary" href="javascript:void(0)">Home</a>
+                    <a class="nav-link   
+                    
+                    
+                     btn-outline-primary" href="javascript:void(0)">Home</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link btn btn-outline-warning" href="javascript:void(0)">Properties</a>
