@@ -1,4 +1,13 @@
 
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+  </head>
+  <body>
+    
 @extends('layouts.app')
 @section('content')
 <body class="hold-transition light-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
@@ -9,7 +18,6 @@
 
   @include('layout.leftmenu') --}}
   <!-- /.navbar -->
-  
   <div class="content-wrapper">
     <div class="card w-70">
     <div class="card card-default">
@@ -100,8 +108,24 @@
         <input class="form-control"  type="text" value="" id="example-number-input" name="resturant">
     </div>
 </div> 
-
-     <a href='#'> 
+<div id="summernote"></div>
+    <script>
+      $('#summernote').summernote({
+        placeholder: 'Write your beautiful decscription here',
+        tabsize: 2,
+        height: 120,
+        toolbar: [
+          ['style', ['style']],
+          ['font', ['bold', 'underline', 'clear']],
+          ['color', ['color']],
+          ['para', ['ul', 'ol', 'paragraph']],
+          ['table', ['table']],
+          ['insert', ['link', 'picture', 'video']],
+          ['view', ['help']]
+        ]
+      });
+    </script>
+    <a href='#'> 
       <button type="submit" class="btn btn-success">Submit</button>
       </a>
       
@@ -109,10 +133,14 @@
     </section>
     </div>
         </div>
+  </body>
+</html>
+
+     
     <!-- /.content -->
 
   <!-- Main Footer -->
-  {{-- @include('layout.footer') --}}
+  {{-- @include('layouts.footer') --}}
   <!-- /.content-wrapper -->
 
 <!-- REQUIRED SCRIPTS -->
