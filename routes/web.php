@@ -18,18 +18,20 @@ use App\Http\Controllers\Admin\PropertiesController;
 // Noted: Here we create route to test your view then comment it . 
 
 Route::get('/',function(){
+    return view('welcome');
+});
+Route::get('/hey',function(){
     return view('properties');
 });
 
-
-// Route::group(['prefix' => 'admin','namespace' => 'Admin','as' => 'admin.','middleware' => 'auth'], function () {
-//     Route::get('/',function(){return view('layouts.include.admin');});
-//     //Route::resource('/properties','PropertiesController');
-//     Route::get('/properties', [PropertiesController::class,'create'])->name('Create');
-//     Route::post('/properties', [PropertiesController::class,'store'])->name('Store');
-//     Route::get('/properties/index', [PropertiesController::class,'index'])->name('index');
+Route::group(['prefix' => 'admin','namespace' => 'Admin','as' => 'admin.','middleware' => 'auth'], function () {
+    Route::get('/',function(){return view('layouts.admin');});
+    //Route::resource('/properties','PropertiesController');
+    Route::get('/properties', [PropertiesController::class,'create'])->name('Create');
+    Route::post('/properties', [PropertiesController::class,'store'])->name('Store');
+    Route::get('/properties/index', [PropertiesController::class,'index'])->name('index');
     
-// });
+});
 
 
      
@@ -38,7 +40,7 @@ Route::get('/',function(){
 
 // Route::get('/propertie',[PropertiesController::class,'index']);
    
-// Auth::routes();
+Auth::routes();
 
 
 // Route::get('/home', [HomeController::class,'index'])->name('home');

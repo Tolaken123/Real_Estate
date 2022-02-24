@@ -44,7 +44,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="{{ asset('vendors/dist/js/adminlte.min.js') }}"></script>
 </body>
 </html> --}}
- @include('layouts.include.link')
+ @include('layouts.link')
 <div class="hold-transition light-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
     <div class="wrapper">
           {{-- navbar --}}
@@ -55,15 +55,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
           
            <div class="containner">
            @yield('content')
-           @include('layouts.include.mainconten') 
+           @include('layouts.mainconten') 
            </div>
           <!-- Main Sidebar Container -->
           <!-- Content Wrapper. Contains page content -->
           <!-- Main Footer -->
-          @include('layouts.include.footer')
+          @include('layouts.footer')
     </div>
 </div>
 {{-- script --}}
-@include('layouts.include.script')
+@include('layouts.script')
 
 
