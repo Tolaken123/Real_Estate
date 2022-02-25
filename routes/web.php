@@ -63,6 +63,3 @@ Auth::routes();
 // Route::get('/admin/properties/createform', function () {
 //     return view('admin.properties.createform');
 // });
-Route::get('/layouts/Home_page',function(){
-    return view('/layouts/Home_page');
-});
