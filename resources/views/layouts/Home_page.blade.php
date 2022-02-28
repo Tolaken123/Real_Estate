@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,6 +6,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <title>Cam Real Estate</title>
 </head>
 <body>
@@ -121,8 +124,8 @@
                             </div>
                             <div class="card-body border-top">
                                 <div class="d-flex no-block align-items-center">
-                                    <span><img src="../assets/images/property/pro-bath.png"></span>
-                                    <span class="p-10 text-muted">Bathrooms</span>
+                                    <span><img src="../img/Bath_icon.png" width="20px" height="20px" ></span>
+                                    <span class="m-2 text-muted"> Bathrooms</span>
                                     <span class="ml-auto badge badge-pill badge-secondary pull-right">2</span>
                                 </div>
                                 <div class="d-flex no-block align-items-center">
@@ -240,7 +243,7 @@
                             </div>
                             <div class="card-body border-top">
                                 <div class="d-flex no-block align-items-center">
-                                <span><img src="../assets/images/property/pro-bed.png"></span>
+                                <span><i class='fa fa-s15'></i></span>
                                     <span class="p-10 text-muted">Bathrooms</span>
                                     <span class="ml-auto badge badge-pill badge-secondary pull-right">2</span>
                                 </div>
@@ -270,22 +273,7 @@
                     
                     
 <!-- /Item -->
-<script src="../assets/node_modules/jquery/jquery-3.2.1.min.js"></script>
-    <!-- Bootstrap tether Core JavaScript -->
-    <script src="../assets/node_modules/popper/popper.min.js"></script>
-    <script src="../assets/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- slimscrollbar scrollbar JavaScript -->
-    <script src="dist/js/perfect-scrollbar.jquery.min.js"></script>
-    <!--Wave Effects -->
-    <script src="dist/js/waves.js"></script>
-    <!--Menu sidebar -->
-    <script src="dist/js/sidebarmenu.js"></script>
-    <!--stickey kit -->
-    <script src="../assets/node_modules/sticky-kit-master/dist/sticky-kit.min.js"></script>
-    <script src="../assets/node_modules/sparkline/jquery.sparkline.min.js"></script>
-    <!--Custom JavaScript -->
-    <script src="dist/js/custom.min.js"></script>
-    <!-- bootstrap-select javascript -->
-    <script src="../assets/node_modules/bootstrap-select/bootstrap-select.min.js"></script>
+<i class="fas fa-car"></i>
+
 </body>
 </html>
