@@ -6,7 +6,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-
+    <link rel="stylesheet" href="{{ asset('vendors/plugins/fontawesome-free/css/all.min.css') }}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -124,18 +124,21 @@
                             </div>
                             <div class="card-body border-top">
                                 <div class="d-flex no-block align-items-center">
-                                    <span><img src="../img/Bath_icon.png" width="20px" height="20px" ></span>
-                                    <span class="m-2 text-muted"> Bathrooms</span>
+                                    <span class="m-2 text-muted">
+                                    <i class="fas fa-bath"></i>    
+                                    Bathrooms</span>
                                     <span class="ml-auto badge badge-pill badge-secondary pull-right">2</span>
                                 </div>
                                 <div class="d-flex no-block align-items-center">
-                                    <span><img src="../assets/images/property/pro-bed.png"></span>
-                                    <span class="p-10 text-muted">Beds</span>
+                                    <span class="p-10 text-muted">
+                                    <i class="fas fa-bed"></i>    
+                                    Beds</span>
                                     <span class="ml-auto badge badge-pill badge-secondary pull-right">2</span>
                                 </div>
                                 <div class="d-flex no-block align-items-center">
-                                    <span><img src="../assets/images/property/pro-garage.png"></span>
-                                    <span class="p-10 text-muted">Garages</span>
+                                    <span class="p-10 text-muted">
+                                    <i class="fas fa-car"></i>    
+                                    Garages</span>
                                     <span class="ml-auto badge badge-pill badge-secondary pull-right">1</span>
                                 </div>
                             </div>
@@ -163,58 +166,21 @@
                             </div>
                             <div class="card-body border-top">
                                 <div class="d-flex no-block align-items-center">
-                                    <span><img src="../assets/images/property/pro-bath.png"></span>
-                                    <span class="p-10 text-muted">Bathrooms</span>
+                                    <span class="p-10 text-muted">
+                                    <i class="fas fa-bath"></i>    
+                                    Bathrooms</span>
                                     <span class="ml-auto badge badge-pill badge-secondary pull-right">2</span>
                                 </div>
                                 <div class="d-flex no-block align-items-center">
-                                    <span><img src="../assets/images/property/pro-bed.png"></span>
-                                    <span class="p-10 text-muted">Beds</span>
+                                    <span class="p-10 text-muted">
+                                    <i class="fas fa-bed"></i>    
+                                    Beds</span>
                                     <span class="ml-auto badge badge-pill badge-secondary pull-right">2</span>
                                 </div>
                                 <div class="d-flex no-block align-items-center">
-                                    <span><img src="../assets/images/property/pro-garage.png"></span>
-                                    <span class="p-10 text-muted">Garages</span>
-                                    <span class="ml-auto badge badge-pill badge-secondary pull-right">1</span>
-                                </div>
-                            </div>
-                            <div class="card-body border-top">
-                                <div class="d-flex no-block align-items-center">
-                                    <a href="javascript:void(0) " class="m-r-15"><img alt="img " class="thumb-md img-circle " src="../assets/images/users/agent2.jpg "></a>
-                                    <div>
-                                        <h5 class="card-title m-b-0">Jon Doe</h5>
-                                        <h6 class="text-muted">5 Property</h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /item -->
-                    <!-- item -->
-                    <div class="col-lg-3 col-md-6">
-                        <div class="card">
-                            <img class="card-img-top" src="../img/House1.jpg" alt="Card image cap">
-                            <div class="card-img-overlay">
-                                <span class="badge badge-danger badge-pill">For Rent</span>
-                            </div>
-                            <div class="card-body bg-light">
-                                <h4 class="card-title">Florida 5, Pinecrest, FL</h4>
-                                <h4 class="text-primary">&#36; 220,000</h4>
-                            </div>
-                            <div class="card-body border-top">
-                                <div class="d-flex no-block align-items-center">
-                                    <span><img src="../assets/images/property/pro-bath.png"></span>
-                                    <span class="p-10 text-muted">Bathrooms</span>
-                                    <span class="ml-auto badge badge-pill badge-secondary pull-right">2</span>
-                                </div>
-                                <div class="d-flex no-block align-items-center">
-                                    <span><img src="../assets/images/property/pro-bed.png"></span>
-                                    <span class="p-10 text-muted">Beds</span>
-                                    <span class="ml-auto badge badge-pill badge-secondary pull-right">2</span>
-                                </div>
-                                <div class="d-flex no-block align-items-center">
-                                    <span><img src="../assets/images/property/pro-garage.png"></span>
-                                    <span class="p-10 text-muted">Garages</span>
+                                    <span class="p-10 text-muted">
+                                    <i class="fas fa-car"></i>    
+                                    Garages</span>
                                     <span class="ml-auto badge badge-pill badge-secondary pull-right">1</span>
                                 </div>
                             </div>
@@ -243,18 +209,66 @@
                             </div>
                             <div class="card-body border-top">
                                 <div class="d-flex no-block align-items-center">
-                                <span><i class='fa fa-s15'></i></span>
-                                    <span class="p-10 text-muted">Bathrooms</span>
+                                    <span class="p-10 text-muted">
+                                    <i class="fas fa-bath"></i>    
+                                    Bathrooms</span>
                                     <span class="ml-auto badge badge-pill badge-secondary pull-right">2</span>
                                 </div>
                                 <div class="d-flex no-block align-items-center">
-                                    <span><img src="../assets/images/property/pro-bed.png"></span>
-                                    <span class="p-10 text-muted">Beds</span>
+                                    <span class="p-10 text-muted">
+                                    <i class="fas fa-bed"></i>    
+                                    Beds</span>
                                     <span class="ml-auto badge badge-pill badge-secondary pull-right">2</span>
                                 </div>
                                 <div class="d-flex no-block align-items-center">
-                                    <span><img src="../assets/images/property/pro-garage.png"></span>
-                                    <span class="p-10 text-muted">Garages</span>
+                                    <span class="p-10 text-muted">
+                                    <i class="fas fa-car"></i>    
+                                    Garages</span>
+                                    <span class="ml-auto badge badge-pill badge-secondary pull-right">1</span>
+                                </div>
+                            </div>
+                            <div class="card-body border-top">
+                                <div class="d-flex no-block align-items-center">
+                                    <a href="javascript:void(0) " class="m-r-15"><img alt="img " class="thumb-md img-circle " src="../assets/images/users/agent2.jpg "></a>
+                                    <div>
+                                        <h5 class="card-title m-b-0">Jon Doe</h5>
+                                        <h6 class="text-muted">5 Property</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /item -->
+                    <!-- item -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card">
+                            <img class="card-img-top" src="../img/House1.jpg" alt="Card image cap">
+                            <div class="card-img-overlay">
+                                <span class="badge badge-danger badge-pill">For Rent</span>
+                            </div>
+                            <div class="card-body bg-light">
+                                <h4 class="card-title">Florida 5, Pinecrest, FL</h4>
+                                <h4 class="text-primary">&#36; 220,000</h4>
+                            </div>
+                            <div class="card-body border-top">
+                                <div class="d-flex no-block align-items-center">
+                                <span></span>
+                                    <span class="p-10 text-muted">
+                                    <i class='fa fa-bath'></i>    
+                                    Bathrooms</span>
+                                    <span class="ml-auto badge badge-pill badge-secondary pull-right">2</span>
+                                </div>
+                                <div class="d-flex no-block align-items-center">
+                                <span></span>
+                                    <span class="p-10 text-muted">
+                                    <i class="fas fa-bed"></i>    
+                                    Beds</span>
+                                    <span class="ml-auto badge badge-pill badge-secondary pull-right">2</span>
+                                </div>
+                                <div class="d-flex no-block align-items-center">
+                                    <span class="p-10 text-muted">
+                                    <i class="fas fa-car"></i>    
+                                    Garages</span>
                                     <span class="ml-auto badge badge-pill badge-secondary pull-right">1</span>
                                 </div>
                             </div>
