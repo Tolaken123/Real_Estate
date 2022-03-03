@@ -8,8 +8,8 @@
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <link rel="stylesheet" href="{{ asset('vendors/plugins/fontawesome-free/css/all.min.css') }}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <title>Cam Real Estate</title>
 </head>
 <body>
@@ -123,8 +123,8 @@
                                 <h4 class="text-primary">&#36; 220,000</h4>
                             </div>
                             <div class="card-body border-top">
-                                <div class="d-flex no-block align-items-center">
-                                    <span class="m-2 text-muted">
+                            <div class="d-flex no-block align-items-center">
+                                    <span class="p-10 text-muted">
                                     <i class="fas fa-bath"></i>    
                                     Bathrooms</span>
                                     <span class="ml-auto badge badge-pill badge-secondary pull-right">2</span>
@@ -144,7 +144,7 @@
                             </div>
                             <div class="card-body border-top">
                                 <div class="d-flex no-block align-items-center">
-                                    <a href="javascript:void(0) " class="m-r-15"><img alt="img " class="thumb-md img-circle " src="../assets/images/users/agent2.jpg "></a>
+                                <img alt="img " class="rounded-circle border border-5 border-white " src="../img/R.jpg" width="50px" height="50px">
                                     <div>
                                         <h5 class="card-title m-b-0">Jon Doe</h5>
                                         <h6 class="text-muted">5 Property</h6>
@@ -186,7 +186,8 @@
                             </div>
                             <div class="card-body border-top">
                                 <div class="d-flex no-block align-items-center">
-                                    <a href="javascript:void(0) " class="m-r-15"><img alt="img " class="thumb-md img-circle " src="../assets/images/users/agent2.jpg "></a>
+                                    <!-- <a href="javascript:void(10) " class="m-r-15"> --></a>
+                                        <img alt="img " class="rounded-circle border border-5 border-white " src="../img/R.jpg" width="50px" height="50px">
                                     <div>
                                         <h5 class="card-title m-b-0">Jon Doe</h5>
                                         <h6 class="text-muted">5 Property</h6>
@@ -229,7 +230,7 @@
                             </div>
                             <div class="card-body border-top">
                                 <div class="d-flex no-block align-items-center">
-                                    <a href="javascript:void(0) " class="m-r-15"><img alt="img " class="thumb-md img-circle " src="../assets/images/users/agent2.jpg "></a>
+                                <img alt="img " class="rounded-circle border border-5 border-white " src="../img/R.jpg" width="50px" height="50px">
                                     <div>
                                         <h5 class="card-title m-b-0">Jon Doe</h5>
                                         <h6 class="text-muted">5 Property</h6>
@@ -274,7 +275,7 @@
                             </div>
                             <div class="card-body border-top">
                                 <div class="d-flex no-block align-items-center">
-                                    <a href="javascript:void(0) " class="m-r-15"><img alt="img " class="thumb-md img-circle " src="../assets/images/users/agent2.jpg "></a>
+                                <img alt="img " class="rounded-circle border border-5 border-white " src="../img/R.jpg" width="50px" height="50px">
                                     <div>
                                         <h5 class="card-title m-b-0">Jon Doe</h5>
                                         <h6 class="text-muted">5 Property</h6>
@@ -284,10 +285,6 @@
                         </div>
                     </div>
                     <!-- /item -->
-                    
-                    
-<!-- /Item -->
-<i class="fas fa-car"></i>
 
 </body>
 </html>
