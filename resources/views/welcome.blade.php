@@ -22,84 +22,312 @@
             }
         </style>
     </head>
-    <body >
-       
-        <nav class="navbar navbar-expand-md navbar-light bg-success" >
+    <body>
+       <!-- Navbar -->
+        <nav class=" row navbar navbar-expand-md navbar-light bg-light fs-5" >
             {{-- <div class="container-fluid"> --}}
-        
-              <a class="navbar-brand" href="javascript:void(0)"><img src="\img\logo.png" alt="" width="40px" height="40px"></a>
-              <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="mynavbar">
-                <ul class="navbar-nav nav-pills me-auto">
+            <div class="col-md-2 d-flex justify-content-center">
+            <img class="d-flex justify-content-center" src="\img\logo.png" alt="" width="50px" height="50px">
+            </div>
+            <div class="col-md-7 ">
+                <ul class="navbar-nav nav-pills ">
                   <li class="nav-item">
-                    <a class="nav-link   
-                    
-                    
-                     btn-outline-primary" href="javascript:void(0)">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link btn btn-outline-warning" href="javascript:void(0)">Properties</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link  btn btn-outline-dark" href="javascript:void(0)">Commercial</a>
+                    <a class=" fs-5 nav-link btn btn-outline-warning" href="javascript:void(0)">Home</a>
                   </li>
                   <li class="nav-item ">
-                    <a class="nav-link  btn btn-outline-warning" href="javascript:void(0)">Areas</a>
+                    <a class="fs-5 nav-link  btn btn-outline-dark" href="javascript:void(0)">House</a>
+                  </li>
+                  <li class="nav-item ">
+                    <a class="fs-5 nav-link  btn btn-outline-warning" href="javascript:void(0)">Land</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link  btn btn-outline-warning" href="javascript:void(0)">Resources</a>
+                    <a class="fs-5 nav-link  btn btn-outline-warning" href="javascript:void(0)">Hotel</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link  btn btn-outline-warning" href="javascript:void(0)">Hot Properties!!</a>
+                    <a class="fs-5 nav-link  btn btn-outline-warning" href="javascript:void(0)">Condo</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link  btn btn-outline-warning" href="javascript:void(0)">About</a>
+                    <a class="fs-5 nav-link  btn btn-outline-warning" href="javascript:void(0)">Room</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link  btn btn-outline-warning" href="javascript:void(0)">Contact</a>
+                    <a class="fs-5 nav-link  btn btn-outline-warning" href="javascript:void(0)">Flat</a>
                   </li>
                   <li class="nav-item">
-
-                  @if (Route::has('login'))
-                  {{-- <div > --}}
-                </li>   {{-- class="hidden fixed top-0 right-0 px-6 py-4 sm:block" --}}
-                      
-                      @auth
-                          <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
-                      @else
-                      <li class="nav-item">
-                          
-                          <a href="{{ route('login') }}" class= "nav-link active m-1">Log in</a>
-                          {{-- class="text-sm text-gray-700 dark:text-gray-500 underline" --}}
-                      </li>
-                      <li class="nav-item">
-                          @if (Route::has('register'))
-                              <a href="{{ route('register') }}" class= "nav-link active m-1">Register</a>
-                          @endif
-                      @endauth
-                  {{-- </div> --}}
-              @endif
-  
-                </ul>
-                {{-- <div> --}}
-                   
+                    <a class="fs-5 nav-link  btn btn-outline-warning" href="javascript:void(0)">Apartment</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="fs-5 nav-link  btn btn-outline-warning" href="javascript:void(0)">Contact</a>
+                  </li>
                   
-                    {{-- </div> --}}
-                    {{-- class="d-flex" --}}
-                <form class="d-flex" >
-                    {{-- class="d-flex" --}}
-                  <input  type="text" class="form-control me-2" placeholder="Search">
-                  {{-- class="form-control me-2" --}}
-                  <button class="btn btn-primary" type="button">Search</button>
-                </form>
+                </ul>
               </div>
             </div>
             {{-- <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0"> --}}
         </div>
-    </button>
+         <div >
+             <ul class="col-md-3 navbar-nav nav-pills nav-item d-flex justify-content-center">
+             @if (Route::has('login'))
+                  {{-- <div 5> --}}
+                  {{-- class="hidden fixed top-0 right-0 px-6 py-4 sm:block" --}}
+                      
+                      @auth
+                          <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
+                      @else
+                      <li class="nav-item nav-link">
+                          
+                          <a href="{{ route('login') }}" class= "">Login</a>
+                          {{-- class="text-sm text-gray-700 dark:text-gray-500 underline" --}}
+                      </li>
+                      <li class="nav-item nav-link">
+                          @if (Route::has('register'))
+                              <a href="{{ route('register') }}" class= "">Register</a>
+                          @endif
+                      @endauth
+                  {{-- </div> --}}
+              @endif
+             </ul>
+                
+                </div>
     </nav>
+    <div class="jumbotron m-3">
+  <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                
+                                <form role="form" class="row">
+                                    <div class="col-sm-6 col-md-3">
+                                        <div class="form-group has-info">
+                                            <select class="form-control custom-select">
+                                                <option value="" disabled selected>Status</option>
+                                                <option value="1">Rent</option>
+                                                <option value="2">Sale</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-3">
+                                        <div class="form-group has-info">
+                                            <select class="form-control custom-select">
+                                                <option value="" disabled selected>Country</option>
+                                                <option value="1">India</option>
+                                                <option value="2">Germany</option>
+                                                <option value="3">Spain</option>
+                                                <option value="4">Russia</option>
+                                                <option value="5">United States</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-2">
+                                        <div class="form-group has-info">
+                                            <select class="form-control custom-select">
+                                                <option value="" disabled selected>City</option>
+                                                <option value="1">Moscow</option>
+                                                <option value="2">Barcelona</option>
+                                                <option value="3">Mumbai</option>
+                                                <option value="4">Houston</option>
+                                                <option value="5">Sokovia</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-3">
+                                        <div class="form-group has-info">
+                                            <select class="form-control custom-select">
+                                                <option value="" disabled selected>Property Type</option>
+                                                <option value="1">Apartment</option>
+                                                <option value="2">Villa/Mansion</option>
+                                                <option value="3">Cottage</option>
+                                                <option value="4">Flat</option>
+                                                <option value="5">House</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-1">
+                                        <a href="#" class="btn btn-info btn-m">
+                                             <span class="glyphicon glyphicon-search"></span> Search 
+                                        </a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+<!-- /Search -->
+<!-- Item -->
+<!-- .row -->
+<div class="row jumbotron m-2">
+                    <!-- item -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card">
+                            <img class="card-img-top" src="../img/House1.jpg" alt="Card image cap">
+                            <div class="card-img-overlay">
+                                <span class="badge badge-danger badge-pill">For Rent</span>
+                            </div>
+                            <div class="card-body bg-light">
+                                <h4 class="card-title">Florida 5, Pinecrest, FL</h4>
+                                <h4 class="text-primary">&#36; 220,000</h4>
+                            </div>
+                            <div class="card-body border-top">
+                                <div class="d-flex no-block align-items-center">
+                                <span class="p-10 text-muted">
+                                    <i class="fas fa-bath"></i>    
+                                    Bathrooms</span>
+                                    <span class="ml-auto badge badge-pill badge-secondary pull-right">2</span>
+                                </div>
+                                <div class="d-flex no-block align-items-center">
+                                    <span class="p-10 text-muted">
+                                    <i class="fas fa-bed"></i>    
+                                    Beds</span>
+                                    <span class="ml-auto badge badge-pill badge-secondary pull-right">2</span>
+                                </div>
+                                <div class="d-flex no-block align-items-center">
+                                    <span class="p-10 text-muted">
+                                    <i class="fas fa-car"></i>    
+                                    Garages</span>
+                                    <span class="ml-auto badge badge-pill badge-secondary pull-right">1</span>
+                                </div>
+                            </div>
+                            <div class="card-body border-top">
+                                <div class="d-flex no-block align-items-center">
+                                    <a href="javascript:void(0) " class="m-r-15"><img alt="img " class="thumb-md img-circle " src="../assets/images/users/agent2.jpg "></a>
+                                    <div>
+                                        <h5 class="card-title m-b-0">Jon Doe</h5>
+                                        <h6 class="text-muted">5 Property</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- item -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card">
+                            <img class="card-img-top" src="../img/House1.jpg" alt="Card image cap">
+                            <div class="card-img-overlay">
+                                <span class="badge badge-danger badge-pill">For Rent</span>
+                            </div>
+                            <div class="card-body bg-light">
+                                <h4 class="card-title">Florida 5, Pinecrest, FL</h4>
+                                <h4 class="text-primary">&#36; 220,000</h4>
+                            </div>
+                            <div class="card-body border-top">
+                                <div class="d-flex no-block align-items-center">
+                                    <span class="p-10 text-muted">
+                                    <i class="fas fa-bath"></i>    
+                                    Bathrooms</span>
+                                    <span class="ml-auto badge badge-pill badge-secondary pull-right">2</span>
+                                </div>
+                                <div class="d-flex no-block align-items-center">
+                                    <span class="p-10 text-muted">
+                                    <i class="fas fa-bed"></i>    
+                                    Beds</span>
+                                    <span class="ml-auto badge badge-pill badge-secondary pull-right">2</span>
+                                </div>
+                                <div class="d-flex no-block align-items-center">
+                                    <span class="p-10 text-muted">
+                                    <i class="fas fa-car"></i>    
+                                    Garages</span>
+                                    <span class="ml-auto badge badge-pill badge-secondary pull-right">1</span>
+                                </div>
+                            </div>
+                            <div class="card-body border-top">
+                                <div class="d-flex no-block align-items-center">
+                                    <a href="javascript:void(0) " class="m-r-15"><img alt="img " class="thumb-md img-circle " src="../assets/images/users/agent2.jpg "></a>
+                                    <div>
+                                        <h5 class="card-title m-b-0">Jon Doe</h5>
+                                        <h6 class="text-muted">5 Property</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /item -->
+                    <!-- item -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card">
+                            <img class="card-img-top" src="../img/House1.jpg" alt="Card image cap">
+                            <div class="card-img-overlay">
+                                <span class="badge badge-danger badge-pill">For Rent</span>
+                            </div>
+                            <div class="card-body bg-light">
+                                <h4 class="card-title">Florida 5, Pinecrest, FL</h4>
+                                <h4 class="text-primary">&#36; 220,000</h4>
+                            </div>
+                            <div class="card-body border-top">
+                                <div class="d-flex no-block align-items-center">
+                                    <span class="p-10 text-muted">
+                                    <i class="fas fa-bath"></i>    
+                                    Bathrooms</span>
+                                    <span class="ml-auto badge badge-pill badge-secondary pull-right">2</span>
+                                </div>
+                                <div class="d-flex no-block align-items-center">
+                                    <span class="p-10 text-muted">
+                                    <i class="fas fa-bed"></i>    
+                                    Beds</span>
+                                    <span class="ml-auto badge badge-pill badge-secondary pull-right">2</span>
+                                </div>
+                                <div class="d-flex no-block align-items-center">
+                                    <span class="p-10 text-muted">
+                                    <i class="fas fa-car"></i>    
+                                    Garages</span>
+                                    <span class="ml-auto badge badge-pill badge-secondary pull-right">1</span>
+                                </div>
+                            </div>
+                            <div class="card-body border-top">
+                                <div class="d-flex no-block align-items-center">
+                                    <a href="javascript:void(0) " class="m-r-15"><img alt="img " class="thumb-md img-circle " src="../assets/images/users/agent2.jpg "></a>
+                                    <div>
+                                        <h5 class="card-title m-b-0">Jon Doe</h5>
+                                        <h6 class="text-muted">5 Property</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /item -->
+                    <!-- item -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card">
+                            <img class="card-img-top" src="../img/House1.jpg" alt="Card image cap">
+                            <div class="card-img-overlay">
+                                <span class="badge badge-danger badge-pill">For Rent</span>
+                            </div>
+                            <div class="card-body bg-light">
+                                <h4 class="card-title">Florida 5, Pinecrest, FL</h4>
+                                <h4 class="text-primary">&#36; 220,000</h4>
+                            </div>
+                            <div class="card-body border-top">
+                                <div class="d-flex no-block align-items-center">
+                                <span></span>
+                                    <span class="p-10 text-muted">
+                                    <i class='fa fa-bath'></i>    
+                                    Bathrooms</span>
+                                    <span class="ml-auto badge badge-pill badge-secondary pull-right">2</span>
+                                </div>
+                                <div class="d-flex no-block align-items-center">
+                                <span></span>
+                                    <span class="p-10 text-muted">
+                                    <i class="fas fa-bed"></i>    
+                                    Beds</span>
+                                    <span class="ml-auto badge badge-pill badge-secondary pull-right">2</span>
+                                </div>
+                                <div class="d-flex no-block align-items-center">
+                                    <span class="p-10 text-muted">
+                                    <i class="fas fa-car"></i>    
+                                    Garages</span>
+                                    <span class="ml-auto badge badge-pill badge-secondary pull-right">1</span>
+                                </div>
+                            </div>
+                            <div class="card-body border-top">
+                                <div class="d-flex no-block align-items-center">
+                                    <a href="javascript:void(0) " class="m-r-15"><img alt="img " class="thumb-md img-circle " src="../assets/images/users/agent2.jpg "></a>
+                                    <div>
+                                        <h5 class="card-title m-b-0">Jon Doe</h5>
+                                        <h6 class="text-muted">5 Property</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
     </body>
 </html>
