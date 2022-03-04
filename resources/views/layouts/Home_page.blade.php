@@ -10,6 +10,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="../css/home_page.css">
     <title>Cam Real Estate</title>
 </head>
 <body>
@@ -43,11 +46,20 @@
       </div>
     </ul>
   </nav>
+<div class="">
+<div class="w3-sidebar w3-bar-block col-md-2" style="width:10%">
+  <h3 class="w3-bar-item">Menu</h3>
+  <a href="#" class="w3-bar-item w3-button">Link 1</a>
+  <a href="#" class="w3-bar-item w3-button">Link 2</a>
+  <a href="#" class="w3-bar-item w3-button">Link 3</a>
+</div>
+</div>
   <!-- Search -->
   <div class="jumbotron m-3">
   <div class="row">
+ 
                     <div class="col-md-12">
-                        <div class="card">
+               <div class="card">
                             <div class="card-body">
                                 
                                 <form role="form" class="row">
