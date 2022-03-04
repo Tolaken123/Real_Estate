@@ -20,7 +20,7 @@ use App\Http\Controllers\Admin\PropertiesController;
 Route::get('/',function(){
     return view('welcome');
 });
-Route::get('/hey',function(){
+Route::get('/property',function(){
     return view('properties');
 });
 
