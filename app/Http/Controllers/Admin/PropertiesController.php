@@ -28,7 +28,7 @@ class PropertiesController extends Controller
     public function create()
     {
 
-        return View('Admin.properties.properties');
+        return View('Admin.properties.createpro');
     }
 
     /**

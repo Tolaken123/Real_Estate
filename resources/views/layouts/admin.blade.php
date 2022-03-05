@@ -22,14 +22,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   <!-- Navbar -->
   @include('layouts.topnavbar')
+  @include('layouts.sidebar')
+
   <!-- /.navbar -->
   @include('layouts.mainconten')
   <!-- Main Sidebar Container -->
-<<<<<<< HEAD
-  @include('layouts.leftmenu')
-=======
-  @include('layouts.sidebar')
->>>>>>> fffd5261f06b15205046cdde504588644f1f4825
+  
 
   <!-- Content Wrapper. Contains page content -->
   {{-- @yield('content') --}}

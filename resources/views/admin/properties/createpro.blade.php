@@ -1,12 +1,5 @@
 
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
-  </head>
-  <body>
+  
     
 @extends('layouts.app')
 @section('content')
@@ -14,13 +7,12 @@
 <div class="wrapper">
   
     <!-- Navbar -->
-    {{-- @include('layout.topnavbar')
-
-  @include('layout.leftmenu') --}}
+ @include('layouts.topnavbar')
+  @include('layouts.sidebar') 
   <!-- /.navbar -->
   <div class="content-wrapper">
-    <div class="card w-70">
-    <div class="card card-default">
+    <div class="card w-70" >
+    <div class="card card-primary">
           <div class="card-header">
             <h3 class="card-title">Property Information</h3>
           </div>
@@ -28,59 +20,67 @@
          <form> 
           <div class="card-body">
             <div class="row">
-              
           </div>
-          <div class="col-md-10">
-                <div class="form-group">
-                  <label>Property Type</label>
-                  <select class="form-control select2" style="width: 100%;">
-                    <option selected="selected">House</option>
-                    <option>Land</option>
-                    <option>Hotel/Guesthouse</option>
-                    <option>Borey</option>
-                    <option>Condo/Apartment/Flat</option>
-                    <option>Shophouse</option>
-                    <option>Bussiness</option>
-                  </select>
-                </div>
-            </div>
+          <br>
+          <div class="dropdown">
+  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+    Select Property Type
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="#">House/Villa</a>
+    <a class="dropdown-item" href="#">Apartment</a>
+    <a class="dropdown-item" href="#">Condo</a>
+    <a class="dropdown-item" href="#">Borey</a>
+    <a class="dropdown-item" href="#">Flat</a>
+    <a class="dropdown-item" href="#">Shophouse</a>
+    <a class="dropdown-item" href="#">Boutique/Hotel/Guesthouse</a>
+    <a class="dropdown-item" href="#">Office Space</a>
+    <a class="dropdown-item" href="#">Land</a>
+    <a class="dropdown-item" href="#">Warehouse</a>
+    <a class="dropdown-item" href="#">Retail Space</a>
+    <a class="dropdown-item" href="#">Buisseniss For Sale</a>
+  </div>
+<br>
+  
+
           <div class="col-md-10">
           <div class="form-group">
           <div class="form-group">
-        <label for="example-datetime-local-input" class="form-control-label">Datetime</label>
+            <br>
+        <label for="example-datetime-local-input" class="form-control-labe l">Datetime</label>
         <input class="form-control" type="datetime-local" value="2018-11-23T10:30:00" id="example-datetime-local-input" name="datetime">
     </div>
     </div>
    <label for="example-number-input" class="form-control-label">Sale Price</label>
-   <input class="form-control" type="text" value="" id="example-number-input"name="house">
+   <input class="form-control" type="text" value="" id="example-number-input"name="price">
    
 <div class="form-group">
 <div class="form-group">
    
    <label for="example-number-input" class="form-control-label">How many Bedrooms?</label>
-   <input class="form-control" type="text" value="" id="example-number-input"name="house">
+   <input class="form-control" type="text" value="" id="example-number-input"name="bedroom">
    
 <div class="form-group">
 <label for="example-number-input" class="form-control-label">How many Bathrooms?</label>
-   <input class="form-control" type="text" value="" id="example-number-input"name="house">
+   <input class="form-control" type="text" value="" id="example-number-input"name="bathroom">
    
 <div class="form-group">
 <label for="example-number-input" class="form-control-label">Floor Size</label>
-   <input class="form-control" type="text" value="" id="example-number-input"name="house">
+   <input class="form-control" type="text" value="" id="example-number-input"name="housesize">
    
 <div class="form-group">
 <label for="example-number-input" class="form-control-label">Land Size</label>
-   <input class="form-control" type="text" value="" id="example-number-input"name="house">
+   <input class="form-control" type="text" value="" id="example-number-input"name="landsize">
    
 <div class="form-group">
 <label for="example-number-input" class="form-control-label">Land Dimension</label>
-   <input class="form-control" type="text" value="" id="example-number-input"name="house">
+   <input class="form-control" type="text" value="" id="example-number-input"name="dimension">
    
 <div class="form-group">
     <div class="form-group">
    
         <label for="example-number-input" class="form-control-label">House No.</label>
-        <input class="form-control" type="text" value="" id="example-number-input"name="house">
+        <input class="form-control" type="text" value="" id="example-number-input"name="houseno">
         
     <div class="form-group">
 
@@ -108,44 +108,23 @@
         <input class="form-control"  type="text" value="" id="example-number-input" name="resturant">
     </div>
 </div> 
-<div id="summernote"></div>
-    <script>
-      $('#summernote').summernote({
-        placeholder: 'Write your beautiful decscription here',
-        tabsize: 2,
-        height: 120,
-        toolbar: [
-          ['style', ['style']],
-          ['font', ['bold', 'underline', 'clear']],
-          ['color', ['color']],
-          ['para', ['ul', 'ol', 'paragraph']],
-          ['table', ['table']],
-          ['insert', ['link', 'picture', 'video']],
-          ['view', ['help']]
-        ]
-      });
-    </script>
-    <a href='#'> 
-      <button type="submit" class="btn btn-success">Submit</button>
-      </a>
-      
+@include('layouts.service')
+
+@include('layouts.summernote')
+<br>
+@include('layouts.image') 
+      <br>
+      <button type="submit" class="btn btn-primary">Submit</button>
+      </a>    
+     
+    
 </form>
     </section>
     </div>
         </div>
-  </body>
-</html>
 
-     
-    <!-- /.content -->
+       
+ @include('layouts.footer') 
 
-  <!-- Main Footer -->
-  {{-- @include('layouts.footer') --}}
-  <!-- /.content-wrapper -->
-
-<!-- REQUIRED SCRIPTS -->
         </div>
-<!-- jQuery -->
-
-</body>
 @endsection
