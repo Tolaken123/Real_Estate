@@ -73,12 +73,12 @@
                       @auth
                           <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
                       @else
-                      <li class="nav-item nav-link">
+                      <li class="nav-item nav-link btn">
                           
                           <a href="{{ route('login') }}" class= "">Login</a>
                           {{-- class="text-sm text-gray-700 dark:text-gray-500 underline" --}}
                       </li>
-                      <li class="nav-item nav-link">
+                      <li class="nav-item nav-link active">
                           @if (Route::has('register'))
                               <a href="{{ route('register') }}" class= "">Register</a>
                           @endif

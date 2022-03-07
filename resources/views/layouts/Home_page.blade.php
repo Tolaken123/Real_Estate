@@ -21,7 +21,7 @@
     <nav class="nav col-mt-3" style="background-color: #99eeff;">
         <div class="col-sm-1"></div>
             <img  src="../img/logo.png" alt="" width="70px" height="70px">
-                <div class="container col-md-10 mt-3">
+                <div class="container col-md-8 mt-3">
                     <ul class="nav nav-tabs justify-content-bottom" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link active" data-bs-toggle="tab" href="#home">Home</a>
@@ -32,16 +32,32 @@
                         <li class="nav-item">
                             <a class="nav-link" data-bs-toggle="tab" href="#menu2">Menu 2</a>
                         </li>
-                        <li>
-                        <div class="container mt-3 justify-content-right">
-                                <button type="button" class="btn btn-outline-primary">Primary</button>
-                                <button type="button" class="btn btn-outline-primary">Primary</button>
-                            </div>
-                        </li>
+                        <li class="navbar-nav ms-auto" >
+                        
+                            @if (Route::has('login'))
+                          <!-- <div  class="hidden fixed top-0 right-0 px-6 py-4 sm:block" > -->
+                         <!-- class="hidden fixed top-0 right-0 px-6 py-4 sm:block"  -->
+                                
+                                @auth
+                                    <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
+                                @else
+                                <li class="nav-item ">
+                                    
+                                    <a href="{{ route('login') }}" class="nav-link">Login</a>
+                                    <!-- {{-- class="text-sm text-gray-700 dark:text-gray-500 underline" --}} -->
+                                </li>
+                                <li class="nav-item">
+                                    @if (Route::has('register'))
+                                        <a href="{{ route('register') }}"class="nav-link">Register</a>
+                                    @endif
+                                @endauth
+                            <!-- {{-- </div> --}} -->
+                            @endif
+</li>
                     </ul>
                 </div>
         </div>
-  </nav>
+    </nav>
 </div> 
   <!-- ======== -->
   <!-- Search -->
