@@ -16,7 +16,7 @@
     <title>Cam Real Estate</title>
 </head>
 <body>
-<nav class="nav -mt-3" style="background-color: #99eeff;">
+<nav class=" row nav -mt-3" style="background-color: #99eeff;">
     <img src="../img/logo.png" alt="" width="70px" height="70px">
 
     <ul class="nav justify-content-center">

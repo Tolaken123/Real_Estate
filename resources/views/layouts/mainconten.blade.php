@@ -12,7 +12,7 @@
         <div class="card-header">
 
           <button type="button" class="btn btn-primary">
-          <link class="hide-line" href="#">
+          <a class="hide-line" href="properties">
           New Property
           </a>
           </button>

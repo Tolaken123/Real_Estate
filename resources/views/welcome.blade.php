@@ -22,9 +22,9 @@
             }
         </style>
     </head>
-    <body>
+    <body">
        <!-- Navbar -->
-        <nav class=" row navbar navbar-expand-md navbar-light bg-light fs-5" >
+        <nav class=" navbar navbar-expand-md navbar-light bg-light fs-5" >
             {{-- <div class="container-fluid"> --}}
             <div class="col-md-2 d-flex justify-content-center">
             <img class="d-flex justify-content-center" src="\img\logo.png" alt="" width="50px" height="50px">
