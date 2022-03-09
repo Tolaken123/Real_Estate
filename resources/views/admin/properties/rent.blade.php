@@ -62,11 +62,11 @@
   <br> <br> 
     <div class="form-group">
    <label for="example-number-input" class="form-control-label">Title</label>
-   <input class="form-control" type="text" value="" id="example-number-input"name="price">
+   <input class="form-control" type="text" value="" id="example-number-input"name="title">
    </div>
    <div class="form-group">
    <label for="example-number-input" class="form-control-label">Rental Price</label>
-   <input class="form-control" type="text" value="" id="example-number-input"name="price">
+   <input class="form-control" type="text" value="" id="example-number-input"name="rentalprice">
    </div>
   
 <div class="form-group">
