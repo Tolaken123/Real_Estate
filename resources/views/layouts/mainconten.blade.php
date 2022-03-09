@@ -11,11 +11,14 @@
       <div class="card">
         <div class="card-header">
 
-          <button type="button" class="btn btn-primary">
-          <a class="hide-line" href="properties">
-          New Property
-          </a>
-          </button>
+        <div class="dropdown">
+  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+    Create New Property
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="#">Rent</a>
+    <a class="dropdown-item" href="#">Sale</a>
+  </div>
           </div>
         </div>
         <div class="card-body p-0">
