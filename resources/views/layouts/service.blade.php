@@ -1,27 +1,27 @@
 
     <label class="checkbox-inline">
-      <input type="checkbox" value="">Parking
+      <input type="checkbox" value="">&nbspParking
     </label>
     <label class="checkbox-inline">
-      <input type="checkbox" value="">Internet
+      <input type="checkbox" value="">&nbspInternet
     </label>
     <label class="checkbox-inline">
-      <input type="checkbox" value="">Sofa
+      <input type="checkbox" value="">&nbspSofa
     </label>
     <label class="checkbox-inline">
-      <input type="checkbox" value="">Bed
+      <input type="checkbox" value="">&nbspBed
     </label>
     <label class="checkbox-inline">
-      <input type="checkbox" value="">Aircondictionor
+      <input type="checkbox" value="">&nbspAircondictionor
     </label>
     <label class="checkbox-inline">
-      <input type="checkbox" value="">TV
+      <input type="checkbox" value="">&nbspTV
     </label>
     <label class="checkbox-inline">
-      <input type="checkbox" value="">Laundry Machine
+      <input type="checkbox" value="">&nbspLaundry Machine
     </label>
     <label class="checkbox-inline">
-      <input type="checkbox" value="">Cleaning Service
+      <input type="checkbox" value="">&nbspCleaning Service
     </label>
           
 

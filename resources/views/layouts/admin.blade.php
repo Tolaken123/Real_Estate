@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+{{-- {{-- <!DOCTYPE html>
 <!--
 This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
@@ -21,18 +21,26 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <div class="wrapper">
 
   <!-- Navbar -->
+<<<<<<< HEAD
   @include('layouts.topnavbar')
   @include('layouts.sidebar')
 
+=======
+  @include('layout.topnavbar')
+>>>>>>> 80ba13965dd8721051dcddbb9c0b368c05d086a0
   <!-- /.navbar -->
-  @include('layouts.mainconten')
+  @include('layout.mainconten')
   <!-- Main Sidebar Container -->
+<<<<<<< HEAD
   
+=======
+  @include('layout.leftmenu')
+>>>>>>> 80ba13965dd8721051dcddbb9c0b368c05d086a0
 
   <!-- Content Wrapper. Contains page content -->
-  {{-- @yield('content') --}}
+  @yield('content')
   <!-- Main Footer -->
-  @include('layouts.footer')
+  @include('layout.footer')
 </div>
 <!-- ./wrapper -->
 
@@ -45,27 +53,27 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- AdminLTE App -->
 <script src="{{ asset('vendors/dist/js/adminlte.min.js') }}"></script>
 </body>
-</html>
- {{-- @include('layouts.link')
- <div class="hold-transition light-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+</html> --}}
+ @include('layouts.link')
+<div class="hold-transition light-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
     <div class="wrapper">
           {{-- navbar --}}
-          {{-- @include('layouts.topnavbar') --}}
+          @include('layouts.topnavbar')
           <!-- sidebar -->
-          {{-- @include('layouts.sidebar') --}}
+          @include('layouts.sidebar')
         
           
-           {{-- <div class="containner"> --}}
-           {{-- @yield('content') --}}
-           {{-- @include('layouts.mainconten')  --}}
-           {{-- </div> --}}
+           <div class="containner">
+           @yield('content')
+           @include('layouts.mainconten') 
+           </div>
           <!-- Main Sidebar Container -->
           <!-- Content Wrapper. Contains page content -->
           <!-- Main Footer -->
-          {{-- @include('layouts.footer') --}}
-    {{-- </div> --}}
-{{-- </div> --}}
+          @include('layouts.footer')
+    </div>
+</div>
 {{-- script --}}
-{{-- @include('layouts.script') --}}
- 
+@include('layouts.script')
+
 

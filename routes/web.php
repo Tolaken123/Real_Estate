@@ -20,10 +20,16 @@ use App\Http\Controllers\Admin\PropertiesController;
 Route::get('/',function(){
     return view('welcome');
 });
+<<<<<<< HEAD
 // Route::get('/hey',function(){
 //     return view('properties');
 // });
 Route::get('/admin/properties', [PropertiesController::class,'create']);
+=======
+Route::get('/property',function(){
+    return view('properties');
+});
+>>>>>>> 80ba13965dd8721051dcddbb9c0b368c05d086a0
 
 // Route::group(['prefix' => 'admin','namespace' => 'Admin','as' => 'admin.','middleware' => 'auth'], function () {
 //     Route::get('/',function(){return view('layouts.admin');});
@@ -64,3 +70,12 @@ Route::get('/admin/properties', [PropertiesController::class,'create']);
 // Route::get('/admin/properties/createform', function () {
 //     return view('admin.properties.createform');
 // });
+Route::get('/fonte/home/Item',function(){
+    return view('fonte.home.Item');
+});
+Route::get('/layouts/Home_page',function(){
+    return view('layouts/Home_page');
+});
+Route::get('/layouts/test',function(){
+    return view('layouts/test');
+});
