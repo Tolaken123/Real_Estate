@@ -60,9 +60,10 @@
     </nav>
 </div> 
   <!-- ======== -->
+
   <!-- Search -->
-<div class="jumbotron m-3">
-    <div class="row">
+  <div class="jumbotron m-3">
+    <div class="row bgimg" >
         <div class="card">
             <div class="card-body">   
                 <form role="form" class="row">
@@ -119,8 +120,19 @@
                 </form>
             </div>
         </div>
+        <img alt="img " class="cover" src="../img/c.jpg" width="500px" height="500px">
     </div>
 </div>
+  <!-- sidebar -->
+  <!-- <div class="w3-sidebar w3-light-grey " style="width:25%">
+  <h3 class="w3-bar-item">Menu</h3>
+  <a href="#" class="w3-bar-item w3-button">Link 1</a>
+  <a href="#" class="w3-bar-item w3-button">Link 2</a>
+  <a href="#" class="w3-bar-item w3-button">Link 3</a>
+</div> -->
+
+  <!-- end seidebar -->
+
 <!-- end Search -->
 <!-- Item -->
 <div class="row jumbotron m-2">
