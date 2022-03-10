@@ -31,26 +31,26 @@ Route::get('/property',function(){
 });
 
 
-// Route::group(['prefix' => 'admin','namespace' => 'Admin','as' => 'admin.','middleware' => 'auth'], function () {
-//     Route::get('/',function(){return view('layouts.admin');});
-//     //Route::resource('/properties','PropertiesController');
-//     Route::get('/properties', [PropertiesController::class,'create'])->name('Create');
-//     Route::post('/properties', [PropertiesController::class,'store'])->name('Store');
-//     Route::get('/properties/index', [PropertiesController::class,'index'])->name('index');
+Route::group(['prefix' => 'admin','namespace' => 'Admin','as' => 'admin.','middleware' => 'auth'], function () {
+    Route::get('/',function(){return view('layouts.admin');});
+    Route::resource('/properties','PropertiesController');
+    Route::get('/properties', [PropertiesController::class,'create'])->name('Create');
+    Route::post('/properties', [PropertiesController::class,'store'])->name('Store');
+    Route::get('/properties/index', [PropertiesController::class,'index'])->name('index');
     
-// });
+});
 
 
      
 
 
 
-// Route::get('/propertie',[PropertiesController::class,'index']);
+Route::get('/propertie',[PropertiesController::class,'index']);
    
-// Auth::routes();
+Auth::routes();
 
 
-//  Route::get('/home', [HomeController::class,'index'])->name('home');
+ Route::get('/home', [HomeController::class,'index'])->name('home');
 
 // Route::get('/livewire',function(){
 //     return view('livewire.index');

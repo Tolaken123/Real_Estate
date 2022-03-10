@@ -112,7 +112,6 @@
         <input class="form-control"  type="text" value="" id="example-number-input" name="resturant">
     </div>
 </div> 
-<<<<<<< HEAD:resources/views/admin/properties/createpro.blade.php
 @include('layouts.service')
 
 @include('layouts.summernote')
@@ -123,23 +122,19 @@
       </a>    
      
     
-=======
+
 
      <a href='#'> 
       <button type="submit" class="btn btn-success">Submit</button>
       </a>
       
->>>>>>> 80ba13965dd8721051dcddbb9c0b368c05d086a0:resources/views/properties.blade.php
 </form>
     </section>
     </div>
         </div>
-<<<<<<< HEAD:resources/views/admin/properties/createpro.blade.php
 
        
  @include('layouts.footer') 
-
-=======
     <!-- /.content -->
 
   <!-- Main Footer -->
@@ -147,6 +142,5 @@
   <!-- /.content-wrapper -->
 
 <!-- REQUIRED SCRIPTS -->
->>>>>>> 80ba13965dd8721051dcddbb9c0b368c05d086a0:resources/views/properties.blade.php
         </div>
 @endsection
