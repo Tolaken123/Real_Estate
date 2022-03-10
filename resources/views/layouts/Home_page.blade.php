@@ -14,11 +14,22 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="../css/home_page.css">
     <title>Cam Real Estate</title>
+    <style> 
+        #myDIV {
+        background: red;
+        animation: mymove 5s infinite;
+        }
+
+        @keyframes mymove {
+        50% {background-color: blue;}
+        }
+    </style>
 </head>
 <body>
      <!-- Nav tabs -->
+     <!-- style="background-color: #99eeff;"  -->
 <div class="row"> 
-    <nav class="nav col-mt-3" style="background-color: #99eeff;">
+    <nav class="nav col-mt-12" id="myDIV">
         <div class="col-sm-1"></div>
             <img  src="../img/logo.png" alt="" width="70px" height="70px">
                 <div class="container col-md-8 mt-3">
@@ -120,7 +131,11 @@
                 </form>
             </div>
         </div>
-        <img alt="img " class="cover" src="../img/c.jpg" width="500px" height="500px">
+    </div>
+    <div class="row jumbtron m-2">
+    <img alt="img " class="cover" src="../img/c.jpg"   height="500px">
+    </p>
+        
     </div>
 </div>
   <!-- sidebar -->
