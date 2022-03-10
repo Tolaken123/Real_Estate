@@ -38,10 +38,19 @@
                             <a class="nav-link active" data-bs-toggle="tab" href="#home">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-bs-toggle="tab" href="#menu1">Menu 1</a>
+                            <a class="nav-link" data-bs-toggle="tab" href="#menu1">Bye</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-bs-toggle="tab" href="#menu2">Menu 2</a>
+                            <a class="nav-link" data-bs-toggle="tab" href="#menu2">Rent</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#menu2">Installment payment</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#menu2">
+                                <i class='fas fa-heart' style='font-size:25px;color:red'></i>
+                            </a>
+                            
                         </li>
                         <li class="navbar-nav ms-auto" >
                         
@@ -64,7 +73,7 @@
                                 @endauth
                             <!-- {{-- </div> --}} -->
                             @endif
-</li>
+                        </li>
                     </ul>
                 </div>
         </div>
@@ -133,7 +142,7 @@
         </div>
     </div>
     <div class="row jumbtron m-2">
-    <img alt="img " class="cover" src="../img/c.jpg"   height="500px">
+    <img alt="img " class="cover" src="../img/c.jpg"   >
     </p>
         
     </div>
