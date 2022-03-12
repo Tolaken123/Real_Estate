@@ -41,17 +41,11 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','as' => 'admin.','middl
 });
 
 
-     
-
-
-
-Route::get('/propertie',[PropertiesController::class,'index']);
+// Route::get('/propertie',[PropertiesController::class,'index']);
    
 Auth::routes();
 
-
  Route::get('/home', [HomeController::class,'index'])->name('home');
-
 // Route::get('/livewire',function(){
 //     return view('livewire.index');
 // });
