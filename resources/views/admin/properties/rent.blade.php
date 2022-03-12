@@ -11,7 +11,8 @@
   @include('layouts.sidebar') 
   <!-- /.navbar -->
   <div class="content-wrapper">
-    <div class="card w-70" >
+  <div class="container-lg">
+  <div class="card w-70" >
     <div class="card card-primary">
           <div class="card-header">
             <h3 class="card-title">Property Information</h3>
@@ -154,7 +155,7 @@
     </div>
         </div>
 
-       
+</div>     
  @include('layouts.footer') 
 
         </div>

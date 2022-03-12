@@ -1,12 +1,6 @@
 <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
 <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
-<div class="row">
-          <div class="col-md-12">
-            <div class="card card-default">
-              <div class="card-header">
-                <h3 class="card-title">Upload Your Picture Here!</h3>
-              </div>
-              <div class="card-body">
+
                 <div id="actions" class="row">
                   <div class="col-lg-6">
                     <div class="btn-group w-100">
@@ -66,8 +60,7 @@
                       </div>
                     </div>
                   </div>
-                </div>
-              </div>
+               
 <script>
   $(function () {
     //Initialize Select2 Elements

@@ -1,5 +1,12 @@
 
-
+@extends('layouts.app')
+@section('content')
+<body class="hold-transition light-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+<div class="wrapper">
+  
+    <!-- Navbar -->
+ @include('layouts.topnavbar')
+  @include('layouts.sidebar') 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -118,6 +125,10 @@
     <!-- /.content -->
   </div>
 </div>
+@include('layouts.footer') 
+
+</div>
+@endsection
   <!-- /.content-wrapper -->
 
   

@@ -31,6 +31,12 @@ class PropertiesController extends Controller
         return View('Admin.properties.rent');
     }
 
+    public function prolist()
+    {
+
+        return View('Admin.properties.prolist');
+    }
+
     /**
      * Store a newly created resource in storage.
      *
