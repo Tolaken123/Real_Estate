@@ -17,7 +17,7 @@
             <h3 class="card-title">Property Information</h3>
           </div>
           <!-- /.card-header -->
-         <form> 
+         <form action="#" > 
           <div class="card-body">
             <div class="row">
           </div>

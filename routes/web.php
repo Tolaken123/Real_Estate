@@ -34,7 +34,7 @@ Route::get('/property',function(){
 Route::group(['prefix' => 'admin','namespace' => 'Admin','as' => 'admin.','middleware' => 'auth'], function () {
     Route::get('/',function(){return view('layouts.admin');});
     Route::resource('/properties','PropertiesController');
-    Route::get('/properties', [PropertiesController::class,'create'])->name('Create');
+    Route::get('/properties', [PropertiesController::class,'create'])->name('create');
     Route::post('/properties', [PropertiesController::class,'store'])->name('Store');
     Route::get('/properties/index', [PropertiesController::class,'index'])->name('index');
     
