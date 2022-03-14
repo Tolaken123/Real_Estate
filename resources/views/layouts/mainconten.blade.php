@@ -16,8 +16,8 @@
     Create New Property
   </button>
   <div class="dropdown-menu">
-    <a class="dropdown-item" href="{{route('admin/properties.rent')}}">Rent</a>
-    <a class="dropdown-item" href="{{route('admin/properties.sale')}}">Sale</a>
+    <a class="dropdown-item" href="{{route('admin/properties.rent')}}">Rent</a> 
+    <a class="dropdown-item" href="{{route('admin/properties.sale')}}">Sale</a> 
   </div>
           </div>
         </div>
