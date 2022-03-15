@@ -76,6 +76,14 @@
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+            <i class="far fa-lock-alt"></i>
+              <p>
+                Change Password
+              </p>
+            </a>
+          </li>
             </ul>
           </li>
           <li class="nav-item">

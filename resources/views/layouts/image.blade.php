@@ -153,8 +153,8 @@
 
   var myDropzone = new Dropzone(document.body, { // Make the whole body a dropzone
     url: "/target-url", // Set the url
-    thumbnailWidth: 80,
-    thumbnailHeight: 80,
+    thumbnailWidth: 150,
+    thumbnailHeight: 100,
     parallelUploads: 20,
     previewTemplate: previewTemplate,
     autoQueue: false, // Make sure the files aren't queued until manually added
