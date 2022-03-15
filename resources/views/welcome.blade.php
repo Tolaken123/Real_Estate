@@ -22,9 +22,9 @@
             }
         </style>
     </head>
-    <body">
+    <body>
        <!-- Navbar -->
-        <nav class=" navbar navbar-expand-md navbar-light bg-light fs-5" >
+        <nav class=" row navbar navbar-expand-md navbar-light bg-light fs-5" >
             {{-- <div class="container-fluid"> --}}
             <div class="col-md-2 d-flex justify-content-center">
             <img class="d-flex justify-content-center" src="\img\logo.png" alt="" width="50px" height="50px">
@@ -73,12 +73,12 @@
                       @auth
                           <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
                       @else
-                      <li class="nav-item nav-link">
+                      <li class="nav-item nav-link btn">
                           
                           <a href="{{ route('login') }}" class= "">Login</a>
                           {{-- class="text-sm text-gray-700 dark:text-gray-500 underline" --}}
                       </li>
-                      <li class="nav-item nav-link">
+                      <li class="nav-item nav-link active">
                           @if (Route::has('register'))
                               <a href="{{ route('register') }}" class= "">Register</a>
                           @endif

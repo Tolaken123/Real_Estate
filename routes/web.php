@@ -20,31 +20,32 @@ use App\Http\Controllers\Admin\PropertiesController;
 Route::get('/',function(){
     return view('welcome');
 });
+
+// Route::get('/hey',function(){
+//     return view('properties');
+// });
+Route::get('/admin/properties', [PropertiesController::class,'create']);
+
 Route::get('/property',function(){
     return view('properties');
 });
 
+
 Route::group(['prefix' => 'admin','namespace' => 'Admin','as' => 'admin.','middleware' => 'auth'], function () {
     Route::get('/',function(){return view('layouts.admin');});
-    //Route::resource('/properties','PropertiesController');
-    Route::get('/properties', [PropertiesController::class,'create'])->name('Create');
+    Route::resource('/properties','PropertiesController');
+    Route::get('/properties', [PropertiesController::class,'create'])->name('create');
     Route::post('/properties', [PropertiesController::class,'store'])->name('Store');
     Route::get('/properties/index', [PropertiesController::class,'index'])->name('index');
     
 });
 
 
-     
-
-
-
 // Route::get('/propertie',[PropertiesController::class,'index']);
    
 Auth::routes();
 
-
  Route::get('/home', [HomeController::class,'index'])->name('home');
-
 // Route::get('/livewire',function(){
 //     return view('livewire.index');
 // });
