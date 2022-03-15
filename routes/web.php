@@ -72,3 +72,10 @@ Route::get('/layouts/Home_page',function(){
 Route::get('/layouts/test',function(){
     return view('layouts/test');
 });
+
+Route::get('/admin/Account/Index',function(){
+    return view('admin/Account/Index');
+});
+Route::get('/admin/Account/user_profile',function(){
+    return view('admin/Account/user_profile');
+});
