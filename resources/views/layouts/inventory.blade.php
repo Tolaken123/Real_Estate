@@ -1,9 +1,9 @@
 
     <label class="checkbox-inline">
-      <input type="checkbox" value="">&nbspParking
+      <input type="checkbox" value="">&nbspGenterator
     </label>
     <label class="checkbox-inline">
-      <input type="checkbox" value="">&nbspInternet/ Wi-Fi
+      <input type="checkbox" value="">&nbspFan
     </label>
     <label class="checkbox-inline">
       <input type="checkbox" value="">&nbspSofa
@@ -24,19 +24,19 @@
       <input type="checkbox" value="">&nbspLaundry Machine
     </label>
     <label class="checkbox-inline">
-      <input type="checkbox" value="">&nbspCleaning Service
+      <input type="checkbox" value="">&nbspMicrowave
     </label>
     <label class="checkbox-inline">
-      <input type="checkbox" value="">&nbspGym
+      <input type="checkbox" value="">&nbspCCTV
     </label>
     <label class="checkbox-inline">
-      <input type="checkbox" value="">&nbspPool
+      <input type="checkbox" value="">&nbspHot and Cold water
     </label>
     <label class="checkbox-inline">
-      <input type="checkbox" value="">&nbspGardening Service
+      <input type="checkbox" value="">&nbspDesk/Chair
     </label>
     <label class="checkbox-inline">
-      <input type="checkbox" value="">&nbspRepair Service 
+      <input type="checkbox" value="">&nbsp Cabinet
     </label>
 
 

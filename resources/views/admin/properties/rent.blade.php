@@ -137,7 +137,10 @@
         <label for="example-number-input" class="form-control-label">How far from Restaurant?</label>
         <input class="form-control"  type="text" value="" id="example-number-input" name="resturant">
     </div>
-
+    <div class="form-group">
+        <label for="example-number-input" class="form-control-label">Link Location</label>
+        <input class="form-control"  type="text" value="" id="example-number-input" name="maplocation">
+    </div>
     
 
 @include('layouts.service')
