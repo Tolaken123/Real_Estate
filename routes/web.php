@@ -70,6 +70,9 @@ Route::get('/fonte/home/Item',function(){
 Route::get('/layouts/Home_page',function(){
     return view('layouts/Home_page');
 });
+Route::get('/layouts/property_detail',function(){
+    return view('layouts/property_detail');
+});
 Route::get('/layouts/test',function(){
     return view('layouts/test');
 });
