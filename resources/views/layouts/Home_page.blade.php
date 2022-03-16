@@ -50,16 +50,16 @@
                 <div class="container col-md-8 mt-3">
                     <ul class="nav nav-tabs justify-content-bottom" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link active" data-bs-toggle="tab" href="#home">Home</a>
+                            <a class="nav-link active" data-bs-toggle="tab" href="#home"><h4>Home</h4></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-bs-toggle="tab" href="#menu1">Bye</a>
+                            <a class="nav-link" data-bs-toggle="tab" href="#menu1"><h4>Bye</h4></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-bs-toggle="tab" href="#menu2">Rent</a>
+                            <a class="nav-link" data-bs-toggle="tab" href="#menu2"><h4>Rent</h4></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-bs-toggle="tab" href="#menu2">Installment payment</a>
+                            <a class="nav-link" data-bs-toggle="tab" href="#menu2"><h4>Installment payment</h4></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" data-bs-toggle="tab" href="#menu2">
@@ -78,12 +78,12 @@
                                 @else
                                 <li class="nav-item ">
                                     
-                                    <a href="{{ route('login') }}" class="nav-link">Login</a>
+                                    <a href="{{ route('login') }}" class="nav-link"><h4>Login</h4></a>
                                     <!-- {{-- class="text-sm text-gray-700 dark:text-gray-500 underline" --}} -->
                                 </li>
                                 <li class="nav-item">
                                     @if (Route::has('register'))
-                                        <a href="{{ route('register') }}"class="nav-link">Register</a>
+                                        <a href="{{ route('register') }}"class="nav-link"><h4>Register</h4></a>
                                     @endif
                                 @endauth
                             <!-- {{-- </div> --}} -->
