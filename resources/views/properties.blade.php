@@ -1,9 +1,4 @@
 
-<<<<<<< HEAD:resources/views/admin/properties/createpro.blade.php
-  
-    
-=======
->>>>>>> 80ba13965dd8721051dcddbb9c0b368c05d086a0:resources/views/properties.blade.php
 @extends('layouts.app')
 @section('content')
 <body class="hold-transition light-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">

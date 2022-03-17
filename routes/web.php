@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\PropertiesController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes

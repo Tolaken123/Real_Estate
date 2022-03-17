@@ -38,7 +38,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           
            <div class="containner">
            @yield('content')
-           @include('layouts.mainconten') 
+         
            </div>
           <!-- Main Sidebar Container -->
           <!-- Content Wrapper. Contains page content -->
@@ -48,5 +48,3 @@ scratch. This page gets rid of all links and provides the needed markup only.
 </div>
 {{-- script --}}
 @include('layouts.script')
-
-
