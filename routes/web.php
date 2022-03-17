@@ -65,34 +65,3 @@ Auth::routes();
 // Route::get('/admin/properties/createform', function () {
 //     return view('admin.properties.createform');
 // });
-<<<<<<< HEAD
-// Route::get('/fonte/home/Item',function(){
-//     return view('fonte.home.Item');
-// });
-// Route::get('/layouts/Home_page',function(){
-//     return view('layouts/Home_page');
-// });
-// Route::get('/layouts/test',function(){
-//     return view('layouts/test');
-// });
-=======
-Route::get('/fonte/home/Item',function(){
-    return view('fonte.home.Item');
-});
-Route::get('/layouts/Home_page',function(){
-    return view('layouts/Home_page');
-});
-Route::get('/layouts/property_detail',function(){
-    return view('layouts/property_detail');
-});
-Route::get('/layouts/test',function(){
-    return view('layouts/test');
-});
-
-Route::get('/admin/Account/Index',function(){
-    return view('admin/Account/Index');
-});
-Route::get('/admin/Account/user_profile',function(){
-    return view('admin/Account/user_profile');
-});
->>>>>>> 576e3c1c6aec7c2a884fbfbd20793812648a79bd
