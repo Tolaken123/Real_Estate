@@ -8,11 +8,11 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <title>Document</title>
 </head>
-<body>
-<div class="row">
+<body class="" style="background-color: #E5E5E5E5">
+<div class="row" style="background-color: #ffffff">
     <div class="col-sm-1"></div>
     <div class="col-md-1">
-        <img  src="../img/logo.png" alt="" width="100px" height="100px">
+        <img  src="../img/logo.png" alt="" height="70%">
     </div>
     <!-- Search -->
     <div class="col-md-7">
@@ -106,7 +106,8 @@
     <div class="col-sm-1"></div>
 </div>
 
-<div class="row">
+<!-- Slide -->
+<div class="row" style="padding-top: 25px;">
   <div class="col-md-2">
 
   </div>
@@ -155,40 +156,76 @@
     </button>
     </div>
 
-    <div class="container-fluid mt-3">
-    <h3>Carousel Example</h3>
-    <p>The following example shows how to create a basic carousel with indicators and controls.</p>
+    <div><img src="../img/House1.jpg" alt="" style="width:15%"></div>
+    
+    <div class="container-fluid mt-3" style="background-color: #ffffff">
+    <h2>ផ្ទះលក់បន្ទាន់​</h2>
+    <h4>មានសម្ភារះ​ប្រើប្រាស់ស្រាប់ អាចបង់រំលស់ ឬ ទិញដាក់</h4>
+    <h4>0123456789</h4>
+    <h4>realestate@gmail.com</h4>
+    <h4>SiemReap</h4>
+    <table class="table table-striped">
+      <tbody>
+        <tr>
+          <td>ID</td>
+          <td>62453</td>
+        </tr>
+        <tr>
+          <td>Category</td>
+          <td>House</td>
+        </tr>
+        <td>For</td>
+          <td>Sale</td>
+        </tr>
+        <td>Price</td>
+          <td>100000$</td>
+        </tr>
+        <tr>
+        <td>Location</td>
+          <td>siem reap</td>
+        </tr>
+        <td>Posted</td>
+          <td>17-Mar-22</td>
+        </tr>
+      </tbody>
+    </table>
     </div>
 
 </div>
-<div class="col-md-4">
-<div class="container mt-3">
-  <h2>Striped Rows</h2>
-  <p>The .table-striped class adds zebra-stripes to a table:</p>            
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Category</th>
-        <th>Number</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Bedroom</td>
-        <td>6</td>
-      </tr>
-      <tr>
-        <td>Bathroom</td>
-        <td>8</td>
-      </tr>
-      <tr>
-      <td>Garage</td>
-        <td>4</td>
-      </tr>
-    </tbody>
-  </table>
+<div class="col-md-3" style="background-color: #ffffff">
+  <div class="container mt-3">
+  <tr>
+    <th><img  src="../img/logo.png" alt="#" width="20%" height="20%"></th>
+    <th>Duong</th>
+  </tr>
+    <p>The .table-striped class adds zebra-stripes to a table:</p>            
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Number</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Bedroom</td>
+          <td>6</td>
+        </tr>
+        <tr>
+          <td>Bathroom</td>
+          <td>8</td>
+        </tr>
+        <tr>
+        <td>Garage</td>
+          <td>4</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
-</div>
+  <div class="col-md-1">
+    
+  </div>
 </div>
 </body>
 </html>
