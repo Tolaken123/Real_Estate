@@ -25,6 +25,11 @@ Route::get('/',function(){
 // Route::get('/hey',function(){
 //     return view('properties');
 // });
+
+
+
+
+
 Route::get('/admin/properties', [PropertiesController::class,'create']);
 
 Route::get('/property',function(){
@@ -40,6 +45,10 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','as' => 'admin.','middl
     Route::get('/properties/index', [PropertiesController::class,'index'])->name('index');
     
 });
+
+
+
+
 
 
 // Route::get('/propertie',[PropertiesController::class,'index']);
@@ -65,3 +74,8 @@ Auth::routes();
 // Route::get('/admin/properties/createform', function () {
 //     return view('admin.properties.createform');
 // });
+
+Route::get('/homepage', function () {
+    return view('homepage');
+    });
+    
