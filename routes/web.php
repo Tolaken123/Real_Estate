@@ -3,6 +3,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\PropertiesController;
+use App\Http\Controllers\UserController;
 
 
 /*
@@ -78,4 +79,7 @@ Auth::routes();
 Route::get('/homepage', function () {
     return view('homepage');
     });
+
+
+Route::get('user',[UserController::class,'show']);
     
