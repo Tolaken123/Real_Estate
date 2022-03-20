@@ -19,25 +19,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <body class="hold-transition light-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
 <div class="wrapper">
-<<<<<<< HEAD
-
-  <!-- Navbar -->
-  @include('layouts.topnavbar')
-  @include('layouts.sidebar')
-
-
-  @include('layout.topnavbar')
-  <!-- Content Wrapper. Contains page content -->
-  @yield('content')
-  <!-- Main Footer -->
-  @include('layout.footer')
-</div>
-<!-- ./wrapper -->
-
-<!-- REQUIRED SCRIPTS -->
-
-=======
->>>>>>> 576e3c1c6aec7c2a884fbfbd20793812648a79bd
 <!-- jQuery -->
 <script src="{{ asset('vendors/plugins/jquery/jquery.min.js') }}"></script>
 <!-- Bootstrap 4 -->
