@@ -1,19 +1,21 @@
 <h3>User List</h3>
-
 <table border='1'>
+    <thead>
     <tr>
         <td>Id </td>
         <td>Name</td>
         <td>Email</td>
         <td>Password</td>
     </tr>
-   
-    @foreach($user as $user)
+    </thead>
+    <tbody> 
+    @foreach ($data as $row)
     <tr>
-        <td>{{$user['id']}}</td>
-        <td>{{$user['name']}}</td>
-        <td>{{$user['email']}}</td>
-        <td>{{$user['password']}}</td>
+        <td>{{$row->id}}</td>
+        <td>{{$row->name}}</td>
+        <td>{{$row->email}}</td>
+        <td>{{$row->password}}</td>
     </tr>
-    @endforeach
+     @endforeach 
+</tbody>
 </table>
