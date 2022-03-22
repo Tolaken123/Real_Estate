@@ -41,10 +41,6 @@
                       <th style="width: 20%">
                           Type
                       </th>
-                     
-                      <th>
-                          MonthlyRental
-                      </th>
                       <th style="width: 30%" class="text-center">
                          Sale Price 
                       </th>
