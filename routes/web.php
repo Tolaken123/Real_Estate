@@ -75,7 +75,7 @@ Auth::routes();
 // Route::get('/admin/properties/createform', function () {
 //     return view('admin.properties.createform');
 // });
-<<<<<<< Updated upstream
+
 
 Route::get('/homepage', function () {
     return view('homepage');
@@ -84,7 +84,8 @@ Route::get('/homepage', function () {
 
 Route::get('user',[UserController::class,'show']);
     
-=======
+
+
 
 // Route::get('/fonte/home/Item',function(){
 //     return view('fonte.home.Item');
@@ -114,4 +115,3 @@ Route::get('/admin/Account/Index',function(){
 Route::get('/admin/Account/user_profile',function(){
     return view('admin/Account/user_profile');
 });
->>>>>>> Stashed changes
