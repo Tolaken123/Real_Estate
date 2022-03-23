@@ -5,14 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/slideshow.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <title>Document</title>
+    <title>Detail</title>
 </head>
-<body>
-<div class="row">
+<body class="" style="background-color: #E5E5E5E5">
+<div class="row" style="background-color: #ffffff">
     <div class="col-sm-1"></div>
     <div class="col-md-1">
-        <img  src="../img/logo.png" alt="" width="100px" height="100px">
+        <img  src="../img/logo.png" alt="" height="70%">
     </div>
     <!-- Search -->
     <div class="col-md-7">
@@ -105,90 +106,146 @@
     </div>
     <div class="col-sm-1"></div>
 </div>
+<!-- slideshow -->
+<div class="row" style="padding-top: 1%;">
+	<div class="col-md-2">
+  
+	</div>
+	<div class="col-md-6" >
 
-<div class="row">
-  <div class="col-md-2">
+    <div id="container">
 
-  </div>
-  <div class="col-md-6">
-        <!-- Carousel -->
-    <div id="demo" class="carousel slide" data-bs-ride="carousel">
+			<div id="slideshow" class="">
+				<!-- Below are the images in the gallery -->
+			    <div id="img-1" data-img-id="1" class="img-wrapper active" style="background-image: url('../img/img1.jpg')"></div>
+			    <div id="img-2" data-img-id="2" class="img-wrapper" style="background-image: url('../img/img2.jpg')"></div>
+			    <div id="img-3" data-img-id="3" class="img-wrapper" style="background-image: url('../img/img3.jpg')"></div>
+			    <div id="img-4" data-img-id="4" class="img-wrapper" style="background-image: url('../img/img2.jpg')"></div>
+			    <div id="img-1" data-img-id="5" class="img-wrapper" style="background-image: url('../img/img1.jpg')"></div>
+			    <div id="img-2" data-img-id="6" class="img-wrapper" style="background-image: url('../img/img2.jpg')"></div>
+			    <div id="img-3" data-img-id="7" class="img-wrapper" style="background-image: url('../img/img3.jpg')"></div>
+			    <div id="img-4" data-img-id="8" class="img-wrapper" style="background-image: url('../img/img2.jpg')"></div>
 
-    <!-- Indicators/dots -->
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-      <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-      <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-    </div>
+				<!-- Below are the thumbnails of above images -->
+        <div>
+        <div class="thumbs-container bottom">
+			    	<div id="prev-btn" class="prev">	
+              <span class="carousel-control-prev-icon"></span>
+			    	</div>
 
-    <!-- The slideshow/carousel -->
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="../img/House1.jpg" alt="Los Angeles" class="d-block" style="width:100%">
-        <div class="carousel-caption">
-          <h3>Los Angeles</h3>
-          <p>We had such a great time in LA!</p>
+					<ul class="thumbs">
+						<li data-thumb-id="1" class="thumb active" style="background-image: url('../img/img1-thumb.jpg')"></li>
+						<li data-thumb-id="2" class="thumb" style="background-image: url('../img/img2-thumb.jpg')"></li>
+						<li data-thumb-id="3" class="thumb" style="background-image: url('../img/img3-thumb.jpg')"></li>
+						<li data-thumb-id="4" class="thumb" style="background-image: url('../img/img2-thumb.jpg')"></li>
+						<li data-thumb-id="5" class="thumb" style="background-image: url('../img/img1-thumb.jpg')"></li>
+						<li data-thumb-id="6" class="thumb" style="background-image: url('../img/img2-thumb.jpg')"></li>
+						<li data-thumb-id="7" class="thumb" style="background-image: url('../img/img3-thumb.jpg')"></li>
+						<li data-thumb-id="8" class="thumb" style="background-image: url('../img/img2-thumb.jpg')"></li>
+					</ul>
+
+          <div id="next-btn" class="next">
+            <span class="carousel-control-next-icon"></span>
+			    	</div>
+			    </div>
         </div>
-      </div>
-      <div class="carousel-item">
-        <img src="../img/House1.jpg" alt="Chicago" class="d-block" style="width:100%">
-        <div class="carousel-caption">
-          <h3>Chicago</h3>
-          <p>Thank you, Chicago!</p>
-        </div> 
-      </div>
-      <div class="carousel-item">
-        <img src="../img/House1.jpg" alt="New York" class="d-block" style="width:100%">
-        <div class="carousel-caption">
-          <h3>New York</h3>
-          <p>We love the Big Apple!</p>
-        </div>  
-      </div>
+
+			</div>
+		</div>
+    
+  
+    
+<!--end slideshow -->
+
+    <div class="container-fluid mt-3" style="background-color: #ffffff">
+    <h2>ផ្ទះលក់បន្ទាន់​</h2>
+    <h4>មានសម្ភារះ​ប្រើប្រាស់ស្រាប់ អាចបង់រំលស់ ឬ ទិញដាក់</h4>
+    <h4>0123456789</h4>
+    <h4>realestate@gmail.com</h4>
+    <h4>SiemReap</h4>
+    <table class="table table-striped">
+      <tbody>
+        <tr>
+          <td>ID</td>
+          <td>62453</td>
+        </tr>
+        <tr>
+          <td>Category</td>
+          <td>House</td>
+        </tr>
+        <td>For</td>
+          <td>Sale</td>
+        </tr>
+        <td>Price</td>
+          <td>100000$</td>
+        </tr>
+        <tr>
+        <td>Location</td>
+          <td>siem reap</td>
+        </tr>
+        <td>Posted</td>
+          <td>17-Mar-22</td>
+        </tr>
+      </tbody>
+    </table>
     </div>
 
-    <!-- Left and right controls/icons -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </button>
-    </div>
+</div>
+<div class="col-md-3" style="background-color: #ffffff" >
+  <div class="container mt-3" >
+  <tr>
+    <th><img  src="../img/user2-160x160.jpg" alt="#" height="10%"></th>
+    <th>Duong</th>
+  </tr>
+    <p>The .table-striped class adds zebra-stripes to a table:</p>            
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Number</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Bedroom</td>
+          <td>6</td>
+        </tr>
+        <tr>
+          <td>Bathroom</td>
+          <td>8</td>
+        </tr>
+        <tr>
+        <td>Garage</td>
+          <td>4</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+  <div class="col-md-1">
+    
+  </div>
+</div>
 
-    <div class="container-fluid mt-3">
-    <h3>Carousel Example</h3>
-    <p>The following example shows how to create a basic carousel with indicators and controls.</p>
-    </div>
 
-</div>
-<div class="col-md-4">
-<div class="container mt-3">
-  <h2>Striped Rows</h2>
-  <p>The .table-striped class adds zebra-stripes to a table:</p>            
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Category</th>
-        <th>Number</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Bedroom</td>
-        <td>6</td>
-      </tr>
-      <tr>
-        <td>Bathroom</td>
-        <td>8</td>
-      </tr>
-      <tr>
-      <td>Garage</td>
-        <td>4</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-</div>
-</div>
+
+
+
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.1.min.js"></script>
+<script src="../js/gallery.js"></script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
 </body>
 </html>

@@ -33,12 +33,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
           {{-- navbar --}}
           @include('layouts.topnavbar')
           <!-- sidebar -->
-          @include('layouts.sidebar')
+          @include('layouts.usersidebar')
         
           
            <div class="containner">
            @yield('content')
-           @include('layouts.mainconten') 
+           @include('admin.Account.user_list') 
            </div>
           <!-- Main Sidebar Container -->
           <!-- Content Wrapper. Contains page content -->
