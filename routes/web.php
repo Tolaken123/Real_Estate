@@ -40,23 +40,55 @@ Route::get('/property',function(){
 
 Route::group(['prefix' => 'admin','namespace' => 'Admin','as' => 'admin.','middleware' => 'auth'], function () {
     Route::get('/',function(){return view('layouts.admin');});
-    Route::resource('/properties','PropertiesController');
+    // Route::resource('/properties','PropertiesController');
     Route::get('/properties', [PropertiesController::class,'create'])->name('create');
     Route::post('/properties', [PropertiesController::class,'store'])->name('Store');
     Route::get('/properties/index', [PropertiesController::class,'index'])->name('index');
     
+    Route::get('/user',function () {
+        return view('admin.account.user_list');
+    });
+    Route::get('/admin/Account/Index',function(){
+        return view('admin/Account/Index');
+    });
+    Route::get('/layouts/property_detail',function(){
+        return view('layouts/property_detail');
+    });
+    Route::get('/admin/Account/user_profile',function(){
+        return view('admin/Account/user_profile');
+    });
+
+});
+Route::get('/fonte/home/Item',function(){
+    return view('fonte.home.Item');
+});
+Route::get('/layouts/Home_page',function(){
+    return view('layouts/Home_page');
+});
+
+Route::get('/layouts/test',function(){
+    return view('layouts/test');
 });
 
 
 
 
-
-
-// Route::get('/propertie',[PropertiesController::class,'index']);
-   
 Auth::routes();
 
  Route::get('/home', [HomeController::class,'index'])->name('home');
+
+
+ Route::get('/homepage', function () {
+    return view('homepage');
+    });
+  
+
+
+
+    
+// Route::get('/propertie',[PropertiesController::class,'index']);
+   
+
 // Route::get('/livewire',function(){
 //     return view('livewire.index');
 // });
@@ -75,17 +107,23 @@ Auth::routes();
 // Route::get('/admin/properties/createform', function () {
 //     return view('admin.properties.createform');
 // });
+<<<<<<< HEAD
 
 
 Route::get('/homepage', function () {
     return view('homepage');
     });
 
+=======
+>>>>>>> fa9a0b941b1f957d98a74d8a30307b9da6471888
 
 Route::get('user',[UserController::class,'show']);
     
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> fa9a0b941b1f957d98a74d8a30307b9da6471888
 
 // Route::get('/fonte/home/Item',function(){
 //     return view('fonte.home.Item');
@@ -96,18 +134,7 @@ Route::get('user',[UserController::class,'show']);
 // Route::get('/layouts/test',function(){
 //     return view('layouts/test');
 // });
-Route::get('/fonte/home/Item',function(){
-    return view('fonte.home.Item');
-});
-Route::get('/layouts/Home_page',function(){
-    return view('layouts/Home_page');
-});
-Route::get('/layouts/property_detail',function(){
-    return view('layouts/property_detail');
-});
-Route::get('/layouts/test',function(){
-    return view('layouts/test');
-});
+
 
 Route::get('/admin/Account/Index',function(){
     return view('admin/Account/Index');
@@ -115,3 +142,7 @@ Route::get('/admin/Account/Index',function(){
 Route::get('/admin/Account/user_profile',function(){
     return view('admin/Account/user_profile');
 });
+<<<<<<< HEAD
+=======
+
+>>>>>>> fa9a0b941b1f957d98a74d8a30307b9da6471888

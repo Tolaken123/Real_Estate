@@ -5,12 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    
     <link rel="stylesheet" type="text/css" href="../css/slideshow.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <title>Detail</title>
 </head>
 <body class="" style="background-color: #E5E5E5E5">
-<div class="row" style="background-color: #ffffff">
+<div class="row" style="background-color: #ffffff" >
     <div class="col-sm-1"></div>
     <div class="col-md-1">
         <img  src="../img/logo.png" alt="" height="70%">
@@ -115,7 +117,7 @@
 
     <div id="container">
 
-			<div id="slideshow" class="">
+			<div id="slideshow" class="" width="300%">
 				<!-- Below are the images in the gallery -->
 			    <div id="img-1" data-img-id="1" class="img-wrapper active" style="background-image: url('../img/img1.jpg')"></div>
 			    <div id="img-2" data-img-id="2" class="img-wrapper" style="background-image: url('../img/img2.jpg')"></div>
@@ -152,44 +154,7 @@
 
 			</div>
 		</div>
-    
-  
-    
 <!--end slideshow -->
-
-    <div class="container-fluid mt-3" style="background-color: #ffffff">
-    <h2>ផ្ទះលក់បន្ទាន់​</h2>
-    <h4>មានសម្ភារះ​ប្រើប្រាស់ស្រាប់ អាចបង់រំលស់ ឬ ទិញដាក់</h4>
-    <h4>0123456789</h4>
-    <h4>realestate@gmail.com</h4>
-    <h4>SiemReap</h4>
-    <table class="table table-striped">
-      <tbody>
-        <tr>
-          <td>ID</td>
-          <td>62453</td>
-        </tr>
-        <tr>
-          <td>Category</td>
-          <td>House</td>
-        </tr>
-        <td>For</td>
-          <td>Sale</td>
-        </tr>
-        <td>Price</td>
-          <td>100000$</td>
-        </tr>
-        <tr>
-        <td>Location</td>
-          <td>siem reap</td>
-        </tr>
-        <td>Posted</td>
-          <td>17-Mar-22</td>
-        </tr>
-      </tbody>
-    </table>
-    </div>
-
 </div>
 <div class="col-md-3" style="background-color: #ffffff" >
   <div class="container mt-3" >
@@ -227,8 +192,110 @@
   </div>
 </div>
 
+<div class="row">
+  <div class="col-md-2">
 
+  </div>
+  <div class="col-md-6">
+    
+    <div class="container-fluid wrapper mt-3" style="background-color: #ffffff">
+      <h2>ផ្ទះលក់បន្ទាន់​</h2>
+      <h4>មានសម្ភារះ​ប្រើប្រាស់ស្រាប់ អាចបង់រំលស់ ឬ ទិញដាក់</h4>
+      <h4>0123456789</h4>
+      <h4>realestate@gmail.com</h4>
+      <h4>SiemReap</h4>
+      <table class="table table-striped">
+        <tbody>
+          <tr>
+            <td>ID</td>
+            <td>62453</td>
+          </tr>
+          <tr>
+            <td>Category</td>
+            <td>House</td>
+          </tr>
+          <td>For</td>
+            <td>Sale</td>
+          </tr>
+          <td>Price</td>
+            <td>100000$</td>
+          </tr>
+          <tr>
+          <td>Location</td>
+            <td>siem reap</td>
+          </tr>
+          <td>Posted</td>
+            <td>17-Mar-22</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+  </div>
+  <div class="col-md-4">
 
+  </div>
+</div>
+<footer>
+    <div class="content">
+      <div class="top">
+        <div class="logo-details">
+          <i class="fab fa-slack"></i>
+          <span class="logo_name">CodingLab</span>
+        </div>
+        <div class="media-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="link-boxes">
+        <ul class="box">
+          <li class="link_name">Company</li>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Contact us</a></li>
+          <li><a href="#">About us</a></li>
+          <li><a href="#">Get started</a></li>
+        </ul>
+        <ul class="box">
+          <li class="link_name">Services</li>
+          <li><a href="#">App design</a></li>
+          <li><a href="#">Web design</a></li>
+          <li><a href="#">Logo design</a></li>
+          <li><a href="#">Banner design</a></li>
+        </ul>
+        <ul class="box">
+          <li class="link_name">Account</li>
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">My account</a></li>
+          <li><a href="#">Prefrences</a></li>
+          <li><a href="#">Purchase</a></li>
+        </ul>
+        <ul class="box">
+          <li class="link_name">Courses</li>
+          <li><a href="#">HTML & CSS</a></li>
+          <li><a href="#">JavaScript</a></li>
+          <li><a href="#">Photography</a></li>
+          <li><a href="#">Photoshop</a></li>
+        </ul>
+        <ul class="box input-box">
+          <li class="link_name">Subscribe</li>
+          <li><input type="text" placeholder="Enter your email"></li>
+          <li><input type="button" value="Subscribe"></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom-details">
+      <div class="bottom_text">
+        <span class="copyright_text">Copyright &#169; 2021 <a href="#">CodingLab.</a>All rights reserved</span>
+        <span class="policy_terms">
+          <a href="#">Privacy policy</a>
+          <a href="#">Terms & condition</a>
+        </span>
+      </div>
+    </div>
+  </footer>
 
 
 <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.1.min.js"></script>
@@ -247,5 +314,6 @@
   })();
 
 </script>
+
 </body>
 </html>

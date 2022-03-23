@@ -3,11 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Users;
+use App\Models\User;
 class UserController extends Controller
 {
-   public function show(){
-    $data= users::all();
-        return view('admin.account.user_list',['user'=>$data]);
+   public function index(){
+      
+      $data= user::get();
+        return view('admin.account.user_list',['data' => $data]);
    }
+   public function create(){
+      
+   }
+
 }

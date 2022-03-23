@@ -1,19 +1,31 @@
 @extends('layouts.app')
 @section('content')
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
-        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" /> 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/svg-with-js.min.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+
+
 <link rel="stylesheet" type="text/css" href="{{ asset('css/user_profile.css') }}" />
 <main >
 <div class="container mt-6" >
-   
-        <div class=" social-prof">
-        <hr/>
-                <div class="wrapper">
-                    <img src="/img/user2-160x160.jpg" alt="" class="user-profile">
-                   
+<hr/>
+        <!-- <div class=" social-prof"> -->
+          <div class="profile">
+                <!-- <div class="wrapper"> -->
+                <div class="profilepic">
+                    <!-- <img src="/img/user2-160x160.jpg" alt="" class="user-profile"> -->
+                    <img src="/img/user2-160x160.jpg" alt="" class="profilepic__image">
+                    <div class="profilepic__content">
+                      <span class="profilepic__icon"><i class="fas fa-camera"></i></span>
+                      <span class="profilepic__text">Edit Profile</span>
+                    </div>
                 </div>
             </div>
-            </div>
+          </div>
         </div>
       <div class="container" >
         <form> 
@@ -22,45 +34,21 @@
                     <div class="form-group">
                         <label for="InputName">Name</label>
                         <input type="name" class="form-control" id="name" placeholder="Enter name">
-
                     </div>
                     <div class="form-group">
                         <label for="InputName">Phone</label>
                         <input type="phone" class="form-control" id="phone" placeholder="Enter Phone">
-
                     </div>
-
                   <div class="form-group">
                     <label for="exampleInputEmail1">Email address</label>
                     <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
                   </div>
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  <div class="btn">
+                      <button type="button" class="btn btn-primary btn-lg">Create</button>
+                      <button type="button" class="btn btn-secondary btn-lg">Cancel</button>
+                      
                   </div>
-                <div class="form-group">
-                    <label for="exampleInputFile">File input</label>
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                      </div>
-                      <div class="input-group-append">
-                        <span class="input-group-text">Upload</span>
-                      </div>
-                    </div> 
-                  </div>
-                   <!-- <div class="form-check"> 
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                  </div>
-                </div> -->
-                
-
-                <!-- <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Submit</button>
-                </div> 
-                 </div>  -->
+                  
         </form>
        
         </div> 
