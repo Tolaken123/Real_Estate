@@ -44,6 +44,7 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','as' => 'admin.','middl
     Route::get('/properties', [PropertiesController::class,'create'])->name('create');
     Route::post('/properties', [PropertiesController::class,'store'])->name('Store');
     Route::get('/properties/index', [PropertiesController::class,'index'])->name('index');
+    
     Route::get('/user',function () {
         return view('admin.account.user_list');
     });
