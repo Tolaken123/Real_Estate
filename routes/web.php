@@ -114,20 +114,14 @@ Route::get('/homepage', function () {
     return view('homepage');
     });
 
-<<<<<<< Updated upstream
+    
+Route::get('user',[UserController::class,'show']);
+    
 
 
 Route::get('user',[UserController::class,'show']);
     
 
-
-
-=======
-    
-Route::get('user',[UserController::class,'show']);
-    
-
->>>>>>> Stashed changes
 
 // Route::get('/fonte/home/Item',function(){
 //     return view('fonte.home.Item');
@@ -146,14 +140,11 @@ Route::get('/admin/Account/Index',function(){
 Route::get('/admin/Account/user_profile',function(){
     return view('admin/Account/user_profile');
 });
-<<<<<<< Updated upstream
-  
+
 Route::get('/auth/Account/userprofile',function(){
     return view('auth/Account/userprofile');
 });
-=======
 
 Route::get('/layouts/property_detail',function(){
     return view('layouts/property_detail');
 });
->>>>>>> Stashed changes
