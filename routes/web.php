@@ -107,23 +107,20 @@ Auth::routes();
 // Route::get('/admin/properties/createform', function () {
 //     return view('admin.properties.createform');
 // });
-<<<<<<< HEAD
+
 
 
 Route::get('/homepage', function () {
     return view('homepage');
     });
 
-=======
->>>>>>> fa9a0b941b1f957d98a74d8a30307b9da6471888
+
 
 Route::get('user',[UserController::class,'show']);
     
 
-<<<<<<< HEAD
 
-=======
->>>>>>> fa9a0b941b1f957d98a74d8a30307b9da6471888
+
 
 // Route::get('/fonte/home/Item',function(){
 //     return view('fonte.home.Item');
@@ -142,7 +139,7 @@ Route::get('/admin/Account/Index',function(){
 Route::get('/admin/Account/user_profile',function(){
     return view('admin/Account/user_profile');
 });
-<<<<<<< HEAD
-=======
-
->>>>>>> fa9a0b941b1f957d98a74d8a30307b9da6471888
+  
+Route::get('/auth/Account/userprofile',function(){
+    return view('auth/Account/userprofile');
+});
