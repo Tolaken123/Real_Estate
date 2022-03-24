@@ -17,12 +17,12 @@
     <title>Cam Real Estate</title>
     <style> 
         .myDIV {
-        background: red;
-        animation: mymove 5s infinite;
+        background: pink;
+        /* animation: mymove 5s infinite; */
         }
 
-        @keyframes mymove {
-        50% {background-color: blue;}
+        /* @keyframes mymove { */
+        /* 50% {background-color: blue;} */
         }
         .bg-text {
         background-color: rgb(0,0,0); /* Fallback color */
@@ -44,57 +44,7 @@
 <body>
      <!-- Nav tabs -->
      <!-- style="background-color: #99eeff;"  -->
-<div class="row"> 
-    <nav class="nav col-mt-12 myDIV">
-        <div class="col-sm-1"></div>
-            <img  src="../img/logo.png" alt="" width="70px" height="70px">
-                <div class="container col-md-8 mt-3">
-                    <ul class="nav nav-tabs justify-content-bottom" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link active" data-bs-toggle="tab" href="#home"><h4>Home</h4></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-bs-toggle="tab" href="#menu1"><h4>Bye</h4></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-bs-toggle="tab" href="#menu2"><h4>Rent</h4></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-bs-toggle="tab" href="#menu2"><h4>Installment payment</h4></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-bs-toggle="tab" href="#menu2">
-                                <i class='fas fa-heart' style='font-size:25px;color:red'></i>
-                            </a>
-                            
-                        </li>
-                        <li class="navbar-nav ms-auto" >
-                        
-                            @if (Route::has('login'))
-                          <!-- <div  class="hidden fixed top-0 right-0 px-6 py-4 sm:block" > -->
-                         <!-- class="hidden fixed top-0 right-0 px-6 py-4 sm:block"  -->
-                                
-                                @auth
-                                    <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
-                                @else
-                                <li class="nav-item ">
-                                    
-                                    <a href="{{ route('login') }}" class="nav-link"><h4>Login</h4></a>
-                                    <!-- {{-- class="text-sm text-gray-700 dark:text-gray-500 underline" --}} -->
-                                </li>
-                                <li class="nav-item">
-                                    @if (Route::has('register'))
-                                        <a href="{{ route('register') }}"class="nav-link"><h4>Register</h4></a>
-                                    @endif
-                                @endauth
-                            <!-- {{-- </div> --}} -->
-                            @endif
-                        </li>
-                    </ul>
-                </div>
-        </div>
-    </nav>
-</div> 
+
   <!-- ======== -->
 
   <!-- Search -->
@@ -172,7 +122,57 @@
 </div> -->
 
   <!-- end seidebar -->
-
+  <div class="row"> 
+    <nav class="nav col-mt-12 myDIV">
+        <div class="col-sm-1"></div>
+            <img  src="../img/logo.png" alt="" width="70px" height="70px">
+                <div class="container col-md-8 mt-3">
+                    <ul class="nav nav-tabs justify-content-bottom" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-bs-toggle="tab" href="#home"><h4>Home</h4></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#menu1"><h4>Bye</h4></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#menu2"><h4>Rent</h4></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#menu2"><h4>Installment payment</h4></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#menu2">
+                                <i class='fas fa-heart' style='font-size:25px;color:red'></i>
+                            </a>
+                            
+                        </li>
+                        <li class="navbar-nav ms-auto" >
+                        
+                            @if (Route::has('login'))
+                          <!-- <div  class="hidden fixed top-0 right-0 px-6 py-4 sm:block" > -->
+                         <!-- class="hidden fixed top-0 right-0 px-6 py-4 sm:block"  -->
+                                
+                                @auth
+                                    <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
+                                @else
+                                <li class="nav-item ">
+                                    
+                                    <a href="{{ route('login') }}" class="nav-link"><h4>Login</h4></a>
+                                    <!-- {{-- class="text-sm text-gray-700 dark:text-gray-500 underline" --}} -->
+                                </li>
+                                <li class="nav-item">
+                                    @if (Route::has('register'))
+                                        <a href="{{ route('register') }}"class="nav-link"><h4>Register</h4></a>
+                                    @endif
+                                @endauth
+                            <!-- {{-- </div> --}} -->
+                            @endif
+                        </li>
+                    </ul>
+                </div>
+        </div>
+    </nav>
+</div> 
 <!-- end Search -->
 <!-- Item -->
 <div class="row jumbotron m-5">

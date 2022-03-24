@@ -183,6 +183,7 @@
         <td>Garage</td>
           <td>4</td>
         </tr>
+        <tr>
       </tbody>
     </table>
   </div>

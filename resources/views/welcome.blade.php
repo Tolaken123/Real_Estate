@@ -23,6 +23,9 @@
         @keyframes mymove {
         50% {background-color: blue;}
         }
+        .bg-null{
+            background-color: null;
+        }
         .bg-text {
         background-color: rgb(0,0,0); /* Fallback color */
         background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
@@ -97,7 +100,7 @@
   <!-- ======== -->
 
   <!-- Search -->
-  <div class="jumbotron m-3">
+  <div class="jumbotron m-3 bg-null" >
     <div class="row bgimg" >
         <div class="card">
             <div class="card-body">   
