@@ -43,7 +43,7 @@ Route::get('/property',function(){
 
 
 Route::group(['prefix' => 'admin','namespace' => 'Admin','as' => 'admin.','middleware' => 'auth'], function () {
-<<<<<<< HEAD
+
     Route::get('/',function(){return view('layouts.admin');});
     Route::resource('/properties','PropertiesController');
     Route::get('/properties', [PropertiesController::class,'create'])->name('create');
@@ -54,9 +54,9 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','as' => 'admin.','middl
 
 Route::group(['prefix' => 'admin','namespace' => 'Admin','as' => 'admin.','middleware' => 'auth'], function () {
     Route::get('/',function(){return view('layouts.admin');});
-=======
+
     Route::get('/',function(){return view('properties');});
->>>>>>> 7140b3c81546dc888d02235e83da13455ab57665
+
     // Route::resource('/properties','PropertiesController');
     Route::get('/properties', [PropertiesController::class,'create'])->name('create');
     Route::post('/properties', [PropertiesController::class,'store'])->name('Store');
@@ -133,7 +133,7 @@ Route::get('/admin/properties/createform', function () {
 
 
 
-<<<<<<< HEAD
+
 Route::get('/fonte/home/Item',function(){
     return view('fonte.home.Item');
 });
@@ -143,7 +143,7 @@ Route::get('/layouts/Home_page',function(){
 Route::get('/layouts/test',function(){
     return view('layouts/test');
 });
-=======
+
 Route::get('/homepage', function () {
     return view('homepage');
     });
@@ -158,7 +158,7 @@ Route::get('/homepage', function () {
 // Route::get('/layouts/test',function(){
 //     return view('layouts/test');
 // });
->>>>>>> 7140b3c81546dc888d02235e83da13455ab57665
+
 
 
 Route::get('/admin/Account/Index',function(){
