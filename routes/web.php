@@ -5,7 +5,6 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\PropertiesController;
 use App\Http\Controllers\UserController;
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,7 +30,12 @@ Route::get('/',function(){
 
 
 
-Route::get('/admin/properties', [PropertiesController::class,'create']);
+Route::get('/admin/sale', [PropertiesController::class,'sale']);
+Route::get('/admin/rent', [PropertiesController::class,'rent']);
+Route::get('/admin/prolist', [PropertiesController::class,'prolist']);
+Route::get('/admin/rentlist', [PropertiesController::class,'rentlist']);
+Route::get('/admin/salelist', [PropertiesController::class,'salelist']);
+Route::get('/auth/Account/userlist', [AccountController::class,'userlist']);
 
 Route::get('/property',function(){
     return view('properties');
@@ -39,25 +43,36 @@ Route::get('/property',function(){
 
 
 Route::group(['prefix' => 'admin','namespace' => 'Admin','as' => 'admin.','middleware' => 'auth'], function () {
+<<<<<<< HEAD
     Route::get('/',function(){return view('layouts.admin');});
+    Route::resource('/properties','PropertiesController');
+    Route::get('/properties', [PropertiesController::class,'create'])->name('create');
+    Route::post('/properties', [PropertiesController::class,'store'])->name('Store');
+    Route::get('/properties/index', [PropertiesController::class,'index'])->name('index');
+    
+});
+
+Route::group(['prefix' => 'admin','namespace' => 'Admin','as' => 'admin.','middleware' => 'auth'], function () {
+    Route::get('/',function(){return view('layouts.admin');});
+=======
+    Route::get('/',function(){return view('properties');});
+>>>>>>> 7140b3c81546dc888d02235e83da13455ab57665
     // Route::resource('/properties','PropertiesController');
     Route::get('/properties', [PropertiesController::class,'create'])->name('create');
     Route::post('/properties', [PropertiesController::class,'store'])->name('Store');
     Route::get('/properties/index', [PropertiesController::class,'index'])->name('index');
     
-    Route::get('/user',function () {
-        return view('admin.account.user_list');
+    
     });
     Route::get('/admin/Account/Index',function(){
-        return view('admin/Account/Index');
-    });
-    // Route::get('/layouts/property_detail',function(){
-    //     return view('layouts/property_detail');
-    // });
-    Route::get('/admin/Account/user_profile',function(){
-        return view('admin/Account/user_profile');
-    });
+        return view('admin/Account/Index'); 
 
+});
+Route::get('/layouts/property_detail',function(){
+    return view('layouts/property_detail');
+});
+Route::get('/admin/Account/user_profile',function(){
+    return view('admin/Account/user_profile');
 });
 Route::get('/fonte/home/Item',function(){
     return view('fonte.home.Item');
@@ -66,12 +81,20 @@ Route::get('/layouts/Home_page',function(){
     return view('layouts/Home_page');
 });
 
+
 Route::get('/layouts/test',function(){
     return view('layouts/test');
 });
 
 
 
+
+
+Route::get('/propertie',[PropertiesController::class,'index']);
+   
+Auth::routes();
+
+ Route::get('/home', [HomeController::class,'index'])->name('home');
 
 Auth::routes();
 
@@ -82,47 +105,50 @@ Auth::routes();
     return view('homepage');
     });
   
-
+ Route::get('list', [UserController::class,'show']);
 
 
     
-// Route::get('/propertie',[PropertiesController::class,'index']);
+Route::get('/propertie',[PropertiesController::class,'index']);
    
+Route::get('/livewire',function(){
+    return view('livewire.index');
+});
 
-// Route::get('/livewire',function(){
-//     return view('livewire.index');
-// });
-
-// Route::get('/nav', function () {
-//     return view('fonte.index');
-// });
-// Route::get('/home/admin', function () {
-//     return view('Home.admin');
-// });
-//  Route::get('/home/verify', function () {
-//     return view('Home.verify');
-// });
-// //Route::get('/home/homepage', function () {
-// //});
-// Route::get('/admin/properties/createform', function () {
-//     return view('admin.properties.createform');
-// });
-
+Route::get('/nav', function () {
+    return view('fonte.index');
+});
+Route::get('/home/admin', function () {
+    return view('Home.admin');
+});
+ Route::get('/home/verify', function () {
+    return view('Home.verify');
+});
+Route::get('/home/homepage', function () {
+});
+Route::get('/admin/properties/createform', function () {
+    return view('admin.properties.createform');
+});
 
 
+
+
+<<<<<<< HEAD
+Route::get('/fonte/home/Item',function(){
+    return view('fonte.home.Item');
+});
+Route::get('/layouts/Home_page',function(){
+    return view('layouts/Home_page');
+});
+Route::get('/layouts/test',function(){
+    return view('layouts/test');
+});
+=======
 Route::get('/homepage', function () {
     return view('homepage');
     });
 
     
-Route::get('user',[UserController::class,'show']);
-    
-
-
-Route::get('user',[UserController::class,'show']);
-    
-
-
 // Route::get('/fonte/home/Item',function(){
 //     return view('fonte.home.Item');
 // });
@@ -132,6 +158,7 @@ Route::get('user',[UserController::class,'show']);
 // Route::get('/layouts/test',function(){
 //     return view('layouts/test');
 // });
+>>>>>>> 7140b3c81546dc888d02235e83da13455ab57665
 
 
 Route::get('/admin/Account/Index',function(){
@@ -148,3 +175,4 @@ Route::get('/auth/Account/userprofile',function(){
 Route::get('/layouts/property_detail',function(){
     return view('layouts/property_detail');
 });
+

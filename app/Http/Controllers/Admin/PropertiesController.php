@@ -25,10 +25,30 @@ class PropertiesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function sale()
     {
 
-        return View('Admin.properties.sale');
+        return View('Admin.properties.saleform');
+    }
+    public function rent()
+    {
+
+        return View('Admin.properties.rentform');
+    }
+    public function prolist()
+    {
+
+        return View('Admin.properties.prolist');
+    }
+    public function rentlist()
+    {
+
+        return View('Admin.properties.rentlist');
+    }
+    public function salelist()
+    {
+
+        return View('Admin.properties.salelist');
     }
 
     /**

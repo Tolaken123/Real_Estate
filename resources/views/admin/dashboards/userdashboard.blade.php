@@ -1,3 +1,10 @@
+
+
+<body class="hold-transition light-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+    <div class="wrapper">
+
+        <!-- Navbar -->
+       
 <div class="content-wrapper">
     <div class="content-header">
       <div class="container-fluid">
@@ -61,5 +68,5 @@
           </div>
         </div>
         <!-- /.row -->
-         @include('admin.properties.prolist')
+     
         
