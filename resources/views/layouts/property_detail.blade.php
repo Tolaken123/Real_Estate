@@ -424,10 +424,42 @@
 <div class="col-md-3" style="background-color: #ffffff" >
   <div class="container mt-3" >
   <tr>
-    <th><img  src="../img/user2-160x160.jpg" alt="#" height="10%"></th>
-    <th>Duong</th>
+    <th><img class="mx-auto d-block" src="../img/user2-160x160.jpg" alt="#" height="10%"></th>
+    <th><h3 class="text-center">Duong </h3></th>
   </tr>
-    <p>The .table-striped class adds zebra-stripes to a table:</p>            
+    <div class="" style="background-color: #ffffff">
+      <h2>ផ្ទះលក់បន្ទាន់​</h2>
+      <h4>មានសម្ភារះ​ប្រើប្រាស់ស្រាប់ អាចបង់រំលស់ ឬ ទិញដាក់</h4>
+      <h4>0123456789</h4>
+      <h4>realestate@gmail.com</h4>
+      <h4>SiemReap</h4>
+      <table class="table table-striped">
+        <tbody>
+          <tr>
+            <td>ID</td>
+            <td>62453</td>
+          </tr>
+          
+          <tr>
+            <td>Category</td>
+            <td>House</td>
+          </tr>
+          <td>For</td>
+            <td>Sale</td>
+          </tr>
+          <td>Price</td>
+            <td>100000$</td>
+          </tr>
+          <tr>
+          <td>Location</td>
+            <td>siem reap</td>
+          </tr>
+          <td>Posted</td>
+            <td>17-Mar-22</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
     <table class="table table-striped">
       <thead>
         <tr>
@@ -464,43 +496,14 @@
   </div>
   <div class="col-md-6">
     
-    <div class="container-fluid wrapper mt-3" style="background-color: #ffffff">
-      <h2>ផ្ទះលក់បន្ទាន់​</h2>
-      <h4>មានសម្ភារះ​ប្រើប្រាស់ស្រាប់ អាចបង់រំលស់ ឬ ទិញដាក់</h4>
-      <h4>0123456789</h4>
-      <h4>realestate@gmail.com</h4>
-      <h4>SiemReap</h4>
-      <table class="table table-striped">
-        <tbody>
-          <tr>
-            <td>ID</td>
-            <td>62453</td>
-          </tr>
-          
-          <tr>
-            <td>Category</td>
-            <td>House</td>
-          </tr>
-          <td>For</td>
-            <td>Sale</td>
-          </tr>
-          <td>Price</td>
-            <td>100000$</td>
-          </tr>
-          <tr>
-          <td>Location</td>
-            <td>siem reap</td>
-          </tr>
-          <td>Posted</td>
-            <td>17-Mar-22</td>
-          </tr>
-        </tbody>
-      </table>
-      </div>
+
   </div>
   <div class="col-md-4">
 
   </div>
+</div>
+<div class="row">
+  <p></p>
 </div>
 <footer>
     <div class="content">
