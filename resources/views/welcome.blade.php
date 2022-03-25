@@ -26,7 +26,13 @@
                 background-color: blue;
             }
         }
+<<<<<<< HEAD
 
+=======
+        .bg-null{
+            background-color: null;
+        }
+>>>>>>> 7140b3c81546dc888d02235e83da13455ab57665
         .bg-text {
             background-color: rgb(0, 0, 0);
             /* Fallback color */
@@ -116,6 +122,7 @@
     </div>
     <!-- ======== -->
 
+<<<<<<< HEAD
     <!-- Search -->
     <div class="jumbotron m-3">
         <div class="row bgimg">
@@ -130,6 +137,21 @@
                                     <option value="2">Sale</option>
                                 </select>
                             </div>
+=======
+  <!-- Search -->
+  <div class="jumbotron m-3 bg-null" >
+    <div class="row bgimg" >
+        <div class="card">
+            <div class="card-body">   
+                <form role="form" class="row">
+                    <div class="col-sm-6 col-md-3">
+                        <div class="form-group has-info">
+                            <select class="form-control custom-select">
+                                <option value="" disabled selected>Status</option>
+                                <option value="1">Rent</option>
+                                <option value="2">Sale</option>
+                            </select>
+>>>>>>> 7140b3c81546dc888d02235e83da13455ab57665
                         </div>
                         <div class="col-sm-6 col-md-3">
                             <div class="form-group has-info">

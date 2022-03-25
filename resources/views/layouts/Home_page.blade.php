@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
@@ -13,10 +14,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="../css/home_page.css">
+    <link rel="stylesheet" type="text/css" href="../css/slideshow.css">
     <title>Cam Real Estate</title>
     <style>
         .myDIV {
+<<<<<<< HEAD
             background: red;
             animation: mymove 5s infinite;
         }
@@ -25,6 +27,14 @@
             50% {
                 background-color: blue;
             }
+=======
+        background: pink;
+        /* animation: mymove 5s infinite; */
+        }
+
+        /* @keyframes mymove { */
+        /* 50% {background-color: blue;} */
+>>>>>>> 7140b3c81546dc888d02235e83da13455ab57665
         }
 
         .bg-text {
@@ -49,6 +59,7 @@
 </head>
 
 <body>
+<<<<<<< HEAD
     <!-- Nav tabs -->
     <!-- style="background-color: #99eeff;"  -->
     <div class="row">
@@ -115,6 +126,12 @@
     </nav>
     </div>
     <!-- ======== -->
+=======
+     <!-- Nav tabs -->
+     <!-- style="background-color: #99eeff;"  -->
+
+  <!-- ======== -->
+>>>>>>> 7140b3c81546dc888d02235e83da13455ab57665
 
     <!-- Search -->
     <div class="jumbotron m-3">
@@ -190,6 +207,7 @@
   <a href="#" class="w3-bar-item w3-button">Link 3</a>
 </div> -->
 
+<<<<<<< HEAD
     <!-- end seidebar -->
 
     <!-- end Search -->
@@ -233,6 +251,103 @@
                         <div>
                             <h5 class="card-title m-b-0">Jon Doe</h5>
                             <h6 class="text-muted">5 Property</h6>
+=======
+  <!-- end seidebar -->
+  <div class="row"> 
+    <nav class="nav col-mt-12 myDIV">
+        <div class="col-sm-1"></div>
+            <img  src="../img/logo.png" alt="" width="70px" height="70px">
+                <div class="container col-md-8 mt-3">
+                    <ul class="nav nav-tabs justify-content-bottom" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-bs-toggle="tab" href="#home"><h4>Home</h4></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#menu1"><h4>Bye</h4></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#menu2"><h4>Rent</h4></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#menu2"><h4>Installment payment</h4></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#menu2">
+                                <i class='fas fa-heart' style='font-size:25px;color:red'></i>
+                            </a>
+                            
+                        </li>
+                        <li class="navbar-nav ms-auto" >
+                        
+                            @if (Route::has('login'))
+                          <!-- <div  class="hidden fixed top-0 right-0 px-6 py-4 sm:block" > -->
+                         <!-- class="hidden fixed top-0 right-0 px-6 py-4 sm:block"  -->
+                                
+                                @auth
+                                    <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
+                                @else
+                                <li class="nav-item ">
+                                    
+                                    <a href="{{ route('login') }}" class="nav-link"><h4>Login</h4></a>
+                                    <!-- {{-- class="text-sm text-gray-700 dark:text-gray-500 underline" --}} -->
+                                </li>
+                                <li class="nav-item">
+                                    @if (Route::has('register'))
+                                        <a href="{{ route('register') }}"class="nav-link"><h4>Register</h4></a>
+                                    @endif
+                                @endauth
+                            <!-- {{-- </div> --}} -->
+                            @endif
+                        </li>
+                    </ul>
+                </div>
+        </div>
+    </nav>
+</div> 
+<!-- end Search -->
+<!-- Item -->
+<div class="row jumbotron m-5">
+                    <!-- item -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card">
+                            <img class="card-img-top" src="../img/House1.jpg" alt="Card image cap">
+                            <div class="card-img-overlay">
+                                <span class="badge badge-danger badge-pill">For Rent</span>
+                            </div>
+                            <div class="card-body bg-light">
+                                <h4 class="card-title">Florida 5, Pinecrest, FL</h4>
+                                <h4 class="text-primary">&#36; 220,000</h4>
+                            </div>
+                            <div class="card-body border-top">
+                            <div class="d-flex no-block align-items-center">
+                                    <span class="p-10 text-muted">
+                                    <i class="fas fa-bath"></i>    
+                                    Bathrooms</span>
+                                    <span class="ml-auto badge badge-pill badge-secondary pull-right">2</span>
+                                </div>
+                                <div class="d-flex no-block align-items-center">
+                                    <span class="p-10 text-muted">
+                                    <i class="fas fa-bed"></i>    
+                                    Beds</span>
+                                    <span class="ml-auto badge badge-pill badge-secondary pull-right">2</span>
+                                </div>
+                                <div class="d-flex no-block align-items-center">
+                                    <span class="p-10 text-muted">
+                                    <i class="fas fa-car"></i>    
+                                    Garages</span>
+                                    <span class="ml-auto badge badge-pill badge-secondary pull-right">1</span>
+                                </div>
+                            </div>
+                            <div class="card-body border-top">
+                                <div class="d-flex no-block align-items-center">
+                                <img alt="img " class="rounded-circle border border-5 border-white " src="../img/R.jpg" width="50px" height="50px">
+                                    <div>
+                                        <h5 class="card-title m-b-0">Jon Doe</h5>
+                                        <h6 class="text-muted">5 Property</h6>
+                                    </div>
+                                </div>
+                            </div>
+>>>>>>> 7140b3c81546dc888d02235e83da13455ab57665
                         </div>
                     </div>
                 </div>
@@ -557,11 +672,19 @@
     </div>
     <!-- /item -->
 
+<<<<<<< HEAD
     <!-- footer -->
     <footer>
         <div class="card myDIV">
             <div class="row">
                 <div class="col-md-3">
+=======
+<!-- footer -->
+<!-- <footer >
+    <div class="card myDIV">
+        <div class="row">
+            <div class="col-md-3">
+>>>>>>> 7140b3c81546dc888d02235e83da13455ab57665
 
                 </div>
                 <div class="col-md-3 bg-text ">
@@ -576,8 +699,75 @@
                 <img src="../img/footerbg.png" class="" alt="...">
             </div>
         </div>
+<<<<<<< HEAD
     </footer>
     <!-- end footer -->
+=======
+    </div>
+</footer> -->
+<footer>
+    <div class="content">
+      <div class="top">
+        <div class="logo-details">
+          <i class="fab fa-slack"></i>
+          <span class="logo_name">CodingLab</span>
+        </div>
+        <div class="media-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="link-boxes">
+        <ul class="box">
+          <li class="link_name">Company</li>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Contact us</a></li>
+          <li><a href="#">About us</a></li>
+          <li><a href="#">Get started</a></li>
+        </ul>
+        <ul class="box">
+          <li class="link_name">Services</li>
+          <li><a href="#">App design</a></li>
+          <li><a href="#">Web design</a></li>
+          <li><a href="#">Logo design</a></li>
+          <li><a href="#">Banner design</a></li>
+        </ul>
+        <ul class="box">
+          <li class="link_name">Account</li>
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">My account</a></li>
+          <li><a href="#">Prefrences</a></li>
+          <li><a href="#">Purchase</a></li>
+        </ul>
+        <ul class="box">
+          <li class="link_name">Courses</li>
+          <li><a href="#">HTML & CSS</a></li>
+          <li><a href="#">JavaScript</a></li>
+          <li><a href="#">Photography</a></li>
+          <li><a href="#">Photoshop</a></li>
+        </ul>
+        <ul class="box input-box">
+          <li class="link_name">Subscribe</li>
+          <li><input type="text" placeholder="Enter your email"></li>
+          <li><input type="button" value="Subscribe"></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom-details">
+      <div class="bottom_text">
+        <span class="copyright_text">Copyright &#169; 2021 <a href="#">CodingLab.</a>All rights reserved</span>
+        <span class="policy_terms">
+          <a href="#">Privacy policy</a>
+          <a href="#">Terms & condition</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+<!-- end footer -->
+>>>>>>> 7140b3c81546dc888d02235e83da13455ab57665
 </body>
 
 </html>
