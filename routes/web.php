@@ -29,7 +29,7 @@ Route::get('/',function(){
 
 
 
-
+//Hey Route here
 Route::get('/admin/sale', [PropertiesController::class,'sale']);
 Route::get('/admin/rent', [PropertiesController::class,'rent']);
 Route::get('/admin/prolist', [PropertiesController::class,'prolist']);
@@ -40,6 +40,8 @@ Route::get('/auth/Account/userlist', [AccountController::class,'userlist']);
 Route::get('/property',function(){
     return view('properties');
 });
+
+///End Hey route//
 
 
 Route::group(['prefix' => 'admin','namespace' => 'Admin','as' => 'admin.','middleware' => 'auth'], function () {
