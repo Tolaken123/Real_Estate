@@ -123,47 +123,6 @@
                                             <input class="form-control" type="text" value="" id="example-number-input"
                                                 name="street">
                                         </div>
-
-                                        <div class="form-group">
-                                            <label for="example-number-input" class="form-control-label">How far from
-                                                tourist spot?</label>
-                                            <input class="form-control" type="text" value="" id="example-number-input"
-                                                name="tourist">
-                                        </div>
-
-
-                                        <div class="form-group">
-                                            <label for="example-number-input" class="form-control-label">How far from
-                                                Hospital or Pharmacy?</label>
-                                            <input class="form-control" type="text" value="" id="example-number-input"
-                                                name="hospital">
-                                        </div>
-
-
-
-                                        <div class="form-group">
-                                            <label for="example-number-input" class="form-control-label">How far from
-                                                school or bank?</label>
-                                            <input class="form-control" type="text" value="" id="example-number-input"
-                                                name="bank">
-                                        </div>
-
-
-                                        <div class="form-group">
-                                            <label for="example-number-input" class="form-control-label">How far from
-                                                shopping place?</label>
-                                            <input class="form-control" type="text" value="" id="example-number-input"
-                                                name="shopping">
-                                        </div>
-
-
-
-                                        <div class="form-group">
-                                            <label for="example-number-input" class="form-control-label">How far from
-                                                Restaurant?</label>
-                                            <input class="form-control" type="text" value="" id="example-number-input"
-                                                name="resturant">
-                                        </div>
                                         <div class="form-group">
                                             <label for="example-number-input" class="form-control-label">Link
                                                 Location</label>

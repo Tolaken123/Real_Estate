@@ -31,7 +31,12 @@ Route::get('/',function(){
 
 
 
-Route::get('/admin/properties', [PropertiesController::class,'create']);
+Route::get('/admin/sale', [PropertiesController::class,'sale']);
+Route::get('/admin/rent', [PropertiesController::class,'rent']);
+Route::get('/admin/prolist', [PropertiesController::class,'prolist']);
+Route::get('/admin/rentlist', [PropertiesController::class,'rentlist']);
+Route::get('/admin/salelist', [PropertiesController::class,'salelist']);
+Route::get('/auth/Account/userlist', [AccountController::class,'userlist']);
 
 Route::get('/property',function(){
     return view('properties');

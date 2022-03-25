@@ -1,13 +1,9 @@
 @extends('layouts.app')
 @section('content')
-
-<body class="hold-transition light-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
-    <div class="wrapper">
-
+@include('layouts.lightmode')
         <!-- Navbar -->
         @include('layouts.topnavbar')
         @include('layouts.usersidebar')
-        @include('admin.properties.prolist')
         <!-- /.navbar -->
         <div class="content-wrapper">
             <div class="container-lg">
@@ -125,46 +121,7 @@
                                                 name="street">
                                         </div>
 
-                                        <div class="form-group">
-                                            <label for="example-number-input" class="form-control-label">How far from
-                                                tourist spot?</label>
-                                            <input class="form-control" type="text" value="" id="example-number-input"
-                                                name="tourist">
-                                        </div>
-
-
-                                        <div class="form-group">
-                                            <label for="example-number-input" class="form-control-label">How far from
-                                                Hospital or Pharmacy?</label>
-                                            <input class="form-control" type="text" value="" id="example-number-input"
-                                                name="hospital">
-                                        </div>
-
-
-
-                                        <div class="form-group">
-                                            <label for="example-number-input" class="form-control-label">How far from
-                                                school or bank?</label>
-                                            <input class="form-control" type="text" value="" id="example-number-input"
-                                                name="bank">
-                                        </div>
-
-
-                                        <div class="form-group">
-                                            <label for="example-number-input" class="form-control-label">How far from
-                                                shopping place?</label>
-                                            <input class="form-control" type="text" value="" id="example-number-input"
-                                                name="shopping">
-                                        </div>
-
-
-
-                                        <div class="form-group">
-                                            <label for="example-number-input" class="form-control-label">How far from
-                                                Restaurant?</label>
-                                            <input class="form-control" type="text" value="" id="example-number-input"
-                                                name="resturant">
-                                        </div>
+                                        
                                         <div class="form-group">
                                             <label for="example-number-input" class="form-control-label">Link
                                                 Location</label>

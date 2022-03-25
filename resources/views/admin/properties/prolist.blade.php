@@ -1,3 +1,4 @@
+@include('layouts.style')
 <style>
     body {
         background: #eee;
@@ -30,12 +31,12 @@
         font-weight: 600;
     }
 
-    .user-list tbody td .user-subhead {
+    .pro-list tbody td .user-subhead {
         font-size: 0.875em;
         font-style: italic;
     }
 
-    .user-list tbody td .user-link {
+    .pro-list tbody td .user-link {
         display: block;
         font-size: 1.25em;
         padding-top: 3px;
@@ -47,7 +48,7 @@
         outline: none !important;
     }
 
-    .user-list tbody td>img {
+    .pro-list tbody td>img {
         position: relative;
         max-width: 70px;
         float: left;
@@ -82,17 +83,28 @@
 
 </style>
 
-<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
-<hr>
-<div class="container bootstrap snippets bootdey">
-    <div class="content-header">
-        <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1 class="m-0">Properties List</h1>
-                </div>
-            </div>
-            <div class="dropdown">
+@include('layouts.lightmode')
+<!-- Navbar -->
+@include('layouts.topnavbar')
+@include('layouts.usersidebar')
+
+
+<div class="content-wrapper">
+    <div class="container-lg">
+        <div class="card w-70">
+
+            <link rel="stylesheet" type="text/css"
+                href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+            <hr>
+            <div class="container bootstrap snippets bootdey">
+                <div class="content-header">
+                    <div class="container-lg">
+                        <div class="row mb-2">
+                            <div class="col-sm-">
+                                <h1 class="m-0">All Properties List</h1>
+                            </div>
+                        </div>
+                        <div class="dropdown">
                             <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                                 Create New Property
                             </button>
@@ -102,122 +114,119 @@
                             </div>
                         </div>
                     </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="main-box no-header clearfix">
-                <div class="main-box-body clearfix">
-                    <div class="table-responsive">
-                        <table class="table user-list">
-                            <thead>
-                                <tr class="bg-primary">
-                                    <th><span>ID</span></th>
-                                    <th><span>Thumbnail</span></th>
-                                    <th><span>Title</span></th>
-                                    <th><span>Created</span></th>
-                                    <th class="text-center"><span>Sale</span></th>
-                                    <th><span>Rent</span></th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="table-active">
-                                    <td>
-                                        1
-                                    </td>
-                                    <td>
-                                        <img src="https://bootdey.com/img/Content/user_1.jpg" alt="">
-                                    </td>
-                                    <td>2 Bedroom House For Sale </td>
-                                    <td>2013/08/12</td>
-                                    <td class="text-center">
-                                        <span class="label label-default">20000$</span>
-                                    </td>
-                                    <td>
-                                    &nbsp; 
-                                    </td>
-                                    <td style="width: 30%;">
-                                        <a href="#" class="table-link text-info">
-                                            <span class="fa-stack">
-                                                <i class="fa fa-square fa-stack-2x"></i>
-                                                <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
-                                            </span>
-                                        </a>
-                                        <a href="#" class="table-link text-primary">
-                                            <span class="fa-stack">
-                                                <i class="fa fa-square fa-stack-2x"></i>
-                                                <i class="fa fa-eye fa-stack-1x fa-inverse" aria-hidden="true"></i>
-                                                
-                                            </span>
-                                        </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="main-box no-header clearfix">
+                        <div class="main-box-body clearfix">
+                            <div class="table-responsive">
+                                <table class="table pro-list">
+                                    <thead>
+                                        <tr class="bg-primary">
+                                            <th><span>ID</span></th>
+                                            <th><span>Thumbnail</span></th>
+                                            <th><span>Title</span></th>
+                                            <th><span>Created</span></th>
+                                            <th class="text-center"><span>Sale</span></th>
+                                            <th><span>Rent</span></th>
                                         
-                                        <a href="#" class="table-link danger">
-                                            <span class="fa-stack">
-                                                <i class="fa fa-square fa-stack-2x"></i>
-                                                <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
-                                            </span>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr class="table-active">
-                                    <td>
-                                        2
-                                    </td>
-                                    <td>
-                                        <img src="https://bootdey.com/img/Content/user_1.jpg" alt="">
-                                    </td>
-                                    <td>2 Bedroom House For Sale </td>
-                                    <td>2013/08/12</td>
-                                    <td class="text-center">
-                                        <span class="label label-default"> &nbsp; </span>
-                                    </td>
-                                    <td>
-                                    2000$ 
-                                    </td>
-                                    <td style="width: 30%;">
-                                        <a href="#" class="table-link text-info">
-                                            <span class="fa-stack">
-                                                <i class="fa fa-square fa-stack-2x"></i>
-                                                <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
-                                            </span>
-                                        </a>
-                                        <a href="#" class="table-link text-primary">
-                                            <span class="fa-stack">
-                                                <i class="fa fa-square fa-stack-2x"></i>
-                                                <i class="fa fa-eye fa-stack-1x fa-inverse" aria-hidden="true"></i>
-                                                
-                                            </span>
-                                        </a>
-                                        
-                                        <a href="#" class="table-link danger">
-                                            <span class="fa-stack">
-                                                <i class="fa fa-square fa-stack-2x"></i>
-                                                <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
-                                            </span>
-                                        </a>
-                                    </td>
-                                </tr>
+                                            <th >  </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="table-active">
+                                            <td>
+                                                1
+                                            </td>
+                                            <td>
+                                                <img src="https://bootdey.com/img/Content/user_1.jpg" alt="">
+                                            </td>
+                                            <td>2 Bedroom House For Sale </td>
+                                            <td>2013/08/12</td>
+                                            <td class="text-center">
+                                                <span class="label label-default">20000$</span>
+                                            </td>
+                                            <td>
+                                                &nbsp;
+                                            </td>
 
-                            </tbody>
-                        </table>
-                        <br>
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination justify-content-center">
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#" tabindex="-1">Previous</a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">Next</a>
-                                </li>
-                            </ul>
-                        </nav>
+                                            <td style="width: 30%;" class="project-actions text-right">
+                                                <a class="btn btn-primary btn-sm" href="#">
+                                                    <i class="fas fa-folder">
+                                                    </i>
+                                                    View
+                                                </a>
+                                                <a class="btn btn-info btn-sm" href="#">
+                                                    <i class="fas fa-pencil-alt">
+                                                    </i>
+                                                    Edit
+                                                </a>
+                                                <a class="btn btn-danger btn-sm" href="#">
+                                                    <i class="fas fa-trash">
+                                                    </i>
+                                                    Delete
+                                                </a>
+                                        </tr>
+                                        <tr class="table-active">
+                                            <td>
+                                                2
+                                            </td>
+                                            <td>
+                                                <img src="https://bootdey.com/img/Content/user_1.jpg" alt="">
+                                            </td>
+                                            <td>2 Bedroom House For Sale </td>
+                                            <td>2013/08/12</td>
+                                            <td class="text-center">
+                                                <span class="label label-default"> &nbsp; </span>
+                                            </td>
+                                            <td>
+                                                2000$
+                                            </td>
+
+                                            <td style="width: 30%;" class="project-actions text-right">
+                                                <a class="btn btn-primary btn-sm" href="#">
+                                                    <i class="fas fa-folder">
+                                                    </i>
+                                                    View
+                                                </a>
+                                                <a class="btn btn-info btn-sm" href="#">
+                                                    <i class="fas fa-pencil-alt">
+                                                    </i>
+                                                    Edit
+                                                </a>
+                                                <a class="btn btn-danger btn-sm" href="#">
+                                                    <i class="fas fa-trash">
+                                                    </i>
+                                                    Delete
+                                                </a>
+                                            </td>
+
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                                <br>
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-center">
+                                        <li class="page-item disabled">
+                                            <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                        </li>
+                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">Next</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        @include('layouts.footer')
+
     </div>
-</div>
+    @include('layouts.script')
