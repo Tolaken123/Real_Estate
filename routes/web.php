@@ -58,11 +58,7 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','as' => 'admin.','middl
     Route::get('/',function(){return view('layouts.admin');});
 
     Route::get('/',function(){return view('properties');});
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> e3f6c3ea03707b0a7d55850034d3261c78b184b9
     // Route::resource('/properties','PropertiesController');
     Route::get('/properties', [PropertiesController::class,'create'])->name('create');
     Route::post('/properties', [PropertiesController::class,'store'])->name('Store');
@@ -164,12 +160,6 @@ Route::get('/homepage', function () {
 // Route::get('/layouts/test',function(){
 //     return view('layouts/test');
 // });
-<<<<<<< HEAD
-=======
-
-
->>>>>>> e3f6c3ea03707b0a7d55850034d3261c78b184b9
-
 Route::get('/admin/Account/Index',function(){
     return view('admin/Account/Index');
 });

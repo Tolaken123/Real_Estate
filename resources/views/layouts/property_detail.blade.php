@@ -9,6 +9,11 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
   <link rel="stylesheet" type="text/css" href="../css/slideshow.css">
   <title>Document</title>
+  <style>
+    .mf-12{
+      margin-left: 12px;
+    }
+  </style>
 </head>
 <body style="background-color: #E5E5E5E5">
 <div class="row" style="background-color: #ffffff">
@@ -154,12 +159,16 @@
 
 <!-- description -->
 <div class="row">
-  <div class="col-md-2"></div>
-  <div class="col-md-8" style="background-color: #ffffff">
-    <div class="container mt-5">
-      <a href="">Duong</a>
+  <p></p>
+</div>
+<div class="row">
+    <div class="col-md-2"></div>
+    <!-- <div class="jumbotron m-3"> -->
+    <div class="col-md-8 mf-12" style="background-color: #ffffff; " >
+      <div class="container mt-1 ">
+        <a href="#"><img src="../img/user2-160x160.jpg" alt="#" height="10%"><h2>Duong</h2></a>
+      </div>
     </div>
-
   </div>
   <div class="col-md-2"></div>
 </div>
