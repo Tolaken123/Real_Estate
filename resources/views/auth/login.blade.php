@@ -1,7 +1,7 @@
-<!-- @extends('layouts.app')
+{{-- <!-- @extends('layouts.app') --}}
 
-@section('content')
-<div class="container">
+{{-- @section('content') --}}
+{{-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -70,8 +70,8 @@
         </div>
     </div>
 </div>
-@endsection -->
-
+@endsection --> --}}
+@include('layouts.style')
 <body class="hold-transition login-page">
     <div class="login-box">
         <!-- /.login-logo -->
@@ -82,9 +82,15 @@
             <div class="card-body">
                 <p class="login-box-msg">Sign in to start your session</p>
 
-                <form action="#" method="post">
+                <form action="{{ route('login')}}" method="post">
+                    @csrf
                     <div class="input-group mb-3">
-                        <input type="email" class="form-control" placeholder="Email">
+                        <input type="email" class="form-control  @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Email">
+                        @error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror    
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-envelope"></span>
@@ -92,7 +98,12 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" class="form-control" placeholder="Password">
+                        <input  id="password" type="password" class="form-control  @error('password') is-invalid @enderror" name="password" value="{{ old('password') }}" required autocomplete="email" autofocus placeholder="Password">
+                        @error('password')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
@@ -102,7 +113,7 @@
                     <div class="row">
                         <div class="col-8">
                             <div class="icheck-primary">
-                                <input type="checkbox" id="remember">
+                                <input type="checkbox"  name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
                                 <label for="remember">
                                     Remember Me
                                 </label>
@@ -124,11 +135,13 @@
                 <!-- /.social-auth-links -->
 
                 <p class="mb-1">
-                    <a href="forgot-password.html">I forgot my password</a>
+                    @if (Route::has('password.request'))
+                    <a href={{ route('password.request') }}>I forgot my password</a>
                 </p>
                 <p class="mb-0">
                     <a href="register.html" class="text-center">Register a new membership</a>
                 </p>
+                    @endif
             </div>
             <!-- /.card-body -->
         </div>

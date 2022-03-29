@@ -18,13 +18,13 @@
 
     </thead>
     <tbody>
-        {{-- @foreach($data['show'] as $user)
+        @foreach($users as $user)
         <tr>
             <td>{{$user['id']}}</td>
             <td>{{$user['name']}}</td>
             <td>{{$user['email']}}</td>
             <td>{{$user['Photo']}}</td>
         </tr>
-        @endforeach --}}
+        @endforeach
     </tbody>
 </table>

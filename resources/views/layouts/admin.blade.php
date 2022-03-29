@@ -37,7 +37,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
         
           
            <div class="containner">
-           @yield('content')
            @include('admin.Account.list') 
            </div>
           <!-- Main Sidebar Container -->

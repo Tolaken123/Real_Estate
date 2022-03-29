@@ -28,7 +28,7 @@
                 <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                 <li class="nav-item">
-                    <a href="/admin/properties" class="nav-link">
+                    <a href="#" class="nav-link">
                         <i class="fas fa-home"></i>
                         <p>
                             Properties
@@ -89,9 +89,14 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="fas fa-sign-out-alt">Logout</i>
+                    <a class="nav-link" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                      document.getElementById('logout-form').submit();">
+                        <i class="fas fa-sign-out-alt">logout</i>
                     </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
                 </li>
             </ul>
         </nav>
