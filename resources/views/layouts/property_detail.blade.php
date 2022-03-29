@@ -161,12 +161,61 @@
 <div class="row">
   <p></p>
 </div>
-<div class="row">
+<div class="row mt-1">
     <div class="col-md-2"></div>
     <!-- <div class="jumbotron m-3"> -->
     <div class="col-md-8 mf-12" style="background-color: #ffffff; " >
-      <div class="container mt-1 ">
-        <a href="#"><img src="../img/user2-160x160.jpg" alt="#" height="10%"><h2>Duong</h2></a>
+    <div class="row">
+      <div class="col-md-1">
+        <div class="container mt-1 ">
+          <img src="../img/user2-160x160.jpg" alt="#" >
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="container mt-5 p-5">
+          <a href="#" style="text-decoration: none;"><h2>Duong Ret</h2></a>
+        </div>
+      </div>
+    </div>
+      <div class="row">
+        <div class="col-md-8"></div>
+        <div class="col-md-3">
+        <table class="table table-striped ">
+          <thead>
+            <tr>
+              <th><h4>កន្លែង</h4></th>
+              <th><h4>ចំនួន</h4></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><h5>បន្ទប់គេង</h5></td>
+              <td><h5>5</h5></td>
+            </tr>
+            <tr>
+              <td><h5>បន្ទប់ទឹក</h5></td>
+              <td><h5>7</h5></td>
+            </tr>
+            <tr>
+              <td><h5>ចំណតឡាន</h5></td>
+              <td><h5>3</h5></td>
+            </tr>
+            <tr>
+              <td><h5>កន្លែងទទួលភ្ញៀវ</h5></td>
+              <td><h5>1</h5></td>
+            </tr>
+            <tr>
+              <td><h5>សួន</h5></td>
+              <td><h5>2</h5></td>
+            </tr>
+            <tr>
+              <td><h5>ផ្ទះបាយ</h5></td>
+              <td><h5>1</h5></td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
       </div>
     </div>
   </div>
