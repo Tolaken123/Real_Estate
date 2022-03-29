@@ -107,10 +107,8 @@ Auth::routes();
     return view('homepage');
     });
   
- Route::get('list', [UserController::class,'show']);
+ Route::get('/list', [UserController::class,'show']);
 
-
-    
 Route::get('/propertie',[PropertiesController::class,'index']);
    
 Route::get('/livewire',function(){
@@ -131,9 +129,6 @@ Route::get('/home/homepage', function () {
 Route::get('/admin/properties/createform', function () {
     return view('admin.properties.createform');
 });
-
-
-
 
 
 Route::get('/fonte/home/Item',function(){

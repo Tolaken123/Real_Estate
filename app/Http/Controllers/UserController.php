@@ -8,9 +8,12 @@ use App\Models\User;
 class UserController extends Controller
 {
     //
-    function show()
+   public function show()
     {
-        $data = user::all();
-        return view('admin.Account.list',['users'=>$data]);
+        $data['show'] =user::all();
+        return view('admin.Account.list',compact("data"));
+    }
+    public function creat(){
+       return view('admin.Account.create_user');
     }
 }
