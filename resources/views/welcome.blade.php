@@ -64,7 +64,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" data-bs-toggle="tab" href="#menu1">
-                            <h4>Bye</h4>
+                            <h4>Buy</h4>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -115,53 +115,69 @@
     </nav>
     </div>
     <!-- ======== -->
-
-                        </div>
-                        <div class="col-sm-6 col-md-3">
-                            <div class="form-group has-info">
-                                <select class="form-control custom-select">
-                                    <option value="" disabled selected>Country</option>
-                                    <option value="1">India</option>
-                                    <option value="2">Germany</option>
-                                    <option value="3">Spain</option>
-                                    <option value="4">Russia</option>
-                                    <option value="5">United States</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-2">
-                            <div class="form-group has-info">
-                                <select class="form-control custom-select">
-                                    <option value="" disabled selected>City</option>
-                                    <option value="1">Moscow</option>
-                                    <option value="2">Barcelona</option>
-                                    <option value="3">Mumbai</option>
-                                    <option value="4">Houston</option>
-                                    <option value="5">Sokovia</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-3">
-                            <div class="form-group has-info">
-                                <select class="form-control custom-select">
-                                    <option value="" disabled selected>Property Type</option>
-                                    <option value="1">Apartment</option>
-                                    <option value="2">Villa/Mansion</option>
-                                    <option value="3">Cottage</option>
-                                    <option value="4">Flat</option>
-                                    <option value="5">House</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-1">
-                            <a href="#" class="btn btn-info btn-m">
-                                <span class="glyphicon glyphicon-search"></span> Search
-                            </a>
-                        </div>
-                    </form>
+    <div class="row">
+    <div class="jumbotron m-3">
+      <div class="row bgimg">
+        <div class="card">
+          <div class="card-body">
+             <form role="form" class="row">
+               <div class="col-sm-6 col-md-3">
+                 <div class="form-group has-info">
+                   <select class="form-control custom-select">
+                     <option value="" disabled selected>Status</option>
+                     <option value="1">Rent</option>
+                     <option value="2">Sale</option>
+                    </select>
+                  </div>
                 </div>
+                <div class="col-sm-6 col-md-3">
+                  <div class="form-group has-info">
+                    <select class="form-control custom-select">
+                      <option value="" disabled selected>Country</option>
+                      <option value="1">India</option>
+                      <option value="2">Germany</option>
+                      <option value="3">Spain</option>
+                      <option value="4">Russia</option>
+                      <option value="5">United States</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-md-2">
+                  <div class="form-group has-info">
+                    <select class="form-control custom-select">
+                      <option value="" disabled selected>City</option>
+                      <option value="1">Moscow</option>
+                      <option value="2">Barcelona</option>
+                      <option value="3">Mumbai</option>
+                      <option value="4">Houston</option>
+                      <option value="5">Sokovia</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                  <div class="form-group has-info">
+                    <select class="form-control custom-select">
+                      <option value="" disabled selected>Property Type</option>
+                      <option value="1">Apartment</option>
+                      <option value="2">Villa/Mansion</option>
+                      <option value="3">Cottage</option>
+                      <option value="4">Flat</option>
+                      <option value="5">House</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-md-1">
+                  <a href="#" class="btn btn-info btn-m">
+                    <span class="glyphicon glyphicon-search"></span> Search
+                  </a>
+                </div>
+              </form>
             </div>
+          </div>
         </div>
+      </div>
+    </div>
+    
         <div class="row jumbtron m-2">
             <img alt="img " class="cover" src="../img/c.jpg">
             </p>
@@ -564,6 +580,24 @@
         </div>
     </footer>
     <!-- end footer -->
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.1.min.js"></script>
+<script src="../js/gallery.js"></script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
 </body>
 
+
 </html>
+
