@@ -1,6 +1,8 @@
+@include('layouts.style')
 <h1>User List</h1>
-<table border="1">
-    <thead>
+<div class="container-fluid">
+<table class="table table-bordered table-sm table-hover  border-primary">
+    <thead class="table-active bg-primary">
         <tr>
             <th>
                 ID
@@ -12,7 +14,7 @@
                 Email
             </th>
             <th>
-                Photos
+                Profile
             </th>
         </tr>
 
@@ -28,3 +30,4 @@
         @endforeach
     </tbody>
 </table>
+</div>

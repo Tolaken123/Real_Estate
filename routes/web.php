@@ -44,27 +44,12 @@ Route::get('/property', function () {
 
 ///End Hey route//
 
-
-// Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'middleware' => 'auth'], function () {
-
-//     Route::get('/', function () {
-//         return view('layouts.admin');
-//     });
-//     Route::resource('/properties', 'PropertiesController');
-//     Route::get('/properties', [PropertiesController::class, 'create'])->name('create');
-//     Route::post('/properties', [PropertiesController::class, 'store'])->name('Store');
-//     Route::get('/properties/index', [PropertiesController::class, 'index'])->name('index');
-// });
-
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'middleware' => 'auth'], function () {
     Route::get('/', function () {
-        return view('layouts.admin');
-    });
-
+        return view('layouts.admin');});
     Route::get('/', function () {
-        return view('properties');
-    });
-    // Route::resource('/properties','PropertiesController');
+        return view('properties');});
+    Route::resource('/properties','PropertiesController');
     Route::get('/properties', [PropertiesController::class, 'create'])->name('create');
     Route::post('/properties', [PropertiesController::class, 'store'])->name('Store');
     Route::get('/properties/index', [PropertiesController::class, 'index'])->name('index');
