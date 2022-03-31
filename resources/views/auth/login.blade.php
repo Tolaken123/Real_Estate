@@ -1,6 +1,4 @@
-<!-- @extends('layouts.app')
-
-@section('content')
+@include('layouts.style')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -70,7 +68,7 @@
         </div>
     </div>
 </div>
-@endsection -->
+
 
 <body class="hold-transition login-page">
     <div class="login-box">
@@ -134,3 +132,4 @@
         </div>
         <!-- /.card -->
     </div>
+    @include('layouts.script')

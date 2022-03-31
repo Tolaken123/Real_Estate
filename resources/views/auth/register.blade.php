@@ -1,6 +1,6 @@
-<!-- @extends('layouts.app')
 
-@section('content')
+@include('layouts.style')
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -74,13 +74,13 @@
         </div>
     </div>
 </div>
-@endsection -->
+
 
 <body class="hold-transition register-page">
     <div class="register-box">
         <div class="card card-outline card-primary">
             <div class="card-header text-center">
-                <a href="../../index2.html" class="h1"><b>Came</b>RealEstate</a>
+                <h1><b>Came</b>RealEstate</h1>
             </div>
             <div class="card-body">
                 <p class="login-box-msg">Register a new membership</p>
@@ -147,3 +147,4 @@
             <!-- /.form-box -->
         </div><!-- /.card -->
     </div>
+    @include('layouts.script')
