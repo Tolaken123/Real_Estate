@@ -6,7 +6,7 @@
 
         <!-- Navbar -->
         @include('layouts.topnavbar')
-        @include('layouts.sidebar')
+        @include('layouts.usersidebar')
         <!-- /.navbar -->
 
         <div class="content-wrapper">

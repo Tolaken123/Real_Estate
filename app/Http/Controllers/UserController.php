@@ -8,7 +8,7 @@ use App\Models\User;
 class UserController extends Controller
 {
     //
-   public function show()
+   public function getUser()
     {
         $users =user::all();
         return view('admin.Account.list',['users'=>$users]);
