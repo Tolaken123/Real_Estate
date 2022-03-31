@@ -169,6 +169,370 @@
             <div class="card">
                 <img class="card-img-top" src="../img/House1.jpg" alt="Card image cap">
                 <div class="card-img-overlay">
+                    <span class="badge badge-danger badge-pill">For Sale</span>
+                </div>
+                <div class="card-body bg-light">
+                    <h4 class="card-title">Florida 5, Pinecrest, FL</h4>
+                    <h4 class="text-primary">&#36; 220,000</h4>
+                </div>
+                <div class="card-body border-top">
+                    <div class="d-flex no-block align-items-center">
+                        <span class="p-10 text-muted">
+                            <i class="fas fa-bath"></i>
+                            Bathrooms</span>
+                        <span class="ml-auto badge badge-pill badge-secondary pull-right">2</span>
+                    </div>
+                    <div class="d-flex no-block align-items-center">
+                        <span class="p-10 text-muted">
+                            <i class="fas fa-bed"></i>
+                            Beds</span>
+                        <span class="ml-auto badge badge-pill badge-secondary pull-right">2</span>
+                    </div>
+                    <div class="d-flex no-block align-items-center">
+                        <span class="p-10 text-muted">
+                            <i class="fas fa-car"></i>
+                            Garages</span>
+                        <span class="ml-auto badge badge-pill badge-secondary pull-right">1</span>
+                    </div>
+                </div>
+                <div class="card-body border-top">
+                    <div class="d-flex no-block align-items-center">
+                        <img alt="img " class="rounded-circle border border-5 border-white " src="../img/R.jpg"
+                            width="50px" height="50px">
+                        <div>
+                            <h5 class="card-title m-b-0">Jon Doe</h5>
+                            <h6 class="text-muted">5 Property</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- item -->
+        <div class="col-lg-3 col-md-6">
+            <div class="card">
+                <img class="card-img-top" src="../img/House1.jpg" alt="Card image cap">
+                <div class="card-img-overlay">
+                    <span class="badge badge-danger badge-pill">For Sale</span>
+                </div>
+                <div class="card-body bg-light">
+                    <h4 class="card-title">Florida 5, Pinecrest, FL</h4>
+                    <h4 class="text-primary">&#36; 220,000</h4>
+                </div>
+                <div class="card-body border-top">
+                    <div class="d-flex no-block align-items-center">
+                        <span class="p-10 text-muted">
+                            <i class="fas fa-bath"></i>
+                            Bathrooms</span>
+                        <span class="ml-auto badge badge-pill badge-secondary pull-right">2</span>
+                    </div>
+                    <div class="d-flex no-block align-items-center">
+                        <span class="p-10 text-muted">
+                            <i class="fas fa-bed"></i>
+                            Beds</span>
+                        <span class="ml-auto badge badge-pill badge-secondary pull-right">2</span>
+                    </div>
+                    <div class="d-flex no-block align-items-center">
+                        <span class="p-10 text-muted">
+                            <i class="fas fa-car"></i>
+                            Garages</span>
+                        <span class="ml-auto badge badge-pill badge-secondary pull-right">1</span>
+                    </div>
+                </div>
+                <div class="card-body border-top">
+                    <div class="d-flex no-block align-items-center">
+                        <!-- <a href="javascript:void(10) " class="m-r-15"> --></a>
+                        <img alt="img " class="rounded-circle border border-5 border-white " src="../img/R.jpg"
+                            width="50px" height="50px">
+                        <div>
+                            <h5 class="card-title m-b-0">Jon Doe</h5>
+                            <h6 class="text-muted">5 Property</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /item -->
+        <!-- item -->
+        <div class="col-lg-3 col-md-6">
+            <div class="card">
+                <img class="card-img-top" src="../img/House1.jpg" alt="Card image cap">
+                <div class="card-img-overlay">
+                    <span class="badge badge-danger badge-pill">For Sale</span>
+                </div>
+                <div class="card-body bg-light">
+                    <h4 class="card-title">Florida 5, Pinecrest, FL</h4>
+                    <h4 class="text-primary">&#36; 220,000</h4>
+                </div>
+                <div class="card-body border-top">
+                    <div class="d-flex no-block align-items-center">
+                        <span class="p-10 text-muted">
+                            <i class="fas fa-bath"></i>
+                            Bathrooms</span>
+                        <span class="ml-auto badge badge-pill badge-secondary pull-right">2</span>
+                    </div>
+                    <div class="d-flex no-block align-items-center">
+                        <span class="p-10 text-muted">
+                            <i class="fas fa-bed"></i>
+                            Beds</span>
+                        <span class="ml-auto badge badge-pill badge-secondary pull-right">2</span>
+                    </div>
+                    <div class="d-flex no-block align-items-center">
+                        <span class="p-10 text-muted">
+                            <i class="fas fa-car"></i>
+                            Garages</span>
+                        <span class="ml-auto badge badge-pill badge-secondary pull-right">1</span>
+                    </div>
+                </div>
+                <div class="card-body border-top">
+                    <div class="d-flex no-block align-items-center">
+                        <img alt="img " class="rounded-circle border border-5 border-white " src="../img/R.jpg"
+                            width="50px" height="50px">
+                        <div>
+                            <h5 class="card-title m-b-0">Jon Doe</h5>
+                            <h6 class="text-muted">5 Property</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /item -->
+
+        <!-- item -->
+        <div class="col-lg-3 col-md-6">
+            <div class="card">
+                <img class="card-img-top" src="../img/House1.jpg" alt="Card image cap">
+                <div class="card-img-overlay">
+                    <span class="badge badge-danger badge-pill">For Sale</span>
+                </div>
+                <div class="card-body bg-light">
+                    <h4 class="card-title">Florida 5, Pinecrest, FL</h4>
+                    <h4 class="text-primary">&#36; 220,000</h4>
+                </div>
+                <div class="card-body border-top">
+                    <div class="d-flex no-block align-items-center">
+                        <span></span>
+                        <span class="p-10 text-muted">
+                            <i class='fa fa-bath'></i>
+                            Bathrooms</span>
+                        <span class="ml-auto badge badge-pill badge-secondary pull-right">2</span>
+                    </div>
+                    <div class="d-flex no-block align-items-center">
+                        <span></span>
+                        <span class="p-10 text-muted">
+                            <i class="fas fa-bed"></i>
+                            Beds</span>
+                        <span class="ml-auto badge badge-pill badge-secondary pull-right">2</span>
+                    </div>
+                    <div class="d-flex no-block align-items-center">
+                        <span class="p-10 text-muted">
+                            <i class="fas fa-car"></i>
+                            Garages</span>
+                        <span class="ml-auto badge badge-pill badge-secondary pull-right">1</span>
+                    </div>
+                </div>
+                <div class="card-body border-top">
+                    <div class="d-flex no-block align-items-center">
+                        <img alt="img " class="rounded-circle border border-5 border-white " src="../img/R.jpg"
+                            width="50px" height="50px">
+                        <div>
+                            <h5 class="card-title m-b-0">Jon Doe</h5>
+                            <h6 class="text-muted">5 Property</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row jumbotron m-5">
+        <!-- item -->
+        <div class="col-lg-3 col-md-6">
+            <div class="card">
+                <img class="card-img-top" src="../img/House1.jpg" alt="Card image cap">
+                <div class="card-img-overlay">
+                    <span class="badge badge-danger badge-pill">For Sale</span>
+                </div>
+                <div class="card-body bg-light">
+                    <h4 class="card-title">Florida 5, Pinecrest, FL</h4>
+                    <h4 class="text-primary">&#36; 220,000</h4>
+                </div>
+                <div class="card-body border-top">
+                    <div class="d-flex no-block align-items-center">
+                        <span class="p-10 text-muted">
+                            <i class="fas fa-bath"></i>
+                            Bathrooms</span>
+                        <span class="ml-auto badge badge-pill badge-secondary pull-right">2</span>
+                    </div>
+                    <div class="d-flex no-block align-items-center">
+                        <span class="p-10 text-muted">
+                            <i class="fas fa-bed"></i>
+                            Beds</span>
+                        <span class="ml-auto badge badge-pill badge-secondary pull-right">2</span>
+                    </div>
+                    <div class="d-flex no-block align-items-center">
+                        <span class="p-10 text-muted">
+                            <i class="fas fa-car"></i>
+                            Garages</span>
+                        <span class="ml-auto badge badge-pill badge-secondary pull-right">1</span>
+                    </div>
+                </div>
+                <div class="card-body border-top">
+                    <div class="d-flex no-block align-items-center">
+                        <img alt="img " class="rounded-circle border border-5 border-white " src="../img/R.jpg"
+                            width="50px" height="50px">
+                        <div>
+                            <h5 class="card-title m-b-0">Jon Doe</h5>
+                            <h6 class="text-muted">5 Property</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- item -->
+        <div class="col-lg-3 col-md-6">
+            <div class="card">
+                <img class="card-img-top" src="../img/House1.jpg" alt="Card image cap">
+                <div class="card-img-overlay">
+                    <span class="badge badge-danger badge-pill">For Sale</span>
+                </div>
+                <div class="card-body bg-light">
+                    <h4 class="card-title">Florida 5, Pinecrest, FL</h4>
+                    <h4 class="text-primary">&#36; 220,000</h4>
+                </div>
+                <div class="card-body border-top">
+                    <div class="d-flex no-block align-items-center">
+                        <span class="p-10 text-muted">
+                            <i class="fas fa-bath"></i>
+                            Bathrooms</span>
+                        <span class="ml-auto badge badge-pill badge-secondary pull-right">2</span>
+                    </div>
+                    <div class="d-flex no-block align-items-center">
+                        <span class="p-10 text-muted">
+                            <i class="fas fa-bed"></i>
+                            Beds</span>
+                        <span class="ml-auto badge badge-pill badge-secondary pull-right">2</span>
+                    </div>
+                    <div class="d-flex no-block align-items-center">
+                        <span class="p-10 text-muted">
+                            <i class="fas fa-car"></i>
+                            Garages</span>
+                        <span class="ml-auto badge badge-pill badge-secondary pull-right">1</span>
+                    </div>
+                </div>
+                <div class="card-body border-top">
+                    <div class="d-flex no-block align-items-center">
+                        <!-- <a href="javascript:void(10) " class="m-r-15"> --></a>
+                        <img alt="img " class="rounded-circle border border-5 border-white " src="../img/R.jpg"
+                            width="50px" height="50px">
+                        <div>
+                            <h5 class="card-title m-b-0">Jon Doe</h5>
+                            <h6 class="text-muted">5 Property</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /item -->
+        <!-- item -->
+        <div class="col-lg-3 col-md-6">
+            <div class="card">
+                <img class="card-img-top" src="../img/House1.jpg" alt="Card image cap">
+                <div class="card-img-overlay">
+                    <span class="badge badge-danger badge-pill">For Sale</span>
+                </div>
+                <div class="card-body bg-light">
+                    <h4 class="card-title">Florida 5, Pinecrest, FL</h4>
+                    <h4 class="text-primary">&#36; 220,000</h4>
+                </div>
+                <div class="card-body border-top">
+                    <div class="d-flex no-block align-items-center">
+                        <span class="p-10 text-muted">
+                            <i class="fas fa-bath"></i>
+                            Bathrooms</span>
+                        <span class="ml-auto badge badge-pill badge-secondary pull-right">2</span>
+                    </div>
+                    <div class="d-flex no-block align-items-center">
+                        <span class="p-10 text-muted">
+                            <i class="fas fa-bed"></i>
+                            Beds</span>
+                        <span class="ml-auto badge badge-pill badge-secondary pull-right">2</span>
+                    </div>
+                    <div class="d-flex no-block align-items-center">
+                        <span class="p-10 text-muted">
+                            <i class="fas fa-car"></i>
+                            Garages</span>
+                        <span class="ml-auto badge badge-pill badge-secondary pull-right">1</span>
+                    </div>
+                </div>
+                <div class="card-body border-top">
+                    <div class="d-flex no-block align-items-center">
+                        <img alt="img " class="rounded-circle border border-5 border-white " src="../img/R.jpg"
+                            width="50px" height="50px">
+                        <div>
+                            <h5 class="card-title m-b-0">Jon Doe</h5>
+                            <h6 class="text-muted">5 Property</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /item -->
+
+        <!-- item -->
+        <div class="col-lg-3 col-md-6">
+            <div class="card">
+                <img class="card-img-top" src="../img/House1.jpg" alt="Card image cap">
+                <div class="card-img-overlay">
+                    <span class="badge badge-danger badge-pill">For Sale</span>
+                </div>
+                <div class="card-body bg-light">
+                    <h4 class="card-title">Florida 5, Pinecrest, FL</h4>
+                    <h4 class="text-primary">&#36; 220,000</h4>
+                </div>
+                <div class="card-body border-top">
+                    <div class="d-flex no-block align-items-center">
+                        <span></span>
+                        <span class="p-10 text-muted">
+                            <i class='fa fa-bath'></i>
+                            Bathrooms</span>
+                        <span class="ml-auto badge badge-pill badge-secondary pull-right">2</span>
+                    </div>
+                    <div class="d-flex no-block align-items-center">
+                        <span></span>
+                        <span class="p-10 text-muted">
+                            <i class="fas fa-bed"></i>
+                            Beds</span>
+                        <span class="ml-auto badge badge-pill badge-secondary pull-right">2</span>
+                    </div>
+                    <div class="d-flex no-block align-items-center">
+                        <span class="p-10 text-muted">
+                            <i class="fas fa-car"></i>
+                            Garages</span>
+                        <span class="ml-auto badge badge-pill badge-secondary pull-right">1</span>
+                    </div>
+                </div>
+                <div class="card-body border-top">
+                    <div class="d-flex no-block align-items-center">
+                        <img alt="img " class="rounded-circle border border-5 border-white " src="../img/R.jpg"
+                            width="50px" height="50px">
+                        <div>
+                            <h5 class="card-title m-b-0">Jon Doe</h5>
+                            <h6 class="text-muted">5 Property</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row jumbotron m-5">
+
+<!-- Property rent -->
+
+    <div class="text-center mb-4 "><strong class="btn btn-primary fs-4">Properties For Rent</strong></div>
+        <!-- item -->
+        <div class="col-lg-3 col-md-6">
+            <div class="card">
+                <img class="card-img-top" src="../img/House1.jpg" alt="Card image cap">
+                <div class="card-img-overlay">
                     <span class="badge badge-danger badge-pill">For Rent</span>
                 </div>
                 <div class="card-body bg-light">
@@ -522,7 +886,6 @@
                 </div>
             </div>
         </div>
-        <a class="btn btn-secondary mt-3"href="#">Learn More</a>
     </div>
     
         <!-- /item -->

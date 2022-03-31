@@ -128,11 +128,13 @@
                                             <input class="form-control" type="text" value="" id="example-number-input"
                                                 name="maplocation">
                                         </div>
-
+                                        
+                                        <div class="form-group">
+                                    <label for="exampleFormControlTextarea1" class="form-label">Descrioption</label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
+                                </div>
 
                                         @include('layouts.service')
-
-                                        @include('layouts.summernote')
                                         <br>
                                         @include('layouts.image')
                                         <br>

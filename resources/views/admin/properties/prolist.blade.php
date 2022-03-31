@@ -130,8 +130,8 @@
                                             <th><span>Created</span></th>
                                             <th class="text-center"><span>Sale</span></th>
                                             <th><span>Rent</span></th>
-                                        
-                                            <th >  </th>
+
+                                            <th> </th>
                                         </tr>
                                     </thead>
                                     <tbody>
