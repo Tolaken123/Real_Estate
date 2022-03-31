@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\PropertiesController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\Admin\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,16 +31,16 @@ Route::get('/', function () {
 
 
 //Hey Route here
-Route::get('/admin/sale', [PropertiesController::class, 'sale']);
-Route::get('/admin/rent', [PropertiesController::class, 'rent']);
-Route::get('/admin/prolist', [PropertiesController::class, 'prolist']);
-Route::get('/admin/rentlist', [PropertiesController::class, 'rentlist']);
-Route::get('/admin/salelist', [PropertiesController::class, 'salelist']);
-Route::get('/auth/Account/userlist', [AccountController::class, 'userlist']);
+// Route::get('/admin/sale', [PropertiesController::class, 'sale']);
+// Route::get('/admin/rent', [PropertiesController::class, 'rent']);
+// Route::get('/admin/prolist', [PropertiesController::class, 'prolist']);
+// Route::get('/admin/rentlist', [PropertiesController::class, 'rentlist']);
+// Route::get('/admin/salelist', [PropertiesController::class, 'salelist']);
+// Route::get('/auth/Account/userlist', [AccountController::class, 'userlist']);
 
-Route::get('/property', function () {
-    return view('properties');
-});
+// Route::get('/property', function () {
+//     return view('properties');
+// });
 
 ///End Hey route//
 
@@ -51,6 +51,13 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'mi
     Route::get('/properties', [PropertiesController::class, 'create'])->name('create');
     Route::post('/properties', [PropertiesController::class, 'store'])->name('Store');
     Route::get('/properties/index', [PropertiesController::class, 'index'])->name('index');
+    Route::get('/sale', [PropertiesController::class, 'sale']);
+    Route::get('/rent', [PropertiesController::class, 'rent']);
+    Route::get('/prolist', [PropertiesController::class, 'prolist']);
+    Route::get('/rentlist', [PropertiesController::class, 'rentlist']);
+    Route::get('/salelist', [PropertiesController::class, 'salelist']);
+    Route::get('/list', [UserController::class, 'getUser']);
+
 });
 Route::get('/admin/Account/Index', function () {
     return view('admin/Account/Index');
