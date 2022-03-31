@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class OwnerController extends Controller
 {
-    public function index(){
-        return view('Home.properties');
-    }
+    // public function index(){
+    //     return view('Home.properties');
+    // }
 }

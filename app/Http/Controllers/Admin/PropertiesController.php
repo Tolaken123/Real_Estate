@@ -17,7 +17,7 @@ class PropertiesController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.properties.prolist');
     }
 
     /**
@@ -28,27 +28,27 @@ class PropertiesController extends Controller
     public function sale()
     {
 
-        return View('Admin.properties.saleform');
+        return View('admin.properties.saleform');
     }
     public function rent()
     {
 
-        return View('Admin.properties.rentform');
+        return View('admin.properties.rentform');
     }
     public function prolist()
     {
 
-        return View('Admin.properties.prolist');
+        return View('admin.properties.prolist');
     }
     public function rentlist()
     {
 
-        return View('Admin.properties.rentlist');
+        return View('admin.properties.rentlist');
     }
     public function salelist()
     {
 
-        return View('Admin.properties.salelist');
+        return View('admin.properties.salelist');
     }
 
     /**
