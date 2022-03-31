@@ -151,3 +151,7 @@ Route::get('/auth/Account/userprofile', function () {
 Route::get('/layouts/property_detail', function () {
     return view('layouts/property_detail');
 });
+
+Route::get('/layouts/contact_us',function(){
+    return view('layouts/contact_us');
+});
