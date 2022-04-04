@@ -12,7 +12,7 @@ class UserController extends Controller
    public function getUser()
     {
         $users = DB::table('users')->get();
-        //dd($users);
+        // dd($users);
         return view('admin.Account.list',['users'=>$users]);
     }
     public function creat(){
