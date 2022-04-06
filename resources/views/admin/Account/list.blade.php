@@ -11,8 +11,8 @@
         <!-- /.navbar -->
         <!--content -->
         <div class="content-wrapper">
-            @include('layouts.script')
-            @include('layouts.style')
+            {{-- @include('layouts.script')
+            @include('layouts.style') --}}
             <h1>User List</h1>
                 <div class="container-fluid">
                     <table class="table table-bordered table-sm table-hover  border-primary">
@@ -33,19 +33,19 @@
                             </tr>
                         </thead>
                     <tbody>
-                        @foreach($users as $user)
+                        {{-- @foreach($users as $user)
                         <tr>
                             <td>{{$user->id}}</td>
                             <td>{{$user->name}}</td>
                             <td>{{$user->email}}</td>
                             {{-- <td>{{$user['Photo']}}</td> --}}
-                        </tr>
-                        @endforeach
+                        </tr> 
+                        {{-- @endforeach  --}} --}}
                     </tbody>
                     </table>
                 </div>
         </div>
-            @include('layouts.footer')
+            {{-- @include('layouts.footer') --}}
          <!-- /.content -->
 
             <!-- Main Footer -->

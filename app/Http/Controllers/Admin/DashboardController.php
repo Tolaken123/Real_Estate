@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class PropertiesController extends Controller
+class DashboardController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +13,7 @@ class PropertiesController extends Controller
      */
     public function index()
     {
-        //
-        return view('admin.properties.prolist');
+        return view('admin.dashboards.dashboard');
     }
 
     /**

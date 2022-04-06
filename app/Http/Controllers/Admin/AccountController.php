@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
-
+namespace App\Http\Controllers\Admin;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class AccountController extends Controller
 {
@@ -11,9 +12,10 @@ class AccountController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function userlist()
+    public function index()
     {
-        return View('auth.Account.userlist');
+        $users=User::all();
+    return view('admin.Account.list',compact('users'));
     }
 
     /**
@@ -23,7 +25,7 @@ class AccountController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.Account.userprofile');
     }
 
     /**
@@ -45,7 +47,8 @@ class AccountController extends Controller
      */
     public function show($id)
     {
-        //
+       
+        
     }
 
     /**
@@ -56,7 +59,7 @@ class AccountController extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**
