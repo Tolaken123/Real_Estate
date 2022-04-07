@@ -1,4 +1,7 @@
-@include('layouts.style')
+
+    
+
+{{-- @include('layouts.style') --}}
 <style>
     body {
         background: #eee;
@@ -83,12 +86,13 @@
 
 </style>
 
-@include('layouts.lightmode')
+{{-- @include('layouts.lightmode')
 <!-- Navbar -->
 @include('layouts.topnavbar')
-@include('layouts.usersidebar')
+@include('layouts.usersidebar') --}}
 
-
+@extends('layouts.admin')
+@section('content')
 <div class="content-wrapper">
     <div class="container-lg">
         <div class="card w-70">
@@ -109,8 +113,8 @@
                                 Create New Property
                             </button>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="">Rent</a>
-                                <a class="dropdown-item" href="">Sale</a>
+                                <a class="dropdown-item" href="{{ route('admin.rent.create') }}">Rent</a>
+                                <a class="dropdown-item" href="{{ route('admin.sale.create') }}">Sale</a>
                             </div>
                         </div>
                     </div>
@@ -226,7 +230,8 @@
                 </div>
             </div>
         </div>
-        @include('layouts.footer')
+        {{-- @include('layouts.footer') --}}
 
     </div>
-    @include('layouts.script')
+    {{-- @include('layouts.script') --}}
+    @endsection

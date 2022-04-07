@@ -82,7 +82,7 @@
 
 </style>
 
-@extends('layouts.app')
+@extends('layouts.admin')
 @section('content')
 
 

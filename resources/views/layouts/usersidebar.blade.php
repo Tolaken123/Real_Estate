@@ -11,11 +11,10 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <img src="{{ asset('vendors/dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2"
-                    alt="User Image">
+                <img src="https://bootdey.com/img/Content/user_1.jpg" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">Chhorn Hey</a>
+                <a href="#" class="d-block">{{ Auth::user()->name }}</a>
 
             </div>
         </div>
@@ -28,7 +27,7 @@
                 <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{ Route('admin.properties.index') }}" class="nav-link">
                         <i class="fas fa-home"></i>
                         <p>
                             Properties
@@ -46,7 +45,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#" class="nav-link ">
+                            <a href="{{ route('admin.rent.index') }}" class="nav-link ">
                                 <i class="fas fa-bed"></i>
                                 <p>Rent</p>
                             </a>
@@ -54,7 +53,7 @@
                     </ul>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#" class="nav-link ">
+                            <a href="{{ route('admin.sale.index') }}" class="nav-link ">
                                 <i class="fas fa-hand-holding-usd"></i>
                                 <p>Sale</p>
                             </a>
@@ -71,7 +70,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ route('admin.user.create') }}" class="nav-link">
                                 <i class="fas fa-user"></i>
                                 <p>
                                     Edit Profile

@@ -1,3 +1,7 @@
+@extends('layouts.admin')
+@section('content')
+  
+
 <div class="content-wrapper">
     <div class="content-header">
       <div class="container-fluid">
@@ -88,4 +92,4 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
- 
+  @endsection

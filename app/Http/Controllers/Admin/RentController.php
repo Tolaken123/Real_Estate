@@ -1,19 +1,20 @@
 <?php
 
-namespace App\Http\Controllers;
-
+namespace App\Http\Controllers\Admin;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class AccountController extends Controller
+class RentController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function userlist()
+    public function index()
     {
-        return View('auth.Account.userlist');
+        //
+    return view('admin.properties.rentlist');
     }
 
     /**
@@ -23,7 +24,7 @@ class AccountController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.properties.rentform');
     }
 
     /**
