@@ -128,16 +128,22 @@
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
+                                           
                                             <tbody>
+                                                @foreach($rent as $list)
+                                                
                                                 <tr class="table-active">
                                                     <td>
                                                         <img src="https://bootdey.com/img/Content/user_1.jpg" alt="">
                                                     </td>
-                                                    <td>2 Bedroom House For Sale </td>
-                                                    <td>2013/08/12</td>
+                                                    <td>{{ $list->name}}</td>
+                                                    <td>{{ $list->rentalprice }}</td>
                                                     <td>
-                                                        1500$
+                                                        {{ $list->bedroom }}
                                                     </td>
+                                                    {{-- <td>
+                                                        {{ $list->bathroom}}
+                                                    </td> --}}
                                                     <td style="width: 10%;">
                                                         <a href="#" class="table-link text-info">
                                                             <span class="fa-stack">
@@ -162,6 +168,8 @@
                                                         </a>
                                                     </td>
                                                 </tr>
+                                                
+                                                @endforeach
                                             </tbody>
                                         </table>
                                         <br>

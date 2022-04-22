@@ -1,5 +1,4 @@
 @include('layouts.style')
-<<<<<<< HEAD
 
 <div class="container">
     <div class="row justify-content-center">
@@ -72,8 +71,6 @@
 </div>
 
 
-=======
-
 <body class="hold-transition login-page">
     <div class="login-box">
         <!-- /.login-logo -->
@@ -83,6 +80,6 @@
             </div>
             <div class="card-body">
                 <p class="login-box-msg">Sign in to start your session</p>
->>>>>>> 38ddf20380082d46fbea1ec9eddacd7cf8844b79
+
 
     @include('layouts.script')

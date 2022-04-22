@@ -16,12 +16,16 @@ class CreateSalesTable extends Migration
         Schema::create('sales', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('price');
+            $table->string('saleprice');
             $table->string('bedroom'); 
-            $table->string('batroom');
-            $table->string('floor');
-            $table->string('land');
-            $table->string('house');
+            $table->string('bathroom');
+            $table->string('housesize');
+            $table->String('houseno');
+            $table->String('landsize');
+            $table->string('dimension');
+            $table->string('street');
+            $table->string('maplocation');
+            $table->string('description');
             $table->timestamps();
         });
     }

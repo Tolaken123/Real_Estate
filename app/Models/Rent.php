@@ -8,4 +8,19 @@ use Illuminate\Database\Eloquent\Model;
 class Rent extends Model
 {
     use HasFactory;
+    protected $filible=
+    [
+        'id',
+        'name',
+        'rentalprice',
+        'bedroom',
+        'bathroom',
+        'housesize',
+        'landsize',
+        'dimension',
+        'houseno',
+        'street',
+        'maplocation',
+        'description',
+    ];
 }

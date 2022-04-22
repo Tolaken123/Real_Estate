@@ -16,12 +16,16 @@ class CreateRentsTable extends Migration
         Schema::create('rents', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('price');
+            $table->string('rentalprice');
             $table->string('bedroom'); 
-            $table->string('batroom');
-            $table->string('floor');
-            $table->string('land');
-            $table->string('house');
+            $table->string('bathroom');
+            $table->string('housesize');
+            $table->string('landsize');
+            $table->string('dimension');
+            $table->string('houseno');
+            $table->String('street');
+            $table->String('maplocation');
+            $table->string('description');
             $table->timestamps();
         });
     }
