@@ -1,5 +1,4 @@
-@extends('layouts.app')
-@section('content')
+@include('layouts.style')
 @include('layouts.lightmode')
         <!-- Navbar -->
         @include('layouts.topnavbar')
@@ -150,6 +149,7 @@
 
             </div>
             @include('layouts.footer')
+            @include('layouts.script')
 
         </div>
-        @endsection
+       
