@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use App\Models\Sale;
 class SaleController extends Controller
 {
     /**
@@ -13,8 +13,8 @@ class SaleController extends Controller
      */
     public function index()
     {
-        //
-        return view('admin.properties.salelist');
+        $sale=Sale::all();
+        return view('admin.properties.salelist',compact('sale'));
     }
 
     /**
@@ -36,7 +36,36 @@ class SaleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' =>'required',
+            'saleprice'=>'required',
+            'bedroom'=>'required',
+            'bathroom'=>'required',
+            'landsize'=>'required',
+            'housesize'=>'required',
+            'houseno'=>'required',
+            'dimension'=>'required',
+            'street'=>'required',
+            'maplocation'=>'required',
+            'description'=>'required',
+
+        ]);
+        $sale = new Sale();
+        $sale->name=$request->name;
+        $sale->saleprice=$request->saleprice;
+        $sale->bedroom=$request->bedroom;
+        $sale->bathroom=$request->bathroom;
+        $sale->housesize=$request->housesize;
+        $sale->landsize=$request->landsize;
+        $sale->houseno=$request->houseno;
+        $sale->dimension=$request->dimension;
+        $sale->street=$request->street;
+        $sale->maplocation=$request->maplocation;
+        $sale->description=$request->description;
+        $sale->save();
+        // dd($sale);
+        return redirect('admin/sale')->with('rent','rent create succassfully');
+    
     }
 
     /**

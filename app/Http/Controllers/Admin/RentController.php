@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Rent;
 
 class RentController extends Controller
 {
@@ -13,8 +14,8 @@ class RentController extends Controller
      */
     public function index()
     {
-        //
-    return view('admin.properties.rentlist');
+        $rent=Rent::all();
+        return view('admin.properties.rentlist',compact('rent'));
     }
 
     /**
@@ -35,7 +36,35 @@ class RentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' =>'required',
+            'rentalprice'=>'required',
+            'bedroom'=>'required',
+            'bathroom'=>'required',
+            'landsize'=>'required',
+            'housesize'=>'required',
+            'houseno'=>'required',
+            'dimension'=>'required',
+            'street'=>'required',
+            'maplocation'=>'required',
+            'description'=>'required',
+
+        ]);
+        $rent = new Rent();
+        $rent->name=$request->name;
+        $rent->rentalprice=$request->rentalprice;
+        $rent->bedroom=$request->bedroom;
+        $rent->bathroom=$request->bathroom;
+        $rent->housesize=$request->housesize;
+        $rent->landsize=$request->landsize;
+        $rent->houseno=$request->houseno;
+        $rent->dimension=$request->dimension;
+        $rent->street=$request->street;
+        $rent->maplocation=$request->maplocation;
+        $rent->description=$request->description;
+        $rent->save();
+        // dd($rent);
+        return redirect('admin/rent')->with('rent','rent create succassfully');
     }
 
     /**

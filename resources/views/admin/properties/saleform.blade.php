@@ -5,6 +5,15 @@
         @include('layouts.usersidebar')
         <!-- /.navbar -->
         <div class="content-wrapper">
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            {{-- </div> --}}
+        @endif
             <div class="container-lg">
                 <div class="card w-70">
                     <div class="card card-primary">
@@ -12,7 +21,8 @@
                             <h3 class="card-title">Property Information</h3>
                         </div>
                         <!-- /.card-header -->
-                        <form>
+                        <form action="{{ url('admin/sale') }}" method="POST">
+                            @csrf
                             <div class="card-body">
                                 <div class="row">
                                 </div>
@@ -60,13 +70,13 @@
                                         <div class="form-group">
                                             <label for="example-number-input" class="form-control-label">Title</label>
                                             <input class="form-control" type="text" value="" id="example-number-input"
-                                                name="title">
+                                                name="name">
                                         </div>
                                         <div class="form-group">
                                             <label for="example-number-input" class="form-control-label">Sale
                                                 Price</label>
                                             <input class="form-control" type="text" value="" id="example-number-input"
-                                                name="rentalprice">
+                                                name="saleprice">
                                         </div>
 
                                         <div class="form-group">
