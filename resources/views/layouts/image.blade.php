@@ -1,7 +1,8 @@
 <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"> </script>
 <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
-
+{{-- <form action="{{route('imageUpload')}}" method="POST" enctype="multipart/form-data">
+    @csrf --}}
 <div id="actions" class="row">
     <div class="col-lg-6">
         <div class="btn-group w-100">
@@ -63,7 +64,7 @@
             </div>
         </div>
     </div>
-
+{{-- </form> --}}
     <script>
         
 
@@ -123,6 +124,7 @@
         // DropzoneJS Demo Code End
 
     </script>
-    </body>
 
-    </html>
+</body>
+</html>
+   

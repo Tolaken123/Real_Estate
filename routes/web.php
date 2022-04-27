@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\FileUpload;
 // use App\Http\Controllers\Admin\PropertiesController;
 use App\Http\Controllers\Admin\UserController;
 
@@ -35,6 +36,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'mi
       
 
 });
+Route::get('/image-upload', [FileUpload::class, 'createForm']);
+Route::post('/image-upload', [FileUpload::class, 'fileUpload'])->name('imageUpload');
 Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 // Route::get('/admin/Account/Index', function () {
