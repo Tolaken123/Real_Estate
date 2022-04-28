@@ -14,8 +14,8 @@
                 </ul>
             {{-- </div> --}}
         @endif
-            <div class="container-lg">
-                <div class="card w-70">
+            <div class="container-fluid">
+                <div class="card ">
                     <div class="card card-primary">
                         <div class="card-header">
                             <h3 class="card-title">Property Information</h3>
@@ -26,7 +26,7 @@
                             <div class="card-body">
                                 <div class="row">
                                 </div>
-                                <br>
+                               
                                 <div class="dropdown">
                                     <button type="button" class="btn btn-primary dropdown-toggle"
                                         data-toggle="dropdown">

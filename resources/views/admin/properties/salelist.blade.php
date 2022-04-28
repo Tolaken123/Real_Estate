@@ -108,9 +108,12 @@
                                     </div>
                                 </div>
                             </div>
+                            <a href="{{ route('admin.sale.create') }}">
                             <button type="button" class="btn btn-primary">
-                                Create New Property
+                                
+                            Create New Property
                             </button>
+                            </a>
                         </div>
                     </div>
                     <div class="row">
