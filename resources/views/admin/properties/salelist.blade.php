@@ -108,6 +108,9 @@
                                     </div>
                                 </div>
                             </div>
+                            <button type="button" class="btn btn-primary">
+                                Create New Property
+                            </button>
                         </div>
                     </div>
                     <div class="row">

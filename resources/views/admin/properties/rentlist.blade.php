@@ -105,12 +105,17 @@
                     <div class="container bootstrap snippets bootdey">
                         <div class="content-header">
                             <div class="container-fluid">
+                                
                                 <div class="row mb-2">
                                     <div class="col-sm-6">
                                         <h1 class="m-0">Rent Listing</h1>
                                     </div>
+                                    
                                 </div>
                             </div>
+                            <button type="button" class="btn btn-primary">
+                                Create New Property
+                            </button>
                         </div>
                     </div>
                     <div class="row">
