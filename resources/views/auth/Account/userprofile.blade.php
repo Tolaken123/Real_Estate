@@ -99,9 +99,7 @@
                  </div>  -->
 
                   <div class="btn">
-                      <button type="button" class="btn btn-primary btn-lg">Create</button>
-                      <button type="button" class="btn btn-secondary btn-lg">Cancel</button>
-                      
+                      <button type="button" class="btn btn-primary btn-lg">Save</button>
                   </div>
                   
 
