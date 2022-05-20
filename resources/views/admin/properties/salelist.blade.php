@@ -140,7 +140,7 @@
                                                         <img src="https://bootdey.com/img/Content/user_1.jpg" alt="">
                                                     </td>
                                                     <td>{{ $list->name }}</td>
-                                                    <td>{{ $list->saleprice}}</td>
+                                                    <td>{{ $list->created_at}}</td>
                                                     <td>
                                                        {{ $list->bedroom }}
                                                     </td>

@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Sale extends Model
 {
-    use HasFactory;
-    protected $filible=
+    use HasFactory ;
+    protected $fillable=
     [
         'id',
         'name',
@@ -20,8 +20,6 @@ class Sale extends Model
         'street ',
         'maplocation',
         'description',
+];
 
-        
-        
-    ];
 }

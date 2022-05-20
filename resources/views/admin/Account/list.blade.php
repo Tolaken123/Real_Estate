@@ -1,7 +1,8 @@
 
 {{-- @extends('layouts.app')
 @section('content') --}}
-
+@extends('layouts.admin')
+@section('content')
 <body class="hold-transition light-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
     <div class="wrapper">
 
@@ -33,14 +34,14 @@
                             </tr>
                         </thead>
                     <tbody>
-                        {{-- @foreach($users as $user)
+                        @foreach($users as $user)
                         <tr>
                             <td>{{$user->id}}</td>
                             <td>{{$user->name}}</td>
                             <td>{{$user->email}}</td>
                             {{-- <td>{{$user['Photo']}}</td> --}}
                         </tr> 
-                        {{-- @endforeach  --}} --}}
+                        @endforeach 
                     </tbody>
                     </table>
                 </div>
@@ -55,3 +56,4 @@
         </div>
         {{-- @endsection --}}
 
+        @endsection

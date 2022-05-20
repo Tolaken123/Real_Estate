@@ -8,19 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Rent extends Model
 {
     use HasFactory;
-    protected $filible=
-    [
-        'id',
-        'name',
-        'rentalprice',
-        'bedroom',
-        'bathroom',
-        'housesize',
-        'landsize',
-        'dimension',
-        'houseno',
-        'street',
-        'maplocation',
-        'description',
-    ];
+    protected  $fillable =['name','rentalprice','bedroom','bathroom','floor','landsize','dimension','houseno','street','maplocation','description','image_id'];
+   
+     public function Images(){
+         return $this->hasMany(Image::class,'image_id');
+     }
 }

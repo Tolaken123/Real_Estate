@@ -72,13 +72,13 @@
                                         <br> <br>
                                         <div class="form-group">
                                             <label for="example-number-input" class="form-control-label">Title</label>
-                                            <input class="form-control" type="text" value="" id="example-number-input"
+                                            <input class="form-control" type="text" id="example-number-input"
                                                 name="name">
                                         </div>
                                         <div class="form-group">
                                             <label for="example-number-input" class="form-control-label">Rent
                                                 Price</label>
-                                            <input class="form-control" type="text" value="" id="example-number-input"
+                                            <input class="form-control" type="text"  id="example-number-input"
                                                 name="rentalprice">
                                         </div>
 
@@ -102,7 +102,7 @@
                                             <label for="example-number-input" class="form-control-label">Floor
                                                 Size</label>
                                             <input class="form-control" type="text" value="" id="example-number-input"
-                                                name="housesize">
+                                                name="floor">
                                         </div>
 
                                         <div class="form-group">
@@ -149,7 +149,7 @@
 
                                         
                                         <br>
-                                        @include('layouts.image')
+                                        @include('image-upload')
                                         <br>
                                         <button type="submit" class="btn btn-primary">Submit</button>
                                         </a>

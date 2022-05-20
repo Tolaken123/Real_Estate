@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\FileUpload;
+// use App\Http\Controllers\Admin\RentController;
 // use App\Http\Controllers\Admin\PropertiesController;
 use App\Http\Controllers\Admin\UserController;
 
@@ -33,9 +34,13 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'mi
        Route::resource('/user',AccountController::class);
        Route::resource('/rent',RentController::class);
        Route::resource('/sale',SaleController::class); 
-      
+       Route::resource('/inventory',InverteriesController::class);
 
 });
+
+
+
+
 Route::get('/image-upload', [FileUpload::class, 'createForm']);
 Route::post('/image-upload', [FileUpload::class, 'fileUpload'])->name('imageUpload');
 Auth::routes();

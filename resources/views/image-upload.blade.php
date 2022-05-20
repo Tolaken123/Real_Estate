@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <title>Laravel Image Upload</title>
+    <title>Rant</title>
     <style>
         .container {
             max-width: 500px;
@@ -21,10 +21,11 @@
     </style>
 </head>
 <body>
-    <div class="container mt-5">
-        <h3 class="text-center mb-5">Image Upload in Laravel</h3>
-        <form action="{{route('imageUpload')}}" method="post" enctype="multipart/form-data">
+    {{-- <div class="container mt-5"> --}}
+        {{-- <h3 class="text-center mb-5">Image Upload in Laravel</h3> --}}
+    <form action="{{ url('admin/rent') }}" method="post" enctype="multipart/form-data"> 
             @csrf
+
             @if ($message = Session::get('success'))
                 <div class="alert alert-success">
                     <strong>{{ $message }}</strong>
@@ -44,13 +45,13 @@
             </div>            
             <div class="custom-file">
                 <input type="file" name="imageFile[]" class="custom-file-input" id="images" multiple="multiple">
-                <label class="custom-file-label" for="images">Choose image</label>
+                <label class="custom-file-label" for="images">Add image</label>
             </div>
-            <button type="submit" name="submit" class="btn btn-primary btn-block mt-4">
+            {{-- <button type="submit" name="submit" class="btn btn-primary btn-block mt-4">
                 Upload Images
-            </button>
+            </button> --}}
         </form>
-    </div>
+    {{-- </div> --}}
   
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

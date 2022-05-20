@@ -99,7 +99,7 @@
                 </li>
                 </ul>
                 <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{ Route('admin.user.index') }}" class="nav-link">
             <i class="fas fa-user"></i>
               <p>
                 Account

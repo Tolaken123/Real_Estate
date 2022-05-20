@@ -94,11 +94,14 @@
         <!-- Navbar -->
         @include('layouts.topnavbar')
         @include('layouts.usersidebar') --}}
-        <div class="content-wrapper">
+        <!-- Scrollable modal -->
+{{-- <div class="modal-dialog modal-dialog-scrollable">
+    
+    ...
+  </div> --}}
+        <div class="content-wrapper m-3">
             <div class="container-lg">
                 <div class="card w-70">
-
-
                     <link rel="stylesheet" type="text/css"
                         href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
                     <hr>
@@ -153,12 +156,15 @@
                                                         {{ $list->bathroom}}
                                                     </td> --}}
                                                     <td style="width: 10%;">
-                                                        <a href="#" class="table-link text-info">
+                                                        <a href="/admin/rent/{{$list->id}}/edit" class="table-link text-info">
                                                             <span class="fa-stack">
                                                                 <i class="fa fa-square fa-stack-2x"></i>
                                                                 <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                                             </span>
                                                         </a>
+                                                        <form action="/admin/rent/{{ $list->id }}" method="POST">
+                                                            @csrf
+                                                            @method('delete')
                                                         <a href="#" class="table-link text-primary">
                                                             <span class="fa-stack">
                                                                 <i class="fa fa-square fa-stack-2x"></i>
@@ -204,7 +210,7 @@
         </div>
     </div>
 
-    </div>
+</div>
     
 
     </div>

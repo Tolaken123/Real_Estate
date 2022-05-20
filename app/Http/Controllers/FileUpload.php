@@ -24,10 +24,8 @@ class FileUpload extends Controller
                 $imgData[] = $name;  
             }
             $fileModal = new Image();
-            $fileModal->name = json_encode($imgData);
-            $fileModal->image_path = json_encode($imgData);
-            
-           
+            $fileModal->image= json_encode($imgData);
+            $fileModal->image_path= json_encode($imgData);
             $fileModal->save();
            return back()->with('success', 'File has successfully uploaded!');
         }
