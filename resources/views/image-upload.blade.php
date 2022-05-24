@@ -24,7 +24,7 @@
     {{-- <div class="container mt-5"> --}}
         {{-- <h3 class="text-center mb-5">Image Upload in Laravel</h3> --}}
     <form action="{{ url('admin/rent') }}" method="post" enctype="multipart/form-data"> 
-            @csrf
+        {{ csrf_field() }} 
 
             @if ($message = Session::get('success'))
                 <div class="alert alert-success">

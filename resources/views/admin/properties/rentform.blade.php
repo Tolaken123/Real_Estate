@@ -1,5 +1,6 @@
 
 @include('layouts.style')
+{{-- <link rel="stylesheet" href="{{ asset('css/jquery.imagesloader.css')}}"> --}}
 @include('layouts.lightmode')
         <!-- Navbar -->
         @include('layouts.topnavbar')
@@ -30,46 +31,21 @@
                                 <div class="row">
                                 </div>
                                 <br>
-                                <div class="dropdown">
-                                    <button type="button" class="btn btn-primary dropdown-toggle"
-                                        data-toggle="dropdown">
-                                        Select Your Location
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#">Phnom Penh</a>
-                                        <a class="dropdown-item" href="#">Siem Reap</a>
-                                        <a class="dropdown-item" href="#">Battambang</a>
-                                        <a class="dropdown-item" href="#">Sihanuk</a>
-                                        <a class="dropdown-item" href="#">Kep</a>
-                                        <a class="dropdown-item" href="#">Kampot</a>
-                                        <a class="dropdown-item" href="#">Kandal</a>
-                                        <a class="dropdown-item" href="#">Kampangcham</a>
-                                        <a class="dropdown-item" href="#">Kampangchnang</a>
-                                        <a class="dropdown-item" href="#">Takeo</a>
-                                        <a class="dropdown-item" href="#">Koh Kong</a>
-                                        <a class="dropdown-item" href="#">Other</a>
-                                    </div>
-                                    <br><br>
-                                    <div class="dropdown">
-                                        <button type="button" class="btn btn-primary dropdown-toggle"
-                                            data-toggle="dropdown">
-                                            Select Property Type
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="#">House/Villa</a>
-                                            <a class="dropdown-item" href="#">Apartment</a>
-                                            <a class="dropdown-item" href="#">Condo</a>
-                                            <a class="dropdown-item" href="#">Borey</a>
-                                            <a class="dropdown-item" href="#">Flat</a>
-                                            <a class="dropdown-item" href="#">Shophouse</a>
-                                            <a class="dropdown-item" href="#">Boutique/Hotel/Guesthouse</a>
-                                            <a class="dropdown-item" href="#">Office Space</a>
-                                            <a class="dropdown-item" href="#">Land</a>
-                                            <a class="dropdown-item" href="#">Warehouse</a>
-                                            <a class="dropdown-item" href="#">Retail Space</a>
-                                            <a class="dropdown-item" href="#">Buisseniss For Sale</a>
-                                        </div>
-                                        <br> <br>
+                                <select class="form-select form-select-md mb-3" aria-label=".form-select-md example">
+                                    <option selected>Open this select menu</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                  </select>
+                                    
+                                  {{-- <br> <br> --}}
+                                  <select class="form-select form-select-md mb-3" aria-label=".form-select-md example">
+                                    <option selected>Open this select menu</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                  </select>
+                                        {{-- <br> <br> --}}
                                         <div class="form-group">
                                             <label for="example-number-input" class="form-control-label">Title</label>
                                             <input class="form-control" type="text" id="example-number-input"
@@ -132,8 +108,6 @@
                                             <input class="form-control" type="text" value="" id="example-number-input"
                                                 name="street">
                                         </div>
-
-                                        
                                         <div class="form-group">
                                             <label for="example-number-input" class="form-control-label">Link
                                                 Location</label>
@@ -144,25 +118,16 @@
                                     <label for="exampleFormControlTextarea1" class="form-label">Descrioption</label>
                                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
                                 </div>
-
-                                        @include('layouts.inventory')
-
-                                        
-                                        <br>
-                                        @include('image-upload')
-                                        <br>
-                                        <button type="submit" class="btn btn-primary">Submit</button>
-                                        </a>
-
-
+                                
+                                @include('image-upload')
+                              
+                            <button type="submit" class="btn btn-primary">Submit</button>        
                         </form>
                         </section>
                     </div>
                 </div>
-
             </div>
             @include('layouts.footer')
-
         </div>
        @include('layouts.script')
 

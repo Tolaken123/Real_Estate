@@ -6,9 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Image;
 class FileUpload extends Controller
 {
-    //
     public function createForm(){
-        return view('image-upload');
+        return view('image.form');
       }
     
       public function fileUpload(Request $req){
@@ -21,12 +20,13 @@ class FileUpload extends Controller
             {
                 $name = $file->getClientOriginalName();
                 $file->move(public_path().'/uploads/', $name);  
-                $imgData[] = $name;  
+                $imgData[] =$name;  
             }
             $fileModal = new Image();
             $fileModal->image= json_encode($imgData);
             $fileModal->image_path= json_encode($imgData);
             $fileModal->save();
+            // dd($fileModal);
            return back()->with('success', 'File has successfully uploaded!');
         }
       }
