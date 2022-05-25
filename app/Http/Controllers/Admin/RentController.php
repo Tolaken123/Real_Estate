@@ -66,14 +66,20 @@ class RentController extends Controller
         $rent->street=$request->street;
         $rent->maplocation=$request->maplocation;
         $rent->description=$request->description;
-        foreach ($request->file('imageFile') as $imageFile) {
-        $rent= $imageFile->store('images');
-            Image::create([
-                'image_id' => $rent->id,
-                'image' => $rent
-            ]);
-        }
         $rent->save();
+        if($request->hasfile('files'))
+         {
+
+            foreach($request->file('files') as $image)
+            {
+                $name=$image->getClientOriginalName();
+                $image->move(public_path().'/upload/', $name);  
+                $data[] = $name;  
+            }
+         }
+         $files= new Image();
+         $files->filename=json_encode($data);
+        $files->save();
         return redirect('admin/rent')->with('rent','rent create succassfully');
         // if($request->hasfile('imageFile')) {
         //     foreach($request->file('imageFile') as $file)

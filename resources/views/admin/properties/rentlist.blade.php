@@ -85,15 +85,15 @@
 
 
 
-@extends('layouts.admin')
-@section('content')
+{{-- @extends('layouts.admin')
+@section('content') --}}
     
 
-{{-- @include('layouts.lightmode')
+ {{-- @include('layouts.lightmode') --}}
 
         <!-- Navbar -->
         @include('layouts.topnavbar')
-        @include('layouts.usersidebar') --}}
+        @include('layouts.usersidebar')
         <!-- Scrollable modal -->
 {{-- <div class="modal-dialog modal-dialog-scrollable">
     
@@ -214,7 +214,7 @@
     
 
     </div>
-    @endsection
-    {{-- @include('layouts.footer')
-    @include('layouts.script') --}}
+    {{-- @endsection --}}
+    @include('layouts.footer')
+    @include('layouts.script')
   

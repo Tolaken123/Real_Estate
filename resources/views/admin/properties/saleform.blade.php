@@ -142,7 +142,7 @@
                                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
                                 </div>
 
-                                        @include('layouts.inventory')
+                                        {{-- @include('layouts.inventory') --}}
 
                                         
                                         <br>
