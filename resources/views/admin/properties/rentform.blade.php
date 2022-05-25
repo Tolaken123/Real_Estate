@@ -50,25 +50,14 @@
                                         <a class="dropdown-item" href="#">Other</a>
                                     </div>
                                     <br><br>
-                                    <div class="dropdown">
-                                        <button type="button" class="btn btn-primary dropdown-toggle"
-                                            data-toggle="dropdown">
-                                            Select Property Type
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="#">House/Villa</a>
-                                            <a class="dropdown-item" href="#">Apartment</a>
-                                            <a class="dropdown-item" href="#">Condo</a>
-                                            <a class="dropdown-item" href="#">Borey</a>
-                                            <a class="dropdown-item" href="#">Flat</a>
-                                            <a class="dropdown-item" href="#">Shophouse</a>
-                                            <a class="dropdown-item" href="#">Boutique/Hotel/Guesthouse</a>
-                                            <a class="dropdown-item" href="#">Office Space</a>
-                                            <a class="dropdown-item" href="#">Land</a>
-                                            <a class="dropdown-item" href="#">Warehouse</a>
-                                            <a class="dropdown-item" href="#">Retail Space</a>
-                                            <a class="dropdown-item" href="#">Buisseniss For Sale</a>
-                                        </div>
+                                   
+                                        <select class="custom-select">
+                          <option>option 1</option>
+                          <option>option 2</option>
+                          <option>option 3</option>
+                          <option>option 4</option>
+                          <option>option 5</option>
+                        </select>
                                         <br> <br>
                                         <div class="form-group">
                                             <label for="example-number-input" class="form-control-label">Title</label>
