@@ -41,12 +41,13 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'mi
 
 
 
-Route::get('/image-upload', [FileUpload::class, 'createForm']);
-Route::post('/image-upload', [FileUpload::class, 'fileUpload'])->name('imageUpload');
+Route::get('/image', [FileUpload::class, 'createForm']);
+Route::post('/image', [FileUpload::class, 'fileUpload'])->name('imageUpload');
 Auth::routes();
+Auth::routes(['verify' => true]);
 Route::get('/home', [HomeController::class, 'index'])->name('home');
-// Route::get('/admin/Account/Index', function () {
-//     return view('admin/Account/Index');
+// Route::get('/image', function () {
+//     return view('image.form');
 // });
 // Route::get('/layouts/property_detail', function () {
 //     return view('layouts/property_detail');

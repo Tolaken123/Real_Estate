@@ -66,24 +66,29 @@ class RentController extends Controller
         $rent->street=$request->street;
         $rent->maplocation=$request->maplocation;
         $rent->description=$request->description;
-        // $rent->inventery_id=$request->inventery_id;
-        // $rent->image_id=$request->image_id;
+        foreach ($request->file('imageFile') as $imageFile) {
+        $rent= $imageFile->store('images');
+            Image::create([
+                'image_id' => $rent->id,
+                'image' => $rent
+            ]);
+        }
         $rent->save();
-      
-        if($request->hasfile('imageFile')) {
-            foreach($request->file('imageFile') as $file)
-            {
-                $name = $file->getClientOriginalName();
-                $file->move(public_path().'/uploads/', $name);  
-                $imgData[] = $name;  
-            }
-            $fileModal = new Image();
-            $fileModal->image= json_encode($imgData);
-            $fileModal->image_id= json_encode($imgData);
-            $fileModal->save();
+        return redirect('admin/rent')->with('rent','rent create succassfully');
+        // if($request->hasfile('imageFile')) {
+        //     foreach($request->file('imageFile') as $file)
+        //     {
+        //         $name = $file->getClientOriginalName();
+        //         $file->move(public_path().'/uploads/', $name);  
+        //         $imgData[] = $name;  
+        //     }
+        //     $fileModal = new Image();
+        //     $fileModal->image= json_encode($imgData);
+        //     $fileModal->image_id= json_encode($imgData);
+        //     $fileModal->save();
 //    dd($rent);
-    }
-    return redirect('admin/rent')->with('rent','rent create succassfully');
+    
+   
 
 }
 

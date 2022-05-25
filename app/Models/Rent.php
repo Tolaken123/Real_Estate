@@ -11,6 +11,6 @@ class Rent extends Model
     protected  $fillable =['name','rentalprice','bedroom','bathroom','floor','landsize','dimension','houseno','street','maplocation','description','image_id'];
    
      public function Images(){
-         return $this->hasMany(Image::class,'image_id');
+         return $this->belongsTo(Image::class,'image_id');
      }
 }

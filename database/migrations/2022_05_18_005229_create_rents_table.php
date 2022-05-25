@@ -26,9 +26,9 @@ class CreateRentsTable extends Migration
             $table->string('street');
             $table->string('maplocation');
             $table->longText('description');
-            $table->unsignedBigInteger("image_id")->nullable();
+            $table->unsignedBigInteger("image_id");
             $table->foreign('image_id')->references('id')->on('images')->caseOnDelete();
-            $table->unsignedBigInteger("inventery_id")->nullable();
+            // $table->unsignedBigInteger("inventery_id")->nullable();
             $table->timestamps();
         });
     }

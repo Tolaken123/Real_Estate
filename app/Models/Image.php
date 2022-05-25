@@ -12,7 +12,7 @@ class Image extends Model
         'name',
         'image_path'
     ];
-    // public function rents(){
-    //     return $this->hasMany(Rent::class,'image_id');
-    // }
+    public function rents(){
+        return $this->hasMany(Rent::class,'image_id');
+    }
 }

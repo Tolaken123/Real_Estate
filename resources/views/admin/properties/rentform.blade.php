@@ -1,5 +1,6 @@
 
 @include('layouts.style')
+{{-- <link rel="stylesheet" href="{{ asset('css/jquery.imagesloader.css')}}"> --}}
 @include('layouts.lightmode')
         <!-- Navbar -->
         @include('layouts.topnavbar')
@@ -30,6 +31,7 @@
                                 <div class="row">
                                 </div>
                                 <br>
+<<<<<<< HEAD
                                 <div class="dropdown">
                                     <button type="button" class="btn btn-primary dropdown-toggle"
                                         data-toggle="dropdown">
@@ -59,6 +61,23 @@
                           <option>option 5</option>
                         </select>
                                         <br> <br>
+=======
+                                <select class="form-select form-select-md mb-3" aria-label=".form-select-md example">
+                                    <option selected>Open this select menu</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                  </select>
+                                    
+                                  {{-- <br> <br> --}}
+                                  <select class="form-select form-select-md mb-3" aria-label=".form-select-md example">
+                                    <option selected>Open this select menu</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                  </select>
+                                        {{-- <br> <br> --}}
+>>>>>>> 42f869eb6ec4bff11762fd3016e79019c2589618
                                         <div class="form-group">
                                             <label for="example-number-input" class="form-control-label">Title</label>
                                             <input class="form-control" type="text" id="example-number-input"
@@ -121,8 +140,6 @@
                                             <input class="form-control" type="text" value="" id="example-number-input"
                                                 name="street">
                                         </div>
-
-                                        
                                         <div class="form-group">
                                             <label for="example-number-input" class="form-control-label">Link
                                                 Location</label>
@@ -133,25 +150,16 @@
                                     <label for="exampleFormControlTextarea1" class="form-label">Descrioption</label>
                                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
                                 </div>
-
-                                        @include('layouts.inventory')
-
-                                        
-                                        <br>
-                                        @include('image-upload')
-                                        <br>
-                                        <button type="submit" class="btn btn-primary">Submit</button>
-                                        </a>
-
-
+                                
+                                @include('image-upload')
+                              
+                            <button type="submit" class="btn btn-primary">Submit</button>        
                         </form>
                         </section>
                     </div>
                 </div>
-
             </div>
             @include('layouts.footer')
-
         </div>
        @include('layouts.script')
 
