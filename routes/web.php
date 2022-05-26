@@ -99,9 +99,9 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 //     return view('layouts/test');
 // });
 
-// Route::get('/homepage', function () {
-//     return view('homepage');
-// });
+Route::get('/homepage', function () {
+    return view('homepage');
+});
 
 
 // Route::get('/fonte/home/Item',function(){
