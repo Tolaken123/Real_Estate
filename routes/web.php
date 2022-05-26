@@ -58,10 +58,12 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 // Route::get('/fonte/home/Item', function () {
 //     return view('fonte.home.Item');
 // });
-// Route::get('/layouts/Home_page', function () {
-//     return view('layouts/Home_page');
-// });
-
+Route::get('/layouts/Home_page', function () {
+    return view('layouts/Home_page');
+});
+Route::get('/layouts/industry_profile', function () {
+        return view('layouts/industry_profile');
+    });
 
 // Route::get('/layouts/test', function () {
 //     return view('layouts/test');
