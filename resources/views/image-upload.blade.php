@@ -47,11 +47,7 @@
                 <input type="file" name="imageFile[]" class="custom-file-input" id="images" multiple="multiple">
                 <label class="custom-file-label" for="images">Add image</label>
             </div>
-            {{-- <button type="submit" name="submit" class="btn btn-primary btn-block mt-4">
-                Upload Images
-            </button> --}}
-        </form>
-    {{-- </div> --}}
+      
   
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
