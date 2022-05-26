@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <title>Rant</title>
+    <title>Rent</title>
     <style>
         .container {
             max-width: 500px;
@@ -47,7 +47,11 @@
                 <input type="file" name="imageFile[]" class="custom-file-input" id="images" multiple="multiple">
                 <label class="custom-file-label" for="images">Add image</label>
             </div>
-      
+            {{-- <button type="submit" name="submit" class="btn btn-primary btn-block mt-4">
+                Upload Images
+            </button> --}}
+        </form>
+    {{-- </div> --}}
   
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
