@@ -122,16 +122,15 @@
           <input id="files" type="file" name="files[]" data-button="" multiple="" accept="image/jpeg, image/png, image/gif," style="display:none;">
         </div>
       </div>
-      <input type="submit" value="ok" >
 
         </form>
 
-          {{-- <div class="row mt-2">
+           <div class="row mt-2">
             <div class="col-md-4 offset-md-8 text-center mb-4">
               <button id="btnContinue" type="submit" form="frm" class="btn btn-block btn-outline-success float-right" data-toggle="tooltip" data-trigger="manual" data-placement="top" data-title="Continue">
                 Continue<span id="btnContinueIcon" class="fa fa-chevron-circle-right ml-2"></span><span id="btnContinueLoading" class="fa fa-spin fa-spinner ml-2" style="display:none"></span>
               </button>
-            </div> --}}
+            </div>
 
     </div>
 
@@ -148,7 +147,7 @@
 
       // Create image loader plugin
       var imagesloader = $('[data-type=imagesloader]').imagesloader({
-        maxFiles: 4
+        maxFiles: 30
         , minSelect: 1
         , imagesToLoad: auctionImages
       });
