@@ -34,7 +34,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'mi
        Route::resource('/user',AccountController::class);
        Route::resource('/rent',RentController::class);
        Route::resource('/sale',SaleController::class); 
-       Route::resource('/inventory',InverteriesController::class);
+       
 
 });
 

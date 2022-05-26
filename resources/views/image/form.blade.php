@@ -24,8 +24,17 @@
 
 <body>
 
-  <div class="container col-8 pt-5">
-
+  <div class="container col-10 ">
+    <div class="content-wrapper">
+      @if ($errors->any())
+      <div class="alert alert-danger">
+          <ul>
+              @foreach ($errors->all() as $error)
+                  <li>{{ $error }}</li>
+              @endforeach
+          </ul>
+      </div> 
+      @endif
     <form id="frm" method="POST"  action="/image " class="needs-validation" novalidate="">
         {{ csrf_field() }} 
       <!--Image Upload-->
@@ -59,7 +68,7 @@
            
         <div data-type="image-model" class="col-4 pl-2 pr-2 pt-2" style="max-width:200px; display:none;">
 
-          <div class="ratio-box text-center" data-type="image-ratio-box">
+          <div class="ratio-box text-center" data-type="image-ratio-boxs">
             <img data-type="noimage" class="btn btn-light ratio-img img-fluid p-2 image border dashed rounded" src="{{ asset('img/photo-camera-gray.svg')}}" style="cursor:pointer;">
             <div data-type="loading" class="img-loading" style="color:#218838; display:none;">
               <span class="fa fa-2x fa-spin fa-spinner"></span>
@@ -69,7 +78,7 @@
           </div>
 
           <!-- Buttons -->
-          <div data-type="image-buttons" class="row justify-content-center mt-2">
+          <div data-type="image-button" class="row justify-content-center mt-2">
             <button data-type="add" class="btn btn-outline-success" type="button"><span class="fa fa-camera mr-2"></span>Add</button>
             <button data-type="btn-modify" type="button" class="btn btn-outline-success m-0" data-toggle="popover" data-placement="right" style="display:none;">
               <span class="fa fa-pencil-alt mr-2"></span>Modify
@@ -106,24 +115,24 @@
             </div>
           </div>
         </div>
-
       </div>
-
-      <div class="form-group row">
+      <div class="form-group">
         <div class="input-group">
           <!--Hidden file input for images-->
-          <input id="files" type="file" name="files[]" data-button="" multiple="multiple" accept="image/jpeg, image/png, image/gif," style="display:none;">
+          <input id="files" type="file" name="files[]" data-button="" multiple="" accept="image/jpeg, image/png, image/gif," style="display:none;">
         </div>
       </div>
+      <input type="submit" value="ok" >
 
-    </form>
+        </form>
 
-    <div class="row mt-2">
-      <div class="col-md-4 offset-md-8 text-center mb-4">
-        <button id="btnContinue" type="submit" form="frm" class="btn btn-block btn-outline-success float-right" data-toggle="tooltip" data-trigger="manual" data-placement="top" data-title="Continue">
-          Continue<span id="btnContinueIcon" class="fa fa-chevron-circle-right ml-2"></span><span id="btnContinueLoading" class="fa fa-spin fa-spinner ml-2" style="display:none"></span>
-        </button>
-      </div>
+          {{-- <div class="row mt-2">
+            <div class="col-md-4 offset-md-8 text-center mb-4">
+              <button id="btnContinue" type="submit" form="frm" class="btn btn-block btn-outline-success float-right" data-toggle="tooltip" data-trigger="manual" data-placement="top" data-title="Continue">
+                Continue<span id="btnContinueIcon" class="fa fa-chevron-circle-right ml-2"></span><span id="btnContinueLoading" class="fa fa-spin fa-spinner ml-2" style="display:none"></span>
+              </button>
+            </div> --}}
+
     </div>
 
   </div>

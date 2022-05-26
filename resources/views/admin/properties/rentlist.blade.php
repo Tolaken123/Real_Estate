@@ -85,15 +85,15 @@
 
 
 
-@extends('layouts.admin')
-@section('content')
+{{-- @extends('layouts.admin')
+@section('content') --}}
     
 
-{{-- @include('layouts.lightmode')
+ {{-- @include('layouts.lightmode') --}}
 
         <!-- Navbar -->
         @include('layouts.topnavbar')
-        @include('layouts.usersidebar') --}}
+        @include('layouts.usersidebar')
         <!-- Scrollable modal -->
 {{-- <div class="modal-dialog modal-dialog-scrollable">
     
@@ -149,9 +149,8 @@
                                                     </td>
                                                     <td>{{ $list->name}}</td>
                                                     <td>{{ $list->created_at }}</td>
-                                                    <td>
-                                                        {{ $list->bedroom }}
-                                                    </td>
+                                                    <td> {{ $list->bedroom }}   </td>
+                                                 
                                                     {{-- <td>
                                                         {{ $list->bathroom}}
                                                     </td> --}}
@@ -214,7 +213,7 @@
     
 
     </div>
-    @endsection
-    {{-- @include('layouts.footer')
-    @include('layouts.script') --}}
+    {{-- @endsection --}}
+    @include('layouts.footer')
+    @include('layouts.script')
   
