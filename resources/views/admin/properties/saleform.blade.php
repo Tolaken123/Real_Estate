@@ -12,7 +12,7 @@
                         <li>{{ $error }}</li>
                     @endforeach
                 </ul>
-            {{-- </div> --}}
+            </div>
         @endif
             <div class="container-fluid">
                 <div class="card ">
@@ -24,9 +24,6 @@
                         <form action="{{ url('admin/sale') }}" method="POST">
                             @csrf
                             <div class="card-body">
-                                <div class="row">
-                                </div>
-                               
                                 <div class="dropdown">
                                     <button type="button" class="btn btn-primary dropdown-toggle"
                                         data-toggle="dropdown">
@@ -146,20 +143,22 @@
 
                                         
                                         <br>
-                                        @include('layouts.image')
+                                        @include('image.form')
                                         <br>
                                         <button type="submit" class="btn btn-primary">Submit</button>
-                                        </a>
+                                        {{-- </a> --}}
 
 
                         </form>
-                        </section>
+                       
                     </div>
                 </div>
-
             </div>
             @include('layouts.footer')
+    <input id="files" type="file" name="files[]" data-button="" multiple="" accept="image/jpeg, image/png, image/gif," style="display:none;>
+
             @include('layouts.script')
 
         </div>
+
        

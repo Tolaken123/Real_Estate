@@ -51,7 +51,8 @@ class RentController extends Controller
             'street'=>'required|string|max:255',
             'maplocation'=>'required|string|max:255',
             'description'=>'required|string|max:255',
-
+            'files' => 'required',
+            'files.*' => 'array|required', 'files.*' => 'required|mimetypes:image/jpg,image/jpeg,image/bmp' ,
         ]);
       
         $rent = new Rent();
@@ -67,19 +68,21 @@ class RentController extends Controller
         $rent->maplocation=$request->maplocation;
         $rent->description=$request->description;
         $rent->save();
+        
         if($request->hasfile('files'))
          {
-
             foreach($request->file('files') as $image)
             {
-                $name=$image->getClientOriginalName();
-                $image->move(public_path().'/upload/', $name);  
+                $name = time().'.'.$image->extension();
+                $image->move(public_path().'/files/', $name);  
                 $data[] = $name;  
+                
             }
          }
-         $files= new Image();
-         $files->filename=json_encode($data);
-        $files->save();
+             $file= new Image();
+                $file->files=json_encode($data);
+                $file->rent_id=$rent->id;
+                $file->save();
         return redirect('admin/rent')->with('rent','rent create succassfully');
         // if($request->hasfile('imageFile')) {
         //     foreach($request->file('imageFile') as $file)
@@ -132,23 +135,23 @@ class RentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-        // $this->validate($request, [
-        //     'name' =>'required',
-        //     'rentalprice'=>'required',
-        //     'bedroom'=>'required',
-        //     'bathroom'=>'required',
-        //     'landsize'=>'required',
-        //     'housesize'=>'required',
-        //     'houseno'=>'required',
-        //     'dimension'=>'required',
-        //     'street'=>'required',
-        //     'maplocation'=>'required',
-        //     'description'=>'required',
+        
+        $this->validate($request, [
+            'name' =>'required',
+            'rentalprice'=>'required',
+            'bedroom'=>'required',
+            'bathroom'=>'required',
+            'landsize'=>'required',
+            'housesize'=>'required',
+            'houseno'=>'required',
+            'dimension'=>'required',
+            'street'=>'required',
+            'maplocation'=>'required',
+            'description'=>'required',
 
-        // ]);
+        ]);
         $rent=$request->all();
-        $rent['inventery'] = $request->input('inventery');
+        // $rent['inventery'] = $request->input('inventery');
     //   //    $rent->name=$request->name;
          Rent::where('id',$id)->update($rent);
         return redirect('admin/rent')->with('rent','rent update succassfully');

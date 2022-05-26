@@ -149,9 +149,8 @@
                                                     </td>
                                                     <td>{{ $list->name}}</td>
                                                     <td>{{ $list->created_at }}</td>
-                                                    <td>
-                                                        {{ $list->bedroom }}
-                                                    </td>
+                                                    <td> {{ $list->bedroom }}   </td>
+                                                 
                                                     {{-- <td>
                                                         {{ $list->bathroom}}
                                                     </td> --}}
