@@ -101,9 +101,9 @@ Route::get('/layouts/industry_profile', function () {
 //     return view('layouts/test');
 // });
 
-// Route::get('/homepage', function () {
-//     return view('homepage');
-// });
+Route::get('/homepage', function () {
+    return view('homepage');
+});
 
 
 // Route::get('/fonte/home/Item',function(){
