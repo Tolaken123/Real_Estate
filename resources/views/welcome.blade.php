@@ -13,30 +13,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
 </head>
 
-<body>
+<body id="home">
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background: #140B5C;">
         <div class="container">
-            <a class="navbar-brand" href="#">Cam RealEstate</a> <button aria-controls="navbarSupportedContent"
+            <a class="navbar-brand" href="#home">Cam RealEstate</a> <button aria-controls="navbarSupportedContent"
                 aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
                 data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button"><span
                     class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                    <li class="nav-item">
                         <div class="dropdown">
                             <a class="btn dropdown-toggle link-light" href="#" role="button" id="dropdownMenuLink"
                                 data-bs-toggle="dropdown" aria-expanded="false">Properties
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">Sale</a></li>
-                                <li><a class="dropdown-item" href="#">Rent</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <li><a class="dropdown-item" href="#sale">Sale</a></li>
+                                <li><a class="dropdown-item" href="#rent">Rent</a></li>
                             </ul>
                         </div>
                     </li>
@@ -132,24 +125,21 @@
                         <div class="col-sm-6 col-md-3">
                             <div class="form-group has-info">
                                 <select class="form-control custom-select">
-                                    <option value="" disabled selected>Country</option>
-                                    <option value="1">India</option>
-                                    <option value="2">Germany</option>
-                                    <option value="3">Spain</option>
-                                    <option value="4">Russia</option>
-                                    <option value="5">United States</option>
+                                    <option value="" disabled selected>Contry</option>
+                                    <option value="1">Cambodia</option>
                                 </select>
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-2">
                             <div class="form-group has-info">
                                 <select class="form-control custom-select">
-                                    <option value="" disabled selected>City</option>
-                                    <option value="1">Moscow</option>
-                                    <option value="2">Barcelona</option>
-                                    <option value="3">Mumbai</option>
-                                    <option value="4">Houston</option>
-                                    <option value="5">Sokovia</option>
+                                    <option value="" disabled selected>Province</option>
+                                    <option value="1">Siem Reap</option>
+                                    <option value="2">Phnom Penh</option>
+                                    <option value="3">Battambang</option>
+                                    <option value="1">Kampongthom</option>
+                                    <option value="2">Kampot</option>
+                                    <option value="3">Seihanuk Vill</option>
                                 </select>
                             </div>
                         </div>
@@ -157,11 +147,14 @@
                             <div class="form-group has-info">
                                 <select class="form-control custom-select">
                                     <option value="" disabled selected>Property Type</option>
-                                    <option value="1">Apartment</option>
-                                    <option value="2">Villa/Mansion</option>
-                                    <option value="3">Cottage</option>
-                                    <option value="4">Flat</option>
-                                    <option value="5">House</option>
+                                    <option value="1">House/Villa</option>
+                                    <option value="2">Hotel/Boutique/Guesthouse</option>
+                                    <option value="3">Shophouse</option>
+                                    <option value="3">Apartment/Flat/Condo</option>
+                                    <option value="3">Warehouse</option>
+                                    <option value="3">Office Space</option>
+                                    <option value="3">Retail Space</option>
+                                    <option value="3">Land</option>
                                 </select>
                             </div>
                         </div>
@@ -191,7 +184,7 @@
     
     
     <div class="row jumbotron m-5">
-    <div class="text-center mb-4 "><strong class="btn btn-primary fs-4"  style="background: #140B5C;">Properties For Sale</strong></div>
+    <div class="text-center mb-4 "><strong class="btn btn-primary fs-4"  style="background: #140B5C;" id="sale">Properties For Sale</strong></div>
         <!-- item -->
         <div class="col-lg-3 col-md-6">
             <div class="card">
@@ -555,7 +548,7 @@
 
 <!-- Property rent -->
 
-    <div class="text-center mb-4 "><strong class="btn btn-primary fs-4"  style="background: #140B5C;">Properties For Rent</strong></div>
+    <div class="text-center mb-4 "><strong class="btn btn-primary fs-4"  style="background: #140B5C;" id="rent">Properties For Rent</strong></div>
         <!-- item -->
         <div class="col-lg-3 col-md-6">
             <div class="card">
