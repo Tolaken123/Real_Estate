@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top content">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background: #140B5C;">
         <div class="container">
             <a class="navbar-brand" href="#">Cam RealEstate</a> <button aria-controls="navbarSupportedContent"
                 aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
@@ -191,7 +191,7 @@
     
     
     <div class="row jumbotron m-5">
-    <div class="text-center mb-4 "><strong class="btn btn-primary fs-4">Properties For Sale</strong></div>
+    <div class="text-center mb-4 "><strong class="btn btn-primary fs-4"  style="background: #140B5C;">Properties For Sale</strong></div>
         <!-- item -->
         <div class="col-lg-3 col-md-6">
             <div class="card">
@@ -555,7 +555,7 @@
 
 <!-- Property rent -->
 
-    <div class="text-center mb-4 "><strong class="btn btn-primary fs-4">Properties For Rent</strong></div>
+    <div class="text-center mb-4 "><strong class="btn btn-primary fs-4"  style="background: #140B5C;">Properties For Rent</strong></div>
         <!-- item -->
         <div class="col-lg-3 col-md-6">
             <div class="card">
@@ -924,11 +924,11 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js">
         </script>
 
+<div>
 <footer>
     <div class="content">
       <div class="top">
         <div class="logo-details">
-          <!-- <i class="fab fa-slack"></i> -->
           <span class="logo_name">Cam RealEstate</span>
         </div>
         <div class="media-icons">
@@ -942,7 +942,6 @@
       <div class="link-boxes">
         <ul class="text-light">
         <h3 class="text-light">Contact_Us</h3>
-          <!-- <li class="link_name">Contact_Us</li> -->
           <h6>Smart: 081513303</h6>
           <h6>Metfone: 0977535488</h6>
           <h6>E-mail: camreales@gmail.com</h6>
@@ -950,16 +949,10 @@
         </ul>
         <ul class="text-light">
         <h3 class="text-light">Address</h3>
-          <!-- <li class="link_name">Address</li> -->
-          <!-- <li><a href="#">Profile</a></li>
-          <li><a href="#">My account</a></li>
-          <li><a href="#">Prefrences</a></li>
-          <li><a href="#">Purchase</a></li> -->
           <p>Bburoad, Svaydongkum, Krong Siemreap, Siemreap.</p>
         </ul>
         <ul class="box input-box">
             <h3 class="text-light">Subscribe</h3>
-          <!-- <li class="link_name">Subscribe</li> -->
           <li><input type="text" placeholder="Enter your email"></li>
           <li><input type="button" value="Subscribe"></li>
         </ul>
@@ -975,6 +968,7 @@
       </div>
     </div>
   </footer>
+  </div>
 </body>
 
 </html>

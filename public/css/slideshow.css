@@ -372,11 +372,11 @@ footer .bottom-details .bottom_text{
 /* industry_profile */
 * {box-sizing: border-box;}
 
-.container {
+/* .container {
   position: relative;
   width: 50%;
   max-width: 300px;
-}
+} */
 
 .imgs {
   display: block;
