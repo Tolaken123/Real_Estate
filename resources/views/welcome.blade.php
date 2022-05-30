@@ -24,12 +24,12 @@
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <div class="dropdown">
-                            <a class="btn dropdown-toggle link-light" href="#" role="button" id="dropdownMenuLink"
+                            <a class="btn dropdown-toggle link-light text-capitalize fs-4" href="#" role="button" id="dropdownMenuLink"
                                 data-bs-toggle="dropdown" aria-expanded="false">Properties
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <li><a class="dropdown-item" href="#sale">Sale</a></li>
-                                <li><a class="dropdown-item" href="#rent">Rent</a></li>
+                                <li><a class="dropdown-item text-capitalize  hover-bg" href="#sale">Sale</a></li>
+                                <li><a class="dropdown-item text-capitalize  hover-bg" href="#rent">Rent</a></li>
                             </ul>
                         </div>
                     </li>
@@ -52,14 +52,14 @@
 <li class="nav-item ">
 
 <a href="{{ route('login') }}" class="nav-link">
-    <h5>Login</h5>
+    <h5 class="text-capitalize">Login</h5>
 </a>
 <!-- {{-- class="text-sm text-gray-700 dark:text-gray-500 underline" --}} -->
 </li>
 <li class="nav-item">
 @if (Route::has('register'))
 <a href="{{ route('register') }}" class="nav-link">
-    <h5>Register</h5>
+    <h5 class="text-capitalize">Register</h5>
 </a>
 @endif
 @endauth
@@ -79,7 +79,7 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img alt="..." class="d-block w-100" src="https://i.postimg.cc/LsTXqTNZ/1.jpg">
+                <img alt="..." class="d-block w-100" src="https://live.staticflickr.com/7442/15787257743_1b50713c53_b.jpg">
                 <div class="carousel-caption">
                     <h5 class="animated bounceInRight" style="animation-delay: 1s">RealEstate</h5>
                     <p class="animated bounceInLeft d-none d-md-block" style="animation-delay: 2s">The world Properties are in your hand.</p>
@@ -87,7 +87,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img alt="..." class="d-block w-100" src="https://i.postimg.cc/C1rx7Kyh/2.jpg">
+                <img alt="..." class="d-block w-100" src="https://live.staticflickr.com/8596/16295589400_ae836d00ea_b.jpg">
                 <div class="carousel-caption">
                     <h5 class="animated bounceInRight" style="animation-delay: 1s">Properties Sale</h5>
                     <p class="animated bounceInLeft d-none d-md-block" style="animation-delay: 2s">Find many properties to buy.</p>
@@ -95,7 +95,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img alt="..." class="d-block w-100" src="https://i.postimg.cc/c4nL7ZFW/3.jpg">
+                <img alt="..." class="d-block w-100" src="https://live.staticflickr.com/7419/16218918228_93ab6aa2e9_b.jpg">
                 <div class="carousel-caption">
                     <h5 class="animated bounceInRight" style="animation-delay: 1s">Properties Rent</h5>
                     <p class="animated bounceInLeft d-none d-md-block" style="animation-delay: 2s">Thare are many Properties for rent.</p>
@@ -942,7 +942,7 @@
         </ul>
         <ul class="text-light">
         <h3 class="text-light">Address</h3>
-          <p>Bburoad, Svaydongkum, Krong Siemreap, Siemreap.</p>
+          <p class="fst-italic">BBU road, Svaydongkum, Krong Siemreap, Siemreap.</p>
         </ul>
         <ul class="box input-box">
             <h3 class="text-light">Subscribe</h3>
@@ -953,7 +953,7 @@
     </div>
     <div class="bottom-details">
       <div class="bottom_text">
-        <span class="copyright_text">Copyright &#169; 2021 <a href="#">Cam RealEstate</a>All rights reserved</span>
+        <span class="copyright_text">Copyright &#169; 2022 <a href="#">Cam RealEstate</a>All rights reserved</span>
         <span class="policy_terms">
           <a href="#">Privacy policy</a>
           <a href="#">Terms & condition</a>

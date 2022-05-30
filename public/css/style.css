@@ -77,4 +77,7 @@
 		padding: 10px 15px;
 		font-size: 15px;
 	}
+	.hover-bg a:hover{
+		color: rgba(16, 161, 3, 0.432);
+	}
 }
