@@ -23,9 +23,11 @@
 <body>
     {{-- <div class="container mt-5"> --}}
         {{-- <h3 class="text-center mb-5">Image Upload in Laravel</h3> --}}
-    <form action="{{ url('admin/rent') }}" method="post" enctype="multipart/form-data"> 
-        {{ csrf_field() }} 
+    {{-- <form action="{{ url('admin/rent') }}" method="post" enctype="multipart/form-data">  --}}
+        {{-- {{ csrf_field() }}  --}}
 
+        <form action="{{route('imageUpload')}}" method="post" enctype="multipart/form-data">
+            @csrf
             @if ($message = Session::get('success'))
                 <div class="alert alert-success">
                     <strong>{{ $message }}</strong>
@@ -45,7 +47,10 @@
             </div>            
             <div class="custom-file">
                 <input type="file" name="imageFile[]" class="custom-file-input" id="images" multiple="multiple">
+
                 <label class="custom-file-label" for="images">Add image</label>
+
+                {{-- <label class="custom-file-label" for="images">Add IMage</label> --}}
             </div>
             {{-- <button type="submit" name="submit" class="btn btn-primary btn-block mt-4">
                 Upload Images

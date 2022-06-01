@@ -143,7 +143,9 @@
 
                                         
                                         <br>
+
                                         @include('image.form')
+                                        {{-- @include('image-upload') --}}
                                         <br>
                                         <button type="submit" class="btn btn-primary">Submit</button>
                                         {{-- </a> --}}

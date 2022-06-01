@@ -1,4 +1,5 @@
 
+
 @include('layouts.style')
 @include('layouts.lightmode')
         <!-- Navbar -->
@@ -142,6 +143,7 @@
                           </form>
                        
                       </div>
+
                     </div>
                 </div>
                 @include('layouts.footer')
