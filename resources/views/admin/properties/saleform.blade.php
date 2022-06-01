@@ -127,7 +127,6 @@
 
                                 {{-- @include('layouts.inventory') --}}
 
-<<<<<<< HEAD
                                         
                                         <br>
 
@@ -136,9 +135,6 @@
                                         <br>
                                         <button type="submit" class="btn btn-primary">Submit</button>
                                         {{-- </a> --}}
-=======
->>>>>>> 15d7e9030b5c8059fb85ad6ee8744183efb3a65c
-
                                 <br>
                                 @include('image.form')
                                 <br>
