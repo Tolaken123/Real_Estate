@@ -35,7 +35,7 @@
 .navbar-nav a {
 	font-size: 18px;
 	text-transform: uppercase;
-	font-weight: bold;
+	/* font-weight: bold; */
 }
 .navbar-light .navbar-brand {
 	color: #fff;
@@ -76,5 +76,8 @@
 	.carousel-caption a {
 		padding: 10px 15px;
 		font-size: 15px;
+	}
+	.hover-bg a:hover{
+		color: rgba(16, 161, 3, 0.432);
 	}
 }

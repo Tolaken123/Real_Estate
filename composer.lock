@@ -959,6 +959,7 @@
         },
         {
             "name": "laravel/framework",
+<<<<<<< Updated upstream
             "version": "v8.83.14",
             "source": {
                 "type": "git",
@@ -969,6 +970,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/framework/zipball/141cf126f1746c7264f59aa78c923a84eaab501e",
                 "reference": "141cf126f1746c7264f59aa78c923a84eaab501e",
+=======
+            "version": "v8.83.13",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/framework.git",
+                "reference": "1eed68ec70c98d1a7a6f0fcedbea10cb6dd69a20"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/1eed68ec70c98d1a7a6f0fcedbea10cb6dd69a20",
+                "reference": "1eed68ec70c98d1a7a6f0fcedbea10cb6dd69a20",
+>>>>>>> Stashed changes
                 "shasum": ""
             },
             "require": {
@@ -1128,7 +1141,11 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
+<<<<<<< Updated upstream
             "time": "2022-05-24T14:04:02+00:00"
+=======
+            "time": "2022-05-17T14:08:01+00:00"
+>>>>>>> Stashed changes
         },
         {
             "name": "laravel/sanctum",
@@ -6125,6 +6142,7 @@
         },
         {
             "name": "laravel/sail",
+<<<<<<< Updated upstream
             "version": "v1.14.7",
             "source": {
                 "type": "git",
@@ -6135,6 +6153,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/sail/zipball/c049316f9bcb02598607307f18b514b66202b639",
                 "reference": "c049316f9bcb02598607307f18b514b66202b639",
+=======
+            "version": "v1.14.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/sail.git",
+                "reference": "f00f3a8f83e71436d473cda7700ae7b4b68d26cc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/sail/zipball/f00f3a8f83e71436d473cda7700ae7b4b68d26cc",
+                "reference": "f00f3a8f83e71436d473cda7700ae7b4b68d26cc",
+>>>>>>> Stashed changes
                 "shasum": ""
             },
             "require": {
@@ -6181,7 +6211,11 @@
                 "issues": "https://github.com/laravel/sail/issues",
                 "source": "https://github.com/laravel/sail"
             },
+<<<<<<< Updated upstream
             "time": "2022-05-21T17:14:14+00:00"
+=======
+            "time": "2022-05-18T15:56:59+00:00"
+>>>>>>> Stashed changes
         },
         {
             "name": "mockery/mockery",
