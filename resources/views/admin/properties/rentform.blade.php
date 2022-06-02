@@ -16,6 +16,7 @@
                 </ul>
             {{-- </div> --}}
         @endif
+        <br> <br>
             <div class="container-fluid">
                 <div class="card ">
                     <div class="card card-primary">
@@ -125,9 +126,12 @@
                                     <label for="exampleFormControlTextarea1" class="form-label">Descrioption</label>
                                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
                                 </div>
-                        </section>
                                 @include('image.form')
+                        </section>
+                              
+                                <br>
                             <button type="submit" class="btn btn-primary">Submit</button>        
+                            <br> <br>
                         
                           </form>
                        
@@ -136,8 +140,7 @@
                     </div>
                 </div>
                 @include('layouts.footer')
-               <input id="files" type="file" name="files[]" data-button="" multiple="" accept="image/jpeg, image/png, image/gif," style="display:none;>
-                @include('layouts.script')
+              
     
             </div>
 

@@ -18,7 +18,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js" crossorigin="anonymous"></script>
 
   <!-- Images loader -->
-  <script src="{{ asset("js/jquery.imagesloader-1.0.1.js")}}"></script>
+  <script src="{{ asset('js/jquery.imagesloader-1.0.1.js')}}"> </script>
 
 </head>
 
@@ -39,14 +39,10 @@
         {{ csrf_field() }} 
       <!--Image Upload-->
      
-      <div class="row mt-3 mb-2">
-
-        <div class="col-12 pr-0 text-left">
-          <label for="Images" class="col-form-label text-nowrap"><strong>Images loader</strong></label>
-        </div>
-      </div>
+     
 
       <!--Image container -->
+      
       <div class="row"
            data-type="imagesloader"
            data-errorformat="Accepted file formats"
@@ -57,8 +53,9 @@
            data-modifyimagetext="Modify immage">
 
         <!-- Progress bar -->
+        
         <div class="col-12 order-1 mt-2">
-          <div data-type="progress" class="progress" style="height: 25px; display:none;">
+          <div data-type="progress" class="progress" style="height: 250px; display:none;">
             <div data-type="progressBar" class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: 100%;">Load in progress...</div>
           </div>
         </div>
@@ -66,7 +63,7 @@
         <!-- Model -->
        
            
-        <div data-type="image-model" class="col-4 pl-2 pr-2 pt-2" style="max-width:200px; display:none;">
+        <div data-type="image-model" class="col-2 pl-2 pr-2 pt-2" style="max-width:200px; display:none;">
 
           <div class="ratio-box text-center" data-type="image-ratio-boxs">
             <img data-type="noimage" class="btn btn-light ratio-img img-fluid p-2 image border dashed rounded" src="{{ asset('img/photo-camera-gray.svg')}}" style="cursor:pointer;">
@@ -125,12 +122,6 @@
 
         </form>
 
-           <div class="row mt-2">
-            <div class="col-md-4 offset-md-8 text-center mb-4">
-              <button id="btnContinue" type="submit" form="frm" class="btn btn-block btn-outline-success float-right" data-toggle="tooltip" data-trigger="manual" data-placement="top" data-title="Continue">
-                Continue<span id="btnContinueIcon" class="fa fa-chevron-circle-right ml-2"></span><span id="btnContinueLoading" class="fa fa-spin fa-spinner ml-2" style="display:none"></span>
-              </button>
-            </div>
 
     </div>
 
@@ -147,7 +138,7 @@
 
       // Create image loader plugin
       var imagesloader = $('[data-type=imagesloader]').imagesloader({
-        maxFiles: 30
+        maxFiles: 25
         , minSelect: 1
         , imagesToLoad: auctionImages
       });

@@ -245,7 +245,7 @@ function drawRotated(img,degree) {
 
         fadeTime: 'slow'
       , inputID: 'files'
-      , maxfiles: 4
+      , maxfiles: 25
       , maxSize: 5000 * 1024 // Kb
       , minSelect: 1
       , imagesToLoad: null
