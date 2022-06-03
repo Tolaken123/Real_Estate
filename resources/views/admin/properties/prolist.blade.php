@@ -1,7 +1,5 @@
 
-    
-
-{{-- @include('layouts.style') --}}
+ @include('layouts.style') 
 <style>
     body {
         background: #eee;
@@ -86,10 +84,10 @@
 
 </style>
 
-{{-- @include('layouts.lightmode')
+ @include('layouts.lightmode')
 <!-- Navbar -->
 @include('layouts.topnavbar')
-@include('layouts.usersidebar') --}}
+@include('layouts.usersidebar')
 
 @extends('layouts.admin')
 @section('content')

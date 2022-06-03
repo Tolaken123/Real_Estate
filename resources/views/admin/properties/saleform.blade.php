@@ -125,16 +125,7 @@
                                         name="description"></textarea>
                                 </div>
 
-                                {{-- @include('layouts.inventory') --}}
-
-                                        
-                                        <br>
-
-                                        @include('image.form')
-                                        {{-- @include('image-upload') --}}
-                                        <br>
-                                        <button type="submit" class="btn btn-primary">Submit</button>
-                                        {{-- </a> --}}
+                            
                                 <br>
                                 @include('image.form')
                                 <br>
@@ -148,8 +139,7 @@
         </div>
     </div>
     @include('layouts.footer')
-    <input id="files" type="file" name="files[]" data-button="" multiple="" accept="image/jpeg, image/png, image/gif,"
-        style="display:none;">
+   
 
             
 
