@@ -113,20 +113,12 @@
             <div class="card">
                 <div class="card-body">
                     <form role="form" class="row">
-                        <div class="col-sm-6 col-md-3">
+                        <div class="col-sm-6 col-md-2">
                             <div class="form-group has-info">
                                 <select class="form-control custom-select">
                                     <option value="" disabled selected>Status</option>
                                     <option value="1">Rent</option>
                                     <option value="2">Sale</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-3">
-                            <div class="form-group has-info">
-                                <select class="form-control custom-select">
-                                    <option value="" disabled selected>Contry</option>
-                                    <option value="1">Cambodia</option>
                                 </select>
                             </div>
                         </div>
@@ -158,6 +150,29 @@
                                 </select>
                             </div>
                         </div>
+                        <div class="col-sm-6 col-md-2">
+                            <div class="form-group has-info">
+                                <!-- <input class="form-control custom-select" Type="text" value="Min-Price"></input> -->
+                                <select class="form-control custom-select">
+                                    <option value="" disabled selected>Min-Price</option>
+                                    <option value="">$3,000</option>
+                                    <option value="">$5,000</option>
+                                    <option value="">$10,000</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-2">
+                            <div class="form-group has-info">
+                                <!-- <input class="form-control custom-select" Type="text" value="Max-Price"></input> -->
+                                <select class="form-control custom-select">
+                                    <option value="" disabled selected>Max-Price</option>
+                                    <option value="1">$10,000</option>
+                                    <option value="3">$50,000</option>
+                                    <option value="1">$100,000</option>
+                                    <option value="3">$200,000</option>
+                                </select>
+                            </div>
+</div>
                         <div class="col-sm-6 col-md-1">
                             <a href="#" class="btn btn-info btn-m">
                                 <span class="glyphicon glyphicon-search"></span> Search
