@@ -127,68 +127,22 @@
                                         </div>
                                         <div class="form-group">
                                     <label for="exampleFormControlTextarea1" class="form-label">Descrioption</label>
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description" value="">{{$rents->description }}</textarea>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
                                 </div>
-                                {{-- @include('layouts.inventory') --}}
-                                    
-    <label class="checkbox-inline">
-        <input type="checkbox" name="inventery[]" value="genterator"{{ $rents->inventery=="genterator"? 'checked':''}}>&nbspGenterator
-      </label>
-      <label class="checkbox-inline">
-        <input type="checkbox"  name="inventery[]"value="Fan" {{ $rents->inventery=="fun"? 'checked':'' }}/>&nbspFan
-      </label>
-      <label class="checkbox-inline">
-        <input type="checkbox" name="inventery[]"value="Sofa">&nbspSofa
-      </label>
-      <label class="checkbox-inline">
-        <input type="checkbox"name="inventery[]" value="Refrigerator">&nbsp Refrigerator
-      </label>
-      <label class="checkbox-inline">
-        <input type="checkbox"name="inventery[]" value="Bed">&nbspBed
-      </label>
-      <label class="checkbox-inline">
-        <input type="checkbox"name="inventery[]" value="Aircondictionor">&nbspAircondictionor
-      </label>
-      <label class="checkbox-inline">
-        <input type="checkbox"name="inventery[]" value="TV">&nbspTV
-      </label>
-      <label class="checkbox-inline">
-        <input type="checkbox"name="inventery[]" value="Laundry Machine">&nbspLaundry Machine
-      </label>
-      <label class="checkbox-inline">
-        <input type="checkbox"name="inventery[]" value="Microwave">&nbspMicrowave
-      </label>
-      <label class="checkbox-inline">
-        <input type="checkbox"name="inventery[]" value="CCTV">&nbspCCTV
-      </label>
-      <label class="checkbox-inline">
-        <input type="checkbox"name="checkbox[]" value="Hot and Cold water">&nbspHot and Cold water
-      </label>
-      <label class="checkbox-inline">
-        <input type="checkbox"name="checkbox[]" value="Desk/Chair">&nbspDesk/Chair
-      </label>
-      <label class="checkbox-inline">
-        <input type="checkbox"name="checkbox[]" value="Cabinet">&nbsp Cabinet
-      </label>
-  
-  
-                      
-                                        
-                                        
-                                        @include('image-upload')
-                                        
-                                        <button type="submit" class="btn btn-primary">Submit</button>
-                                        </a>
-                                        <br><br>
-
-                        </form>
+                                @include('image.form')
                         </section>
+                              
+                                <br>
+                            <button type="submit" class="btn btn-primary">Submit</button>        
+                            <br> <br>
+                        
+                          </form>
+                       
+                      </div>
+
                     </div>
                 </div>
-
+                @include('layouts.footer')
+              
+    
             </div>
-            @include('layouts.footer')
-
-        </div>
-       @include('layouts.script')
-

@@ -151,9 +151,6 @@
                                                     <td>{{ $list->created_at }}</td>
                                                     <td> $ {{ $list->rentalprice }}  </td>
                                                  
-                                                    {{-- <td>
-                                                        {{ $list->bathroom}}
-                                                    </td> --}}
                                                     <td style="width: 10%;">
                                                         <a href="/admin/rent/{{$list->id}}/edit" class="table-link text-info">
                                                             <span class="fa-stack">

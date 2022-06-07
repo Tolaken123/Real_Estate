@@ -125,25 +125,20 @@
                                     <label for="exampleFormControlTextarea1" class="form-label">Descrioption</label>
                                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
                                 </div>
-
-                                        @include('layouts.inventory')
-
-                                        
-                                        <br>
-                                        @include('image-upload')
-                                        <br>
-                                        <button type="submit" class="btn btn-primary">Submit</button>
-                                        </a>
-
-
-                        </form>
+                                @include('image.form')
                         </section>
+                              
+                                <br>
+                            <button type="submit" class="btn btn-primary">Submit</button>        
+                            <br> <br>
+                        
+                          </form>
+                       
+                      </div>
+
                     </div>
                 </div>
-
+                @include('layouts.footer')
+             
+    
             </div>
-            @include('layouts.footer')
-            @include('layouts.script')
-
-        </div>
-       

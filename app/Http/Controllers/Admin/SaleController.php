@@ -37,18 +37,19 @@ class SaleController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' =>'required',
-            'saleprice'=>'required',
-            'bedroom'=>'required',
-            'bathroom'=>'required',
-            'landsize'=>'required',
-            'housesize'=>'required',
-            'houseno'=>'required',
-            'dimension'=>'required',
-            'street'=>'required',
-            'maplocation'=>'required',
-            'description'=>'required',
-
+            'name' =>'required|string|max:255',
+            'saleprice'=>'required|string|max:255',
+            'bedroom'=>'required|string|max:255',
+            'bathroom'=>'required|string|max:255',
+            'landsize'=>'required|string|max:255',
+            'floor'=>'required|string|max:255',
+            'houseno'=>'required|string|max:255',
+            'dimension'=>'required|string|max:255',
+            'street'=>'required|string|max:255',
+            'maplocation'=>'required|string|max:255',
+            'description'=>'required|string|max:255',
+            'files' => 'required',
+            'files.*' => 'array|required', 'files.*' => 'required|mimetypes:image/jpg,image/jpeg,image/bmp' ,
         ]);
         $sale = new Sale();
         $sale->name=$request->name;
@@ -64,7 +65,21 @@ class SaleController extends Controller
         $sale->description=$request->description;
         $sale->save();
         // dd($sale);
-        return redirect('admin/sale')->with('rent','rent create succassfully');
+        if($request->hasfile('files'))
+        {
+           foreach($request->file('files') as $image)
+           {
+               $name = time().'.'.$image->extension();
+               $image->move(public_path().'/files/', $name);  
+               $data[] = $name;  
+               
+           }
+        }
+            $file= new Image();
+               $file->files=json_encode($data);
+               $file->sale_id=$sale->id;
+               $file->save();
+       return redirect('admin/sale')->with('sale','sale create succassfully');
     
     }
 
@@ -87,7 +102,8 @@ class SaleController extends Controller
      */
     public function edit($id)
     {
-        //
+        $sale =Sale::find($id);
+        return view('admin.properties.editsaleform',compact("sale"));
     }
 
     /**
@@ -99,7 +115,26 @@ class SaleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'name' =>'required',
+            'saleprice'=>'required',
+            'bedroom'=>'required',
+            'bathroom'=>'required',
+            'landsize'=>'required',
+            'housesize'=>'required',
+            'houseno'=>'required',
+            'dimension'=>'required',
+            'street'=>'required',
+            'maplocation'=>'required',
+            'description'=>'required',
+
+        ]);
+        $sale=$request->all();
+        // $rent['inventery'] = $request->input('inventery');
+    //   //    $rent->name=$request->name;
+         Sale::where('id',$id)->update($sale);
+        return redirect('admin/sale')->with('sale','sale update succassfully');
+
     }
 
     /**
@@ -110,6 +145,10 @@ class SaleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $sale=Rent::findOrFail($id);
+        if ($rent->delete()){
+            return redirect('/admin/sale');
+        }
+        return abort(404);
     }
 }

@@ -143,4 +143,5 @@
               
     
             </div>
+            @include('layouts.script')
 
