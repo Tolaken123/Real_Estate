@@ -11,29 +11,13 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="row">
-        <div class="col-lg-4 col-md-4">
-        <div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="#">About</a>
-  <a href="#">Services</a>
-  <a href="#">Clients</a>
-  <a href="#">Contact</a>
-</div>
-
-
-<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
-        </div>
+<div class="row">
+        <div class="col-lg-4 col-md-4"></div>
         <div class="col-lg-4 col-md-4">
         <div class="container">
             <img src="../img/user2-160x160.jpg" alt="Avatar" class="imgs">
-            <div class="overlay">
-                <div>
-                    <a href=""><i class='fas fa-camera'></i></a>
-                    <a href="https://www.youtube.com/watch?v=AImzCLU8xPI"><i class='far fa-eye'></i></a>
-                </div>
-             </div>
-            </div>
+
+        </div>
         </div>
         <div class="col-lg-4 col-md-4">
             

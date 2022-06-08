@@ -166,56 +166,56 @@
     <!-- <div class="jumbotron m-3"> -->
     <div class="col-md-8 mf-12" style="background-color: #ffffff; " >
     <div class="row">
-      <div class="col-md-1">
+      <div></div>
+      <div class="col-md-5">
         <div class="container mt-1 ">
-          <img src="../img/user2-160x160.jpg" alt="#" >
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="container mt-5 p-5">
-          <a href="#" style="text-decoration: none;"><h2>Duong Ret</h2></a>
-        </div>
-      </div>
-    </div>
-      <div class="row">
-        <div class="col-md-8"></div>
-        <div class="col-md-3">
-        <table class="table table-striped ">
+          <img src="../img/user2-160x160.jpg" alt="#" ><a href="#" style="text-decoration: none;  font-size: 200%;">Duong Ret</a>
+          
+          <table class="table table-striped ">
           <thead>
             <tr>
-              <th><h4>កន្លែង</h4></th>
-              <th><h4>ចំនួន</h4></th>
+              <th><h4>property</h4></th>
+              <th><h4>Qty</h4></th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><h5>បន្ទប់គេង</h5></td>
+              <td><h5>Bedroom</h5></td>
               <td><h5>5</h5></td>
             </tr>
             <tr>
-              <td><h5>បន្ទប់ទឹក</h5></td>
+              <td><h5>bathroom</h5></td>
               <td><h5>7</h5></td>
             </tr>
             <tr>
-              <td><h5>ចំណតឡាន</h5></td>
+              <td><h5>land size</h5></td>
+              <td><h5>30 x 100</h5></td>
+            </tr>
+            <tr>
+              <td><h5>Floor size</h5></td>
               <td><h5>3</h5></td>
             </tr>
             <tr>
-              <td><h5>កន្លែងទទួលភ្ញៀវ</h5></td>
-              <td><h5>1</h5></td>
+              <td><h5>Dimension</h5></td>
+              <td><h5>20 x 30</h5></td>
             </tr>
             <tr>
-              <td><h5>សួន</h5></td>
-              <td><h5>2</h5></td>
-            </tr>
-            <tr>
-              <td><h5>ផ្ទះបាយ</h5></td>
-              <td><h5>1</h5></td>
+              <td><h5>location</h5></td>
+              <td><h5><a href="https://www.google.com/maps/place/Angkor+Wat/@13.4124745,103.864797,17z/data=!3m1!4b1!4m5!3m4!1s0x3110168aea9a272d:0x3eaba81157b0418d!8m2!3d13.4124693!4d103.8669857"><i style='font-size:24px' class='fas fa-map-marker-alt'></i></a></h5></td>
             </tr>
           </tbody>
         </table>
         </div>
       </div>
+      <div class="col-md-7">
+        <h2 class="text-center mt-3">Disciption</h2>
+        <h4 class="text-center">House sale urgentsy House sale urgentsy v House sale urgentsyHouse sale urgentsyHouse sale urgentsyHouse sale urgentsyHouse sale 
+          urgentsyHouse sale urgentsy House sale urgentsyHouse sale urgentsyHouse sale urgentsy House sale urgentsy House sale urgentsy House sale urgentsy
+          House sale urgentsy House sale urgentsy v House sale urgentsyHouse sale urgentsyHouse sale urgentsyHouse sale urgentsyHouse sale 
+          urgentsyHouse sale urgentsy House sale urgentsyHouse sale urgentsyHouse sale urgentsy House sale urgentsy House sale urgentsy House sale urgentsy
+          House sale urgentsy House sale urgentsy v House sale urgentsyHouse sale urgentsyHouse sale urgentsyHouse sale urgentsyHouse sale 
+          urgentsyHouse sale urgentsy House sale urgentsyHouse sale urgentsyHouse sale urgentsy House sale urgentsy House sale urgentsy House sale urgentsy
+        </h4>
       </div>
     </div>
   </div>
