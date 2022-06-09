@@ -9,7 +9,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="../css/slideshow.css">
-  <title>Document</title>
+  <title>Contack Us</title>
   <style>
     .mf-12{
       margin-left: 12px;
@@ -121,7 +121,7 @@
   <div class="col-md-3"></div>
   <div class="col-md-6">
     <div class="container mt-3">
-      <h2 class="txtcenter">HDDTTL KH</h2>
+      <h2 class="txtcenter">CAMREALESTATE</h2>
         <div class="list-group">
           <a href="#" class="list-group-item list-group-item-action txtcenter"><h3>Welcome</h3></a>
           <a href="#" class="list-group-item list-group-item-action "><h4>ក្រុមហ៊ុនយើងខ្ញុំមានទទួលផ្សប់ផ្សាយលក់អចលនទ្រព្យ</h4></a>
@@ -134,11 +134,11 @@
 <!-- end about us -->
 <!-- start contact us -->
 <div class="row">
-    <div class="col-md-2 p-3 col-sm-2">
+    <div class="col-md-2 p-3 col-sm-4">
     <table class="table table-striped" style="background-color: white">
             <thead>
                 <tr>
-                    <img src="../img/img1.jpg" width="100%">
+                    <img src="../img/duongprofile (1).jpg" width="100%">
                 </tr>
                 <tr>
                     <h2 class="txtcenter">Duong Ret</h2>
@@ -155,61 +155,85 @@
                 </tr>
                 <tr>
                     <td><i class="material-icons style='font-size:36px'">&#xe158;</i></td>
-                    <td><h4>duongret@gmail.com</h4></td>
+                    <td><a href="https://mail.google.com/mail/u/0/?tab=om#search/Duongret110%40gmail.com"><h4>Duongret110@gmail.com</h4></a></td>
                 </tr>
                 <tr>
                     <td><i class='fab fa-facebook' style='font-size:24px'></i></i></td>
-                    <td><h4>Duong Ret</h4></td>
+                    <td><a href="https://www.facebook.com/profile.php?id=100017824628039"><h4>Duong Ret</h4></a></td>
                 </tr>
                 <tr>
-                    <td><i class='fas fa-map-marker-alt' style='font-size:30px'></i></i></td>
-                    <td><h4>ភូមិជ្រៃ សង្កាត់ទឹកវិល ក្រុងសៀមរាប</h4></td>
-                </tr>
             </tbody>
         </table>
     </div>
-    <div class="col-md-2 p-3">
+    <div class="col-md-2 p-3 col-sm-4">
         <table class="table table-striped" style="background-color: white">
             <thead>
                 <tr>
-                    <img src="../img/img1.jpg" width="100%">
+                    <img src="../img/daraprofile.jpg" width="100%">
                 </tr>
                 <tr>
-                    <h2 class="txtcenter">Duong Ret</h2>
+                    <h2 class="txtcenter">Phuong Dara</h2>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td><i style='font-size:36px' class='fas'>&#xf2a0;</i></td>
-                    <td><h4>0882885211</h4></td>
+                    <td><h4>081513303</h4></td>
                 </tr>
                 <tr>
                     <td><i style='font-size:24px' class='fas'>&#xf1d8;</i></td>
-                    <td><h4>0882885211</h4></td>
+                    <td><h4>081513303</h4></td>
                 </tr>
                 <tr>
                     <td><i class="material-icons style='font-size:36px'">&#xe158;</i></td>
-                    <td><h4>duongret@gmail.com</h4></td>
+                    <td><a href="https://mail.google.com/mail/u/0/?tab=om#search/phuongdara125%40gmail.com"><h4>phuongdara125@gmail.com</h4></a></td>
                 </tr>
                 <tr>
                     <td><i class='fab fa-facebook' style='font-size:24px'></i></i></td>
-                    <td><h4>Duong Ret</h4></td>
+                    <td><a href="https://www.facebook.com/phuong.dara.71"><h4>Phuong Dara</h4></a></td>
                 </tr>
                 <tr>
-                    <td><i class='fas fa-map-marker-alt' style='font-size:30px'></i></i></td>
-                    <td><h4>ភូមិជ្រៃ សង្កាត់ទឹកវិល ក្រុងសៀមរាប</h4></td>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-2 p-3 col-sm-4">
+    <table class="table table-striped" style="background-color: white">
+            <thead>
+                <tr>
+                    <img src="../img/heyprofile.jpg" width="100%">
+                </tr>
+                <tr>
+                    <h2 class="txtcenter">Chhon Hey</h2>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><i style='font-size:36px' class='fas'>&#xf2a0;</i></td>
+                    <td><h4>090679942</h4></td>
+                </tr>
+                <tr>
+                    <td><i style='font-size:24px' class='fas'>&#xf1d8;</i></td>
+                    <td><h4>090679942</h4></td>
+                </tr>
+                <tr>
+                    <td><i class="material-icons style='font-size:36px'">&#xe158;</i></td>
+                    <td><a href="https://mail.google.com/mail/u/0/?tab=om#search/heyn0504%40gmail.com"><h4>heyn0504@gmail.com</h4></a></td>
+                </tr>
+                <tr>
+                    <td><i class='fab fa-facebook' style='font-size:24px'></i></i></td>
+                    <td><a href="https://www.facebook.com/hey.chhorn"><h4>Hey Chhon</h4></a></td>
                 </tr>
             </tbody>
         </table>
     </div>
-    <div class="col-md-2 p-3">
+    <div class="col-md-2 p-3 col-sm-4">
     <table class="table table-striped" style="background-color: white">
             <thead>
                 <tr>
-                    <img src="../img/img1.jpg" width="100%">
+                    <img src="../img/tharothprofile.jpg" width="100%">
                 </tr>
                 <tr>
-                    <h2 class="txtcenter">Duong Ret</h2>
+                    <h2 class="txtcenter">Van Sotharoth</h2>
                 </tr>
             </thead>
             <tbody>
@@ -223,27 +247,23 @@
                 </tr>
                 <tr>
                     <td><i class="material-icons style='font-size:36px'">&#xe158;</i></td>
-                    <td><h4>duongret@gmail.com</h4></td>
+                    <td><a href=""><h4>vansotharoth@gmail.com</h4></a></td>
                 </tr>
                 <tr>
                     <td><i class='fab fa-facebook' style='font-size:24px'></i></i></td>
-                    <td><h4>Duong Ret</h4></td>
-                </tr>
-                <tr>
-                    <td><i class='fas fa-map-marker-alt' style='font-size:30px'></i></i></td>
-                    <td><h4>ភូមិជ្រៃ សង្កាត់ទឹកវិល ក្រុងសៀមរាប</h4></td>
+                    <td><a href="https://www.facebook.com/vann.sotharoth"><h4>Van Sotharoth</h4></a></td>
                 </tr>
             </tbody>
         </table>
     </div>
-    <div class="col-md-2 p-3">
+    <div class="col-md-2 p-3 col-sm-4">
     <table class="table table-striped" style="background-color: white">
             <thead>
                 <tr>
-                    <img src="../img/img1.jpg" width="100%">
+                    <img src="../img/tolaprofile.jpg" width="100%">
                 </tr>
                 <tr>
-                    <h2 class="txtcenter">Duong Ret</h2>
+                    <h2 class="txtcenter">Ken Tola</h2>
                 </tr>
             </thead>
             <tbody>
@@ -257,27 +277,24 @@
                 </tr>
                 <tr>
                     <td><i class="material-icons style='font-size:36px'">&#xe158;</i></td>
-                    <td><h4>duongret@gmail.com</h4></td>
+                    <td><a href=""><h4>tolaken@gmail.com</h4></a></td>
                 </tr>
                 <tr>
                     <td><i class='fab fa-facebook' style='font-size:24px'></i></i></td>
-                    <td><h4>Duong Ret</h4></td>
+                    <td><a href="https://www.facebook.com/no.zerm.94"><h4>Ken Tola</h4></a></td>
                 </tr>
                 <tr>
-                    <td><i class='fas fa-map-marker-alt' style='font-size:30px'></i></i></td>
-                    <td><h4>ភូមិជ្រៃ សង្កាត់ទឹកវិល ក្រុងសៀមរាប</h4></td>
-                </tr>
             </tbody>
         </table>
     </div>
-    <div class="col-md-2 p-3">
+    <div class="col-md-2 p-3 col-sm-4">
     <table class="table table-striped" style="background-color: white">
             <thead>
                 <tr>
-                    <img src="../img/img1.jpg" width="100%">
+                    <img src="../img/lyhorngprofile.jpg" width="100%">
                 </tr>
                 <tr>
-                    <h2 class="txtcenter">Duong Ret</h2>
+                    <h2 class="txtcenter">Ly Horng</h2>
                 </tr>
             </thead>
             <tbody>
@@ -291,49 +308,11 @@
                 </tr>
                 <tr>
                     <td><i class="material-icons style='font-size:36px'">&#xe158;</i></td>
-                    <td><h4>duongret@gmail.com</h4></td>
+                    <td><a href=""><h4>lyhorng@gmail.com</h4></a></td>
                 </tr>
                 <tr>
                     <td><i class='fab fa-facebook' style='font-size:24px'></i></i></td>
-                    <td><h4>Duong Ret</h4></td>
-                </tr>
-                <tr>
-                    <td><i class='fas fa-map-marker-alt' style='font-size:30px'></i></i></td>
-                    <td><h4>ភូមិជ្រៃ សង្កាត់ទឹកវិល ក្រុងសៀមរាប</h4></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="col-md-2 p-3">
-    <table class="table table-striped" style="background-color: white">
-            <thead>
-                <tr>
-                    <img src="../img/img1.jpg" width="100%">
-                </tr>
-                <tr>
-                    <h2 class="txtcenter">Duong Ret</h2>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><i style='font-size:36px' class='fas'>&#xf2a0;</i></td>
-                    <td><h4>0882885211</h4></td>
-                </tr>
-                <tr>
-                    <td><i style='font-size:24px' class='fas'>&#xf1d8;</i></td>
-                    <td><h4>0882885211</h4></td>
-                </tr>
-                <tr>
-                    <td><i class="material-icons style='font-size:36px'">&#xe158;</i></td>
-                    <td><h4>duongret@gmail.com</h4></td>
-                </tr>
-                <tr>
-                    <td><i class='fab fa-facebook' style='font-size:24px'></i></i></td>
-                    <td><h4>Duong Ret</h4></td>
-                </tr>
-                <tr>
-                    <td><i class='fas fa-map-marker-alt' style='font-size:30px'></i></i></td>
-                    <td><h4>ភូមិជ្រៃ សង្កាត់ទឹកវិល ក្រុងសៀមរាប</h4></td>
+                    <td><a href="https://www.facebook.com/profile.php?id=100008194535136"><h4>Ly Horng</h4></a></td>
                 </tr>
             </tbody>
         </table>
