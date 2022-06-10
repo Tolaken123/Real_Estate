@@ -205,16 +205,11 @@
         <a href="#">
 
             <div class="card">
-<<<<<<< HEAD
+
             <a href="#">
 
                 <img class="card-img-top" src="../img/House1.jpg" alt="Card image cap">
             </a>
-=======
-              
-                <img class="card-img-top" src="../img/House1.jpg" alt="">
-             </a>
->>>>>>> 26870c6ee0bcb11487cb1f00fa8476bf75fe4d8d
                 <div class="card-img-overlay">
                     <span class="badge badge-danger badge-pill">For Sale</span>
                 </div>
