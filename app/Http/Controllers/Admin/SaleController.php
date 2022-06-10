@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Sale;
+use App\Models\Image;
 class SaleController extends Controller
 {
     /**
@@ -65,20 +66,20 @@ class SaleController extends Controller
         $sale->description=$request->description;
         $sale->save();
         // dd($sale);
-        if($request->hasfile('files'))
-        {
-           foreach($request->file('files') as $image)
-           {
-               $name = time().'.'.$image->extension();
-               $image->move(public_path().'/files/', $name);  
-               $data[] = $name;  
+        // if($request->hasfile('files'))
+        // {
+        //    foreach($request->file('files') as $image)
+        //    {
+        //        $name = time().'.'.$image->extension();
+        //        $image->move(public_path().'/files/', $name);  
+        //        $data[] = $name;  
                
-           }
-        }
-            $file= new Image();
-               $file->files=json_encode($data);
-               $file->sale_id=$sale->id;
-               $file->save();
+        //    }
+        // }
+        //     $file= new Image();
+        //        $file->files=json_encode($data);
+        //        $file->sale_id=$sale->id;
+        //        $file->save();
        return redirect('admin/sale')->with('sale','sale create succassfully');
     
     }
@@ -145,8 +146,8 @@ class SaleController extends Controller
      */
     public function destroy($id)
     {
-        $sale=Rent::findOrFail($id);
-        if ($rent->delete()){
+        $sale=Sale::findOrFail($id);
+        if ($sale->delete()){
             return redirect('/admin/sale');
         }
         return abort(404);

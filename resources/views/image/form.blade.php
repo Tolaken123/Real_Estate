@@ -25,7 +25,7 @@
 <body>
 
   <div class="container col-10 ">
-    <div class="content-wrapper">
+    {{-- <div class="content-wrapper"> --}}
       @if ($errors->any())
       <div class="alert alert-danger">
           <ul>
@@ -35,8 +35,8 @@
           </ul>
       </div> 
       @endif
-    <form id="frm" method="POST"  action="/image " class="needs-validation" novalidate="">
-        {{ csrf_field() }} 
+    {{-- <form id="frm" method="POST"  action="/image " class="needs-validation" novalidate="">
+        {{ csrf_field() }}  --}}
       <!--Image Upload-->
      
      
@@ -120,12 +120,12 @@
         </div>
       </div>
 
-        </form>
+        {{-- </form> --}}
 
 
     </div>
 
-  </div>
+  {{-- </div> --}}
 
   <!-- Custom javascript -->
   <script type="text/javascript">

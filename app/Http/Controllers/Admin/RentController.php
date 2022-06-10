@@ -16,8 +16,8 @@ class RentController extends Controller
     public function index()
     {
         $rent=Rent::all();
-        $cat=Inventery::get("id",'inventery');
-        return view('admin.properties.rentlist',['rent'=>$rent,'cat'=>$cat]);
+        // $cat=Inventery::get("id",'inventery');
+        return view('admin.properties.rentlist',['rent'=>$rent]);
     }
 
     /**
@@ -51,8 +51,8 @@ class RentController extends Controller
             'street'=>'required|string|max:255',
             'maplocation'=>'required|string|max:255',
             'description'=>'required|string|max:255',
-            'files' => 'required',
-            'files.*' => 'array|required', 'files.*' => 'required|mimetypes:image/jpg,image/jpeg,image/bmp' ,
+            // 'files' => 'required',
+            // 'files.*' => 'array|required', 'files.*' => 'required|mimetypes:image/jpg,image/jpeg,image/bmp' ,
         ]);
       
         $rent = new Rent();
@@ -69,20 +69,20 @@ class RentController extends Controller
         $rent->description=$request->description;
         $rent->save();
         
-        if($request->hasfile('files'))
-         {
-            foreach($request->file('files') as $image)
-            {
-                $name = time().'.'.$image->extension();
-                $image->move(public_path().'/files/', $name);  
-                $data[] = $name;  
+        // if($request->hasfile('files'))
+        //  {
+        //     foreach($request->file('files') as $image)
+        //     {
+        //         $name = time().'.'.$image->extension();
+        //         $image->move(public_path().'/files/', $name);  
+        //         $data[] = $name;  
                 
-            }
-         }
-             $file= new Image();
-                $file->files=json_encode($data);
-                $file->rent_id=$rent->id;
-                $file->save();
+        //     }
+        //  }
+        //      $file= new Image();
+        //         $file->files=json_encode($data);
+        //         $file->rent_id=$rent->id;
+        //         $file->save();
         return redirect('admin/rent')->with('rent','rent create succassfully');
         // if($request->hasfile('imageFile')) {
         //     foreach($request->file('imageFile') as $file)

@@ -126,23 +126,21 @@
                                     <label for="exampleFormControlTextarea1" class="form-label">Descrioption</label>
                                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
                                 </div>
-                                <div class="form-group">
                                 @include('image.form')
-                                </div>
-                              
-                                <br>
-                            <button type="submit" class="btn btn-primary">Submit</button>        
-                          </form>
-                       
-                      </div>
-
-                    </div>
-                </div>
-          <input id="files" type="file" name="files[]" data-button="" multiple="" accept="image/jpeg, image/png, image/gif," style="display:none;>
-
-                @include('layouts.footer')
-              
+                            </section>
+                                  
+                                    <br>
+                                <button type="submit" class="btn btn-primary">Submit</button>        
+                                <br> <br>
+                            
+                              </form>
+                           
+                          </div>
     
-            </div>
-            @include('layouts.script')
+                        </div>
+                    </div>
+                    @include('layouts.footer')
+                  
+        
+                </div>
 
