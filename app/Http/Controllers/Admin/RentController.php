@@ -150,10 +150,23 @@ class RentController extends Controller
             'description'=>'required',
 
         ]);
-        $rent=$request->all();
-        // $rent['inventery'] = $request->input('inventery');
-    //   //    $rent->name=$request->name;
-         Rent::where('id',$id)->update($rent);
+    //     $rent=$request->all();
+    //     // $rent['inventery'] = $request->input('inventery');
+    // //   //    $rent->name=$request->name;
+    //      Rent::where('id',$id)->update($rent);
+    $rent = new Rent();
+    $rent->name=$request->name;
+    $rent->rentalprice=$request->rentalprice;
+    $rent->bedroom=$request->bedroom;
+    $rent->bathroom=$request->bathroom;
+    $rent->floor=$request->floor;
+    $rent->landsize=$request->landsize;
+    $rent->houseno=$request->houseno;
+    $rent->dimension=$request->dimension;
+    $rent->street=$request->street;
+    $rent->maplocation=$request->maplocation;
+    $rent->description=$request->description;
+    $rent->update();
         return redirect('admin/rent')->with('rent','rent update succassfully');
 
     }

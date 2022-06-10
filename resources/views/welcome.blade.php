@@ -202,8 +202,19 @@
     <div class="text-center mb-4 "><strong class="btn btn-primary fs-4"  style="background: #140B5C;" id="sale">Properties For Sale</strong></div>
         <!-- item -->
         <div class="col-lg-3 col-md-6">
+        <a href="#">
+
             <div class="card">
+<<<<<<< HEAD
+            <a href="#">
+
                 <img class="card-img-top" src="../img/House1.jpg" alt="Card image cap">
+            </a>
+=======
+              
+                <img class="card-img-top" src="../img/House1.jpg" alt="">
+             </a>
+>>>>>>> 26870c6ee0bcb11487cb1f00fa8476bf75fe4d8d
                 <div class="card-img-overlay">
                     <span class="badge badge-danger badge-pill">For Sale</span>
                 </div>
@@ -233,8 +244,7 @@
                 </div>
                 <div class="card-body border-top">
                     <div class="d-flex no-block align-items-center">
-                        <img alt="img " class="rounded-circle border border-5 border-white " src="../img/duongprofile (1).jpg"
-                            width="50px" height="50px">
+                        <img alt="img " class="rounded-circle border border-5 border-white " src="../img/duongprofile (1).jpg" width="50px" height="50px">
                         <div>
                             <h5 class="card-title m-b-0">Duong</h5>
                             <h6 class="text-muted"></h6>
@@ -242,7 +252,10 @@
                     </div>
                 </div>
             </div>
+        
         </div>
+        </a>
+
         <!-- item -->
         <div class="col-lg-3 col-md-6">
             <div class="card">
@@ -252,6 +265,7 @@
                 </div>
                 <div class="card-body bg-light">
                     <h4 class="card-title">House near the sea</h4>
+                    
                     <h4 class="text-primary">&#36; 1999999</h4>
                 </div>
                 <div class="card-body border-top">
@@ -286,6 +300,7 @@
                     </div>
                 </div>
             </div>
+            </a>
         </div>
         <!-- /item -->
         <!-- item -->
@@ -563,7 +578,7 @@
             </div>
         </div>
     </div>
-
+    <a href="https://www.youtube.com/">youtube</a>
     
         <!-- /item -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">
