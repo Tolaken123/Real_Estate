@@ -201,9 +201,9 @@
     <div class="row jumbotron m-5">
     <div class="text-center mb-4 "><strong class="btn btn-primary fs-4"  style="background: #140B5C;" id="sale">Properties For Sale</strong></div>
         <!-- item -->
-        <a href="/layouts/property_detail">
-
         <div class="col-lg-3 col-md-6">
+        <a href="#">
+
             <div class="card">
               
                 <img class="card-img-top" src="../img/House1.jpg" alt="">
@@ -291,6 +291,7 @@
                     </div>
                 </div>
             </div>
+</a>
         </div>
         <!-- /item -->
         <!-- item -->
