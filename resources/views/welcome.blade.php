@@ -201,9 +201,13 @@
     <div class="row jumbotron m-5">
     <div class="text-center mb-4 "><strong class="btn btn-primary fs-4"  style="background: #140B5C;" id="sale">Properties For Sale</strong></div>
         <!-- item -->
+        <a href="/layouts/property_detail">
+
         <div class="col-lg-3 col-md-6">
             <div class="card">
-                <img class="card-img-top" src="../img/House1.jpg" alt="Card image cap">
+              
+                <img class="card-img-top" src="../img/House1.jpg" alt="">
+             </a>
                 <div class="card-img-overlay">
                     <span class="badge badge-danger badge-pill">For Sale</span>
                 </div>
@@ -233,8 +237,7 @@
                 </div>
                 <div class="card-body border-top">
                     <div class="d-flex no-block align-items-center">
-                        <img alt="img " class="rounded-circle border border-5 border-white " src="../img/duongprofile (1).jpg"
-                            width="50px" height="50px">
+                        <img alt="img " class="rounded-circle border border-5 border-white " src="../img/duongprofile (1).jpg" width="50px" height="50px">
                         <div>
                             <h5 class="card-title m-b-0">Duong</h5>
                             <h6 class="text-muted"></h6>
@@ -243,6 +246,8 @@
                 </div>
             </div>
         </div>
+        </a>
+
         <!-- item -->
         <div class="col-lg-3 col-md-6">
             <div class="card">
