@@ -257,6 +257,7 @@
                 </div>
                 <div class="card-body bg-light">
                     <h4 class="card-title">House near the sea</h4>
+                    
                     <h4 class="text-primary">&#36; 1999999</h4>
                 </div>
                 <div class="card-body border-top">
@@ -291,7 +292,7 @@
                     </div>
                 </div>
             </div>
-</a>
+            </a>
         </div>
         <!-- /item -->
         <!-- item -->
@@ -569,7 +570,7 @@
             </div>
         </div>
     </div>
-
+    <a href="https://www.youtube.com/">youtube</a>
     
         <!-- /item -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">
