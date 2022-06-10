@@ -202,20 +202,16 @@
     <div class="text-center mb-4 "><strong class="btn btn-primary fs-4"  style="background: #140B5C;" id="sale">Properties For Sale</strong></div>
         <!-- item -->
         <div class="col-lg-3 col-md-6">
-        <a href="#">
-
+            <a href="/layouts/property_detail">
             <div class="card">
-
-            <a href="#">
-
                 <img class="card-img-top" src="../img/House1.jpg" alt="Card image cap">
-            </a>
                 <div class="card-img-overlay">
                     <span class="badge badge-danger badge-pill">For Sale</span>
                 </div>
                 <div class="card-body bg-light">
                     <h4 class="card-title">Resort for sale</h4>
                     <h4 class="text-primary">&#36; 100000</h4>
+            
                 </div>
                 <div class="card-body border-top">
                     <div class="d-flex no-block align-items-center">
@@ -247,10 +243,9 @@
                     </div>
                 </div>
             </div>
-        
-        </div>
         </a>
-
+        </div>
+        
         <!-- item -->
         <div class="col-lg-3 col-md-6">
             <div class="card">
