@@ -87,7 +87,7 @@
                                             <label for="example-number-input" class="form-control-label">Floor
                                                 Size</label>
                                             <input class="form-control" type="text" value="{{ $rents->floor }}" id="example-number-input"
-                                                name="housesize">
+                                                name="floor">
                                         </div>
 
                                         <div class="form-group">

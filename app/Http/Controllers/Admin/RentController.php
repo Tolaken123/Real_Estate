@@ -142,7 +142,7 @@ class RentController extends Controller
             'bedroom'=>'required',
             'bathroom'=>'required',
             'landsize'=>'required',
-            'housesize'=>'required',
+            'floor'=>'required',
             'houseno'=>'required',
             'dimension'=>'required',
             'street'=>'required',
@@ -154,19 +154,19 @@ class RentController extends Controller
     //     // $rent['inventery'] = $request->input('inventery');
     // //   //    $rent->name=$request->name;
     //      Rent::where('id',$id)->update($rent);
-    $rent = new Rent();
-    $rent->name=$request->name;
-    $rent->rentalprice=$request->rentalprice;
-    $rent->bedroom=$request->bedroom;
-    $rent->bathroom=$request->bathroom;
-    $rent->floor=$request->floor;
-    $rent->landsize=$request->landsize;
-    $rent->houseno=$request->houseno;
-    $rent->dimension=$request->dimension;
-    $rent->street=$request->street;
-    $rent->maplocation=$request->maplocation;
-    $rent->description=$request->description;
-    $rent->update();
+    $rents =Rent::find($id);
+    $rents->name=$request->name;
+    $rents->rentalprice=$request->rentalprice;
+    $rents->bedroom=$request->bedroom;
+    $rents->bathroom=$request->bathroom;
+    $rents->floor=$request->floor;
+    $rents->landsize=$request->landsize;
+    $rents->houseno=$request->houseno;
+    $rents->dimension=$request->dimension;
+    $rents->street=$request->street;
+    $rents->maplocation=$request->maplocation;
+    $rents->description=$request->description;
+    $rents->update();
         return redirect('admin/rent')->with('rent','rent update succassfully');
 
     }
@@ -181,10 +181,10 @@ class RentController extends Controller
     {
         $rent=Rent::findOrFail($id);
         if ($rent->delete()){
-            return redirect('/admin/rent');
+            return redirect('admin/rent')->with('Messege','deleted successfully');;
         }
         return abort(404);
-    // $deleted= Rent::where('id', $id)->delete();
-     }
+    } 
+     
     
 }
