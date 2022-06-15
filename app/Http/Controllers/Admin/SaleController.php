@@ -47,15 +47,15 @@ class SaleController extends Controller
             'dimension'=>'required|string|max:255',
             'maplocation'=>'required|string|max:255',
             'description'=>'required|string|max:255',
-            'files' => 'required',
-            'files.*' => 'array|required', 'files.*' => 'required|mimetypes:image/jpg,image/jpeg,image/bmp' ,
+            // 'files' => 'required',
+            // 'files.*' => 'array|required', 'files.*' => 'required|mimetypes:image/jpg,image/jpeg,image/bmp' ,
         ]);
         $sale = new Sale();
         $sale->name=$request->name;
         $sale->saleprice=$request->saleprice;
         $sale->bedroom=$request->bedroom;
         $sale->bathroom=$request->bathroom;
-        $sale->housesize=$request->housesize;
+        $sale->floor=$request->floor;
         $sale->landsize=$request->landsize;
         $sale->dimension=$request->dimension;
         $sale->maplocation=$request->maplocation;
@@ -118,16 +118,27 @@ class SaleController extends Controller
             'bedroom'=>'required',
             'bathroom'=>'required',
             'landsize'=>'required',
-            'housesize'=>'required',
+            'floor'=>'required',
             'dimension'=>'required',
             'maplocation'=>'required',
             'description'=>'required',
 
         ]);
-        $sale=$request->all();
-        // $rent['inventery'] = $request->input('inventery');
-    //   //    $rent->name=$request->name;
-         Sale::where('id',$id)->update($sale);
+        $sale=Sale::find($id);
+        $sale->name=$request->name;
+        $sale->saleprice=$request->saleprice;
+        $sale->bedroom=$request->bedroom;
+        $sale->bathroom=$request->bathroom;
+        $sale->floor=$request->floor;
+        $sale->landsize=$request->landsize;
+        $sale->dimension=$request->dimension;
+        $sale->maplocation=$request->maplocation;
+        $sale->description=$request->description;
+        $sale->update();
+    //     $sale=$request->all();
+    //     // $rent['inventery'] = $request->input('inventery');
+    // //   //    $rent->name=$request->name;
+    //      Sale::where('id',$id)->update($sale);
         return redirect('admin/sale')->with('sale','sale update succassfully');
 
     }

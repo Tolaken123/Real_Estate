@@ -15,7 +15,7 @@ class Sale extends Model
         'saleprice',
         'bedroom',
         'bathroom',
-        'housesize',
+        'floor',
         'dimension',
         'maplocation',
         'description',
