@@ -16,8 +16,8 @@ class RentController extends Controller
     public function index()
     {
         $rent=Rent::all();
-        $cat=Inventery::get("id",'inventery');
-        return view('admin.properties.rentlist',['rent'=>$rent,'cat'=>$cat]);
+        // $cat=Inventery::get("id",'inventery');
+        return view('admin.properties.rentlist',['rent'=>$rent]);
     }
 
     /**
@@ -49,8 +49,8 @@ class RentController extends Controller
             'dimension'=>'required|string|max:255',
             'maplocation'=>'required|string|max:255',
             'description'=>'required|string|max:255',
-            'files' => 'required',
-            'files.*' => 'array|required', 'files.*' => 'required|mimetypes:image/jpg,image/jpeg,image/bmp' ,
+            // 'files' => 'required',
+            // 'files.*' => 'array|required', 'files.*' => 'required|mimetypes:image/jpg,image/jpeg,image/bmp' ,
         ]);
       
         $rent = new Rent();
@@ -65,20 +65,20 @@ class RentController extends Controller
         $rent->description=$request->description;
         $rent->save();
         
-        if($request->hasfile('files'))
-         {
-            foreach($request->file('files') as $image)
-            {
-                $name = time().'.'.$image->extension();
-                $image->move(public_path().'/files/', $name);  
-                $data[] = $name;  
+        // if($request->hasfile('files'))
+        //  {
+        //     foreach($request->file('files') as $image)
+        //     {
+        //         $name = time().'.'.$image->extension();
+        //         $image->move(public_path().'/files/', $name);  
+        //         $data[] = $name;  
                 
-            }
-         }
-             $file= new Image();
-                $file->files=json_encode($data);
-                $file->rent_id=$rent->id;
-                $file->save();
+        //     }
+        //  }
+        //      $file= new Image();
+        //         $file->files=json_encode($data);
+        //         $file->rent_id=$rent->id;
+        //         $file->save();
         return redirect('admin/rent')->with('rent','rent create succassfully');
         // if($request->hasfile('imageFile')) {
         //     foreach($request->file('imageFile') as $file)
@@ -138,16 +138,34 @@ class RentController extends Controller
             'bedroom'=>'required',
             'bathroom'=>'required',
             'landsize'=>'required',
+<<<<<<< HEAD
             'housesize'=>'required',
+=======
+            'floor'=>'required',
+            'houseno'=>'required',
+>>>>>>> ca3b8714ba7791254f8f628e4ec039e4ec2dc05c
             'dimension'=>'required',
             'maplocation'=>'required',
             'description'=>'required',
 
         ]);
-        $rent=$request->all();
-        // $rent['inventery'] = $request->input('inventery');
-    //   //    $rent->name=$request->name;
-         Rent::where('id',$id)->update($rent);
+    //     $rent=$request->all();
+    //     // $rent['inventery'] = $request->input('inventery');
+    // //   //    $rent->name=$request->name;
+    //      Rent::where('id',$id)->update($rent);
+    $rents =Rent::find($id);
+    $rents->name=$request->name;
+    $rents->rentalprice=$request->rentalprice;
+    $rents->bedroom=$request->bedroom;
+    $rents->bathroom=$request->bathroom;
+    $rents->floor=$request->floor;
+    $rents->landsize=$request->landsize;
+    $rents->houseno=$request->houseno;
+    $rents->dimension=$request->dimension;
+    $rents->street=$request->street;
+    $rents->maplocation=$request->maplocation;
+    $rents->description=$request->description;
+    $rents->update();
         return redirect('admin/rent')->with('rent','rent update succassfully');
 
     }
@@ -155,17 +173,17 @@ class RentController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int  $id​
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
         $rent=Rent::findOrFail($id);
         if ($rent->delete()){
-            return redirect('/admin/rent');
+            return redirect('admin/rent')->with('Messege','deleted successfully');;
         }
         return abort(404);
-    // $deleted= Rent::where('id', $id)->delete();
-     }
+    } 
+     
     
 }

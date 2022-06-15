@@ -126,10 +126,10 @@ Route::get('/homepage', function () {
 //     return view('auth/Account/userprofile');
 // });
 
-// Route::get('/layouts/property_detail', function () {
-//     return view('layouts/property_detail');
-// });
+Route::get('/layouts/property_detail', function () {
+    return view('layouts/property_detail');
+});
 
-// Route::get('/layouts/contact_us',function(){
-//     return view('layouts/contact_us');
-// });
+Route::get('/layouts/contact_us',function(){
+    return view('layouts/contact_us');
+});

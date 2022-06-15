@@ -116,6 +116,7 @@
 
                         </div>
                     </div>
+<<<<<<< HEAD
                     <a href="{{ route('admin.rent.create') }}">
                         <button type="button" class="btn btn-primary">
 
@@ -196,6 +197,83 @@
                                         </li>
                                     </ul>
                                 </nav>
+=======
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="main-box no-header clearfix">
+                                <div class="main-box-body clearfix">
+                                    <div class="table-responsive">
+                                        <table class="table rent-list">
+                                            <thead>
+                                                <tr class="bg-primary">
+                                                    <th><span>Thumbnail</span></th>
+                                                    <th><span>Title</span></th>
+                                                    <th><span>Created</span></th>
+                                                    <th><span>Rent</span></th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                           
+                                            <tbody>
+                                                @foreach($rent as $list)
+                                                
+                                                <tr class="table-active">
+                                                    <td>
+                                                        <img src="https://bootdey.com/img/Content/user_1.jpg" alt="">
+                                                    </td>
+                                                    <td>{{ $list->name}}</td>
+                                                    <td>{{ $list->created_at }}</td>
+                                                    <td> $ {{ $list->rentalprice }}  </td>
+                                                 
+                                                    <td style="width: 10%;">
+                                                        <a href="/admin/rent/{{$list->id}}/edit" class="table-link text-info">
+                                                            <span class="fa-stack">
+                                                                <i class="fa fa-square fa-stack-2x"></i>
+                                                                <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                                                            </span>
+                                                        </a>
+                                                        
+                                                        <a href="#" class="table-link text-primary">
+                                                            <span class="fa-stack">
+                                                                <i class="fa fa-square fa-stack-2x"></i>
+                                                                <i class="fa fa-eye fa-stack-1x fa-inverse"
+                                                                    aria-hidden="true"></i>
+
+                                                            </span>
+                                                        </a>
+                                                       <form action="/admin/rent/{{ $list->id }}" method="POST">
+                                                        @csrf
+                                                        @method('delete')
+                                                        <a href="" class="table-link danger">
+                                                            <span class="fa-stack">
+                                                                <i class="fa fa-square fa-stack-2x"></i>
+                                                                <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+                                                            </span>
+                                                        </a>
+                                                        </form>
+                                                    </td>
+                                                </tr>
+                                                
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                        <br>
+                                        <nav aria-label="Page navigation example">
+                                            <ul class="pagination justify-content-center">
+                                                <li class="page-item disabled">
+                                                    <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                                </li>
+                                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                <li class="page-item">
+                                                    <a class="page-link" href="#">Next</a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+>>>>>>> ca3b8714ba7791254f8f628e4ec039e4ec2dc05c
                             </div>
                         </div>
                     </div>

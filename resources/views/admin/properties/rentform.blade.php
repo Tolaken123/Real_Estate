@@ -114,21 +114,25 @@
                                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
                                 </div>
                                 @include('image.form')
-                        </section>
-                              
-                                <br>
-                            <button type="submit" class="btn btn-primary">Submit</button>        
-                            <br> <br>
-                        
-                          </form>
-                       
-                      </div>
-
-                    </div>
-                </div>
-                @include('layouts.footer')
-              
+                            </section>
+                                  
+                                    <br>
+                                <button type="submit" class="btn btn-primary">Submit</button>        
+                                <br> <br>
+                            
+                              </form>
+                           
+                          </div>
     
+<<<<<<< HEAD
             </div>
            
+=======
+                        </div>
+                    </div>
+                    @include('layouts.footer')
+                  
+        
+                </div>
+>>>>>>> ca3b8714ba7791254f8f628e4ec039e4ec2dc05c
 
