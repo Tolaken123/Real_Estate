@@ -31,7 +31,7 @@
                     <a href="{{ Route('admin.properties.index') }}" class="nav-link">
                         <i class="fas fa-home"></i>
                         <p>
-                            Properties
+                            Dashboard
                             <!-- add new -->
 
                         </p>

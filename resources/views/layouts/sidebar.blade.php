@@ -86,14 +86,6 @@
                   <p>Facilities</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                <i class="fas fa-user-lock"></i>
-                  <p>Permissions</p>
-                </a>
-              </li>
-            </ul>
-          </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
             <i class="fas fa-user"></i>

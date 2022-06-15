@@ -1,5 +1,5 @@
-{{-- @extends('layouts.app')
-@section('content') --}}
+ @extends('layouts.app')
+@section('content') 
 @include('layouts.style')
 
 <div class="container">
@@ -29,4 +29,4 @@
 </div>
 @include('layouts.script')
 
-{{-- @endsection --}}
+ @endsection 

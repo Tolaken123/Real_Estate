@@ -46,9 +46,7 @@ class RentController extends Controller
             'bathroom'=>'required|string|max:255',
             'landsize'=>'required|string|max:255',
             'floor'=>'required|string|max:255',
-            'houseno'=>'required|string|max:255',
             'dimension'=>'required|string|max:255',
-            'street'=>'required|string|max:255',
             'maplocation'=>'required|string|max:255',
             'description'=>'required|string|max:255',
             'files' => 'required',
@@ -62,9 +60,7 @@ class RentController extends Controller
         $rent->bathroom=$request->bathroom;
         $rent->floor=$request->floor;
         $rent->landsize=$request->landsize;
-        $rent->houseno=$request->houseno;
         $rent->dimension=$request->dimension;
-        $rent->street=$request->street;
         $rent->maplocation=$request->maplocation;
         $rent->description=$request->description;
         $rent->save();
@@ -143,9 +139,7 @@ class RentController extends Controller
             'bathroom'=>'required',
             'landsize'=>'required',
             'housesize'=>'required',
-            'houseno'=>'required',
             'dimension'=>'required',
-            'street'=>'required',
             'maplocation'=>'required',
             'description'=>'required',
 

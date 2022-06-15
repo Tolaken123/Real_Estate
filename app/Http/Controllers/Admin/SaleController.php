@@ -43,9 +43,7 @@ class SaleController extends Controller
             'bathroom'=>'required|string|max:255',
             'landsize'=>'required|string|max:255',
             'floor'=>'required|string|max:255',
-            'houseno'=>'required|string|max:255',
             'dimension'=>'required|string|max:255',
-            'street'=>'required|string|max:255',
             'maplocation'=>'required|string|max:255',
             'description'=>'required|string|max:255',
             'files' => 'required',
@@ -58,9 +56,7 @@ class SaleController extends Controller
         $sale->bathroom=$request->bathroom;
         $sale->housesize=$request->housesize;
         $sale->landsize=$request->landsize;
-        $sale->houseno=$request->houseno;
         $sale->dimension=$request->dimension;
-        $sale->street=$request->street;
         $sale->maplocation=$request->maplocation;
         $sale->description=$request->description;
         $sale->save();
@@ -122,9 +118,7 @@ class SaleController extends Controller
             'bathroom'=>'required',
             'landsize'=>'required',
             'housesize'=>'required',
-            'houseno'=>'required',
             'dimension'=>'required',
-            'street'=>'required',
             'maplocation'=>'required',
             'description'=>'required',
 

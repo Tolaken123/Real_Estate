@@ -99,21 +99,6 @@
                                             <input class="form-control" type="text" value="" id="example-number-input"
                                                 name="dimension">
                                         </div>
-
-                                        <div class="form-group">
-                                            <label for="example-number-input" class="form-control-label">House
-                                                No.</label>
-                                            <input class="form-control" type="text" value="" id="example-number-input"
-                                                name="houseno">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="example-number-input" class="form-control-label">Street
-                                                No.</label>
-                                            <input class="form-control" type="text" value="" id="example-number-input"
-                                                name="street">
-                                        </div>
-
                                         
                                         <div class="form-group">
                                             <label for="example-number-input" class="form-control-label">Link

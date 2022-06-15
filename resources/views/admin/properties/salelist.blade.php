@@ -89,8 +89,8 @@
 @include('layouts.lightmode')
 
         <!-- Navbar -->
-        {{-- @include('layouts.topnavbar')
-        @include('layouts.usersidebar') --}}
+        @include('layouts.topnavbar')
+        @include('layouts.usersidebar')
         <div class="content-wrapper">
             <div class="container-lg">
                 <div class="card w-70">
@@ -199,5 +199,5 @@
     
 
     </div>
-    {{-- @include('layouts.footer') --}}
+     @include('layouts.footer') 
     @endsection
