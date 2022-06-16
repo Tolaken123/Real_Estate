@@ -19,7 +19,7 @@ class CreateSalesTable extends Migration
             $table->string('saleprice');
             $table->string('bedroom'); 
             $table->string('bathroom');
-            $table->string('housesize');
+            $table->string('floor');
             $table->String('houseno');
             $table->String('landsize');
             $table->string('dimension');

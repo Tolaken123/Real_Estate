@@ -53,13 +53,13 @@
                             <br>
                                         <div class="form-group">
                                             <label for="example-number-input" class="form-control-label">Title</label>
-                                            <input class="form-control" type="text" value="" id="example-number-input"
+                                            <input class="form-control" type="text" value="{{ $sale->name }}" id="example-number-input"
                                                 name="name">
                                         </div>
                                         <div class="form-group">
                                             <label for="example-number-input" class="form-control-label">Sale
                                                 Price</label>
-                                            <input class="form-control" type="text" value="" id="example-number-input"
+                                            <input class="form-control" type="text" value="{{ $sale->saleprice }}" id="example-number-input"
                                                 name="saleprice">
                                         </div>
 
@@ -67,7 +67,7 @@
 
                                             <label for="example-number-input" class="form-control-label">How many
                                                 Bedrooms?</label>
-                                            <input class="form-control" type="text" value="" id="example-number-input"
+                                            <input class="form-control" type="text" value="{{ $sale->bedroom }}" id="example-number-input"
                                                 name="bedroom">
 
                                         </div>
@@ -75,40 +75,40 @@
                                         <div class="form-group">
                                             <label for="example-number-input" class="form-control-label">How many
                                                 Bathrooms?</label>
-                                            <input class="form-control" type="text" value="" id="example-number-input"
+                                            <input class="form-control" type="text" value="{{ $sale->bathroom }}" id="example-number-input"
                                                 name="bathroom">
                                         </div>
 
                                         <div class="form-group">
                                             <label for="example-number-input" class="form-control-label">Floor
                                                 Size</label>
-                                            <input class="form-control" type="text" value="" id="example-number-input"
-                                                name="housesize">
+                                            <input class="form-control" type="text" value="{{ $sale->floor }}" id="example-number-input"
+                                                name="floor">
                                         </div>
 
                                         <div class="form-group">
                                             <label for="example-number-input" class="form-control-label">Land
                                                 Size</label>
-                                            <input class="form-control" type="text" value="" id="example-number-input"
+                                            <input class="form-control" type="text" value="{{ $sale->landsize }}" id="example-number-input"
                                                 name="landsize">
                                         </div>
 
                                         <div class="form-group">
                                             <label for="example-number-input" class="form-control-label">Land
                                                 Dimension</label>
-                                            <input class="form-control" type="text" value="" id="example-number-input"
+                                            <input class="form-control" type="text" value="{{ $sale->dimension }}" id="example-number-input"
                                                 name="dimension">
                                         </div>
                                         
                                         <div class="form-group">
                                             <label for="example-number-input" class="form-control-label">Link
                                                 Location</label>
-                                            <input class="form-control" type="text" value="" id="example-number-input"
+                                            <input class="form-control" type="text" value="{{ $sale->maplocation }}" id="example-number-input"
                                                 name="maplocation">
                                         </div>
                                         <div class="form-group">
                                     <label for="exampleFormControlTextarea1" class="form-label">Descrioption</label>
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description">{{ $sale->description }}</textarea>
                                 </div>
                                 @include('image.form')
                         </section>
