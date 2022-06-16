@@ -123,16 +123,3 @@
                               </form>
                            
                           </div>
-    
-<<<<<<< HEAD
-            </div>
-           
-=======
-                        </div>
-                    </div>
-                    @include('layouts.footer')
-                  
-        
-                </div>
->>>>>>> ca3b8714ba7791254f8f628e4ec039e4ec2dc05c
-

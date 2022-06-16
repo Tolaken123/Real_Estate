@@ -138,12 +138,10 @@ class RentController extends Controller
             'bedroom'=>'required',
             'bathroom'=>'required',
             'landsize'=>'required',
-<<<<<<< HEAD
-            'housesize'=>'required',
-=======
+
             'floor'=>'required',
             'houseno'=>'required',
->>>>>>> ca3b8714ba7791254f8f628e4ec039e4ec2dc05c
+
             'dimension'=>'required',
             'maplocation'=>'required',
             'description'=>'required',

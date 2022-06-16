@@ -4,8 +4,7 @@
 @include('layouts.topnavbar')
 @include('layouts.usersidebar')
 
-@extends('layouts.admin')
-@section('content')
+
 <br>
 <div class="content-wrapper">
     <div class="container-fluid">
@@ -219,8 +218,7 @@
                             </div>
                         </div>
                     </div>
-                     @include('layouts.footer') 
+                    @include('layouts.footer')
 
                 </div>
-             @include('layouts.script') 
-                @endsection
+                @include('layouts.script')
