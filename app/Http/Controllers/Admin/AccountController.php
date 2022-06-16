@@ -14,8 +14,10 @@ class AccountController extends Controller
      */
     public function index()
     {
-        $users=User::all();
-    return view('admin.Account.list',compact('users'));
+        $users=User::query()
+        ->orderBy('id','DESC')
+        ->get();
+        return view('admin.Account.list',compact('users'));
     }
 
     /**
@@ -23,9 +25,9 @@ class AccountController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create()    
     {
-        return view('admin.Account.userprofile');
+        return view('admin.Account.userform');
     }
 
     /**
@@ -36,7 +38,19 @@ class AccountController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+      
+        $user = User::create([
+            'name' => $request->name,
+            'sex' => $request->sex,
+            'password' => bcrypt($request->password),
+            'email' => $request->email,
+            'phone' => $request->phone
+
+        ]);
+
+        return redirect()->route('admin.user.index');
+
     }
 
     /**
@@ -59,7 +73,7 @@ class AccountController extends Controller
      */
     public function edit($id)
     {
-        
+        return view('admin.Account.userprofile');
     }
 
     /**

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Inventery;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Rent;
 use App\Models\Image;
@@ -15,7 +16,12 @@ class RentController extends Controller
      */
     public function index()
     {
-        $rent=Rent::all();
+        $rent=Rent::query()
+        ->orderBy('id','DESC')
+        ->when(\request('q'),function($query){
+            $query->where('name','like', '%' . request('q','%'));
+        })
+        ->paginate($this->default_paginate);
         // $cat=Inventery::get("id",'inventery');
         return view('admin.properties.rentlist',['rent'=>$rent]);
     }
@@ -117,9 +123,14 @@ class RentController extends Controller
      */
     public function edit($id)
     {
-        //
+        
         $rents =Rent::find($id);
-        return view('admin.properties.editrentform',compact("rents"));
+
+        $categories = Category::query()
+        ->select('id','name')
+        ->get();
+
+        return view('admin.properties.editrentform',compact("rents","categories"));
     }
 
     /**
@@ -131,26 +142,19 @@ class RentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+     
         $this->validate($request, [
+            'category_id' =>'required',
+            'location_id'=>'required',
             'name' =>'required',
             'rentalprice'=>'required',
             'bedroom'=>'required',
             'bathroom'=>'required',
             'landsize'=>'required',
-<<<<<<< HEAD
-
             'floor'=>'required',
-            'houseno'=>'required',
-
-=======
-            'floor'=>'required',
-            'houseno'=>'required',
->>>>>>> 7151259aa884ac258533cd647b58dfd2128f41e9
             'dimension'=>'required',
             'maplocation'=>'required',
             'description'=>'required',
-
         ]);
     //     $rent=$request->all();
     //     // $rent['inventery'] = $request->input('inventery');
@@ -158,14 +162,14 @@ class RentController extends Controller
     //      Rent::where('id',$id)->update($rent);
     $rents =Rent::find($id);
     $rents->name=$request->name;
+    $rents->category_id=$request->category_id;
+    $rents->location_id=$request->location_id;
     $rents->rentalprice=$request->rentalprice;
     $rents->bedroom=$request->bedroom;
     $rents->bathroom=$request->bathroom;
     $rents->floor=$request->floor;
     $rents->landsize=$request->landsize;
-    $rents->houseno=$request->houseno;
     $rents->dimension=$request->dimension;
-    $rents->street=$request->street;
     $rents->maplocation=$request->maplocation;
     $rents->description=$request->description;
     $rents->update();

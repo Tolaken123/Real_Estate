@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\User;
+use App\Models\Sale;
+use App\Models\Rent;
 
 class DashboardController extends Controller
 {
@@ -13,7 +16,16 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('admin.properties.prolist');
+        $users_counts = User::count();
+        $sales_property_count = Sale::count();
+        $rents_property_count = Rent::count();
+
+        return view('admin.dashboard',[
+            'users_count' => $users_counts,
+            'sales_property_count' => $sales_property_count,
+            'rents_property_count' => $rents_property_count,
+            'property_count'=> $sales_property_count + $rents_property_count
+        ]);
     }
 
     /**

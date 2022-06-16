@@ -25,12 +25,16 @@
                         </div>
                         <!-- /.card-header -->
                        
-                            <div class="card-body">
+                                        <form action="{{ url('admin/rent',$rents)}}" method="POST"  enctype="multipart/form-data" >
+                                            @csrf
+                                            @method('put')
+
+                                            <div class="card-body">
                                 <div class="row">
                                 </div>
                                
                             <br>
-                            <select class="form-select form-select-md mb-3" aria-label=".form-select-md example">
+                            <select class="form-select form-select-md mb-3" name="location_id" aria-label=".form-select-md example">
                                 <option selected>Select Location</option>
                                 <option value="1">Siem Reap</option>
                                 <option value="2">Phnom Penh</option>
@@ -40,21 +44,14 @@
                                 <option value="3">Seihanuk Vill</option>
                             </select>
                             <br>
-                            <select class="form-select form-select-md mb-3" aria-label=".form-select-md example">
-                                <option selected>Select Property Type</option>
-                                <option value="1">House/Villa</option>
-                                <option value="2">Hotel/Boutique/Guesthouse</option>
-                                <option value="3">Shophouse</option>
-                                <option value="3">Apartment/Flat/Condo</option>
-                                <option value="3">Warehouse</option>
-                                <option value="3">Office Space</option>
-                                <option value="3">Retail Space</option>
-                                <option value="3">Land</option>
+
+                            <select class="form-select form-select-md mb-3" name="category_id" aria-label=".form-select-md example">
+                                <option >Select Property Type</option>
+                                @foreach($categories as $category)
+                                <option value="{{ $category->id }}" @if($rents->category_id == $category->id) selected @endif>{{ $category->name }}</option>
+                                @endforeach
                             </select>
                             <br>
-                                        <form action="{{ url('admin/rent',$rents)}}" method="POST">
-                                            @csrf
-                                            @method('put')
                                         <div class="form-group">
                                             <label for="example-number-input" class="form-control-label">Title</label>
                                             <input class="form-control" type="text" value="{{$rents->name}}" id="example-number-input"
@@ -112,7 +109,7 @@
                                         </div>
                                         <div class="form-group">
                                     <label for="exampleFormControlTextarea1" class="form-label">Descrioption</label>
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description">{!! $rents->description !!}</textarea>
                                 </div>
                                 @include('image.form')
                         </section>

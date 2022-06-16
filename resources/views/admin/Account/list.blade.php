@@ -31,7 +31,7 @@
 
             <div class="container-fluid">
                 <table class="table table-bordered table-sm table-hover  border-primary">
-                    <a href="{{ route('admin.rent.create') }}">
+                    <a href="{{ route('admin.user.create') }}">
                         <button type="button" class="btn btn-primary">
 
                             Create New Property

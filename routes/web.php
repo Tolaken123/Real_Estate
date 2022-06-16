@@ -4,9 +4,8 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\FileUpload;
-// use App\Http\Controllers\Admin\RentController;
-// use App\Http\Controllers\Admin\PropertiesController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,12 +28,12 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'mi
     // Route::get('/', function () {
     //     return view('layouts.admin');});
        Route::resource('/',AdminController::class);
-       Route::resource('/dashboard',DashboardController::class);
+       Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
        Route::resource('/properties',PropertiesController::class);
        Route::resource('/user',AccountController::class);
        Route::resource('/rent',RentController::class);
        Route::resource('/sale',SaleController::class); 
-       
+
 
 });
 
