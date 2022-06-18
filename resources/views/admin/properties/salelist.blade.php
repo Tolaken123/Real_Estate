@@ -170,7 +170,10 @@
                                     </tbody>
                                 </table>
                                 <br>
-                                <nav aria-label="Page navigation example">
+                                <div class="mx-auto d-flex justify-content-center">
+                                        {{ $sale->links() }}
+                                        </div>
+                                <!-- <nav aria-label="Page navigation example">
                                     <ul class="pagination justify-content-center">
                                         <li class="page-item disabled">
                                             <a class="page-link" href="#" tabindex="-1">Previous</a>
@@ -182,7 +185,7 @@
                                             <a class="page-link" href="#">Next</a>
                                         </li>
                                     </ul>
-                                </nav>
+                                </nav> -->
                             </div>
                         </div>
                     </div>

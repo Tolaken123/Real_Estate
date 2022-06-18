@@ -7,6 +7,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Rent;
 use App\Models\Image;
+use App\Models\location\CityProvince;
 class RentController extends Controller
 {
     /**
@@ -32,9 +33,17 @@ class RentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
+    
     {
+        
+        $categories = Category::query()
+        ->select('id','name')
+        ->get();
+        $provinces = CityProvince::query()
+        ->select('id','name')
+        ->get();
 
-        return view('admin.properties.rentform');
+        return view('admin.properties.rentform',compact("categories","provinces"));
     }
 
     /**

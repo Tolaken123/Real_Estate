@@ -118,8 +118,8 @@
                                                         <th><span>Thumbnail</span></th>
                                                         <th><span>Title</span></th>
                                                         <th><span>Created</span></th>
-                                                        <th class="text-center"><span>Sale</span></th>
-                                                        <th><span>Rent</span></th>
+                                                        <th class="text-center"><span>Price</span></th>
+                                                        <th><span>Type</span></th>
 
                                                         <th> </th>
                                                     </tr>
@@ -136,10 +136,10 @@
                                                         <td>2 Bedroom House For Sale </td>
                                                         <td>2013/08/12</td>
                                                         <td class="text-center">
-                                                            <span class="label label-default">20000$</span>
+                                                            <span class="label label-default">1000$</span>
                                                         </td>
                                                         <td>
-                                                            &nbsp;
+                                                            Rent
                                                         </td>
 
                                                         <td style="width: 30%;" class="project-actions text-right">
@@ -170,10 +170,10 @@
                                                         <td>2 Bedroom House For Sale </td>
                                                         <td>2013/08/12</td>
                                                         <td class="text-center">
-                                                            <span class="label label-default"> &nbsp; </span>
+                                                            <span class="label label-default"> 12000 </span>
                                                         </td>
                                                         <td>
-                                                            2000$
+                                                            Sale
                                                         </td>
 
                                                         <td style="width: 30%;" class="project-actions text-right">

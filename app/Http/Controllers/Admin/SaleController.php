@@ -14,8 +14,14 @@ class SaleController extends Controller
      */
     public function index()
     {
-        $sale=Sale::all();
-        return view('admin.properties.salelist',compact('sale'));
+        $sale=Sale::query()
+        ->orderBy('id','DESC')
+        ->when(\request('q'),function($query){
+            $query->where('name','like', '%' . request('q','%'));
+        })
+        ->paginate($this->default_paginate);
+        // $cat=Inventery::get("id",'inventery');
+        return view('admin.properties.salelist',['sale'=>$sale]);
     }
 
     /**
