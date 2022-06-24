@@ -1,5 +1,6 @@
-<script src="{{ asset('vendors/plugins/jquery/jquery.min.js') }}"></script>
-<!-- Bootstrap 4 -->
+
+
+
 <script src="{{ asset('vendors/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('vendors/dist/js/adminlte.min.js') }}"></script>
@@ -24,4 +25,5 @@
 <script src="{{ asset('backend/dist/js/demo.js') }}"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" ></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" ></script>
-@stack('js')
+<script  type="text/javascript"  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+

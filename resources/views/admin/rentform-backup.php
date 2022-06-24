@@ -1,18 +1,21 @@
-@extends('layouts.backend')
-
-@section('title')
-    Add New Property
-@endsection
-
-@section('css')
-
-
-@endsection
-
-
-@section('content')
-
-<div class="container-fluid">
+@include('layouts.style')
+@include('layouts.lightmode')
+<!-- Navbar -->
+@include('layouts.topnavbar')
+@include('layouts.usersidebar')
+<!-- /.navbar -->
+<div class="content-wrapper">
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+      </div>
+    @endif
+        <br> <br>
+        <div class="container-fluid">
             <div class="card ">
                 <div class="card card-primary">
                     <div class="card-header">
@@ -25,18 +28,14 @@
                             <div class="row">
                             </div>
                             <br>
-                            <div class="form group">
-                                <select class="form-select form-select-md form-control mb-3" name="type"
+                            <select class="form-select form-select-md mb-3" name="type"
                                 aria-label=".form-select-md example">
                                 <option selected>Select Listing Type</option>
                                 <option value="1">Rent</option>
                                 <option value="1">Sale</option>
                             </select>
-                            </div>
-
                             <br>
-                            <div class="form group">
-                                <select class="form-select form-select-md mb-3 form-control select2" id="province_id" name="province_id"
+                            <select class="form-select form-select-md mb-3" name="district"
                                 aria-label=".form-select-md example">
                                 <option>Select Province</option>
                                 @foreach($provinces as $CityProvince)
@@ -44,21 +43,20 @@
                                 </option>
                                 @endforeach
                             </select>
-                            </div>
-
                             <br>
-                            <select class="form-select form-select-md mb-3" id="district_id" name="district_id"
+                            <select class="form-select form-select-md mb-3" name="district"
                                 aria-label=".form-select-md example">
-                                <option >Select District</option>
-                            </select>
-                            <br>
-                            <select class="form-select form-select-md mb-3" id="commune_id" name="commune_id"
-                                aria-label=".form-select-md example">
-                                <option >Select Commune</option>
+                                <option selected>Select District</option>
                                 <option value="1">Siem Reap</option>
                             </select>
                             <br>
-                            <select class="form-select form-select-md mb-3" id="village_id" name="village_id"
+                            <select class="form-select form-select-md mb-3" name="commune"
+                                aria-label=".form-select-md example">
+                                <option selected>Select Commune</option>
+                                <option value="1">Siem Reap</option>
+                            </select>
+                            <br>
+                            <select class="form-select form-select-md mb-3" name="village"
                                 aria-label=".form-select-md example">
                                 <option selected>Select Village</option>
                                 <option value="1">Siem Reap</option>
@@ -135,11 +133,9 @@
                                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
                                     name="description"></textarea>
                             </div>
+                            @include('image.form')
+                            </section>
 
-
-                            <div  id="image_picker" class="row">
-
-                            </div>
                             <br>
                             <button type="submit" class="btn btn-primary">Submit</button>
                             <br> <br>
@@ -147,134 +143,6 @@
                     </form>
 
                 </div>
-@endsection
 
 
-
-@section('script')
-
-<script  type="text/javascript"  src="{{ asset('spartan-multi-image-picker/dist/js/spartan-multi-image-picker-min.js') }}"></script>
-
-<script type="text/javascript">
-
-$("#image_picker").spartanMultiImagePicker({
-		fieldName     : 'images[]', // this configuration will send your images named "fileUpload" to the server
-		maxCount      : 10,
-		rowHeight     : '400px',
-		groupClassName: 'col-3',
-		maxFileSize   : '',
-		dropFileLabel : "Drop Here",
-		onAddRow      : function(index){
-			console.log(index);
-			console.log('add new row');
-		},
-		onRenderedPreview : function(index){
-			console.log(index);
-			console.log('preview rendered');
-		},
-		onRemoveRow : function(index){
-			console.log(index);
-		},
-		onExtensionErr : function(index, file){
-			console.log(index, file,  'extension err');
-			alert('Please only input png or jpg type file')
-		},
-		onSizeErr : function(index, file){
-			console.log(index, file,  'file size too big');
-			alert('File size too big');
-		}
-	}
-);
-</script>
-
-<script>
- $(document).ready(function() {
-        // Select Province Get District
-        $('#province_id').on('change', function() {
-            var province_id = $(this).val();
-
-            if(province_id) {
-                $.ajax({
-                    url: '{{ route("admin.location.district") }}',
-                    type: "GET",
-                    dataType: "json",
-                    data: {
-                        province_id: province_id
-                    },
-                    success:function(data) {
-                        console.log('district data',data.data)
-                        $('#district_id').empty();
-                        $('#district_id').append('<option value="">Select District</option>');
-                        $.each(data.data, function(key, value) {
-                            $('#district_id').append('<option value="'+ value.id +'">'+ value.name +'</option>');
-                        });
-                    }
-                });
-            }else{
-                $('#district_id').empty();
-                $('#district_id').append('<option value="">Select District</option>');
-            }
-        });
-
-
-        // Select District Get Commune
-
-
-        $('#district_id').on('change', function() {
-            var district_id = $(this).val();
-
-            if(district_id) {
-                $.ajax({
-                    url: '{{ route("admin.location.commune") }}',
-                    type: "GET",
-                    dataType: "json",
-                    data: {
-                        district_id: district_id
-                    },
-                    success:function(data) {
-                        console.log('commune data',data.data)
-                        $('#commune_id').empty();
-                        $('#commune_id').append('<option value="">Select Commune</option>');
-                        $.each(data.data, function(key, value) {
-                            $('#commune_id').append('<option value="'+ value.id +'">'+ value.name +'</option>');
-                        });
-                    }
-                });
-            }else{
-                $('#commune_id').empty();
-                $('#commune_id').append('<option value="">Select Commune</option>');
-            }
-        });
-
-        /// Select Commune to get village
-
-        $('#commune_id').on('change', function() {
-            var commune_id = $(this).val();
-
-            if(commune_id) {
-                $.ajax({
-                    url: '{{ route("admin.location.village") }}',
-                    type: "GET",
-                    dataType: "json",
-                    data: {
-                        commune_id: commune_id
-                    },
-                    success:function(data) {
-                        console.log('village data',data.data)
-                        $('#village_id').empty();
-                        $('#village_id').append('<option value="">Select village</option>');
-                        $.each(data.data, function(key, value) {
-                            $('#village_id').append('<option value="'+ value.id +'">'+ value.name +'</option>');
-                        });
-                    }
-                });
-            }else{
-                $('#village_id').empty();
-                $('#village_id').append('<option value="">Select village</option>');
-            }
-        });
-    });
-</script>
-
-@endsection
 

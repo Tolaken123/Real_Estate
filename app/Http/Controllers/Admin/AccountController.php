@@ -73,7 +73,14 @@ class AccountController extends Controller
      */
     public function edit($id)
     {
-        return view('admin.Account.userprofile');
+        $users =User::find($id);
+        // $users->name=$request->name;
+        // $users->sex=$request->sex;
+        // $users->=$request->name;
+        // $users->name=$request->name;
+        // $users->name=$request->name;
+
+        return view('admin.Account.edituserform',compact("users"));
     }
 
     /**

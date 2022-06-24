@@ -8,8 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Image extends Model
 {
     use HasFactory;
-    protected $fillable = ['files','rent_id'];
-    public function rent(){
-        return $this->belongsTo(Rent::class,'rent_id');
+
+    protected $guaded = ['id'];
+
+    public function property(){
+        return $this->belongsTo(Property::class);
     }
 }

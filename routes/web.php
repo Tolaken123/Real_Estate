@@ -6,7 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\FileUpload;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\DashboardController;
-
+use App\Http\Controllers\location\AddressSelectController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,7 +18,7 @@ use App\Http\Controllers\Admin\DashboardController;
 |
 */
 
-// Noted: Here we create route to test your view then comment it . 
+// Noted: Here we create route to test your view then comment it .
 
 Route::get('/', function () {
     return view('welcome');
@@ -32,9 +32,13 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'mi
        Route::resource('/properties',PropertiesController::class);
        Route::resource('/user',AccountController::class);
        Route::resource('/rent',RentController::class);
-       Route::resource('/sale',SaleController::class); 
+       Route::resource('/sale',SaleController::class);
 
-
+    Route::group(['prefix' => 'location','as' => 'location.'],function(){
+        Route::get('district',[AddressSelectController::class,'districts'])->name('district');
+        Route::get('commune',[AddressSelectController::class,'communes'])->name('commune');
+        Route::get('village',[AddressSelectController::class,'villages'])->name('village');
+    });
 });
 
 

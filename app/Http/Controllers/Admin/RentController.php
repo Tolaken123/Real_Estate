@@ -54,6 +54,7 @@ class RentController extends Controller
      */
     public function store(Request $request)
     {
+    
         $this->validate($request, [
             'name' =>'required|string|max:255',
             'rentalprice'=>'required|string|max:255',
@@ -80,20 +81,17 @@ class RentController extends Controller
         $rent->description=$request->description;
         $rent->save();
         
-        // if($request->hasfile('files'))
-        //  {
-        //     foreach($request->file('files') as $image)
-        //     {
-        //         $name = time().'.'.$image->extension();
-        //         $image->move(public_path().'/files/', $name);  
-        //         $data[] = $name;  
-                
-        //     }
-        //  }
-        //      $file= new Image();
-        //         $file->files=json_encode($data);
-        //         $file->rent_id=$rent->id;
-        //         $file->save();
+        if($request->hasfile('filename'))
+        {
+
+           foreach($request->file('filename') as $image)
+           {
+               $name=$image->getClientOriginalName();
+               $image->move(public_path().'/images/', $name);  
+               $data[] = $name;  
+           }
+        }
+        
         return redirect('admin/rent')->with('rent','rent create succassfully');
         // if($request->hasfile('imageFile')) {
         //     foreach($request->file('imageFile') as $file)

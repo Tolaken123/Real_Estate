@@ -1,7 +1,4 @@
- @extends('layouts.app')
-@section('content') 
-@extends('layouts.admin')
-@section('content')
+
 <style>
 
     img{
@@ -17,14 +14,14 @@
 <body class="hold-transition light-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
     <div class="wrapper">
 
-        <!-- Navbar -->
-        @include('layouts.topnavbar')
-        @include('layouts.usersidebar')
-        <!-- /.navbar -->
-        <!--content -->
+    @include('layouts.style')
+@include('layouts.lightmode')
+<!-- Navbar -->
+@include('layouts.topnavbar')
+@include('layouts.usersidebar')
+<!-- /.navbar -->
         <div class="content-wrapper">
-             @include('layouts.script')
-            @include('layouts.style') 
+      
 
             <br>
             <h1>&nbsp;&nbsp;User List</h1>
@@ -73,7 +70,7 @@
                                     View
                                 </a>
                                 &nbsp;
-                                <a class="btn btn-info btn-sm" href="#">
+                                <a class="btn btn-info btn-sm" href="/admin/user/{{$user->id}}/edit">
                                     <i class="fas fa-pencil-alt">
                                     </i>
                                     Edit
@@ -95,4 +92,4 @@
 
     </div>
 
-    @endsection
+  
