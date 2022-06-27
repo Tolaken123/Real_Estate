@@ -5,7 +5,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Inventery;
 use App\Models\Category;
 use Illuminate\Http\Request;
-use App\Models\Rent;
+use App\Models\Properties;
 use App\Models\Image;
 use App\Models\location\CityProvince;
 
@@ -19,7 +19,7 @@ class PropertiesController extends Controller
     public function index()
     {
         //
-        return view('admin.properties.prolist');
+        return view('admin.dashboard');
     }
 
     /**
@@ -36,7 +36,7 @@ class PropertiesController extends Controller
             ->select('id','name')
             ->get();
 
-        return view('admin.properties.rentform',compact("categories","provinces"));
+        return view('admin.properties.createproperty',compact("categories","provinces"));
     }
 
     /**
@@ -48,6 +48,11 @@ class PropertiesController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
+            'listing_type'=>'required|string|max:255',
+            'province_id'=>'required|string|max:255',
+            'district_id'=>'required|string|max:255',
+            'commune_id'=>'required|string|max:255',
+            'village_id'=>'required|string|max:255',
             'name' =>'required|string|max:255',
             'rentalprice'=>'required|string|max:255',
             'bedroom'=>'required|string|max:255',
@@ -57,12 +62,11 @@ class PropertiesController extends Controller
             'dimension'=>'required|string|max:255',
             'maplocation'=>'required|string|max:255',
             'description'=>'required|string|max:255',
-            // 'files' => 'required',
-            // 'files.*' => 'array|required', 'files.*' => 'required|mimetypes:image/jpg,image/jpeg,image/bmp' ,
+            'filesname.*' => 'array|required', 'files.*' => 'required|mimetypes:image/jpg,image/jpeg,image/bmp' ,
         ]);
 
 
-        $property = Property::create([
+        $property = Properties::create([
             'name' => $request->name,
             'listing_type' => $request->listing_type,
             'bedroom' => $request->bedroom,
@@ -82,8 +86,8 @@ class PropertiesController extends Controller
                 ]);
             }
         }
-        
-        return redirect()->route('admin.properties.index')->with('rent','rent create succassfully');
+    // dd($property);
+        return redirect()->route('admin.properties.index')->with('properties','property create succassfully');
     }
 
     /**

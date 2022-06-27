@@ -11,7 +11,7 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                
+
                 <img src="https://bootdey.com/img/Content/user_1.jpg" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
@@ -44,22 +44,22 @@
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
-                    <ul class="nav nav-treeview">
+                    {{-- <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="{{ route('admin.rent.index') }}" class="nav-link ">
                                 <i class="fas fa-bed"></i>
                                 <p>Rent</p>
                             </a>
                         </li>
-                    </ul>
-                    <ul class="nav nav-treeview">
+                    </ul> --}}
+                    {{-- <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="{{ route('admin.sale.index') }}" class="nav-link ">
                                 <i class="fas fa-hand-holding-usd"></i>
                                 <p>Sale</p>
                             </a>
                         </li>
-                    </ul>
+                    </ul> --}}
                 </li>
                 <li class="nav-item menu-close">
                     <a href="#" class="nav-link ">
@@ -78,7 +78,7 @@
                                 </p>
                             </a>
                         </li>
-                        
+
               <li class="nav-item">
                 <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-th"></i>
@@ -91,7 +91,7 @@
                   <p>Permissions</p>
                 </a>
               </li>
-           
+
                 </li>
                 </ul>
                 <li class="nav-item">

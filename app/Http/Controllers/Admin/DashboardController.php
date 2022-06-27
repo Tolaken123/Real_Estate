@@ -16,16 +16,18 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $users_counts = User::count();
-        $sales_property_count = Sale::count();
-        $rents_property_count = Rent::count();
 
-        return view('admin.dashboard',[
-            'users_count' => $users_counts,
-            'sales_property_count' => $sales_property_count,
-            'rents_property_count' => $rents_property_count,
-            'property_count'=> $sales_property_count + $rents_property_count
-        ]);
+        // $users_counts = User::count();
+        // $sales_property_count = Sale::count();
+        // $rents_property_count = Rent::count();
+
+        return view('admin.dashboard');
+        //[
+        //     'users_count' => $users_counts,
+        //     'sales_property_count' => $sales_property_count,
+        //     'rents_property_count' => $rents_property_count,
+        //     'property_count'=> $sales_property_count + $rents_property_count
+        // ]);
     }
 
     /**

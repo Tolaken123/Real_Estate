@@ -1,3 +1,7 @@
+
+@section('title')
+    Admin Dashboard
+@endsection
 @include('layouts.style')
 @include('layouts.lightmode')
 <!-- Navbar -->
@@ -21,7 +25,7 @@
                             <!-- small box -->
                             <div class="small-box bg-info">
                                 <div class="inner">
-                                    <h3>{{$sales_property_count }}</h3>
+                                    {{-- <h3>{{$sales_property_count }}</h3> --}}
 
                                     <p>Sale</p>
                                 </div>
@@ -37,7 +41,7 @@
                             <!-- small box -->
                             <div class="small-box bg-success">
                                 <div class="inner">
-                                    <h3>{{$rents_property_count }}<sup style="font-size: 20px"></sup></h3>
+                                    {{-- <h3>{{$rents_property_count }}<sup style="font-size: 20px"></sup></h3> --}}
 
                                     <p>Rent</p>
                                 </div>
@@ -53,7 +57,7 @@
                             <!-- small box -->
                             <div class="small-box bg-warning">
                                 <div class="inner">
-                                    <h3>{{$property_count}}</h3>
+                                    {{-- <h3>{{$property_count}}</h3> --}}
 
                                     <p>Total Properties</p>
                                 </div>
@@ -69,7 +73,7 @@
                             <!-- small box -->
                             <div class="small-box bg-danger">
                                 <div class="inner">
-                                    <h3>{{ $users_count }}</h3>
+                                    {{-- <h3>{{ $users_count }}</h3> --}}
 
                                     <p>Total User</p>
                                 </div>
@@ -97,8 +101,8 @@
                                         Create New Property
                                     </button>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="{{ route('admin.rent.create') }}">Rent</a>
-                                        <a class="dropdown-item" href="{{ route('admin.sale.create') }}">Sale</a>
+                                        {{-- <a class="dropdown-item" href="{{ route('admin.rent.create') }}">Rent</a>
+                                        <a class="dropdown-item" href="{{ route('admin.sale.create') }}">Sale</a> --}}
                                     </div>
                                 </div>
                                 <div class="container-lg">

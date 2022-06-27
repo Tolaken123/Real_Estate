@@ -3,6 +3,8 @@
   <link rel="stylesheet" href="{{ asset('vendors/plugins/fontawesome-free/css/all.min.css') }}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('vendors/dist/css/adminlte.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('vendors/plugins/select2/css/select2.min.css') }}">
+ <link rel="stylesheet" href="{{ asset('vendors/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
   <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 <!-- CSS only -->
