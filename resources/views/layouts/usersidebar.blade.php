@@ -44,22 +44,22 @@
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
-                    {{-- <ul class="nav nav-treeview">
+                    <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('admin.rent.index') }}" class="nav-link ">
+                            <a href="#" class="nav-link ">
                                 <i class="fas fa-bed"></i>
                                 <p>Rent</p>
                             </a>
                         </li>
-                    </ul> --}}
-                    {{-- <ul class="nav nav-treeview">
+                    </ul>
+                    <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('admin.sale.index') }}" class="nav-link ">
+                            <a href="#" class="nav-link ">
                                 <i class="fas fa-hand-holding-usd"></i>
                                 <p>Sale</p>
                             </a>
                         </li>
-                    </ul> --}}
+                    </ul>
                 </li>
                 <li class="nav-item menu-close">
                     <a href="#" class="nav-link ">

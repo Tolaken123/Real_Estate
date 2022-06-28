@@ -26,7 +26,7 @@
                             <div class="small-box bg-info">
                                 <div class="inner">
                                     {{-- <h3>{{$sales_property_count }}</h3> --}}
-
+                                    <h3>20</h3>
                                     <p>Sale</p>
                                 </div>
                                 <div class="icon">
@@ -42,7 +42,7 @@
                             <div class="small-box bg-success">
                                 <div class="inner">
                                     {{-- <h3>{{$rents_property_count }}<sup style="font-size: 20px"></sup></h3> --}}
-
+                                    <h3>20</h3>
                                     <p>Rent</p>
                                 </div>
                                 <div class="icon">
@@ -58,7 +58,7 @@
                             <div class="small-box bg-warning">
                                 <div class="inner">
                                     {{-- <h3>{{$property_count}}</h3> --}}
-
+                                    <h3>20</h3>
                                     <p>Total Properties</p>
                                 </div>
                                 <div class="icon">
@@ -74,13 +74,14 @@
                             <div class="small-box bg-danger">
                                 <div class="inner">
                                     {{-- <h3>{{ $users_count }}</h3> --}}
+                                    <h3>20</h3>
 
                                     <p>Total User</p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-pie-graph"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">More info <i
+                                <a href="{{ Route('admin.user.index') }}" class="small-box-footer">More info <i
                                         class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
@@ -95,7 +96,7 @@
                                         <h1 class="m-0">All Properties List</h1>
                                     </div>
                                 </div>
-                                <div class="dropdown">
+                                {{-- <div class="dropdown">
                                     <button type="button" class="btn btn-primary dropdown-toggle"
                                         data-toggle="dropdown">
                                         Create New Property
@@ -103,8 +104,13 @@
                                     <div class="dropdown-menu">
                                         {{-- <a class="dropdown-item" href="{{ route('admin.rent.create') }}">Rent</a>
                                         <a class="dropdown-item" href="{{ route('admin.sale.create') }}">Sale</a> --}}
-                                    </div>
-                                </div>
+
+                                <a href="{{ route('admin.properties.create') }}">
+                                    <button type="button" class="btn btn-primary">
+
+                                        Create New Property
+                                    </button>
+                                </a>
                                 <div class="container-lg">
 
                                 </div>
@@ -122,29 +128,28 @@
                                                         <th><span>Thumbnail</span></th>
                                                         <th><span>Title</span></th>
                                                         <th><span>Created</span></th>
-                                                        <th class="text-center"><span>Price</span></th>
+                                                        <th ><span>Price</span></th>
                                                         <th><span>Type</span></th>
 
-                                                        <th> </th>
+                                                        <th></th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
+                                                    @foreach($properties as $list)
                                                     <tr class="table-active">
                                                         <td>
-                                                            1
+                                                           {{$list->id}}
                                                         </td>
                                                         <td>
-                                                            <img src="https://bootdey.com/img/Content/user_1.jpg"
-                                                                alt="">
+                                                            <img src="/img/House9.jpg"style="height:100px;"
+                                                            style="width:100px;" alt="25"/>
+
                                                         </td>
-                                                        <td>2 Bedroom House For Sale </td>
-                                                        <td>2013/08/12</td>
-                                                        <td class="text-center">
-                                                            <span class="label label-default">1000$</span>
-                                                        </td>
-                                                        <td>
-                                                            Rent
-                                                        </td>
+                                                        <td>{{ $list->name}}</td>
+                                                    <td>{{ $list->created_at }}</td>
+                                                    <td> $ {{ $list->price }} </td>
+                                                    <td>  {{ $list->listing_type }} </td>
+
 
                                                         <td style="width: 30%;" class="project-actions text-right">
                                                             <a class="btn btn-primary btn-sm" href="#">
@@ -163,59 +168,13 @@
                                                                 Delete
                                                             </a>
                                                     </tr>
-                                                    <tr class="table-active">
-                                                        <td>
-                                                            2
-                                                        </td>
-                                                        <td>
-                                                            <img src="https://bootdey.com/img/Content/user_1.jpg"
-                                                                alt="">
-                                                        </td>
-                                                        <td>2 Bedroom House For Sale </td>
-                                                        <td>2013/08/12</td>
-                                                        <td class="text-center">
-                                                            <span class="label label-default"> 12000 </span>
-                                                        </td>
-                                                        <td>
-                                                            Sale
-                                                        </td>
 
-                                                        <td style="width: 30%;" class="project-actions text-right">
-                                                            <a class="btn btn-primary btn-sm" href="#">
-                                                                <i class="fas fa-folder">
-                                                                </i>
-                                                                View
-                                                            </a>
-                                                            <a class="btn btn-info btn-sm" href="#">
-                                                                <i class="fas fa-pencil-alt">
-                                                                </i>
-                                                                Edit
-                                                            </a>
-                                                            <a class="btn btn-danger btn-sm" href="#">
-                                                                <i class="fas fa-trash">
-                                                                </i>
-                                                                Delete
-                                                            </a>
-                                                        </td>
-
-                                                    </tr>
-
+                                                @endforeach
                                                 </tbody>
                                             </table>
-                                            <br>
-                                            <nav aria-label="Page navigation example">
-                                                <ul class="pagination justify-content-center">
-                                                    <li class="page-item disabled">
-                                                        <a class="page-link" href="#" tabindex="-1">Previous</a>
-                                                    </li>
-                                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#">Next</a>
-                                                    </li>
-                                                </ul>
-                                            </nav>
+                                            <div class="mx-auto d-flex justify-content-center">
+                                                {{ $properties->links() }}
+                                                </div>
                                         </div>
                                     </div>
                                 </div>

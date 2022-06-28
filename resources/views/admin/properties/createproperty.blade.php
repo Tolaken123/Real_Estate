@@ -18,6 +18,7 @@
                 <!-- /.card-header -->
                 <form action="{{ url('admin/properties') }}" method="POST" enctype="multipart/form-data">
                     @csrf
+
                     <div class="card-body">
                         <div class="row">
                         </div>
@@ -27,8 +28,8 @@
                             <select class="form-select form-select-md form-control mb-3" name="listing_type"
                                 aria-label=".form-select-md example">
                                 <option selected>Select Listing Type</option>
-                                <option value="1">Rent</option>
-                                <option value="1">Sale</option>
+                                <option value="Rent">Rent</option>
+                                <option value="Sale">Sale</option>
                             </select>
                         </div>
 
@@ -80,7 +81,7 @@
                         <div class="form-group">
                             <label for="example-number-input" class="form-control-label">
                                 Price</label>
-                            <input class="form-control" type="text" id="example-number-input" name="rentalprice">
+                            <input class="form-control" type="text" id="example-number-input" name="price">
                         </div>
 
 
