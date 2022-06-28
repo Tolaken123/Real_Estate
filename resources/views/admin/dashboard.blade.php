@@ -95,7 +95,7 @@
                                         <h1 class="m-0">All Properties List</h1>
                                     </div>
                                 </div>
-                                {{-- <div class="dropdown">
+                                <div class="dropdown">
                                     <button type="button" class="btn btn-primary dropdown-toggle"
                                         data-toggle="dropdown">
                                         Create New Property
@@ -103,13 +103,8 @@
                                     <div class="dropdown-menu">
                                         {{-- <a class="dropdown-item" href="{{ route('admin.rent.create') }}">Rent</a>
                                         <a class="dropdown-item" href="{{ route('admin.sale.create') }}">Sale</a> --}}
-
-                                <a href="{{ route('admin.properties.create') }}">
-                                    <button type="button" class="btn btn-primary">
-
-                                        Create New Property
-                                    </button>
-                                </a>
+                                    </div>
+                                </div>
                                 <div class="container-lg">
 
                                 </div>
@@ -130,24 +125,26 @@
                                                         <th class="text-center"><span>Price</span></th>
                                                         <th><span>Type</span></th>
 
-                                                        <th></th>
+                                                        <th> </th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    @foreach($pro as $list)
                                                     <tr class="table-active">
                                                         <td>
-                                                           {{$list->id}}
+                                                            1
                                                         </td>
                                                         <td>
                                                             <img src="https://bootdey.com/img/Content/user_1.jpg"
                                                                 alt="">
                                                         </td>
-                                                        <td>{{ $list->name}}</td>
-                                                    <td>{{ $list->created_at }}</td>
-                                                    <td> $ {{ $list->price }} </td>
-                                                    <td>  {{ $list->listing_type }} </td>
-
+                                                        <td>2 Bedroom House For Sale </td>
+                                                        <td>2013/08/12</td>
+                                                        <td class="text-center">
+                                                            <span class="label label-default">1000$</span>
+                                                        </td>
+                                                        <td>
+                                                            Rent
+                                                        </td>
 
                                                         <td style="width: 30%;" class="project-actions text-right">
                                                             <a class="btn btn-primary btn-sm" href="#">
@@ -166,13 +163,59 @@
                                                                 Delete
                                                             </a>
                                                     </tr>
+                                                    <tr class="table-active">
+                                                        <td>
+                                                            2
+                                                        </td>
+                                                        <td>
+                                                            <img src="https://bootdey.com/img/Content/user_1.jpg"
+                                                                alt="">
+                                                        </td>
+                                                        <td>2 Bedroom House For Sale </td>
+                                                        <td>2013/08/12</td>
+                                                        <td class="text-center">
+                                                            <span class="label label-default"> 12000 </span>
+                                                        </td>
+                                                        <td>
+                                                            Sale
+                                                        </td>
 
-                                                @endforeach
+                                                        <td style="width: 30%;" class="project-actions text-right">
+                                                            <a class="btn btn-primary btn-sm" href="#">
+                                                                <i class="fas fa-folder">
+                                                                </i>
+                                                                View
+                                                            </a>
+                                                            <a class="btn btn-info btn-sm" href="#">
+                                                                <i class="fas fa-pencil-alt">
+                                                                </i>
+                                                                Edit
+                                                            </a>
+                                                            <a class="btn btn-danger btn-sm" href="#">
+                                                                <i class="fas fa-trash">
+                                                                </i>
+                                                                Delete
+                                                            </a>
+                                                        </td>
+
+                                                    </tr>
+
                                                 </tbody>
                                             </table>
-                                            <div class="mx-auto d-flex justify-content-center">
-                                                {{ $pro->links() }}
-                                                </div>
+                                            <br>
+                                            <nav aria-label="Page navigation example">
+                                                <ul class="pagination justify-content-center">
+                                                    <li class="page-item disabled">
+                                                        <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                                    </li>
+                                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                    <li class="page-item">
+                                                        <a class="page-link" href="#">Next</a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
                                         </div>
                                     </div>
                                 </div>

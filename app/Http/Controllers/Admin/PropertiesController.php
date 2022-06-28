@@ -5,8 +5,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Inventery;
 use App\Models\Category;
 use Illuminate\Http\Request;
-use App\Models\Image;
 use App\Models\Properties;
+use App\Models\Image;
 use App\Models\location\CityProvince;
 
 class PropertiesController extends Controller
@@ -54,7 +54,7 @@ class PropertiesController extends Controller
             'commune_id'=>'required|string|max:255',
             'village_id'=>'required|string|max:255',
             'name' =>'required|string|max:255',
-            'price'=>'required|string|max:255',
+            'rentalprice'=>'required|string|max:255',
             'bedroom'=>'required|string|max:255',
             'bathroom'=>'required|string|max:255',
             'landsize'=>'required|string|max:255',
@@ -70,19 +70,8 @@ class PropertiesController extends Controller
             'name' => $request->name,
             'listing_type' => $request->listing_type,
             'bedroom' => $request->bedroom,
-            'province_id'=>$request->province_id,
-            'district_id'=>$request->district_id,
-            'commune_id'=>$request->commune_id,
-            'village_id'=>$request->village_id,
-            'category_id'=>$request->category_id,
             'bathroom' => $request->bathroom,
-            'price' => $request->price,
-            'floor' => $request->floor,
-            'landsize' => $request->landsize,
-            'dimension' => $request->dimension,
-            'maplocation' => $request->maplocation,
-            'description' => $request->description,
-            'filename.*'=> $request->filenam
+
         ]);
 
         if($request->hasfile('filename'))

@@ -5,7 +5,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Sale;
-use App\Models\Properties;
+use App\Models\Rent;
 
 class DashboardController extends Controller
 {
@@ -16,19 +16,12 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $pro=Properties::query()
-        ->orderBy('id','DESC')
-        ->when(\request('q'),function($query){
-            $query->where('name','like', '%' . request('q','%'));
-        })
-        ->paginate($this->default_paginate);
-        // $cat=Inventery::get("id",'inventery');
 
         // $users_counts = User::count();
         // $sales_property_count = Sale::count();
         // $rents_property_count = Rent::count();
 
-        return view('admin.dashboard',['pro'=>$pro]);
+        return view('admin.dashboard');
         //[
         //     'users_count' => $users_counts,
         //     'sales_property_count' => $sales_property_count,
