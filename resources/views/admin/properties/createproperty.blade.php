@@ -18,7 +18,6 @@
                 <!-- /.card-header -->
                 <form action="{{ url('admin/properties') }}" method="POST" enctype="multipart/form-data">
                     @csrf
-
                     <div class="card-body">
                         <div class="row">
                         </div>
@@ -81,7 +80,7 @@
                         <div class="form-group">
                             <label for="example-number-input" class="form-control-label">
                                 Price</label>
-                            <input class="form-control" type="text" id="example-number-input" name="price">
+                            <input class="form-control" type="text" id="example-number-input" name="rentalprice">
                         </div>
 
 

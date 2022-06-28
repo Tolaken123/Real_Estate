@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Rent extends Model
 {
     use HasFactory;
-    protected  $fillable =['name','price','bedroom','bathroom','floor','landsize','dimension','maplocation','description',];
-
+    protected  $fillable =['name','rentalprice','bedroom','bathroom','floor','landsize','dimension','maplocation','description',];
+   
      public function Image(){
          return $this->hasMany(Image::class);
      }
