@@ -146,7 +146,7 @@
                                                             </td>
                                                             <td class="align-middle">{{ $list->name }}</td>
                                                             <td class="align-middle">{{ $list->created_at }}</td>
-                                                            <td class="align-middle"> $ {{ $list->price }} </td>
+                                                            <td class="align-middle">{{ $list->price }} </td>
                                                             <td class="align-middle"> {{ $list->listing_type }} </td>
 
 
@@ -157,16 +157,21 @@
                                                                     </i>
                                                                     View
                                                                 </a>
-                                                                <a class="btn btn-info btn-sm" href="#">
+                                                                <a class="btn btn-info btn-sm" href="/admin/properties/{{ $list->id }}/edit">
                                                                     <i class="fas fa-pencil-alt">
                                                                     </i>
                                                                     Edit
                                                                 </a>
-                                                                <a class="btn btn-danger btn-sm" href="#">
-                                                                    <i class="fas fa-trash">
-                                                                    </i>
-                                                                    Delete
-                                                                </a>
+                                                                <form method="POST" action="{{ route('admin.properties.destroy', $list) }}" style="display:inline" >
+                                                                    <input name="_method" type="hidden" value="DELETE">
+                                                                     {{ csrf_field() }}
+                                                                      <button type="submit" class="btn btn-danger" onclick="return confirm('Do you want to delete?')">
+                                                                    
+                                                                    <i class="fas fa-trash"></i>
+                                                                   
+                                                                  </a>
+                                                                </button>
+                                                             </form>
                                                             </td>
                                                         </tr>
                                                     @endforeach

@@ -66,7 +66,7 @@ class PropertiesController extends Controller
         ]);
 
 
-        $property = Properties::create([
+        $properties = Properties::create([
             'name' => $request->name,
             'listing_type' => $request->listing_type,
             'bedroom' => $request->bedroom,
@@ -120,7 +120,14 @@ class PropertiesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $properties=Properties::find($id);
+        $provinces = CityProvince::query()
+        ->select('id','name')
+        ->get();
+        $categories = Category::query()
+        ->select('id','name')
+        ->get();
+        return view('admin.properties.editproperty',['properties'=>$properties,'provinces'=>$provinces,'categories'=>$categories]);
     }
 
     /**
@@ -132,8 +139,64 @@ class PropertiesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'listing_type'=>'required|string|max:255',
+            'province_id'=>'required|string|max:255',
+            'district_id'=>'required|string|max:255',
+            'commune_id'=>'required|string|max:255',
+            'village_id'=>'required|string|max:255',
+            'name' =>'required|string|max:255',
+            'price'=>'required|string|max:255',
+            'bedroom'=>'required|string|max:255',
+            'bathroom'=>'required|string|max:255',
+            'landsize'=>'required|string|max:255',
+            'floor'=>'required|string|max:255',
+            'dimension'=>'required|string|max:255',
+            'maplocation'=>'required|string|max:255',
+            'description'=>'required|string|max:255',
+            'filesname.*' => 'array|required', 'files.*' => 'required|mimetypes:image/jpg,image/jpeg,image/bmp' ,
+        ]);
+
+
+        $properties = Properties::where('id',$id)->update($request->only([
+            'name',
+            'listing_type',
+            'bedroom',
+            'province_id',
+            'district_id',
+            'commune_id',
+            'village_id',
+            'category_id',
+            'bathroom',
+            'price' ,
+            'floor',
+            'landsize',
+            'dimension',
+            'maplocation',
+            'description' ,
+            'filename.*',
+        ]));
+
+        if($request->hasfile('filename'))
+        {
+            foreach ($$request->hasfile('filename') as $file) {
+                $destinationPath = public_path().'/images/';
+                $file_name = time() . "." . $files->getClientOriginalExtension();
+                $file->move($destinationPath, $file_name);
+                $image = Image::create([
+                    'property_id' => $property->id,
+                    'image' => $file_name
+                ]);
+            }
+        }
+    // dd($property);
+    if($properties)
+    
+    return redirect()->route('admin.properties.index')->with('properties','property update succassfully');
+    else{
+        return abort(404);
     }
+}
 
     /**
      * Remove the specified resource from storage.
@@ -143,6 +206,10 @@ class PropertiesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $properties=Properties::findOrFail($id);
+        $properties->delete();
+    return redirect()->route('admin.properties.index')->with('properties','property delete succassfully');
+        
+     
     }
 }

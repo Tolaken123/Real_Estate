@@ -6,8 +6,6 @@
 
 @section('css')
 @endsection
-
-
 @section('content')
     <div class="container-fluid">
         <div class="card ">
@@ -16,8 +14,9 @@
                     <h3 class="card-title">Property Information</h3>
                 </div>
                 <!-- /.card-header -->
-                <form action="{{ url('admin/properties') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{url('admin/properties',$properties)}}" method="POST" enctype="multipart/form-data">
                     @csrf
+                    @method('put')
                     <div class="card-body">
                         <div class="row">
                         </div>
@@ -75,12 +74,12 @@
 
                         <div class="form-group">
                             <label for="example-number-input" class="form-control-label">Title</label>
-                            <input class="form-control" type="text" id="example-number-input" name="name">
+                            <input class="form-control" type="text" id="example-number-input" name="name" value="{{$properties->name}}" >
                         </div>
                         <div class="form-group">
                             <label for="example-number-input" class="form-control-label">
                                 Price</label>
-                            <input class="form-control" type="text" id="example-number-input" name="price">
+                            <input class="form-control" type="text" id="example-number-input" name="price" value="{{ $properties->price }}">
                         </div>
 
 
@@ -88,7 +87,7 @@
 
                             <label for="example-number-input" class="form-control-label">How many Bedrooms?</label>
 
-                            <input class="form-control" type="text" value="" id="example-number-input"
+                            <input class="form-control" type="text" value="{{ $properties->bedroom }}" id="example-number-input"
                                 name="bedroom">
 
 
@@ -97,7 +96,7 @@
                         <div class="form-group">
                             <label for="example-number-input" class="form-control-label">How many Bathrooms?</label>
 
-                            <input class="form-control" type="text" value="" id="example-number-input"
+                            <input class="form-control" type="text" value="{{ $properties->bathroom }}" id="example-number-input"
                                 name="bathroom">
 
                         </div>
@@ -105,37 +104,37 @@
                         <div class="form-group">
                             <label for="example-number-input" class="form-control-label">FloorSize</label>
 
-                            <input class="form-control" type="text" value="" id="example-number-input"
+                            <input class="form-control" type="text" value="{{ $properties->floor }}" id="example-number-input"
                                 name="floor">
 
                         </div>
 
                         <div class="form-group">
                             <label for="example-number-input" class="form-control-label">LandSize</label>
-                            <input class="form-control" type="text" value="" id="example-number-input"
+                            <input class="form-control" type="text" value="{{ $properties->landsize }}" id="example-number-input"
                                 name="landsize">
                         </div>
 
                         <div class="form-group">
                             <label for="example-number-input" class="form-control-label">Land
                                 Dimension</label>
-                            <input class="form-control" type="text" value="" id="example-number-input"
+                            <input class="form-control" type="text" value="{{ $properties->dimension }}" id="example-number-input"
                                 name="dimension">
                         </div>
 
                         <div class="form-group">
                             <label for="example-number-input" class="form-control-label">Link
                                 Location</label>
-                            <input class="form-control" type="text" value="" id="example-number-input"
+                            <input class="form-control" type="text" value="{{ $properties->maplocation }}" id="example-number-input"
                                 name="maplocation">
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlTextarea1" class="form-label">Descrioption</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description">{{ $properties->description }}</textarea>
                         </div>
 
 
-                        <div id="image_picker" class="row" name="filename">
+                        <div id="image_picker" class="row" name="filename" value="{{ $properties->filename }}">
                         </div>
                         <br>
                         <button type="submit" class="btn btn-primary">Submit</button>

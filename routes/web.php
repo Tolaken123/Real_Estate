@@ -97,6 +97,9 @@ Route::get('/layouts/industry_profile', function () {
 // Route::get('/fonte/home/Item', function () {
 //     return view('fonte.home.Item');
 // });
+Route::get('/admin/hi', function () {
+    return view('admin.properties.editproperty');
+});
 // Route::get('/layouts/Home_page', function () {
 //     return view('layouts/Home_page');
 // });
