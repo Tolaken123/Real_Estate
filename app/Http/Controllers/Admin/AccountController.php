@@ -25,7 +25,7 @@ class AccountController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()    
+    public function create()
     {
         return view('admin.Account.userform');
     }
@@ -39,7 +39,7 @@ class AccountController extends Controller
     public function store(Request $request)
     {
 
-      
+
         $user = User::create([
             'name' => $request->name,
             'sex' => $request->sex,
@@ -61,8 +61,8 @@ class AccountController extends Controller
      */
     public function show($id)
     {
-       
-        
+
+
     }
 
     /**
@@ -92,7 +92,15 @@ class AccountController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $users =User::find($id);
+        $users->name=$request->name;
+        $users->sex=$request->sex;
+        $users->phone=$request->phone;
+        $users->email=$request->email;
+        $users->password=$request->password;
+        $users->update();
+        return redirect()->route('admin.user.index');
+
     }
 
     /**
@@ -103,6 +111,10 @@ class AccountController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $users=User::findOrFail($id);
+        if ($users->delete()){
+            return redirect('admin/user')->with('Messege','deleted successfully');;
+        }
+        return abort(404);
     }
 }
