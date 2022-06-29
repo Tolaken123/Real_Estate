@@ -1,4 +1,3 @@
-
 @section('title')
     Admin Dashboard
 @endsection
@@ -121,60 +120,63 @@
                                 <div class="main-box no-header clearfix">
                                     <div class="main-box-body clearfix">
                                         <div class="table-responsive">
-                                            <table class="table pro-list">
+                                            <table class="table pro-list table-striped">
                                                 <thead>
                                                     <tr class="bg-primary">
                                                         <th><span>ID</span></th>
                                                         <th><span>Thumbnail</span></th>
                                                         <th><span>Title</span></th>
                                                         <th><span>Created</span></th>
-                                                        <th ><span>Price</span></th>
+                                                        <th><span>Price</span></th>
                                                         <th><span>Type</span></th>
 
                                                         <th></th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    @foreach($properties as $list)
-                                                    <tr class="table-active">
-                                                        <td>
-                                                           {{$list->id}}
-                                                        </td>
-                                                        <td>
-                                                            <img src="/img/House9.jpg"style="height:100px;"
-                                                            style="width:100px;" alt="25"/>
+                                                    @foreach ($properties as $list)
+                                                        <tr class="table-active">
+                                                            <td class="align-middle">
+                                                                {{ $list->id }}
+                                                            </td>
+                                                            <td class="align-middle">
+                                                                <img src="/img/House9.jpg"style="height:70px;"
+                                                                    style="width:100px;" alt="25" />
 
-                                                        </td>
-                                                        <td>{{ $list->name}}</td>
-                                                    <td>{{ $list->created_at }}</td>
-                                                    <td> $ {{ $list->price }} </td>
-                                                    <td>  {{ $list->listing_type }} </td>
+                                                            </td>
+                                                            <td class="align-middle">{{ $list->name }}</td>
+                                                            <td class="align-middle">{{ $list->created_at }}</td>
+                                                            <td class="align-middle"> $ {{ $list->price }} </td>
+                                                            <td class="align-middle"> {{ $list->listing_type }} </td>
 
 
-                                                        <td style="width: 30%;" class="project-actions text-right">
-                                                            <a class="btn btn-primary btn-sm" href="#">
-                                                                <i class="fas fa-folder">
-                                                                </i>
-                                                                View
-                                                            </a>
-                                                            <a class="btn btn-info btn-sm" href="#">
-                                                                <i class="fas fa-pencil-alt">
-                                                                </i>
-                                                                Edit
-                                                            </a>
-                                                            <a class="btn btn-danger btn-sm" href="#">
-                                                                <i class="fas fa-trash">
-                                                                </i>
-                                                                Delete
-                                                            </a>
-                                                    </tr>
-
-                                                @endforeach
+                                                            <td style="width: 30%;"
+                                                                class="project-actions text-right align-middle">
+                                                                <a class="btn btn-primary btn-sm" href="#">
+                                                                    <i class="fas fa-folder">
+                                                                    </i>
+                                                                    View
+                                                                </a>
+                                                                <a class="btn btn-info btn-sm" href="#">
+                                                                    <i class="fas fa-pencil-alt">
+                                                                    </i>
+                                                                    Edit
+                                                                </a>
+                                                                <a class="btn btn-danger btn-sm" href="#">
+                                                                    <i class="fas fa-trash">
+                                                                    </i>
+                                                                    Delete
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                    @endforeach
                                                 </tbody>
                                             </table>
+
                                             <div class="mx-auto d-flex justify-content-center">
-                                                {{ $properties->links() }}
-                                                </div>
+                                                {{-- {{ $properties->links() }} --}}
+                                            </div>
+                                            <br>
                                         </div>
                                     </div>
                                 </div>
@@ -184,4 +186,9 @@
                     @include('layouts.footer')
 
                 </div>
+
                 @include('layouts.script')
+            </section>
+        </div>
+    </div>
+</div>

@@ -18,8 +18,8 @@ class PropertiesController extends Controller
      */
     public function index()
     {
-        //
-        return view('admin.dashboard');
+        $properties=Properties::all();
+        return view('admin.dashboard',['properties'=>$properties]);
     }
 
     /**

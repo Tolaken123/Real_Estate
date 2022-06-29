@@ -25,8 +25,8 @@ class DashboardController extends Controller
         // $cat=Inventery::get("id",'inventery');
 
          $users_counts = User::count();
-        // $sales_property_count = Sale::count();
-        // $rents_property_count = Rent::count();
+        $sales_property_count = Properties::count();
+        $rents_property_count = Properties::count();
 
         return view('admin.dashboard',['properties'=>$properties]);
         [

@@ -16,7 +16,11 @@ class AccountController extends Controller
     {
         $users=User::query()
         ->orderBy('id','DESC')
-        ->get();
+        ->when(\request('q'),function($query){
+            $query->where('name','like', '%' . request('q','%'));
+        })
+        ->paginate($this->default_paginate);
+
         return view('admin.Account.list',compact('users'));
     }
 
@@ -99,7 +103,6 @@ class AccountController extends Controller
         $users->email=$request->email;
         $users->password=$request->password;
         $users->update();
-        return redirect()->route('admin.user.index');
 
     }
 
@@ -111,10 +114,6 @@ class AccountController extends Controller
      */
     public function destroy($id)
     {
-        $users=User::findOrFail($id);
-        if ($users->delete()){
-            return redirect('admin/user')->with('Messege','deleted successfully');;
-        }
-        return abort(404);
+        //
     }
 }

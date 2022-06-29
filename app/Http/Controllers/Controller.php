@@ -11,5 +11,5 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    protected $default_paginate = 5;
+    protected $default_paginate = 10;
 }
