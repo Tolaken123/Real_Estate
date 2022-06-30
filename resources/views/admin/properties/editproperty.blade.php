@@ -37,7 +37,7 @@
                                 name="province_id" aria-label=".form-select-md example">
                                 <option>Select Province</option>
                                 @foreach ($provinces as $CityProvince)
-                                    <option value="{{ $CityProvince->id }}">{{ $CityProvince->name }}
+                                    <option value="{{ $CityProvince->id }}"{{ $CityProvince->id==$properties->province_id ? 'selected':''}}>{{ $CityProvince->name }}
                                     </option>
                                 @endforeach
                             </select>
@@ -65,7 +65,7 @@
                             aria-label=".form-select-md example">
                             <option>Select Property Type</option>
                             @foreach ($categories as $category)
-                                <option value="{{ $category->id }}">{{ $category->name }}
+                                <option value="{{ $category->id }}"{{ $category->id==$properties->category_id ? 'selected':''}}>{{ $category->name }}
                                 </option>
                             @endforeach
                         </select>
