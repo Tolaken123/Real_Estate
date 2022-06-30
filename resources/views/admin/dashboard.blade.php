@@ -24,8 +24,8 @@
                             <!-- small box -->
                             <div class="small-box bg-info">
                                 <div class="inner">
-                                    {{-- <h3>{{$sales_property_count }}</h3> --}}
-                                    <h3>20</h3>
+                                    <h3>{{$sales_property_count }}</h3>
+
                                     <p>Sale</p>
                                 </div>
                                 <div class="icon">
@@ -40,8 +40,8 @@
                             <!-- small box -->
                             <div class="small-box bg-success">
                                 <div class="inner">
-                                    {{-- <h3>{{$rents_property_count }}<sup style="font-size: 20px"></sup></h3> --}}
-                                    <h3>20</h3>
+                                   <h3>{{$rents_property_count}}<sup style="font-size: 20px"></sup></h3>
+
                                     <p>Rent</p>
                                 </div>
                                 <div class="icon">
@@ -56,8 +56,7 @@
                             <!-- small box -->
                             <div class="small-box bg-warning">
                                 <div class="inner">
-                                    {{-- <h3>{{$property_count}}</h3> --}}
-                                    <h3>20</h3>
+                                    <h3>{{$property_count}}</h3>
                                     <p>Total Properties</p>
                                 </div>
                                 <div class="icon">
@@ -72,8 +71,8 @@
                             <!-- small box -->
                             <div class="small-box bg-danger">
                                 <div class="inner">
-                                    {{-- <h3>{{ $users_count }}</h3> --}}
-                                    <h3>20</h3>
+                                    <h3>{{$users_count}}</h3>
+
 
                                     <p>Total User</p>
                                 </div>
@@ -166,9 +165,9 @@
                                                                     <input name="_method" type="hidden" value="DELETE">
                                                                      {{ csrf_field() }}
                                                                       <button type="submit" class="btn btn-danger" onclick="return confirm('Do you want to delete?')">
-                                                                    
+
                                                                     <i class="fas fa-trash"></i>
-                                                                   
+
                                                                   </a>
                                                                 </button>
                                                              </form>
@@ -179,9 +178,9 @@
                                             </table>
 
                                             <div class="mx-auto d-flex justify-content-center">
-                                                {{-- {{ $properties->links() }} --}}
+                                                {{ $properties->links() }}
                                             </div>
-                                            <br>
+                                            <br>  <br><br>
                                         </div>
                                     </div>
                                 </div>
