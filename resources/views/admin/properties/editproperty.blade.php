@@ -14,7 +14,7 @@
                     <h3 class="card-title">Property Information</h3>
                 </div>
                 <!-- /.card-header -->
-                <form action="{{url('admin/properties',$properties)}}" method="POST" enctype="multipart/form-data">
+                <form action="{{ url('admin/properties', $properties) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('put')
                     <div class="card-body">
@@ -26,8 +26,8 @@
                             <select class="form-select form-select-md form-control mb-3" name="listing_type"
                                 aria-label=".form-select-md example">
                                 <option selected>Select Listing Type</option>
-                                <option value="1">Rent</option>
-                                <option value="1">Sale</option>
+                                <option value="Rent">Rent</option>
+                                <option value="Sale">Sale</option>
                             </select>
                         </div>
 
@@ -37,7 +37,9 @@
                                 name="province_id" aria-label=".form-select-md example">
                                 <option>Select Province</option>
                                 @foreach ($provinces as $CityProvince)
-                                    <option value="{{ $CityProvince->id }}"{{ $CityProvince->id==$properties->province_id ? 'selected':''}}>{{ $CityProvince->name }}
+                                    <option
+                                        value="{{ $CityProvince->id }}"{{ $CityProvince->id == $properties->province_id ? 'selected' : '' }}>
+                                        {{ $CityProvince->name }}
                                     </option>
                                 @endforeach
                             </select>
@@ -47,17 +49,38 @@
                         <select class="form-select form-select-md mb-3" id="district_id" name="district_id"
                             aria-label=".form-select-md example">
                             <option>Select District</option>
+                            @foreach ($district as $District)
+                                <option
+                                    value="{{ $District->id }}"{{ $District->id == $properties->district_id ? 'selected' : '' }}>
+                                    {{ $District->name }}
+                                </option>
+                            @endforeach
                         </select>
+
                         <br>
                         <select class="form-select form-select-md mb-3" id="commune_id" name="commune_id"
                             aria-label=".form-select-md example">
                             <option>Select Commune</option>
+                            @foreach ($commune as $Commune)
+                                <option
+                                    value="{{ $Commune->id }}"{{ $Commune->id == $properties->commune_id ? 'selected' : '' }}>
+                                    {{ $Commune->name }}
+                                </option>
+                            @endforeach
+
 
                         </select>
                         <br>
                         <select class="form-select form-select-md mb-3" id="village_id" name="village_id"
                             aria-label=".form-select-md example">
                             <option selected>Select Village</option>
+                            @foreach ($village as $Village)
+                                <option
+                                    value="{{ $Village->id }}"{{ $Village->id == $properties->village_id ? 'selected' : '' }}>
+                                    {{ $Village->name }}
+                                </option>
+                            @endforeach
+
 
                         </select>
                         <br>
@@ -65,12 +88,8 @@
                             aria-label=".form-select-md example">
                             <option>Select Property Type</option>
                             @foreach ($categories as $category)
-<<<<<<< HEAD
-                                <option value="{{ $category->id }}"@if($properties->category_id == $category->id)
-                                    selected @endif>{{ $category->name }}
-=======
-                                <option value="{{ $category->id }}"{{ $category->id==$properties->category_id ? 'selected':''}}>{{ $category->name }}
->>>>>>> 522b799e93b7bc9d4d5a0b4a17cc457cc643fee6
+                                <option value="{{ $category->id }}"@if ($properties->category_id == $category->id) selected @endif>
+                                    {{ $category->name }}
                                 </option>
                             @endforeach
                         </select>
@@ -79,12 +98,14 @@
 
                         <div class="form-group">
                             <label for="example-number-input" class="form-control-label">Title</label>
-                            <input class="form-control" type="text" id="example-number-input" name="name" value="{{$properties->name}}" >
+                            <input class="form-control" type="text" id="example-number-input" name="name"
+                                value="{{ $properties->name }}">
                         </div>
                         <div class="form-group">
                             <label for="example-number-input" class="form-control-label">
                                 Price</label>
-                            <input class="form-control" type="text" id="example-number-input" name="price" value="{{ $properties->price }}">
+                            <input class="form-control" type="text" id="example-number-input" name="price"
+                                value="{{ $properties->price }}">
                         </div>
 
 
@@ -92,8 +113,8 @@
 
                             <label for="example-number-input" class="form-control-label">How many Bedrooms?</label>
 
-                            <input class="form-control" type="text" value="{{ $properties->bedroom }}" id="example-number-input"
-                                name="bedroom">
+                            <input class="form-control" type="text" value="{{ $properties->bedroom }}"
+                                id="example-number-input" name="bedroom">
 
 
                         </div>
@@ -101,37 +122,37 @@
                         <div class="form-group">
                             <label for="example-number-input" class="form-control-label">How many Bathrooms?</label>
 
-                            <input class="form-control" type="text" value="{{ $properties->bathroom }}" id="example-number-input"
-                                name="bathroom">
+                            <input class="form-control" type="text" value="{{ $properties->bathroom }}"
+                                id="example-number-input" name="bathroom">
 
                         </div>
 
                         <div class="form-group">
                             <label for="example-number-input" class="form-control-label">FloorSize</label>
 
-                            <input class="form-control" type="text" value="{{ $properties->floor }}" id="example-number-input"
-                                name="floor">
+                            <input class="form-control" type="text" value="{{ $properties->floor }}"
+                                id="example-number-input" name="floor">
 
                         </div>
 
                         <div class="form-group">
                             <label for="example-number-input" class="form-control-label">LandSize</label>
-                            <input class="form-control" type="text" value="{{ $properties->landsize }}" id="example-number-input"
-                                name="landsize">
+                            <input class="form-control" type="text" value="{{ $properties->landsize }}"
+                                id="example-number-input" name="landsize">
                         </div>
 
                         <div class="form-group">
                             <label for="example-number-input" class="form-control-label">Land
                                 Dimension</label>
-                            <input class="form-control" type="text" value="{{ $properties->dimension }}" id="example-number-input"
-                                name="dimension">
+                            <input class="form-control" type="text" value="{{ $properties->dimension }}"
+                                id="example-number-input" name="dimension">
                         </div>
 
                         <div class="form-group">
                             <label for="example-number-input" class="form-control-label">Link
                                 Location</label>
-                            <input class="form-control" type="text" value="{{ $properties->maplocation }}" id="example-number-input"
-                                name="maplocation">
+                            <input class="form-control" type="text" value="{{ $properties->maplocation }}"
+                                id="example-number-input" name="maplocation">
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlTextarea1" class="form-label">Descrioption</label>

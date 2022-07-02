@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 use App\Models\Image;
 use App\Models\Properties;
 use App\Models\location\CityProvince;
+use App\Models\location\District;
+use App\Models\location\Commune;
+use App\Models\location\Village;
 
 class PropertiesController extends Controller
 {
@@ -125,10 +128,27 @@ class PropertiesController extends Controller
         $provinces = CityProvince::query()
         ->select('id','name')
         ->get();
+        $district = District::query()
+        ->select('id','name')
+        ->get();
+        $commune = Commune::query()
+        ->select('id','name')
+        ->get();
+        $village = Village::query()
+        ->select('id','name')
+        ->get();
         $categories = Category::query()
         ->select('id','name')
         ->get();
-        return view('admin.properties.editproperty',['properties'=>$properties,'provinces'=>$provinces,'categories'=>$categories]);
+        return view('admin.properties.editproperty',
+    [
+        'properties'=>$properties,
+        'provinces'=>$provinces,
+        'categories'=>$categories,
+        'district'=>$district,
+        'commune'=>$commune,
+        'village' =>$village
+    ]);
     }
 
     /**
