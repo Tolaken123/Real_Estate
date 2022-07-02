@@ -12,6 +12,6 @@ class Image extends Model
     protected $guaded = ['id'];
 
     public function property(){
-        return $this->belongsTo(Property::class);
+        return $this->belongsTo(Properties::class);
     }
 }

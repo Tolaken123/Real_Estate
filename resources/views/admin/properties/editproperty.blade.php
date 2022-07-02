@@ -65,7 +65,8 @@
                             aria-label=".form-select-md example">
                             <option>Select Property Type</option>
                             @foreach ($categories as $category)
-                                <option value="{{ $category->id }}">{{ $category->name }}
+                                <option value="{{ $category->id }}"@if($properties->category_id == $category->id)
+                                    selected @endif>{{ $category->name }}
                                 </option>
                             @endforeach
                         </select>

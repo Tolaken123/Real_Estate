@@ -82,8 +82,9 @@ class PropertiesController extends Controller
             'dimension' => $request->dimension,
             'maplocation' => $request->maplocation,
             'description' => $request->description,
-            'filename.*'=> $request->filenam
+            'filename.*'=> $request->filename
         ]);
+
 
         if($request->hasfile('filename'))
         {
@@ -191,7 +192,7 @@ class PropertiesController extends Controller
         }
     // dd($property);
     if($properties)
-    
+
     return redirect()->route('admin.properties.index')->with('properties','property update succassfully');
     else{
         return abort(404);
@@ -209,7 +210,7 @@ class PropertiesController extends Controller
         $properties=Properties::findOrFail($id);
         $properties->delete();
     return redirect()->route('admin.properties.index')->with('properties','property delete succassfully');
-        
-     
+
+
     }
 }

@@ -136,7 +136,14 @@
                         </div>
 
 
-                        <div id="image_picker" class="row" name="filename">
+                        <div id="image_picker" class="row" name="filename[]">
+                            @if ($errors->has('files_name'))
+                                @foreach ($errors->get('files_name') as $error)
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $error }}</strong>
+                                    </span>
+                                @endforeach
+                            @endif
                         </div>
                         <br>
                         <button type="submit" class="btn btn-primary">Submit</button>
