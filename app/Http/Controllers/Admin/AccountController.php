@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class AccountController extends Controller
 {
@@ -14,14 +15,14 @@ class AccountController extends Controller
      */
     public function index()
     {
-        $users=User::query()
-        ->orderBy('id','DESC')
-        ->when(\request('q'),function($query){
-            $query->where('name','like', '%' . request('q','%'));
-        })
-        ->paginate($this->default_paginate);
-
-        return view('admin.Account.list',compact('users'));
+        // $users=User::query()
+        // ->orderBy('id','DESC')
+        // ->when(\request('q'),function($query){
+        //     $query->where('name','like', '%' . request('q','%'));
+        // })
+        // ->paginate($this->default_paginate);
+        $users = User::paginate(15)->fragment('users');
+        return view('admin.Account.list',['users'=>$users]);
     }
 
     /**
@@ -96,14 +97,16 @@ class AccountController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $users =User::find($id);
-        $users->name=$request->name;
-        $users->sex=$request->sex;
-        $users->phone=$request->phone;
-        $users->email=$request->email;
-        $users->password=$request->password;
-        $users->update();
+   
+        $users = user::where('id',$id)->update($request->only([
+            'name',
+            'sex',
+            'email',
+            'phone',
+            'password'
+        ]));
 
+        return redirect()->route('admin.user.index');
     }
 
     /**
@@ -114,6 +117,9 @@ class AccountController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $users=User::findOrFail($id);
+          $users->delete();
+        // $users=user::deleted($id);
+          return redirect()->route('admin.user.index')->with('user','user delete succassfully');
     }
 }
