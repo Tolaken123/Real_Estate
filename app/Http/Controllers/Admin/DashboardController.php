@@ -28,9 +28,14 @@ class DashboardController extends Controller
          $sales_property_count = Properties::where('listing_type', '=', 'Sale')->count();
         $rents_property_count = Properties::where('listing_type', '=', 'Rent')->count();
 
-        return view('admin.dashboard',['properties'=>$properties,
-         'users_count' => $users_counts,'sales_property_count' => $sales_property_count,'rents_property_count' => $rents_property_count,
-         'property_count'=> $sales_property_count + $rents_property_count ]);
+        return view('admin.dashboard',
+        [
+        'properties'=>$properties,
+         'users_count' => $users_counts,
+         'sales_property_count' => $sales_property_count,
+         'rents_property_count' => $rents_property_count,
+         'property_count'=> $sales_property_count + $rents_property_count
+        ]);
 
     }
 
