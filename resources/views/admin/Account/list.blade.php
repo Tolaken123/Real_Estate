@@ -76,18 +76,26 @@
                                     Edit
                                 </a>
                                 &nbsp;
-                                <a class="btn btn-danger btn-sm" href="#">
+
+                                <form method="POST" action="/admin/user/{{ $user->id }}" style="display:inline" >                               
+                                     {{-- {{ csrf_field() }}
+                                    <input name="_method" type="hidden" value="DELETE"> --}}
+                                    @csrf
+                                    @method('delete')
+
+                                      <button type="submit" class="btn btn-danger" onclick="return confirm('Do you want to delete?')">
                                     <i class="fas fa-trash">
                                     </i>
-                                    Delete
-                                </a></td>
+                                      </button>
+                                </form>
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>
                 </table>
                 <div class="mx-auto d-flex justify-content-center">
                     {{ $users->links() }}
-                </div>
+             </div> 
             </div>
         </div>
         @include('layouts.footer')
