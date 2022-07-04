@@ -139,9 +139,13 @@
                                                                 {{ $list->id }}
                                                             </td>
                                                             <td class="align-middle">
+                                                                @if($list->thumbnail)
+                                                                    <img src="{{ asset('images/' . $list->thumbnail) }}" style="height:70px;"
+                                                                    style="width:100px;" alt="25" >
+                                                               @else
                                                                 <img src="/img/House9.jpg"style="height:70px;"
                                                                     style="width:100px;" alt="25" />
-
+                                                                @endif
                                                             </td>
                                                             <td class="align-middle">{{ $list->name }}</td>
                                                             <td class="align-middle">{{ $list->created_at }}</td>

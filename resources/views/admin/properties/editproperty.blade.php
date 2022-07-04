@@ -26,8 +26,8 @@
                             <select class="form-select form-select-md form-control mb-3" name="listing_type"
                                 aria-label=".form-select-md example">
                                 <option selected>Select Listing Type</option>
-                                <option value="Rent">Rent</option>
-                                <option value="Sale">Sale</option>
+                                <option @if($properties->listing_type == "Rent") selected @endif value="Rent">Rent</option>
+                                <option  @if($properties->listing_type == "Sale") selected @endif value="Sale">Sale</option>
                             </select>
                         </div>
 
@@ -160,7 +160,15 @@
                         </div>
 
 
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1" class="form-label">Thumbnail</label>
+                            <input type="file" name="thumbnail">
+                        </div>
+
+
                         <div id="image_picker" class="row" name="filename" value="{{ $properties->filename }}">
+
+
                         </div>
                         <br>
                         <button type="submit" class="btn btn-primary">Submit</button>

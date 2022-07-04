@@ -179,7 +179,9 @@ class PropertiesController extends Controller
         ]);
 
 
-        $properties = Properties::where('id',$id)->update($request->only([
+        $properties = Properties::findOrFail($id);
+
+        $properties->update($request->only([
             'name',
             'listing_type',
             'bedroom',
@@ -195,28 +197,38 @@ class PropertiesController extends Controller
             'dimension',
             'maplocation',
             'description' ,
-            'filename.*',
         ]));
 
-        if($request->hasfile('filename'))
+
+        if($request->hasfile('thumbnail'))
         {
-            foreach ($$request->hasfile('filename') as $file) {
+            $file = $request->file('thumbnail');
+            $destinationPath = public_path().'/images/';
+            $file_name = date('m-d-Y') . '-' . time() . uniqid() ."." . $file->getClientOriginalExtension();
+
+            $file->move($destinationPath, $file_name);
+
+            $properties->update([
+                'thumbnail' => $file_name
+            ]);
+        }
+
+        if($request->hasfile('images'))
+        {
+            foreach ($request->file('images') as $file) {
                 $destinationPath = public_path().'/images/';
-                $file_name = time() . "." . $files->getClientOriginalExtension();
+                $file_name = date('m-d-Y') . '-' . time() . uniqid() ."." . $file->getClientOriginalExtension();
                 $file->move($destinationPath, $file_name);
                 $image = Image::create([
-                    'property_id' => $property->id,
+                    'property_id' => $properties->id,
                     'image' => $file_name
                 ]);
             }
         }
-    // dd($property);
-    if($properties)
 
-    return redirect()->route('admin.properties.index')->with('properties','property update succassfully');
-    else{
-        return abort(404);
-    }
+
+    return redirect()->route('admin.dashboard')->with('properties','property update succassfully');
+
 }
 
     /**

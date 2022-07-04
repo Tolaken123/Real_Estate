@@ -108,7 +108,7 @@
                             </div>
                             <a href="{{ route('admin.rent.create') }}">
                             <button type="button" class="btn btn-primary">
-                                
+
                             Create New Property
                             </button>
                             </a>
@@ -135,7 +135,7 @@
 
                                                 <tr class="table-active">
                                                     <td>
-                                                        <img src="https://bootdey.com/img/Content/user_1.jpg" alt="">
+                                                        <img src="{{ asset('images/' . $list->thumbnail) }}" alt="">
                                                     </td>
                                                     <td>{{ $list->name}}</td>
                                                     <td>{{ $list->created_at }}</td>
@@ -175,7 +175,7 @@
                                             </tbody>
                                         </table>
                                         <br>
-                                        
+
                                         <div class="mx-auto d-flex justify-content-center">
                                         {{ $rent->links() }}
                                         </div>

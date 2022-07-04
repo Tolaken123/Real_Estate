@@ -9,7 +9,7 @@ class Image extends Model
 {
     use HasFactory;
 
-    protected $guaded = ['id'];
+    protected $fillable = ['property_id','image'];
 
     public function property(){
         return $this->belongsTo(Properties::class);
