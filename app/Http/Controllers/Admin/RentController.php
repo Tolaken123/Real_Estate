@@ -33,9 +33,9 @@ class RentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    
+
     {
-        
+
         $categories = Category::query()
         ->select('id','name')
         ->get();
@@ -54,7 +54,7 @@ class RentController extends Controller
      */
     public function store(Request $request)
     {
-    
+
         $this->validate($request, [
             'name' =>'required|string|max:255',
             'rentalprice'=>'required|string|max:255',
@@ -68,7 +68,7 @@ class RentController extends Controller
             // 'files' => 'required',
             // 'files.*' => 'array|required', 'files.*' => 'required|mimetypes:image/jpg,image/jpeg,image/bmp' ,
         ]);
-      
+
         $rent = new Rent();
         $rent->name=$request->name;
         $rent->rentalprice=$request->rentalprice;
@@ -80,33 +80,33 @@ class RentController extends Controller
         $rent->maplocation=$request->maplocation;
         $rent->description=$request->description;
         $rent->save();
-        
+
         if($request->hasfile('filename'))
         {
 
            foreach($request->file('filename') as $image)
            {
                $name=$image->getClientOriginalName();
-               $image->move(public_path().'/images/', $name);  
-               $data[] = $name;  
+               $image->move(public_path().'/images/', $name);
+               $data[] = $name;
            }
         }
-        
+
         return redirect('admin/rent')->with('rent','rent create succassfully');
         // if($request->hasfile('imageFile')) {
         //     foreach($request->file('imageFile') as $file)
         //     {
         //         $name = $file->getClientOriginalName();
-        //         $file->move(public_path().'/uploads/', $name);  
-        //         $imgData[] = $name;  
+        //         $file->move(public_path().'/uploads/', $name);
+        //         $imgData[] = $name;
         //     }
         //     $fileModal = new Image();
         //     $fileModal->image= json_encode($imgData);
         //     $fileModal->image_id= json_encode($imgData);
         //     $fileModal->save();
 //    dd($rent);
-    
-   
+
+
 
 }
 
@@ -116,7 +116,7 @@ class RentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    
+
      public function show($id)
     {
         //
@@ -130,7 +130,7 @@ class RentController extends Controller
      */
     public function edit($id)
     {
-        
+
         $rents =Rent::find($id);
 
         $categories = Category::query()
@@ -149,7 +149,7 @@ class RentController extends Controller
      */
     public function update(Request $request, $id)
     {
-     
+
         $this->validate($request, [
             'category_id' =>'required',
             'location_id'=>'required',
@@ -197,7 +197,7 @@ class RentController extends Controller
             return redirect('admin/rent')->with('Messege','deleted successfully');;
         }
         return abort(404);
-    } 
-     
-    
+    }
+
+
 }

@@ -22,7 +22,7 @@ class PropertiesController extends Controller
     public function index()
     {
         $properties=Properties::all();
-        return view('admin.dashboard',['properties'=>$properties]);
+        return redirect()->route('admin.dashboard')->with('properties','property Create succassfully');
     }
 
     /**
@@ -38,6 +38,7 @@ class PropertiesController extends Controller
         $provinces = CityProvince::query()
             ->select('id','name')
             ->get();
+
 
         return view('admin.properties.createproperty',compact("categories","provinces"));
     }

@@ -135,6 +135,10 @@
                             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
                         </div>
 
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1" class="form-label">Thumbnail</label>
+                            <input type="file" name="thumbnail">
+                        </div>
 
                         <div id="image_picker" class="row" name="filename[]">
                             @if ($errors->has('files_name'))
