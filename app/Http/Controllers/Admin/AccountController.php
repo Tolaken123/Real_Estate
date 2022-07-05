@@ -97,8 +97,8 @@ class AccountController extends Controller
      */
     public function update(Request $request, $id)
     {
-   
-        $users = user::where('id',$id)->update($request->only([
+      $users=User::findOrFail($id);
+        $users->update($request->only([
             'name',
             'sex',
             'email',

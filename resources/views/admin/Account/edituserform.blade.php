@@ -32,8 +32,9 @@
 
         </div>
         <div class="container">
-            <form action="{{ route('admin.user.store') }}" method="POST">
+            <form action="{{ url('admin/user',$users) }}" method="POST">
                @csrf()
+               @method('put')
                 <div class="card-body">
                     <div class="form-group">
                         <label for="InputName">Name</label>
