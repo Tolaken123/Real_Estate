@@ -241,7 +241,7 @@ class PropertiesController extends Controller
     {
         $properties=Properties::findOrFail($id);
         $properties->delete();
-    return redirect()->route('admin.properties.index')->with('properties','property delete succassfully');
+    return redirect()->route('admin.dashboard')->with('properties','property delete succassfully');
 
 
     }
