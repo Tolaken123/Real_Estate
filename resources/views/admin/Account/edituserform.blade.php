@@ -12,6 +12,9 @@
     <div class="content-wrapper">
         <div class="container mt-6">
             <hr />
+            <form action="{{ url('admin/user',$users) }}" method="POST">
+                @csrf()
+                @method('put')
             <!-- <div class=" social-prof"> -->
             <div class="profile">
                 <!-- <div class="wrapper"> -->
@@ -32,9 +35,7 @@
 
         </div>
         <div class="container">
-            <form action="{{ url('admin/user',$users) }}" method="POST">
-               @csrf()
-               @method('put')
+           
                 <div class="card-body">
                     <div class="form-group">
                         <label for="InputName">Name</label>
@@ -43,8 +44,8 @@
 
                     <select class="form-select form-select-md mb-3" aria-label=".form-select-md example"value="{{$users->sex}}" name="sex">
                             <option selected>Sex</option>
-                            <option value="2">Male</option>
-                            <option value="2">Female</option>
+                            <option  @if($users->sex== "Male") selected @endif value="Rent" value="Male">Male</option>
+                            <option  @if($users->sex == "Female")selected  @endif value="Rent"value="female">Female</option>
                         </select>
                         <select class="form-select form-select-md mb-3" aria-label=".form-select-md example">
                             <option selected>Select Role</option>
