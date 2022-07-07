@@ -1,7 +1,7 @@
 @extends('layouts.backend')
 
 @section('title')
-    Add New Property
+    Update Propertie
 @endsection
 
 @section('css')
@@ -162,7 +162,7 @@
 
                         <div class="form-group">
                             <label for="exampleFormControlTextarea1" class="form-label">Thumbnail</label>
-                            <input type="file" name="thumbnail">
+                            <input type="file" name="thumbnail" value="{{$properties->thumbnail}}">
                         </div>
 
 

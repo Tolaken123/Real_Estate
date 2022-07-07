@@ -1,14 +1,13 @@
-@section('title')
-    Admin Dashboard
-@endsection
 @include('layouts.style')
 @include('layouts.lightmode')
 <!-- Navbar -->
 @include('layouts.topnavbar')
+@section('title')
+    Admin Dashboard
+@endsection
 @include('layouts.usersidebar')
 
 
-<br>
 <div class="content-wrapper">
     <div class="container-fluid">
         <div class="col-sm-">
@@ -24,7 +23,7 @@
                             <!-- small box -->
                             <div class="small-box bg-info">
                                 <div class="inner">
-                                    <h3>{{$sales_property_count }}</h3>
+                                    <h3>{{ $sales_property_count }}</h3>
 
                                     <p>Sale</p>
                                 </div>
@@ -40,7 +39,7 @@
                             <!-- small box -->
                             <div class="small-box bg-success">
                                 <div class="inner">
-                                   <h3>{{$rents_property_count}}<sup style="font-size: 20px"></sup></h3>
+                                    <h3>{{ $rents_property_count }}<sup style="font-size: 20px"></sup></h3>
 
                                     <p>Rent</p>
                                 </div>
@@ -56,7 +55,7 @@
                             <!-- small box -->
                             <div class="small-box bg-warning">
                                 <div class="inner">
-                                    <h3>{{$property_count}}</h3>
+                                    <h3>{{ $property_count }}</h3>
                                     <p>Total Properties</p>
                                 </div>
                                 <div class="icon">
@@ -71,7 +70,7 @@
                             <!-- small box -->
                             <div class="small-box bg-danger">
                                 <div class="inner">
-                                    <h3>{{$users_count}}</h3>
+                                    <h3>{{ $users_count }}</h3>
 
 
                                     <p>Total User</p>
@@ -139,12 +138,13 @@
                                                                 {{ $list->id }}
                                                             </td>
                                                             <td class="align-middle">
-                                                                @if($list->thumbnail)
-                                                                    <img src="{{ asset('images/' . $list->thumbnail) }}" style="height:70px;"
-                                                                    style="width:100px;" alt="25" >
-                                                               @else
-                                                                <img src="/img/House9.jpg"style="height:70px;"
-                                                                    style="width:100px;" alt="25" />
+                                                                @if ($list->thumbnail)
+                                                                    <img src="{{ asset('images/' . $list->thumbnail) }}"
+                                                                        style="height:70px;" style="width:100px;"
+                                                                        alt="25">
+                                                                @else
+                                                                    <img src="/img/House9.jpg"style="height:70px;"
+                                                                        style="width:100px;" alt="25" />
                                                                 @endif
                                                             </td>
                                                             <td class="align-middle">{{ $list->name }}</td>
@@ -160,21 +160,25 @@
                                                                     </i>
                                                                     View
                                                                 </a>
-                                                                <a class="btn btn-info btn-sm" href="/admin/properties/{{ $list->id }}/edit">
+                                                                <a class="btn btn-info btn-sm"
+                                                                    href="/admin/properties/{{ $list->id }}/edit">
                                                                     <i class="fas fa-pencil-alt">
                                                                     </i>
                                                                     Edit
                                                                 </a>
-                                                                <form method="POST" action="{{ route('admin.properties.destroy', $list) }}" style="display:inline" >
+                                                                <form method="POST"
+                                                                    action="{{ route('admin.properties.destroy', $list) }}"
+                                                                    style="display:inline">
                                                                     <input name="_method" type="hidden" value="DELETE">
-                                                                     {{ csrf_field() }}
-                                                                      <button type="submit" class="btn btn-danger" onclick="return confirm('Do you want to delete?')">
+                                                                    {{ csrf_field() }}
+                                                                    <button type="submit" class="btn btn-danger"
+                                                                        onclick="return confirm('Do you want to delete?')">
 
-                                                                    <i class="fas fa-trash"></i>
+                                                                        <i class="fas fa-trash"></i>
 
-                                                                  </a>
-                                                                </button>
-                                                             </form>
+                                                                        </a>
+                                                                    </button>
+                                                                </form>
                                                             </td>
                                                         </tr>
                                                     @endforeach
@@ -184,7 +188,7 @@
                                             <div class="mx-auto d-flex justify-content-center">
                                                 {{ $properties->links() }}
                                             </div>
-                                            <br>  <br><br>
+                                            <br> <br><br>
                                         </div>
                                     </div>
                                 </div>

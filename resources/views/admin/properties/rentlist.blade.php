@@ -131,7 +131,7 @@
                                             </thead>
 
                                             <tbody>
-                                                @foreach($rent as $list)
+                                                @foreach($rentlist as $list)
 
                                                 <tr class="table-active">
                                                     <td>
@@ -139,36 +139,31 @@
                                                     </td>
                                                     <td>{{ $list->name}}</td>
                                                     <td>{{ $list->created_at }}</td>
-                                                    <td> $ {{ $list->rentalprice }} </td>
+                                                    <td> $ {{ $list->price }} </td>
 
-                                                    <td style="width: 10%;">
-                                                        <a href="/admin/rent/{{$list->id}}/edit"
-                                                            class="table-link text-info">
-                                                            <span class="fa-stack">
-                                                                <i class="fa fa-square fa-stack-2x"></i>
-                                                                <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
-                                                            </span>
-                                                        </a>
+                                                    <td style="width: 30%;"
+                                                    class="project-actions text-right align-middle">
+                                                    <a class="btn btn-primary btn-sm" href="#">
+                                                        <i class="fas fa-folder">
+                                                        </i>
+                                                        View
+                                                    </a>
+                                                    <a class="btn btn-info btn-sm" href="/admin/properties/{{ $list->id }}/edit">
+                                                        <i class="fas fa-pencil-alt">
+                                                        </i>
+                                                        Edit
+                                                    </a>
+                                                    <form method="POST" action="{{ route('admin.properties.destroy', $list) }}" style="display:inline" >
+                                                        <input name="_method" type="hidden" value="DELETE">
+                                                         {{ csrf_field() }}
+                                                          <button type="submit" class="btn btn-danger" onclick="return confirm('Do you want to delete?')">
 
-                                                        <a href="#" class="table-link text-primary">
-                                                            <span class="fa-stack">
-                                                                <i class="fa fa-square fa-stack-2x"></i>
-                                                                <i class="fa fa-eye fa-stack-1x fa-inverse"
-                                                                    aria-hidden="true"></i>
+                                                        <i class="fas fa-trash"></i>
 
-                                                            </span>
-                                                        </a>
-                                                        <form action="/admin/rent/{{ $list->id }}" method="POST">
-                                                            @csrf
-                                                            @method('delete')
-                                                            <a href="" class="table-link danger">
-                                                                <span class="fa-stack">
-                                                                    <i class="fa fa-square fa-stack-2x"></i>
-                                                                    <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
-                                                                </span>
-                                                            </a>
-                                                        </form>
-                                                    </td>
+                                                      </a>
+                                                    </button>
+
+                                                </td>
                                                 </tr>
 
                                                 @endforeach
