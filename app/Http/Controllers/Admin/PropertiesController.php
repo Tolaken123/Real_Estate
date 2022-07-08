@@ -22,6 +22,8 @@ class PropertiesController extends Controller
     public function index()
     {
         $properties=Properties::all();
+       
+        
         return redirect()->route('admin.dashboard')->with('properties','property Create succassfully');
     }
 
@@ -72,7 +74,7 @@ class PropertiesController extends Controller
 
         $properties = Properties::create([
             'name' => $request->name,
-            'listing_type' => $request->listing_type,
+            
             'bedroom' => $request->bedroom,
             'province_id'=>$request->province_id,
             'district_id'=>$request->district_id,
@@ -86,9 +88,10 @@ class PropertiesController extends Controller
             'dimension' => $request->dimension,
             'maplocation' => $request->maplocation,
             'description' => $request->description,
-            'filename.*'=> $request->filename
+            'filename.*'=> $request->filename,
+            'listing_type' => $request->listing_type,
         ]);
-
+         
         if($request->hasfile('thumbnail'))
         {
             $file = $request->file('thumbnail');
@@ -101,7 +104,7 @@ class PropertiesController extends Controller
                 'thumbnail' => $file_name
             ]);
         }
-        // dd($file_name);
+        //  dd($file_name);
 
 
 

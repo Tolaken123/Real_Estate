@@ -131,15 +131,22 @@
                                             </thead>
 
                                             <tbody>
-                                                @foreach($rentlist as $list)
+                                                @foreach($rents_property as $list)
 
                                                 <tr class="table-active">
-                                                    <td>
-                                                        <img src="{{ asset('images/' . $list->thumbnail) }}" alt="">
+                                                    <td class="align-middle">
+                                                        @if ($list->thumbnail)
+                                                            <img src="{{ asset('images/' . $list->thumbnail) }}"
+                                                                style="height:70px;" style="width:100px;"
+                                                                alt="25">
+                                                        @else
+                                                            <img src="/img/House9.jpg"style="height:70px;"
+                                                                style="width:100px;" alt="25" />
+                                                        @endif
                                                     </td>
                                                     <td>{{ $list->name}}</td>
                                                     <td>{{ $list->created_at }}</td>
-                                                    <td> $ {{ $list->price }} </td>
+                                                    <td>{{ $list->listing_type }} </td>
 
                                                     <td style="width: 30%;"
                                                     class="project-actions text-right align-middle">
@@ -162,7 +169,7 @@
 
                                                       </a>
                                                     </button>
-
+                                                    </form>
                                                 </td>
                                                 </tr>
 
@@ -172,7 +179,7 @@
                                         <br>
 
                                         <div class="mx-auto d-flex justify-content-center">
-                                        {{ $rent->links() }}
+                                        {{-- {{ $rent->links() }} --}}
                                         </div>
                                     </div>
                                 </div>

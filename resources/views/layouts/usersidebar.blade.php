@@ -46,7 +46,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#" class="nav-link ">
+                            <a href="/admin/rent" class="nav-link ">
                                 <i class="fas fa-bed"></i>
                                 <p>Rent</p>
                             </a>
@@ -54,7 +54,7 @@
                     </ul>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#" class="nav-link ">
+                            <a href="/admin/sale" class="nav-link ">
                                 <i class="fas fa-hand-holding-usd"></i>
                                 <p>Sale</p>
                             </a>

@@ -27,7 +27,8 @@ class DashboardController extends Controller
          $users_counts = User::count();
          $sales_property_count = Properties::where('listing_type', '=', 'Sale')->count();
         $rents_property_count = Properties::where('listing_type', '=', 'Rent')->count();
-
+       
+       
         return view('admin.dashboard',
         [
         'properties'=>$properties,

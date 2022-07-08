@@ -130,48 +130,55 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach($sale as $list)
+                                        @foreach($sales_property as $list)
 
 
                                         <tr class="table-active">
-                                            <td>
-                                                <img src="https://bootdey.com/img/Content/user_1.jpg" alt="">
+                                            <td class="align-middle">
+                                                @if ($list->thumbnail)
+                                                    <img src="{{ asset('images/' . $list->thumbnail) }}"
+                                                        style="height:70px;" style="width:100px;"
+                                                        alt="25">
+                                                @else
+                                                    <img src="/img/House9.jpg"style="height:70px;"
+                                                        style="width:100px;" alt="25" />
+                                                @endif
                                             </td>
-                                            <td>{{ $list->name }}</td>
-                                            <td>{{ $list->created_at}}</td>
-                                            <td>
-                                                ${{ $list->saleprice }}
-                                            </td>
-                                            <td style="width: 10%;">
-                                                <a href="/admin/sale/{{$list->id}}/edit" class="table-link text-info">
-                                                    <span class="fa-stack">
-                                                        <i class="fa fa-square fa-stack-2x"></i>
-                                                        <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
-                                                    </span>
-                                                </a>
-                                                <a href="#" class="table-link text-primary">
-                                                    <span class="fa-stack">
-                                                        <i class="fa fa-square fa-stack-2x"></i>
-                                                        <i class="fa fa-eye fa-stack-1x fa-inverse"
-                                                            aria-hidden="true"></i>
+                                            <td>{{ $list->name}}</td>
+                                            <td>{{ $list->created_at }}</td>
+                                            <td>{{ $list->listing_type }} </td>
 
-                                                    </span>
-                                                </a>
+                                            <td style="width: 30%;"
+                                            class="project-actions text-right align-middle">
+                                            <a class="btn btn-primary btn-sm" href="#">
+                                                <i class="fas fa-folder">
+                                                </i>
+                                                View
+                                            </a>
+                                            <a class="btn btn-info btn-sm" href="/admin/properties/{{ $list->id }}/edit">
+                                                <i class="fas fa-pencil-alt">
+                                                </i>
+                                                Edit
+                                            </a>
+                                            <form method="POST" action="{{ route('admin.properties.destroy', $list) }}" style="display:inline" >
+                                                <input name="_method" type="hidden" value="DELETE">
+                                                 {{ csrf_field() }}
+                                                  <button type="submit" class="btn btn-danger" onclick="return confirm('Do you want to delete?')">
 
-                                                <a href="#" class="table-link danger">
-                                                    <span class="fa-stack">
-                                                        <i class="fa fa-square fa-stack-2x"></i>
-                                                        <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
-                                                    </span>
-                                                </a>
-                                            </td>
+                                                <i class="fas fa-trash"></i>
+
+                                              </a>
+                                            </button>
+                                            </form>
+                                        </td>
                                         </tr>
+
                                         @endforeach
                                     </tbody>
                                 </table>
                                 <br>
                                 <div class="mx-auto d-flex justify-content-center">
-                                        {{ $sale->links() }}
+                                        {{-- {{ $sale->links() }} --}}
                                         </div>
                                 <!-- <nav aria-label="Page navigation example">
                                     <ul class="pagination justify-content-center">

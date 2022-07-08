@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
+use App\Models\Properties;
 use Illuminate\Http\Request;
-use App\Models\Sale;
-use App\Models\Image;
+
 class SaleController extends Controller
 {
     /**
@@ -14,14 +14,9 @@ class SaleController extends Controller
      */
     public function index()
     {
-        $sale=Sale::query()
-        ->orderBy('id','DESC')
-        ->when(\request('q'),function($query){
-            $query->where('name','like', '%' . request('q','%'));
-        })
-        ->paginate($this->default_paginate);
-        // $cat=Inventery::get("id",'inventery');
-        return view('admin.properties.salelist',['sale'=>$sale]);
+        $sales_property = Properties::where('listing_type', '=', 'Sale')->get();
+      return view('admin.properties.salelist',['sales_property'=> $sales_property]);
+        
     }
 
     /**
@@ -32,7 +27,6 @@ class SaleController extends Controller
     public function create()
     {
         //
-        return view('admin.properties.saleform');
     }
 
     /**
@@ -43,47 +37,7 @@ class SaleController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'name' =>'required|string|max:255',
-            'saleprice'=>'required|string|max:255',
-            'bedroom'=>'required|string|max:255',
-            'bathroom'=>'required|string|max:255',
-            'landsize'=>'required|string|max:255',
-            'floor'=>'required|string|max:255',
-            'dimension'=>'required|string|max:255',
-            'maplocation'=>'required|string|max:255',
-            'description'=>'required|string|max:255',
-            // 'files' => 'required',
-            // 'files.*' => 'array|required', 'files.*' => 'required|mimetypes:image/jpg,image/jpeg,image/bmp' ,
-        ]);
-        $sale = new Sale();
-        $sale->name=$request->name;
-        $sale->saleprice=$request->saleprice;
-        $sale->bedroom=$request->bedroom;
-        $sale->bathroom=$request->bathroom;
-        $sale->floor=$request->floor;
-        $sale->landsize=$request->landsize;
-        $sale->dimension=$request->dimension;
-        $sale->maplocation=$request->maplocation;
-        $sale->description=$request->description;
-        $sale->save();
-        // dd($sale);
-        // if($request->hasfile('files'))
-        // {
-        //    foreach($request->file('files') as $image)
-        //    {
-        //        $name = time().'.'.$image->extension();
-        //        $image->move(public_path().'/files/', $name);  
-        //        $data[] = $name;  
-               
-        //    }
-        // }
-        //     $file= new Image();
-        //        $file->files=json_encode($data);
-        //        $file->sale_id=$sale->id;
-        //        $file->save();
-       return redirect('admin/sale')->with('sale','sale create succassfully');
-    
+        //
     }
 
     /**
@@ -105,8 +59,7 @@ class SaleController extends Controller
      */
     public function edit($id)
     {
-        $sale =Sale::find($id);
-        return view('admin.properties.editsaleform',compact("sale"));
+        //
     }
 
     /**
@@ -118,35 +71,7 @@ class SaleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-            'name' =>'required',
-            'saleprice'=>'required',
-            'bedroom'=>'required',
-            'bathroom'=>'required',
-            'landsize'=>'required',
-            'floor'=>'required',
-            'dimension'=>'required',
-            'maplocation'=>'required',
-            'description'=>'required',
-
-        ]);
-        $sale=Sale::find($id);
-        $sale->name=$request->name;
-        $sale->saleprice=$request->saleprice;
-        $sale->bedroom=$request->bedroom;
-        $sale->bathroom=$request->bathroom;
-        $sale->floor=$request->floor;
-        $sale->landsize=$request->landsize;
-        $sale->dimension=$request->dimension;
-        $sale->maplocation=$request->maplocation;
-        $sale->description=$request->description;
-        $sale->update();
-    //     $sale=$request->all();
-    //     // $rent['inventery'] = $request->input('inventery');
-    // //   //    $rent->name=$request->name;
-    //      Sale::where('id',$id)->update($sale);
-        return redirect('admin/sale')->with('sale','sale update succassfully');
-
+        //
     }
 
     /**
@@ -157,10 +82,6 @@ class SaleController extends Controller
      */
     public function destroy($id)
     {
-        $sale=Sale::findOrFail($id);
-        if ($sale->delete()){
-            return redirect('/admin/sale');
-        }
-        return abort(404);
+        //
     }
 }

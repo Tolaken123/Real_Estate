@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
-use App\Models\Inventery;
+use App\Models\Properties;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Rent;
@@ -17,14 +17,17 @@ class RentController extends Controller
      */
     public function index()
     {
-        $rent=Rent::query()
-        ->orderBy('id','DESC')
-        ->when(\request('q'),function($query){
-            $query->where('name','like', '%' . request('q','%'));
-        })
-        ->paginate($this->default_paginate);
+        // $rent=Rent::query()
+        // ->orderBy('id','DESC')
+        // ->when(\request('q'),function($query){
+        //     $query->where('name','like', '%' . request('q','%'));
+        // })
+        // ->paginate($this->default_paginate);
         // $cat=Inventery::get("id",'inventery');
-        return view('admin.properties.rentlist',['rent'=>$rent]);
+    //     return view('admin.properties.rentlist',['rent'=>$rent]);
+    $rents_property = Properties::where('listing_type', '=', 'Rent')->get();
+    return view('admin.properties.rentlist',compact('rents_property'));
+   
     }
 
     /**
@@ -81,6 +84,7 @@ class RentController extends Controller
         $rent->description=$request->description;
         $rent->save();
 
+
         if($request->hasfile('filename'))
         {
 
@@ -93,19 +97,7 @@ class RentController extends Controller
         }
 
         return redirect('admin/rent')->with('rent','rent create succassfully');
-        // if($request->hasfile('imageFile')) {
-        //     foreach($request->file('imageFile') as $file)
-        //     {
-        //         $name = $file->getClientOriginalName();
-        //         $file->move(public_path().'/uploads/', $name);
-        //         $imgData[] = $name;
-        //     }
-        //     $fileModal = new Image();
-        //     $fileModal->image= json_encode($imgData);
-        //     $fileModal->image_id= json_encode($imgData);
-        //     $fileModal->save();
-//    dd($rent);
-
+     
 
 
 }
@@ -163,10 +155,6 @@ class RentController extends Controller
             'maplocation'=>'required',
             'description'=>'required',
         ]);
-    //     $rent=$request->all();
-    //     // $rent['inventery'] = $request->input('inventery');
-    // //   //    $rent->name=$request->name;
-    //      Rent::where('id',$id)->update($rent);
     $rents =Rent::find($id);
     $rents->name=$request->name;
     $rents->category_id=$request->category_id;
