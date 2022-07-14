@@ -77,7 +77,7 @@
                                 </a>
                                 &nbsp;
 
-                                <form method="POST" action="/admin/user/{{ $user->id }}" style="display:inline" >                               
+                                <form method="POST" action="/admin/user/{{ $user->id }}" style="display:inline" >
                                      {{-- {{ csrf_field() }}
                                     <input name="_method" type="hidden" value="DELETE"> --}}
                                     @csrf
@@ -95,7 +95,7 @@
                 </table>
                 <div class="mx-auto d-flex justify-content-center">
                     {{ $users->links() }}
-             </div> 
+             </div>
             </div>
         </div>
         @include('layouts.footer')

@@ -106,7 +106,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="{{ route('admin.rent.create') }}">
+                            <a href="{{ route('admin.properties.create') }}">
                             <button type="button" class="btn btn-primary">
 
                             Create New Property
@@ -125,8 +125,8 @@
                                                     <th><span>Thumbnail</span></th>
                                                     <th><span>Title</span></th>
                                                     <th><span>Created</span></th>
-                                                    <th><span>Rent</span></th>
-                                                    <th>Action</th>
+                                                    <th><span>Price</span></th>
+                                                    <th></th>
                                                 </tr>
                                             </thead>
 
@@ -137,8 +137,8 @@
                                                     <td class="align-middle">
                                                         @if ($list->thumbnail)
                                                             <img src="{{ asset('images/' . $list->thumbnail) }}"
-                                                                style="height:70px;" style="width:100px;"
-                                                                alt="25">
+                                                            style="height:70px;" style="width:100px;"
+                                                            alt="25">
                                                         @else
                                                             <img src="/img/House9.jpg"style="height:70px;"
                                                                 style="width:100px;" alt="25" />
@@ -146,7 +146,7 @@
                                                     </td>
                                                     <td>{{ $list->name}}</td>
                                                     <td>{{ $list->created_at }}</td>
-                                                    <td>{{ $list->listing_type }} </td>
+                                                    <td>{{ $list->price }} </td>
 
                                                     <td style="width: 30%;"
                                                     class="project-actions text-right align-middle">
@@ -179,7 +179,7 @@
                                         <br>
 
                                         <div class="mx-auto d-flex justify-content-center">
-                                        {{-- {{ $rent->links() }} --}}
+                                        {{ $rents->links() }}
                                         </div>
                                     </div>
                                 </div>

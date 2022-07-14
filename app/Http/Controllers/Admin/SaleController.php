@@ -16,7 +16,7 @@ class SaleController extends Controller
     {
         $sales_property = Properties::where('listing_type', '=', 'Sale')->get();
       return view('admin.properties.salelist',['sales_property'=> $sales_property]);
-        
+
     }
 
     /**
