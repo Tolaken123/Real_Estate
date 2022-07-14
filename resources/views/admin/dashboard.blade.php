@@ -11,7 +11,8 @@
 <div class="content-wrapper">
     <div class="container-fluid">
         <div class="col-sm-">
-            <h1 class="m-0">Welcome {{ Auth::user()->name }} !</h1>
+            <br>
+            <h1 class="m-0">{{ Auth::user()->name }} Using System Right Now!</h1>
         </div>
         <br>
         <div class="card w-100">
