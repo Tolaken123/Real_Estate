@@ -7,6 +7,7 @@ use App\Http\Controllers\FileUpload;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\location\AddressSelectController;
+use App\Http\Controllers\Admin\RoleController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,6 +34,10 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'mi
        Route::resource('/user',AccountController::class);
        Route::resource('/rent',RentController::class);
        Route::resource('/sale',SaleController::class);
+       Route::resource('roles', RoleController::class);
+
+
+      
 
     Route::group(['prefix' => 'location','as' => 'location.'],function(){
         Route::get('district',[AddressSelectController::class,'districts'])->name('district');
@@ -49,6 +54,11 @@ Route::post('/image', [FileUpload::class, 'fileUpload'])->name('imageUpload');
 Auth::routes();
 Auth::routes(['verify' => true]);
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+// Route::group(['middleware' => ['auth']], function() {
+//     Route::resource('roles', RoleController::class);
+//     Route::resource('users', UserController::class);
+//     Route::resource('products', ProductController::class);
+// });
 // Route::get('/image', function () {
 //     return view('image.form');
 // });

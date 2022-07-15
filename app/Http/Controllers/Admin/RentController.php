@@ -10,6 +10,13 @@ use App\Models\Image;
 use App\Models\location\CityProvince;
 class RentController extends Controller
 {
+    // function __construct()
+    // {
+    //      $this->middleware('permission:properties-list|properties-create|properties-edit|properties-delete', ['only' => ['index','show']]);
+    //      $this->middleware('permission:properties-create', ['only' => ['create','store']]);
+    //      $this->middleware('permission:properties-edit', ['only' => ['edit','update']]);
+    //      $this->middleware('permission:properties-delete', ['only' => ['destroy']]);
+    // }
     /**
      * Display a listing of the resource.
      *
