@@ -89,7 +89,7 @@
       <li class="navbar-nav ms-auto">
         @if (Route::has('login'))
         @auth
-        <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
+        <a href="{{ url('/home') }}" >Home</a>
         @else
         <li class="nav-item ">
           <a href="{{ route('login') }}" class="nav-link">
@@ -147,8 +147,8 @@
                             <h4>Installment payment</h4>
                         </a>
                     </li>
-                   
-                    
+
+
                     <li class="navbar-nav ms-auto">
 
                         @if (Route::has('login'))

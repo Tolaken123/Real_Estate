@@ -27,7 +27,7 @@ class RentController extends Controller
     //     return view('admin.properties.rentlist',['rent'=>$rent]);
     $rents_property = Properties::where('listing_type', '=', 'Rent')->get();
     return view('admin.properties.rentlist',compact('rents_property'));
-   
+
     }
 
     /**
@@ -97,7 +97,7 @@ class RentController extends Controller
         }
 
         return redirect('admin/rent')->with('rent','rent create succassfully');
-     
+
 
 
 }

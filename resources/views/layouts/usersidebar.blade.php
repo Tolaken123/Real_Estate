@@ -1,9 +1,9 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="/" class="brand-link">
+    <a href="/" class="brand-link text-decoration-none">
         <img src="{{ asset('vendors/dist/img/camrealestatelogo.png')}}" alt="camrealestate"
             class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">CamRealEstate</span>
+        <span class="brand-text font-weight-light ">CamRealEstate</span>
     </a>
 
     <!-- Sidebar -->
@@ -15,7 +15,7 @@
                 <img src="https://bootdey.com/img/Content/user_1.jpg" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">{{ Auth::user()->name }}</a>
+                <a href="#" class="d-block text-decoration-none">{{ Auth::user()->name }}</a>
 
             </div>
         </div>
@@ -78,13 +78,6 @@
                                 </p>
                             </a>
                         </li>
-
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-th"></i>
-                  <p>Categories</p>
-                </a>
-              </li>
               <li class="nav-item">
                 <a href="#" class="nav-link">
                 <i class="fas fa-user-lock"></i>
@@ -92,7 +85,18 @@
                 </a>
               </li>
 
-                </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="fas fa-trash"></i>
+                  <p>Trash</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-table"></i>
+                  <p>Report</p>
+                </a>
+              </li>
                 </ul>
                 <li class="nav-item">
             <a href="{{ Route('admin.user.index') }}" class="nav-link">

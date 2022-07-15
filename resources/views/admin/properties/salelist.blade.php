@@ -2,6 +2,9 @@
 @include('layouts.style')
 @include('layouts.lightmode')
 <!-- Navbar -->
+@section('title')
+    Sale List
+@endsection
 @include('layouts.topnavbar')
 @include('layouts.usersidebar')
 
@@ -87,7 +90,6 @@
     a:hover {
         text-decoration: none;
     }
-
 </style>
 <div class="content-wrapper">
     <div class="container-lg">
@@ -106,7 +108,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href="{{ route('admin.sale.create') }}">
+                    <a href="{{ route('admin.properties.create') }}">
                         <button type="button" class="btn btn-primary">
 
                             Create New Property
@@ -125,61 +127,61 @@
                                             <th><span>Thumbnail</span></th>
                                             <th><span>Title</span></th>
                                             <th><span>Created</span></th>
-                                            <th><span>Sale</span></th>
-                                            <th>Action</th>
+                                            <th><span>Price</span></th>
+                                            <th></th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach($sales_property as $list)
+                                        @foreach ($sales_property as $list)
+                                            <tr class="table-active">
+                                                <td class="align-middle">
+                                                    @if ($list->thumbnail)
+                                                        <img src="{{ asset('images/' . $list->thumbnail) }}"
+                                                        style="height:50px;"
+                                                       alt="25" />
+                                                    @else
+                                                        <img src="/img/House9.jpg"style="height:70px;"
+                                                            style="width:100px;" alt="25" />
+                                                    @endif
+                                                </td>
+                                                <td>{{ $list->name }}</td>
+                                                <td>{{ $list->created_at }}</td>
+                                                <td>{{ $list->price }} </td>
 
+                                                <td style="width: 30%;" class="project-actions text-right align-middle">
+                                                    <a class="btn btn-primary btn-sm" href="#">
+                                                        <i class="fas fa-folder">
+                                                        </i>
+                                                        View
+                                                    </a>
+                                                    <a class="btn btn-info btn-sm"
+                                                        href="/admin/properties/{{ $list->id }}/edit">
+                                                        <i class="fas fa-pencil-alt">
+                                                        </i>
+                                                        Edit
+                                                    </a>
+                                                    <form method="POST"
+                                                        action="{{ route('admin.properties.destroy', $list) }}"
+                                                        style="display:inline">
+                                                        <input name="_method" type="hidden" value="DELETE">
+                                                        {{ csrf_field() }}
+                                                        <button type="submit" class="btn btn-danger"
+                                                            onclick="return confirm('Do you want to delete?')">
 
-                                        <tr class="table-active">
-                                            <td class="align-middle">
-                                                @if ($list->thumbnail)
-                                                    <img src="{{ asset('images/' . $list->thumbnail) }}"
-                                                        style="height:70px;" style="width:100px;"
-                                                        alt="25">
-                                                @else
-                                                    <img src="/img/House9.jpg"style="height:70px;"
-                                                        style="width:100px;" alt="25" />
-                                                @endif
-                                            </td>
-                                            <td>{{ $list->name}}</td>
-                                            <td>{{ $list->created_at }}</td>
-                                            <td>{{ $list->listing_type }} </td>
+                                                            <i class="fas fa-trash"></i>
 
-                                            <td style="width: 30%;"
-                                            class="project-actions text-right align-middle">
-                                            <a class="btn btn-primary btn-sm" href="#">
-                                                <i class="fas fa-folder">
-                                                </i>
-                                                View
-                                            </a>
-                                            <a class="btn btn-info btn-sm" href="/admin/properties/{{ $list->id }}/edit">
-                                                <i class="fas fa-pencil-alt">
-                                                </i>
-                                                Edit
-                                            </a>
-                                            <form method="POST" action="{{ route('admin.properties.destroy', $list) }}" style="display:inline" >
-                                                <input name="_method" type="hidden" value="DELETE">
-                                                 {{ csrf_field() }}
-                                                  <button type="submit" class="btn btn-danger" onclick="return confirm('Do you want to delete?')">
-
-                                                <i class="fas fa-trash"></i>
-
-                                              </a>
-                                            </button>
-                                            </form>
-                                        </td>
-                                        </tr>
-
+                                                            </a>
+                                                        </button>
+                                                    </form>
+                                                </td>
+                                            </tr>
                                         @endforeach
                                     </tbody>
                                 </table>
                                 <br>
                                 <div class="mx-auto d-flex justify-content-center">
-                                        {{-- {{ $sale->links() }} --}}
-                                        </div>
+                                    {{-- {{ $sale->links() }} --}}
+                                </div>
                                 <!-- <nav aria-label="Page navigation example">
                                     <ul class="pagination justify-content-center">
                                         <li class="page-item disabled">
@@ -199,7 +201,7 @@
                 </div>
             </div>
         </div>
-    </div>      
+    </div>
 </div>
 @include('layouts.footer')
 @include('layouts.script')
