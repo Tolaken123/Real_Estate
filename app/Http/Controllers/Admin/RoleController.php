@@ -45,7 +45,7 @@ class RoleController extends Controller
         
 
         $roles = Role::orderBy('id', 'desc')->paginate(20);
-        return view('admin.role.roleList', ['roles'=> $roles]);
+        return view('admin.role.index', ['roles'=> $roles]);
     }
 
     public function create()
@@ -57,7 +57,7 @@ class RoleController extends Controller
     public function edit($id)
     {
         $role = Role:: where("id", $id)->firstOrFail();
-        return view('admin.role.roleForm', ['role'=> $role]);
+        return view('admin.role.edit', ['role'=> $role]);
     }
 
     public function update(Request $request, $id)
