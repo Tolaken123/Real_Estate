@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\location\AddressSelectController;
 use App\Http\Controllers\Admin\RoleController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,8 +22,12 @@ use App\Http\Controllers\Admin\RoleController;
 
 // Noted: Here we create route to test your view then comment it .
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['as' => 'frontend.'], function () {
+    Route::get('/', [\App\Http\Controllers\Frontend\HomeController::class, 'home'])->name('home');
+    Route::group(['prefix' => 'properties', 'as' => 'properties.'], function () {
+        Route::get('/', [\App\Http\Controllers\Frontend\PropertyController::class, 'index'])->name('index');
+        Route::get('/{property}', [\App\Http\Controllers\Frontend\PropertyController::class, 'detail'])->name('detail');
+    });
 });
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'middleware' => 'auth'], function () {
@@ -39,14 +44,20 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'mi
 
       
 
-    Route::group(['prefix' => 'location','as' => 'location.'],function(){
-        Route::get('district',[AddressSelectController::class,'districts'])->name('district');
-        Route::get('commune',[AddressSelectController::class,'communes'])->name('commune');
-        Route::get('village',[AddressSelectController::class,'villages'])->name('village');
+//     Route::resource('/', AdminController::class);
+//     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+//     Route::resource('/properties', PropertiesController::class);
+//     Route::resource('/user', AccountController::class);
+//     Route::resource('/rent', RentController::class);
+//     Route::resource('/sale', SaleController::class);
+// >>>>>>> d54922a55117e9c725aa13321098a58991b429c3
+
+    Route::group(['prefix' => 'location', 'as' => 'location.'], function () {
+        Route::get('district', [AddressSelectController::class, 'districts'])->name('district');
+        Route::get('commune', [AddressSelectController::class, 'communes'])->name('commune');
+        Route::get('village', [AddressSelectController::class, 'villages'])->name('village');
     });
 });
-
-
 
 
 Route::get('/image', [FileUpload::class, 'createForm']);
@@ -75,8 +86,8 @@ Route::get('/layouts/Home_page', function () {
     return view('layouts/Home_page');
 });
 Route::get('/layouts/industry_profile', function () {
-        return view('layouts/industry_profile');
-    });
+    return view('layouts/industry_profile');
+});
 
 // Route::get('/layouts/test', function () {
 //     return view('layouts/test');
@@ -146,6 +157,6 @@ Route::get('/layouts/property_detail', function () {
     return view('layouts/property_detail');
 });
 
-Route::get('/layouts/contact_us',function(){
+Route::get('/layouts/contact_us', function () {
     return view('layouts/contact_us');
 });
