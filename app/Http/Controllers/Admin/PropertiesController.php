@@ -22,8 +22,6 @@ class PropertiesController extends Controller
     public function index()
     {
         $properties=Properties::all();
-
-
         return redirect()->route('admin.dashboard')->with('properties','property Create succassfully');
     }
 
