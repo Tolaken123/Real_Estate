@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+
 use App\Http\Controllers\Controller;
+use App\Models\Property;
 use Illuminate\Http\Request;
 use App\Models\User;
-use App\Models\Sale;
-use App\Models\Properties;
 
 class DashboardController extends Controller
 {
@@ -16,27 +16,27 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $properties=Properties::query()
-        ->orderBy('id','DESC')
-        ->when(\request('q'),function($query){
-            $query->where('name','like', '%' . request('q','%'));
-        })
-        ->paginate($this->default_paginate);
+        $properties = Property::query()
+            ->orderBy('id', 'DESC')
+            ->when(\request('q'), function ($query) {
+                $query->where('name', 'like', '%' . request('q', '%'));
+            })
+            ->paginate($this->default_paginate);
         // $cat=Inventery::get("id",'inventery');
 
-         $users_counts = User::count();
-         $sales_property_count = Properties::where('listing_type', '=', 'Sale')->count();
-        $rents_property_count = Properties::where('listing_type', '=', 'Rent')->count();
-       
-       
+        $users_counts = User::count();
+        $sales_property_count = Property::query()->sale()->count();
+        $rents_property_count = Property::query()->rent()->count();
+
+
         return view('admin.dashboard',
-        [
-        'properties'=>$properties,
-         'users_count' => $users_counts,
-         'sales_property_count' => $sales_property_count,
-         'rents_property_count' => $rents_property_count,
-         'property_count'=> $sales_property_count + $rents_property_count
-        ]);
+            [
+                'properties' => $properties,
+                'users_count' => $users_counts,
+                'sales_property_count' => $sales_property_count,
+                'rents_property_count' => $rents_property_count,
+                'property_count' => $sales_property_count + $rents_property_count
+            ]);
 
     }
 
@@ -53,7 +53,7 @@ class DashboardController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -64,7 +64,7 @@ class DashboardController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -75,7 +75,7 @@ class DashboardController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -86,8 +86,8 @@ class DashboardController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -98,7 +98,7 @@ class DashboardController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
