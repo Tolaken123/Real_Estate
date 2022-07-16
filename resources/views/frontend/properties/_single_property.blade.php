@@ -1,4 +1,4 @@
-<div class="col-lg-3 col-md-6">
+<div class="col-lg-3 col-md-6 mt-4">
     <a class="text-decoration-none"href="{{ route('frontend.properties.detail', $property->id) }}">
         <div class="card">
             <img class="card-img-top" src="{{ asset('images/' . $property->thumbnail) }}" alt="Card image cap">
@@ -42,7 +42,7 @@
             <div class="card-body border-top">
                 <div class="d-flex no-block align-items-center">
                     <img alt="img " class="rounded-circle border border-5 border-white "
-                         src="../img/duongprofile (1).jpg" width="50px" height="50px">
+                         src="../img/nophoto.png" width="50px" height="50px">
                     <div>
                         <h5 class="card-title m-b-0">Duong</h5>
                         <h6 class="text-muted"></h6>

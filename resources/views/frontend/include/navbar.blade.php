@@ -20,26 +20,18 @@
                                    href="{{ route('frontend.properties.index',['listing_type' => 'Sale']) }}">Sale</a>
                             </li>
                             <li><a class="dropdown-item text-capitalize hover-bg"
-                                   href="{{ route('frontend.properties.index',['listing_type' => 'Rentz']) }}">Rent</a>
+                                   href="{{ route('frontend.properties.index',['listing_type' => 'Rent']) }}">Rent</a>
                             </li>
                         </ul>
                     </div>
                 </li>
-                <!-- <li class="nav-item">
-                    <a class="nav-link" href="#">Services</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li> -->
                 @if (Route::has('login'))
 
-                    <li class="navbar-nav ms-auto">
-                        <!-- <div  class="hidden fixed top-0 right-0 px-6 py-4 sm:block" > -->
-                        <!-- class="hidden fixed top-0 right-0 px-6 py-4 sm:block"  -->
+                    <li class="nav-item">
 
                         @auth
                             <a href="{{ url('/home') }}"
-                               class="text-decoration-none text-white">Home</a>
+                               class="text-decoration-none text-white nav-item">Home</a>
                         @endauth
                     </li>
                 @else

@@ -19,13 +19,13 @@ class AccountController extends Controller
      */
     public function index()
     {
-        // $users=User::query()
-        // ->orderBy('id','DESC')
-        // ->when(\request('q'),function($query){
-        //     $query->where('name','like', '%' . request('q','%'));
-        // })
-        // ->paginate($this->default_paginate);
-        $users = User::paginate(15)->fragment('users');
+        $users=User::query()
+        ->orderBy('id','DESC')
+        ->when(\request('q'),function($query){
+            $query->where('name','like', '%' . request('q','%'));
+        })
+        ->paginate($this->default_paginate);
+        // $users = User::paginate(15)->fragment('users');
         return view('admin.Account.list',['users'=>$users]);
     }
 
@@ -65,13 +65,13 @@ class AccountController extends Controller
             'password' => 'required|same:confirm-password',
             'roles' => 'required'
         ]);
-    
+
         $input = $request->all();
         $input['password'] = Hash::make($input['password']);
-    
+
         $user = User::create($input);
         $user->assignRole($request->input('roles'));
-    
+
         return redirect()->route('users.index')
                         ->with('success','User created successfully');
 
@@ -113,8 +113,8 @@ class AccountController extends Controller
      */
     public function update(Request $request, $id)
     {
-     
-       
+
+
         $this->validate($request, [
             'name' => 'required',
             'phone'=> 'required',
@@ -124,7 +124,7 @@ class AccountController extends Controller
             'roles' => 'required'
         ]);
         $users=User::findOrFail($id);
-        
+
         return redirect()->route('admin.user.index') ->with('success','User updated successfully');
     }
 
