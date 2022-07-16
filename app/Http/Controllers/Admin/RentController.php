@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
-use App\Models\Properties;
+use App\Models\Property;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Rent;
@@ -24,7 +24,7 @@ class RentController extends Controller
      */
     public function index()
     {
-        $rent=Properties::query()
+        $rent=Property::query()
         ->orderBy('id','DESC')
         ->when(\request('q'),function($query){
             $query->where('name','like', '%' . request('q','%'));
@@ -32,7 +32,7 @@ class RentController extends Controller
         ->paginate($this->default_paginate);
         // $cat=Inventery::get("id",'inventery');
     //     return view('admin.properties.rentlist',['rent'=>$rent]);
-    $rents_property = Properties::where('listing_type', '=', 'Rent')->get();
+    $rents_property = Property::where('listing_type', '=', 'Rent')->get();
     return view('admin.properties.rentlist',compact('rents_property','rent'));
 
     }

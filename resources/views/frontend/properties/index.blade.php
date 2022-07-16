@@ -20,7 +20,7 @@
 
     @include('frontend.include.property-filter')
 
-    <div class="row jumbotron m-5">
+    <div class="row jumbotron m-5 ">
 
         @foreach($properties as $property)
             @include('frontend.properties._single_property',['property' => $property])

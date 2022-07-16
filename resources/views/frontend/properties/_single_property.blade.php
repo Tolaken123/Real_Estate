@@ -1,11 +1,11 @@
 <div class="col-lg-3 col-md-6">
-    <a href="{{ route('frontend.properties.detail', $property->id) }}">
+    <a class="text-decoration-none"href="{{ route('frontend.properties.detail', $property->id) }}">
         <div class="card">
             <img class="card-img-top" src="../img/House1.jpg" alt="Card image cap">
             <div class="card-img-overlay">
                 <span class="badge badge-danger badge-pill">For {{ $property->listing_type }}</span>
             </div>
-            <div class="card-body bg-light">
+            <div class="card-body bg-light ">
                 <h4 class="card-title">{{ $property->name }}</h4>
                 <h4 class="text-primary">{{ format_currency($property->price) }}</h4>
             </div>

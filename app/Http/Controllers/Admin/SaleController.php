@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
-use App\Models\Properties;
+use App\Models\Property;
 use Illuminate\Http\Request;
 
 class SaleController extends Controller
@@ -14,7 +14,7 @@ class SaleController extends Controller
      */
     public function index()
     {
-        $sales_property = Properties::where('listing_type', '=', 'Sale')->get();
+        $sales_property = Property::where('listing_type', '=', 'Sale')->get();
       return view('admin.properties.salelist',['sales_property'=> $sales_property]);
 
     }

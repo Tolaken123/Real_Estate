@@ -7,12 +7,8 @@ use App\Models\Inventery;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Image;
-<<<<<<< HEAD
-use App\Models\User;
-use App\Models\Properties;
-=======
+
 use App\Models\Property;
->>>>>>> f7be6bcd2334dd028c888476cfff9d9262bbd201
 use App\Models\location\CityProvince;
 use App\Models\location\District;
 use App\Models\location\Commune;
@@ -27,14 +23,11 @@ class PropertiesController extends Controller
      */
     public function index()
     {
-// <<<<<<< HEAD
-//         $properties=Properties::all();
-//         return redirect()->route('admin.dashboard')->with('properties','property Create succassfully');
-// =======
-//         $properties = Property::all();
 
-//         return redirect()->route('admin.dashboard')->with('properties', 'property Create succassfully');
-// >>>>>>> d54922a55117e9c725aa13321098a58991b429c3
+     $properties = Property::all();
+
+        return redirect()->route('admin.dashboard')->with('properties', 'property Create succassfully');
+
     }
 
     /**
