@@ -4,6 +4,10 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Arr;
+use Spatie\Permission\Models\Role;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 
 class AccountController extends Controller
@@ -45,14 +49,31 @@ class AccountController extends Controller
     {
 
 
-        $user = User::create([
-            'name' => $request->name,
-            'sex' => $request->sex,
-            'password' => bcrypt($request->password),
-            'email' => $request->email,
-            'phone' => $request->phone
+        // $user = User::create([
+        //     'name' => $request->name,
+        //     'sex' => $request->sex,
+        //     'password' => bcrypt($request->password),
+        //     'email' => $request->email,
+        //     'phone' => $request->phone
 
+        // ]);
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required|email|unique:users,email',
+            'phone' => 'required',
+            'sex'=>'required',
+            'password' => 'required|same:confirm-password',
+            'roles' => 'required'
         ]);
+    
+        $input = $request->all();
+        $input['password'] = Hash::make($input['password']);
+    
+        $user = User::create($input);
+        $user->assignRole($request->input('roles'));
+    
+        return redirect()->route('users.index')
+                        ->with('success','User created successfully');
 
 
         return redirect()->route('admin.user.index');
@@ -80,13 +101,10 @@ class AccountController extends Controller
     public function edit($id)
     {
         $users =User::find($id);
-        // $users->name=$request->name;
-        // $users->sex=$request->sex;
-        // $users->=$request->name;
-        // $users->name=$request->name;
-        // $users->name=$request->name;
+        $roles = Role::pluck('name','name')->all();
+        $userRole = $users->roles->pluck('name','name')->all();
 
-        return view('admin.Account.edituserform',compact("users"));
+        return view('admin.Account.edituserform',compact("users",'roles','userRole'));
     }
 
     /**
@@ -99,15 +117,29 @@ class AccountController extends Controller
     public function update(Request $request, $id)
     {
       $users=User::findOrFail($id);
-        $users->update($request->only([
-            'name',
-            'sex',
-            'email',
-            'phone',
-            'password'
-        ]));
-
-        return redirect()->route('admin.user.index');
+       
+        $this->validate($request, [
+            'name' => 'required',
+            'phone'=> 'required',
+            'sex'=> 'required',
+            'email' => 'required|email|unique:users,email,'.$id,
+            'password' => 'same:confirm-password',
+            'roles' => 'required'
+        ]);
+    
+        $input = $request->all();
+        if(!empty($input['password'])){ 
+            $input['password'] = Hash::make($input['password']);
+        }else{
+            $input = Arr::except($input,array('password'));    
+        }
+    
+        $user = User::find($id);
+        $user->update($input);
+        DB::table('model_has_roles')->where('model_id',$id)->delete();
+    
+        $user->assignRole($request->input('roles'));
+        return redirect()->route('admin.user.index') ->with('success','User updated successfully');
     }
 
     /**

@@ -1,13 +1,18 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+
 use App\Http\Controllers\Controller;
 use App\Models\Inventery;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Image;
+<<<<<<< HEAD
 use App\Models\User;
 use App\Models\Properties;
+=======
+use App\Models\Property;
+>>>>>>> f7be6bcd2334dd028c888476cfff9d9262bbd201
 use App\Models\location\CityProvince;
 use App\Models\location\District;
 use App\Models\location\Commune;
@@ -22,10 +27,14 @@ class PropertiesController extends Controller
      */
     public function index()
     {
-        $properties=Properties::all();
+// <<<<<<< HEAD
+//         $properties=Properties::all();
+//         return redirect()->route('admin.dashboard')->with('properties','property Create succassfully');
+// =======
+//         $properties = Property::all();
 
-
-        return redirect()->route('admin.dashboard')->with('properties','property Create succassfully');
+//         return redirect()->route('admin.dashboard')->with('properties', 'property Create succassfully');
+// >>>>>>> d54922a55117e9c725aa13321098a58991b429c3
     }
 
     /**
@@ -36,52 +45,52 @@ class PropertiesController extends Controller
     public function create()
     {
         $categories = Category::query()
-            ->select('id','name')
+            ->select('id', 'name')
             ->get();
         $provinces = CityProvince::query()
-            ->select('id','name')
+            ->select('id', 'name')
             ->get();
 
 
-        return view('admin.properties.createproperty',compact("categories","provinces"));
+        return view('admin.properties.createproperty', compact("categories", "provinces"));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
         $this->validate($request, [
-            'listing_type'=>'required|string|max:255',
-            'province_id'=>'required|string|max:255',
-            'district_id'=>'required|string|max:255',
-            'commune_id'=>'required|string|max:255',
-            'village_id'=>'required|string|max:255',
-            'name' =>'required|string|max:255',
-            'price'=>'required|string|max:255',
-            'bedroom'=>'required|string|max:255',
-            'bathroom'=>'required|string|max:255',
-            'landsize'=>'required|string|max:255',
-            'floor'=>'required|string|max:255',
-            'dimension'=>'required|string|max:255',
-            'maplocation'=>'required|string|max:255',
-            'description'=>'required|string|max:500',
-            'filesname.*' => 'array|required', 'files.*' => 'required|mimetypes:image/jpg,image/jpeg,image/bmp' ,
+            'listing_type' => 'required|string|max:255',
+            'province_id' => 'required|string|max:255',
+            'district_id' => 'required|string|max:255',
+            'commune_id' => 'required|string|max:255',
+            'village_id' => 'required|string|max:255',
+            'name' => 'required|string|max:255',
+            'price' => 'required|string|max:255',
+            'bedroom' => 'required|string|max:255',
+            'bathroom' => 'required|string|max:255',
+            'landsize' => 'required|string|max:255',
+            'floor' => 'required|string|max:255',
+            'dimension' => 'required|string|max:255',
+            'maplocation' => 'required|string|max:255',
+            'description' => 'required|string|max:255',
+            'filesname.*' => 'array|required', 'files.*' => 'required|mimetypes:image/jpg,image/jpeg,image/bmp',
         ]);
 
 
-        $properties = Properties::create([
+        $properties = Property::create([
             'name' => $request->name,
 
             'bedroom' => $request->bedroom,
-            'province_id'=>$request->province_id,
-            'district_id'=>$request->district_id,
-            'commune_id'=>$request->commune_id,
-            'village_id'=>$request->village_id,
-            'category_id'=>$request->category_id,
+            'province_id' => $request->province_id,
+            'district_id' => $request->district_id,
+            'commune_id' => $request->commune_id,
+            'village_id' => $request->village_id,
+            'category_id' => $request->category_id,
             'bathroom' => $request->bathroom,
             'price' => $request->price,
             'floor' => $request->floor,
@@ -89,15 +98,14 @@ class PropertiesController extends Controller
             'dimension' => $request->dimension,
             'maplocation' => $request->maplocation,
             'description' => $request->description,
-            'filename.*'=> $request->filename,
+            'filename.*' => $request->filename,
             'listing_type' => $request->listing_type,
         ]);
 
-        if($request->hasfile('thumbnail'))
-        {
+        if ($request->hasfile('thumbnail')) {
             $file = $request->file('thumbnail');
-            $destinationPath = public_path().'/images/';
-            $file_name = date('m-d-Y') . '-' . time() . uniqid() ."." . $file->getClientOriginalExtension();
+            $destinationPath = public_path() . '/images/';
+            $file_name = date('m-d-Y') . '-' . time() . uniqid() . "." . $file->getClientOriginalExtension();
 
             $file->move($destinationPath, $file_name);
 
@@ -108,12 +116,10 @@ class PropertiesController extends Controller
         //  dd($file_name);
 
 
-
-        if($request->hasfile('images'))
-        {
+        if ($request->hasfile('images')) {
             foreach ($request->file('images') as $file) {
-                $destinationPath = public_path().'/images/';
-                $file_name = date('m-d-Y') . '-' . time() . uniqid() ."." . $file->getClientOriginalExtension();
+                $destinationPath = public_path() . '/images/';
+                $file_name = date('m-d-Y') . '-' . time() . uniqid() . "." . $file->getClientOriginalExtension();
                 $file->move($destinationPath, $file_name);
                 $image = Image::create([
                     'property_id' => $properties->id,
@@ -121,14 +127,14 @@ class PropertiesController extends Controller
                 ]);
             }
         }
-    // dd($property);
-        return redirect()->route('admin.properties.index')->with('properties','property create succassfully');
+        // dd($property);
+        return redirect()->route('admin.properties.index')->with('properties', 'property create succassfully');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -139,67 +145,67 @@ class PropertiesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $properties=Properties::find($id);
+        $properties = Property::find($id);
         $provinces = CityProvince::query()
-        ->select('id','name')
-        ->get();
+            ->select('id', 'name')
+            ->get();
         $district = District::query()
-        ->select('id','name')
-        ->get();
+            ->select('id', 'name')
+            ->get();
         $commune = Commune::query()
-        ->select('id','name')
-        ->get();
+            ->select('id', 'name')
+            ->get();
         $village = Village::query()
-        ->select('id','name')
-        ->get();
+            ->select('id', 'name')
+            ->get();
         $categories = Category::query()
-        ->select('id','name')
-        ->get();
+            ->select('id', 'name')
+            ->get();
         return view('admin.properties.editproperty',
-    [
-        'properties'=>$properties,
-        'provinces'=>$provinces,
-        'categories'=>$categories,
-        'district'=>$district,
-        'commune'=>$commune,
-        'village' =>$village
-    ]);
+            [
+                'properties' => $properties,
+                'provinces' => $provinces,
+                'categories' => $categories,
+                'district' => $district,
+                'commune' => $commune,
+                'village' => $village
+            ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'listing_type'=>'required|string|max:255',
-            'province_id'=>'required|string|max:255',
-            'district_id'=>'required|string|max:255',
-            'commune_id'=>'required|string|max:255',
-            'village_id'=>'required|string|max:255',
-            'name' =>'required|string|max:255',
-            'price'=>'required|string|max:255',
-            'bedroom'=>'required|string|max:255',
-            'bathroom'=>'required|string|max:255',
-            'landsize'=>'required|string|max:255',
-            'floor'=>'required|string|max:255',
-            'dimension'=>'required|string|max:255',
-            'maplocation'=>'required|string|max:255',
-            'description'=>'required|string|max:255',
-            'filesname.*' => 'array|required', 'files.*' => 'required|mimetypes:image/jpg,image/jpeg,image/bmp' ,
+            'listing_type' => 'required|string|max:255',
+            'province_id' => 'required|string|max:255',
+            'district_id' => 'required|string|max:255',
+            'commune_id' => 'required|string|max:255',
+            'village_id' => 'required|string|max:255',
+            'name' => 'required|string|max:255',
+            'price' => 'required|string|max:255',
+            'bedroom' => 'required|string|max:255',
+            'bathroom' => 'required|string|max:255',
+            'landsize' => 'required|string|max:255',
+            'floor' => 'required|string|max:255',
+            'dimension' => 'required|string|max:255',
+            'maplocation' => 'required|string|max:255',
+            'description' => 'required|string|max:255',
+            'filesname.*' => 'array|required', 'files.*' => 'required|mimetypes:image/jpg,image/jpeg,image/bmp',
         ]);
 
 
-        $properties = Properties::findOrFail($id);
+        $properties = Property::findOrFail($id);
 
         $properties->update($request->only([
             'name',
@@ -211,20 +217,19 @@ class PropertiesController extends Controller
             'village_id',
             'category_id',
             'bathroom',
-            'price' ,
+            'price',
             'floor',
             'landsize',
             'dimension',
             'maplocation',
-            'description' ,
+            'description',
         ]));
 
 
-        if($request->hasfile('thumbnail'))
-        {
+        if ($request->hasfile('thumbnail')) {
             $file = $request->file('thumbnail');
-            $destinationPath = public_path().'/images/';
-            $file_name = date('m-d-Y') . '-' . time() . uniqid() ."." . $file->getClientOriginalExtension();
+            $destinationPath = public_path() . '/images/';
+            $file_name = date('m-d-Y') . '-' . time() . uniqid() . "." . $file->getClientOriginalExtension();
 
             $file->move($destinationPath, $file_name);
 
@@ -233,11 +238,10 @@ class PropertiesController extends Controller
             ]);
         }
 
-        if($request->hasfile('images'))
-        {
+        if ($request->hasfile('images')) {
             foreach ($request->file('images') as $file) {
-                $destinationPath = public_path().'/images/';
-                $file_name = date('m-d-Y') . '-' . time() . uniqid() ."." . $file->getClientOriginalExtension();
+                $destinationPath = public_path() . '/images/';
+                $file_name = date('m-d-Y') . '-' . time() . uniqid() . "." . $file->getClientOriginalExtension();
                 $file->move($destinationPath, $file_name);
                 $image = Image::create([
                     'property_id' => $properties->id,
@@ -247,21 +251,21 @@ class PropertiesController extends Controller
         }
 
 
-    return redirect()->route('admin.dashboard')->with('properties','property update succassfully');
+        return redirect()->route('admin.dashboard')->with('properties', 'property update succassfully');
 
-}
+    }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $properties=Properties::findOrFail($id);
+        $properties = Property::findOrFail($id);
         $properties->delete();
-    return redirect()->route('admin.dashboard')->with('properties','property delete succassfully');
+        return redirect()->route('admin.dashboard')->with('properties', 'property delete succassfully');
 
 
     }
