@@ -54,9 +54,9 @@ class AccountController extends Controller
             'phone' => 'required',
             'sex'=>'required',
             'password' => 'required|same:confirm-password',
-            
+
         ]);
-<<<<<<< HEAD
+
 
         $input = $request->all();
         $input['password'] = Hash::make($input['password']);
@@ -66,8 +66,8 @@ class AccountController extends Controller
 
         return redirect()->route('users.index')
                         ->with('success','User created successfully');
-=======
-    
+
+
         $user = User::create([
             'name' => $request->name,
             'sex' => $request->sex,
@@ -76,16 +76,16 @@ class AccountController extends Controller
             'phone' => $request->phone
 
         ]);
-       
+
         // $input = $request->all();
         // $input['password'] = Hash::make($input['password']);
-    
+
         // $user = User::create($input);
         // $user->assignRole($request->input('roles'));
-    
+
         // return redirect()->route('users.index')
         //                 ->with('success','User created successfully');
->>>>>>> 175d956aadf423a406708df6d6314f129c60fbdc
+
 
 
         return redirect()->route('admin.user.index');
@@ -125,12 +125,7 @@ class AccountController extends Controller
      */
     public function update(Request $request, $id)
     {
-<<<<<<< HEAD
 
-
-=======
-      
->>>>>>> 175d956aadf423a406708df6d6314f129c60fbdc
         $this->validate($request, [
             'name' => 'required',
             'phone'=> 'required',
@@ -139,15 +134,11 @@ class AccountController extends Controller
             'password' => 'same:confirm-password',
             'profile' =>'required'
         ]);
-<<<<<<< HEAD
+
         $users=User::findOrFail($id);
 
         return redirect()->route('admin.user.index') ->with('success','User updated successfully');
-=======
-        // $users=User::findOrFail($id);
-        // dd($users);
-        // return redirect()->route('admin.user.index') ->with('success','User updated successfully');
->>>>>>> 175d956aadf423a406708df6d6314f129c60fbdc
+
     }
 
     /**

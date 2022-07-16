@@ -23,6 +23,10 @@
                         <div class="row">
                         </div>
                         <br>
+                        <div class="form-group">
+                            <label for="example-number-input" class="form-control-label">Agent</label>
+                            <input class="form-control" type="text" id="example-number-input" name="username">
+                        </div>
 
                         <div class="form group">
                             <select class="form-select form-select-md form-control mb-3" name="listing_type"
