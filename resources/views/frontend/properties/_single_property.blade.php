@@ -1,7 +1,7 @@
 <div class="col-lg-3 col-md-6">
     <a class="text-decoration-none"href="{{ route('frontend.properties.detail', $property->id) }}">
         <div class="card">
-            <img class="card-img-top" src="../img/House1.jpg" alt="Card image cap">
+            <img class="card-img-top" src="{{ asset('images/' . $property->thumbnail) }}" alt="Card image cap">
             <div class="card-img-overlay">
                 <span class="badge badge-danger badge-pill">For {{ $property->listing_type }}</span>
             </div>
