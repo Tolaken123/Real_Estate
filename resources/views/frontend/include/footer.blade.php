@@ -16,7 +16,7 @@
             </div>
             <div class="link-boxes">
                 <ul class="text-light">
-                    <h3 class="text-light">Contact_Us</h3>
+                    <h3 class="text-light">Contact Us</h3>
                     <h6>Smart: 081513303</h6>
                     <h6>Metfone: 0977535488</h6>
                     <h6>E-mail: camreales@gmail.com</h6>
@@ -24,7 +24,7 @@
                 </ul>
                 <ul class="text-light">
                     <h3 class="text-light">Address</h3>
-                    <p class="fst-italic">BBU road, Svaydongkum, Krong Siemreap, Siemreap.</p>
+                    <p>BBU road, Svaydongkum, Krong Siemreap, Siemreap.</p>
                 </ul>
                 <ul class="box input-box">
                     <h3 class="text-light">Subscribe</h3>

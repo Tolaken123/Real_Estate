@@ -3,26 +3,26 @@
         <div class="card">
             <img class="card-img-top" src="{{ asset('images/' . $property->thumbnail) }}" alt="Card image cap">
             <div class="card-img-overlay">
-                <span class="badge badge-danger badge-pill">For {{ $property->listing_type }}</span>
+                <span class="badge badge-danger badge-pill bg-danger text-white">For {{ $property->listing_type }}</span>
             </div>
             <div class="card-body bg-light ">
                 <h4 class="card-title">{{ $property->name }}</h4>
-                <h4 class="text-primary">{{ format_currency($property->price) }}</h4>
+                <h4 class="text-danger">{{ format_currency($property->price) }}</h4>
             </div>
             <div class="card-body border-top">
 
                 <div class="d-flex no-block align-items-center">
                         <span class="p-10 text-muted">
-                            <i class="fas fa-bath"></i>
-                            {{ $property->bathroom }}
+                            <li>Bathroom:{{ $property->bathroom }}</li>
+
                         </span>
                     <span class="ml-auto badge badge-pill badge-secondary pull-right">{{ $property->bathroom }}</span>
                 </div>
 
                 <div class="d-flex no-block align-items-center">
                         <span class="p-10 text-muted">
-                            <i class="fas fa-bed"></i>
-                            {{ $property->bedroom }}
+                            <li>Bedroom:{{ $property->bedroom }}</li>
+
                         </span>
                     <span class="ml-auto badge badge-pill badge-secondary pull-right">
                         {{ $property->bedroom }}
@@ -31,11 +31,11 @@
 
                 <div class="d-flex no-block align-items-center">
                         <span class="p-10 text-muted">
-                            <i class="fas fa-car"></i>
-                            {{ $property->floor }}
+                            <li>Land Size:{{ $property->landsize }}</li>
+
                         </span>
                     <span class="ml-auto badge badge-pill badge-secondary pull-right">
-                        {{ $property->floor }}
+                        {{ $property->landsize }}
                     </span>
                 </div>
             </div>

@@ -6,10 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Image;
-<<<<<<< HEAD
-
-=======
->>>>>>> 46fb90755babea30a7805ce3a080ceb599f2dae9
 use App\Models\Property;
 use App\Models\location\CityProvince;
 use App\Models\location\District;
@@ -25,17 +21,12 @@ class PropertiesController extends Controller
      */
     public function index()
     {
-<<<<<<< HEAD
+
 
      $properties = Property::all();
 
         return redirect()->route('admin.dashboard')->with('properties', 'property Create succassfully');
 
-=======
-        $properties = Property::all();
-        return redirect()->route('admin.dashboard')->with('properties', 'property Create succassfully');
-
->>>>>>> 46fb90755babea30a7805ce3a080ceb599f2dae9
     }
 
     /**
