@@ -28,18 +28,21 @@ Route::group(['as' => 'frontend.'], function () {
         Route::get('/', [\App\Http\Controllers\Frontend\PropertyController::class, 'index'])->name('index');
         Route::get('/{property}', [\App\Http\Controllers\Frontend\PropertyController::class, 'detail'])->name('detail');
     });
+    Route::group(['prefix', 'agents', 'as' => 'agent.'], function () {
+        Route::get('/{user}', [\App\Http\Controllers\Frontend\PropertyController::class, 'agent_properties'])->name('index');
+    });
 });
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'middleware' => 'auth'], function () {
     // Route::get('/', function () {
     //     return view('layouts.admin');});
-       Route::resource('/',AdminController::class);
-       Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
-       Route::resource('/properties',PropertiesController::class);
-       Route::resource('/user',AccountController::class);
-       Route::resource('/rent',RentController::class);
-       Route::resource('/sale',SaleController::class);
-       Route::resource('/roles', RoleController::class);
+    Route::resource('/', AdminController::class);
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::resource('/properties', PropertiesController::class);
+    Route::resource('/user', AccountController::class);
+    Route::resource('/rent', RentController::class);
+    Route::resource('/sale', SaleController::class);
+    Route::resource('/roles', RoleController::class);
 
     Route::group(['prefix' => 'location', 'as' => 'location.'], function () {
         Route::get('district', [AddressSelectController::class, 'districts'])->name('district');

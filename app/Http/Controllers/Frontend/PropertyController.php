@@ -50,4 +50,9 @@ class PropertyController extends Controller
             'property' => $property
         ]);
     }
+
+    public function agent_properties()
+    {
+        dd('here');
+    }
 }
