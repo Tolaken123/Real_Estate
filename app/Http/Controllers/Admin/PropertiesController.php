@@ -21,7 +21,10 @@ class PropertiesController extends Controller
      */
     public function index()
     {
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6979096cc71098052fb52a90f61dc33c680e258d
 
      $properties = Property::all();
 

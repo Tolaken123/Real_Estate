@@ -101,9 +101,6 @@ class AccountController extends Controller
     public function edit($id)
     {
         $users =User::find($id);
-        $roles = Role::pluck('name','name')->all();
-        $userRole = $users->roles->pluck('name','name')->all();
-
         return view('admin.Account.edituserform',compact("users",'roles','userRole'));
     }
 
@@ -116,7 +113,7 @@ class AccountController extends Controller
      */
     public function update(Request $request, $id)
     {
-      $users=User::findOrFail($id);
+     
        
         $this->validate($request, [
             'name' => 'required',
@@ -126,19 +123,8 @@ class AccountController extends Controller
             'password' => 'same:confirm-password',
             'roles' => 'required'
         ]);
-    
-        $input = $request->all();
-        if(!empty($input['password'])){ 
-            $input['password'] = Hash::make($input['password']);
-        }else{
-            $input = Arr::except($input,array('password'));    
-        }
-    
-        $user = User::find($id);
-        $user->update($input);
-        DB::table('model_has_roles')->where('model_id',$id)->delete();
-    
-        $user->assignRole($request->input('roles'));
+        $users=User::findOrFail($id);
+        
         return redirect()->route('admin.user.index') ->with('success','User updated successfully');
     }
 
