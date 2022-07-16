@@ -21,12 +21,9 @@ class PropertiesController extends Controller
      */
     public function index()
     {
-<<<<<<< HEAD
 
-=======
->>>>>>> 175d956aadf423a406708df6d6314f129c60fbdc
 
-     $properties = Property::all();
+        $properties = Property::all();
 
         return redirect()->route('admin.dashboard')->with('properties', 'property Create succassfully');
 
@@ -259,7 +256,5 @@ class PropertiesController extends Controller
         $properties = Property::findOrFail($id);
         $properties->delete();
         return redirect()->route('admin.dashboard')->with('properties', 'property delete succassfully');
-
-
     }
 }

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
@@ -19,14 +20,14 @@ class AccountController extends Controller
      */
     public function index()
     {
-        $users=User::query()
-        ->orderBy('id','DESC')
-        ->when(\request('q'),function($query){
-            $query->where('name','like', '%' . request('q','%'));
-        })
-        ->paginate($this->default_paginate);
+        $users = User::query()
+            ->orderBy('id', 'DESC')
+            ->when(\request('q'), function ($query) {
+                $query->where('name', 'like', '%' . request('q', '%'));
+            })
+            ->paginate($this->default_paginate);
         // $users = User::paginate(15)->fragment('users');
-        return view('admin.Account.list',['users'=>$users]);
+        return view('admin.Account.list', ['users' => $users]);
     }
 
     /**
@@ -42,7 +43,7 @@ class AccountController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -52,11 +53,10 @@ class AccountController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:users,email',
             'phone' => 'required',
-            'sex'=>'required',
+            'sex' => 'required',
             'password' => 'required|same:confirm-password',
-            
+
         ]);
-<<<<<<< HEAD
 
         $input = $request->all();
         $input['password'] = Hash::make($input['password']);
@@ -65,9 +65,9 @@ class AccountController extends Controller
         $user->assignRole($request->input('roles'));
 
         return redirect()->route('users.index')
-                        ->with('success','User created successfully');
-=======
-    
+            ->with('success', 'User created successfully');
+
+
         $user = User::create([
             'name' => $request->name,
             'sex' => $request->sex,
@@ -76,16 +76,15 @@ class AccountController extends Controller
             'phone' => $request->phone
 
         ]);
-       
+
         // $input = $request->all();
         // $input['password'] = Hash::make($input['password']);
-    
+
         // $user = User::create($input);
         // $user->assignRole($request->input('roles'));
-    
+
         // return redirect()->route('users.index')
         //                 ->with('success','User created successfully');
->>>>>>> 175d956aadf423a406708df6d6314f129c60fbdc
 
 
         return redirect()->route('admin.user.index');
@@ -95,7 +94,7 @@ class AccountController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -107,60 +106,55 @@ class AccountController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $users =User::find($id);
-        return view('admin.Account.edituserform',compact("users"));
+        $users = User::find($id);
+        return view('admin.Account.edituserform', compact("users"));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-<<<<<<< HEAD
 
-
-=======
-      
->>>>>>> 175d956aadf423a406708df6d6314f129c60fbdc
         $this->validate($request, [
             'name' => 'required',
-            'phone'=> 'required',
-            'sex'=> 'required',
-            'email' => 'required|email|unique:users,email,'.$id,
+            'phone' => 'required',
+            'sex' => 'required',
+            'email' => 'required|email|unique:users,email,' . $id,
             'password' => 'same:confirm-password',
-            'profile' =>'required'
+            'profile' => 'required'
         ]);
-<<<<<<< HEAD
-        $users=User::findOrFail($id);
 
-        return redirect()->route('admin.user.index') ->with('success','User updated successfully');
-=======
+        $users = User::findOrFail($id);
+
+        return redirect()->route('admin.user.index')->with('success', 'User updated successfully');
+
         // $users=User::findOrFail($id);
         // dd($users);
         // return redirect()->route('admin.user.index') ->with('success','User updated successfully');
->>>>>>> 175d956aadf423a406708df6d6314f129c60fbdc
+
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $users=User::findOrFail($id);
-          $users->delete();
+        $users = User::findOrFail($id);
+        $users->delete();
         // $users=user::deleted($id);
-          return redirect()->route('admin.user.index')->with('user','user delete succassfully');
+        return redirect()->route('admin.user.index')->with('user', 'user delete succassfully');
     }
 }
