@@ -128,6 +128,7 @@
                                                         <th><span>Created</span></th>
                                                         <th><span>Price</span></th>
                                                         <th><span>Type</span></th>
+                                                        <th><span>Industry Name</span></th>
 
                                                         <th></th>
                                                     </tr>
@@ -152,6 +153,8 @@
                                                             <td class="align-middle">{{ $list->created_at }}</td>
                                                             <td class="align-middle">{{ $list->price }} </td>
                                                             <td class="align-middle"> {{ $list->listing_type }} </td>
+                                                            <td class="align-middle"> {{ $list->user}} </td>
+
 
 
                                                             <td style="width: 30%;"

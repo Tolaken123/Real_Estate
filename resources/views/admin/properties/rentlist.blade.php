@@ -179,7 +179,7 @@
                                         <br>
 
                                         <div class="mx-auto d-flex justify-content-center">
-                                        {{ $rents->links() }}
+                                        {{$rent->links() }}
                                         </div>
                                     </div>
                                 </div>

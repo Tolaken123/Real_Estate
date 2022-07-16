@@ -17,16 +17,16 @@ class RentController extends Controller
      */
     public function index()
     {
-        // $rent=Rent::query()
-        // ->orderBy('id','DESC')
-        // ->when(\request('q'),function($query){
-        //     $query->where('name','like', '%' . request('q','%'));
-        // })
-        // ->paginate($this->default_paginate);
+        $rent=Properties::query()
+        ->orderBy('id','DESC')
+        ->when(\request('q'),function($query){
+            $query->where('name','like', '%' . request('q','%'));
+        })
+        ->paginate($this->default_paginate);
         // $cat=Inventery::get("id",'inventery');
     //     return view('admin.properties.rentlist',['rent'=>$rent]);
     $rents_property = Properties::where('listing_type', '=', 'Rent')->get();
-    return view('admin.properties.rentlist',compact('rents_property'));
+    return view('admin.properties.rentlist',compact('rents_property','rent'));
 
     }
 
