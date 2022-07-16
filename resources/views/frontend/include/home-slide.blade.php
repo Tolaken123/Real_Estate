@@ -14,7 +14,8 @@
                 <h5 class="animated bounceInRight" style="animation-delay: 1s">RealEstate</h5>
                 <p class="animated bounceInLeft d-none d-md-block" style="animation-delay: 2s">The world Properties are
                     in your hand.</p>
-                <p class="animated bounceInRight" style="animation-delay: 3s"><a href="#">Learn More</a></p>
+                <p class="animated bounceInRight" style="animation-delay: 3s"><a
+                        href="{{ route('frontend.properties.index') }}">Learn More</a></p>
             </div>
         </div>
         <div class="carousel-item">
@@ -23,7 +24,8 @@
                 <h5 class="animated bounceInRight" style="animation-delay: 1s">Properties Sale</h5>
                 <p class="animated bounceInLeft d-none d-md-block" style="animation-delay: 2s">Find many properties to
                     buy.</p>
-                <p class="animated bounceInRight" style="animation-delay: 3s"><a href="#">Learn More</a></p>
+                <p class="animated bounceInRight" style="animation-delay: 3s"><a
+                        href="{{ route('frontend.properties.index') }}">Learn More</a></p>
             </div>
         </div>
         <div class="carousel-item">
@@ -32,7 +34,8 @@
                 <h5 class="animated bounceInRight" style="animation-delay: 1s">Properties Rent</h5>
                 <p class="animated bounceInLeft d-none d-md-block" style="animation-delay: 2s">Thare are many Properties
                     for rent.</p>
-                <p class="animated bounceInRight" style="animation-delay: 3s"><a href="#">Learn More</a></p>
+                <p class="animated bounceInRight" style="animation-delay: 3s"><a
+                        href="{{ route('frontend.properties.index') }}">Learn More</a></p>
             </div>
         </div>
     </div>

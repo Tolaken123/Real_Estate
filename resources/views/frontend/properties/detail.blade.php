@@ -26,23 +26,13 @@
                 <div id="container">
                     <div id="slideshow" class="">
                         <!-- Below are the images in the gallery -->
-                        <div><img src="../img/img1.jpg" width="100%"></div>
-                        <div id="img-1" data-img-id="1" class="img-wrapper active"
-                             style="background-image: url('../img/House1.jpg')"></div>
-                        <div id="img-2" data-img-id="2" class="img-wrapper"
-                             style="background-image: url('../img/House7.jpg')"></div>
-                        <div id="img-3" data-img-id="3" class="img-wrapper"
-                             style="background-image: url('../img/House3.jpg')"></div>
-                        <div id="img-4" data-img-id="4" class="img-wrapper"
-                             style="background-image: url('../img/House4.jpg')"></div>
-                        <div id="img-1" data-img-id="5" class="img-wrapper"
-                             style="background-image: url('../img/House8.jpg')"></div>
-                        <div id="img-2" data-img-id="6" class="img-wrapper"
-                             style="background-image: url('../img/House6.jpg')"></div>
-                        <div id="img-3" data-img-id="7" class="img-wrapper"
-                             style="background-image: url('../img/House9.jpg')"></div>
-                        <div id="img-4" data-img-id="8" class="img-wrapper"
-                             style="background-image: url('../img/House2.jpg')"></div>
+                        <div>
+                            <img src="{{ asset('images/' . $property->thumbnail) }}" width="100%">
+                        </div>
+                        @foreach($property->images as $image)
+                            <div id="img-{{ $image->id }}" data-img-id="{{ $image->id}}" class="img-wrapper active"
+                                 style="background-image: url('{{ asset('images/' . $image->image) }}')"></div>
+                        @endforeach
 
                         <!-- Below are the thumbnails of above images -->
                         <div>
@@ -51,22 +41,10 @@
                                     <span class="carousel-control-prev-icon"></span>
                                 </div>
                                 <ul class="thumbs">
-                                    <li data-thumb-id="1" class="thumb active"
-                                        style="background-image: url('../img/House1.jpg')"></li>
-                                    <li data-thumb-id="2" class="thumb"
-                                        style="background-image: url('../img/House7.jpg')"></li>
-                                    <li data-thumb-id="3" class="thumb"
-                                        style="background-image: url('../img/House3.jpg')"></li>
-                                    <li data-thumb-id="4" class="thumb"
-                                        style="background-image: url('../img/House4.jpg')"></li>
-                                    <li data-thumb-id="5" class="thumb"
-                                        style="background-image: url('../img/House8.jpg')"></li>
-                                    <li data-thumb-id="6" class="thumb"
-                                        style="background-image: url('../img/House6.jpg')"></li>
-                                    <li data-thumb-id="7" class="thumb"
-                                        style="background-image: url('../img/House9.jpg')"></li>
-                                    <li data-thumb-id="8" class="thumb"
-                                        style="background-image: url('../img/House2.jpg')"></li>
+                                    @foreach($property->images as $image)
+                                        <li data-thumb-id="{{ $image->id }}" class="thumb active"
+                                            style="background-image: url('{{ asset('images/' . $image->$image) }}')"></li>
+                                    @endforeach
                                 </ul>
 
                                 <div id="next-btn" class="next">
@@ -103,23 +81,23 @@
                                 <tbody>
                                 <tr>
                                     <td><h5>Bedroom</h5></td>
-                                    <td><h5>5</h5></td>
+                                    <td><h5>{{ $property->bedroom }}</h5></td>
                                 </tr>
                                 <tr>
                                     <td><h5>bathroom</h5></td>
-                                    <td><h5>7</h5></td>
+                                    <td><h5>{{ $property->bathroom }}</h5></td>
                                 </tr>
                                 <tr>
                                     <td><h5>land size</h5></td>
-                                    <td><h5>30 x 100</h5></td>
+                                    <td><h5>{{ $property->landsize }}</h5></td>
                                 </tr>
                                 <tr>
                                     <td><h5>Floor size</h5></td>
-                                    <td><h5>3</h5></td>
+                                    <td><h5>{{ $property->floor }}</h5></td>
                                 </tr>
                                 <tr>
                                     <td><h5>Dimension</h5></td>
-                                    <td><h5>20 x 30</h5></td>
+                                    <td><h5>{{ $property->dimension }}</h5></td>
                                 </tr>
                                 <tr>
                                     <td><h5>location</h5></td>
@@ -134,16 +112,9 @@
                         </div>
                     </div>
                     <div class="col-md-7">
-                        <h2 class="text-center mt-3">Disciption</h2>
-                        <h4 class="text-center">As a first-time home seller, you have the advantage of having gone
-                            through a purchase and sale transaction when you bought the home. As a buyer, you spent
-                            time
-                            gathering your financial documents and searching for the perfect home. As the seller, a
-                            large amount of prep work is required, too, but it’s just a different type — you’ll
-                            spend
-                            your time getting your house looking its best for potential buyers. And depending on
-                            your
-                            plans, you may also have the added stress of buying and selling at the same time.
+                        <h2 class="text-center mt-3">Description</h2>
+                        <h4 class="text-center">
+                            {!! $property->description !!}
                         </h4>
                     </div>
                 </div>

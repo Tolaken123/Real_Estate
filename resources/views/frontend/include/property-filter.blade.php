@@ -3,13 +3,19 @@
         <div class="row">
             <div class="card col-12">
                 <div class="card-body">
-                    <form role="form" class="row" action="#" method="GET">
+                    <form role="form" class="row" action="{{ route('frontend.properties.index') }}" method="GET">
                         <div class="col-sm-6 col-md-2">
                             <div class="form-group has-info">
                                 <select class="form-control custom-select" name="listing_type">
                                     <option value="" disabled selected>Type</option>
-                                    <option value="Rent">Rent</option>
-                                    <option value="Sale">Sale</option>
+                                    <option
+                                        {{ request()->input('listing_type') == "Rent" ? 'selected' : '' }} value="Rent">
+                                        Rent
+                                    </option>
+                                    <option
+                                        {{ request()->input('listing_type') == "Sale" ? 'selected' : '' }} value="Sale">
+                                        Sale
+                                    </option>
                                 </select>
                             </div>
                         </div>
@@ -18,53 +24,51 @@
                                 <select class="form-control custom-select" name="province_id">
                                     <option value="" disabled selected>Province</option>
                                     @foreach($provinces as $province)
-                                        <option value="{{ $province->id }}">{{ $province->name }}</option>
+                                        <option
+                                            {{ request()->input('province_id') == $province->id ? 'selected' : '' }} value="{{ $province->id }}">{{ $province->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-2">
                             <div class="form-group has-info">
-                                <select class="form-control custom-select">
+                                <select class="form-control custom-select" name="category_id">
                                     <option value="" disabled selected>Property Type</option>
-                                    <option value="1">House/Villa</option>
-                                    <option value="2">Hotel/Boutique/Guesthouse</option>
-                                    <option value="3">Shophouse</option>
-                                    <option value="3">Apartment/Flat/Condo</option>
-                                    <option value="3">Warehouse</option>
-                                    <option value="3">Office Space</option>
-                                    <option value="3">Retail Space</option>
-                                    <option value="3">Land</option>
+                                    @foreach($property_types as $type)
+                                        <option
+                                            {{ request()->input('category_id') == $type->id ? 'selected' : '' }} value="{{ $type->id }}">{{ $type->name }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-2">
                             <div class="form-group has-info">
                                 <!-- <input class="form-control custom-select" Type="text" value="Min-Price"></input> -->
-                                <select class="form-control custom-select">
+                                <select class="form-control custom-select" name="min_price">
                                     <option value="" disabled selected>Min-Price</option>
-                                    <option value="">$3,000</option>
-                                    <option value="">$5,000</option>
-                                    <option value="">$10,000</option>
+                                    @foreach($min_price_ranges as $range)
+                                        <option
+                                            {{ request()->input('min_price') == $range ? 'selected': '' }}  value="{{ $range }}">{{ format_currency($range) }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-2">
                             <div class="form-group has-info">
                                 <!-- <input class="form-control custom-select" Type="text" value="Max-Price"></input> -->
-                                <select class="form-control custom-select">
+                                <select class="form-control custom-select" name="max_price">
                                     <option value="" disabled selected>Max-Price</option>
-                                    <option value="1">$10,000</option>
-                                    <option value="3">$50,000</option>
-                                    <option value="1">$100,000</option>
-                                    <option value="3">$200,000</option>
+                                    @foreach($max_price_ranges as $range)
+                                        <option
+                                            {{ request()->input('max_price') == $range ? 'selected': '' }} value="{{ $range }}">{{ format_currency($range) }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-2">
-                            <a href="#" class="btn btn-info btn-m btn-block">
+                            <button type="submit" class="btn btn-info btn-m btn-block">
                                 <span class="glyphicon glyphicon-search"></span> Search
-                            </a>
+                            </button>
                         </div>
                     </form>
                 </div>

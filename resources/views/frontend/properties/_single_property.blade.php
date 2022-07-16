@@ -1,20 +1,20 @@
 <div class="col-lg-3 col-md-6 mt-4">
-    <a class="text-decoration-none"href="{{ route('frontend.properties.detail', $property->id) }}">
+    <a class="text-decoration-none" href="{{ route('frontend.properties.detail', $property->id) }}">
         <div class="card">
             <img class="card-img-top" src="{{ asset('images/' . $property->thumbnail) }}" alt="Card image cap">
             <div class="card-img-overlay">
-                <span class="badge badge-danger badge-pill bg-danger text-white">For {{ $property->listing_type }}</span>
+                <span
+                    class="badge badge-danger badge-pill bg-danger text-white">For {{ $property->listing_type }}</span>
             </div>
             <div class="card-body bg-light ">
-                <h4 class="card-title">{{ $property->name }}</h4>
-                <h4 class="text-danger">{{ format_currency($property->price) }}</h4>
+                <h5 class="card-title">{{ \Illuminate\Support\Str::limit( $property->name,25)  }}</h5>
+                <h5 class="text-danger">{{ format_currency($property->price) }}</h5>
             </div>
             <div class="card-body border-top">
 
                 <div class="d-flex no-block align-items-center">
                         <span class="p-10 text-muted">
                             <li>Bathroom:{{ $property->bathroom }}</li>
-
                         </span>
                     <span class="ml-auto badge badge-pill badge-secondary pull-right">{{ $property->bathroom }}</span>
                 </div>

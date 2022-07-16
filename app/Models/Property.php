@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Builders\PropertyBuilder;
+use App\Models\location\CityProvince;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -15,6 +16,11 @@ class Property extends Model
     public function images()
     {
         return $this->hasMany(Image::class);
+    }
+
+    public function province()
+    {
+        return $this->belongsTo(CityProvince::class);
     }
 
     public static function query(): PropertyBuilder

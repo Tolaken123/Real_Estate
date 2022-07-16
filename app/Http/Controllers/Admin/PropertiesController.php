@@ -23,7 +23,7 @@ class PropertiesController extends Controller
     {
 
 
-     $properties = Property::all();
+        $properties = Property::all();
 
         return redirect()->route('admin.dashboard')->with('properties', 'property Create succassfully');
 
@@ -256,7 +256,5 @@ class PropertiesController extends Controller
         $properties = Property::findOrFail($id);
         $properties->delete();
         return redirect()->route('admin.dashboard')->with('properties', 'property delete succassfully');
-
-
     }
 }
