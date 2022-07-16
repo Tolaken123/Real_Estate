@@ -26,7 +26,7 @@
                         <label for="file">
                             <span class="profilepic__icon"><i class="fas fa-camera"></i></span>
                             <input id="file" type="file" class="profilepic__text" onchange="loadFile(event)"
-                                name="Edit Profile" style="display: none;visibility:none;">Edit</input>
+                                name="profile" style="display: none;visibility:none;">Edit</input>
 
                         </label>
                     </div>
