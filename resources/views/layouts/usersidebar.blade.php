@@ -41,32 +41,6 @@
                     <a href="#" class="nav-link ">
                         <i class="fas fa-list-ul"></i>
                         <p>
-                          Role
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link ">
-                                <i class="fas fa-bed"></i>
-                                <p>CreateRole</p>
-                            </a>
-                        </li>
-                    </ul>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link ">
-                                <i class="fas fa-hand-holding-usd"></i>
-                                <p>RoleList</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                   
-                <li class="nav-item menu-close">
-                    <a href="#" class="nav-link ">
-                        <i class="fas fa-list-ul"></i>
-                        <p>
                             Listing Type
                             <i class="right fas fa-angle-left"></i>
                         </p>
