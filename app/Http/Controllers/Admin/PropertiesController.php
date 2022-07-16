@@ -21,10 +21,6 @@ class PropertiesController extends Controller
      */
     public function index()
     {
-<<<<<<< HEAD
-
-=======
->>>>>>> 6979096cc71098052fb52a90f61dc33c680e258d
 
      $properties = Property::all();
 
@@ -45,8 +41,6 @@ class PropertiesController extends Controller
         $provinces = CityProvince::query()
             ->select('id', 'name')
             ->get();
-
-
         return view('admin.properties.createproperty', compact("categories", "provinces"));
     }
 

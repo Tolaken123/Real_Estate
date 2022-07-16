@@ -48,32 +48,32 @@ class AccountController extends Controller
     public function store(Request $request)
     {
 
-
-        // $user = User::create([
-        //     'name' => $request->name,
-        //     'sex' => $request->sex,
-        //     'password' => bcrypt($request->password),
-        //     'email' => $request->email,
-        //     'phone' => $request->phone
-
-        // ]);
         $this->validate($request, [
             'name' => 'required',
             'email' => 'required|email|unique:users,email',
             'phone' => 'required',
             'sex'=>'required',
             'password' => 'required|same:confirm-password',
-            'roles' => 'required'
+            
         ]);
     
-        $input = $request->all();
-        $input['password'] = Hash::make($input['password']);
+        $user = User::create([
+            'name' => $request->name,
+            'sex' => $request->sex,
+            'password' => bcrypt($request->password),
+            'email' => $request->email,
+            'phone' => $request->phone
+
+        ]);
+       
+        // $input = $request->all();
+        // $input['password'] = Hash::make($input['password']);
     
-        $user = User::create($input);
-        $user->assignRole($request->input('roles'));
+        // $user = User::create($input);
+        // $user->assignRole($request->input('roles'));
     
-        return redirect()->route('users.index')
-                        ->with('success','User created successfully');
+        // return redirect()->route('users.index')
+        //                 ->with('success','User created successfully');
 
 
         return redirect()->route('admin.user.index');
@@ -101,7 +101,7 @@ class AccountController extends Controller
     public function edit($id)
     {
         $users =User::find($id);
-        return view('admin.Account.edituserform',compact("users",'roles','userRole'));
+        return view('admin.Account.edituserform',compact("users"));
     }
 
     /**
@@ -113,19 +113,18 @@ class AccountController extends Controller
      */
     public function update(Request $request, $id)
     {
-     
-       
+      
         $this->validate($request, [
             'name' => 'required',
             'phone'=> 'required',
             'sex'=> 'required',
             'email' => 'required|email|unique:users,email,'.$id,
             'password' => 'same:confirm-password',
-            'roles' => 'required'
+            'profile' =>'required'
         ]);
-        $users=User::findOrFail($id);
-        
-        return redirect()->route('admin.user.index') ->with('success','User updated successfully');
+        // $users=User::findOrFail($id);
+        // dd($users);
+        // return redirect()->route('admin.user.index') ->with('success','User updated successfully');
     }
 
     /**
