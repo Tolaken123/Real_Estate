@@ -26,7 +26,7 @@ class PropertiesController extends Controller
 
 
         $properties = Property::all();
-       
+
         return redirect()->route('admin.dashboard')->with('properties', 'property Create succassfully');
 
     }
@@ -70,7 +70,7 @@ class PropertiesController extends Controller
             'floor' => 'required|string|max:255',
             'dimension' => 'required|string|max:255',
             'maplocation' => 'required|string|max:255',
-            'description' => 'required|string|max:255',
+            'description' => 'required|string',
             'filesname.*' => 'array|required', 'files.*' => 'required|mimetypes:image/jpg,image/jpeg,image/bmp',
         ]);
 
@@ -193,7 +193,7 @@ class PropertiesController extends Controller
             'floor' => 'required|string|max:255',
             'dimension' => 'required|string|max:255',
             'maplocation' => 'required|string|max:255',
-            'description' => 'required|string|max:255',
+            'description' => 'required|string',
             'filesname.*' => 'array|required', 'files.*' => 'required|mimetypes:image/jpg,image/jpeg,image/bmp',
         ]);
 
