@@ -90,25 +90,6 @@
                     </div>
                 </div>
             </div>
-<<<<<<< HEAD
-            <!-- end slide -->
-
-            <!-- description -->
-            <div class="row">
-                <p></p>
-            </div>
-
-            <div class="col-md-12" style="background-color: #ffffff; ">
-                <div class="row">
-                    <div class="col-md-5">
-                        <div class="container mt-1 ">
-                            <img class="rounded-circle" alt="100x100" src="../img/nophoto.png" width="30%" ; height="Auto" ; alt="#"><a href="#"
-                                                                                                            style="text-decoration: none;  font-size: 200%;">Duong
-                                Ret</a>
-
-                            <table class="table table-striped ">
-                                <thead>
-=======
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                 <div class="card">
                     <div class="card-body">
@@ -116,7 +97,6 @@
                         <div class="table-responsive">
                             <table class="table no-border">
                                 <tbody class="text-dark">
->>>>>>> d260ea115784996db5cef0e1161aa69ec370109a
                                 <tr>
                                     <td>Price</td>
                                     <td>{{ format_currency($property->price) }}</td>
