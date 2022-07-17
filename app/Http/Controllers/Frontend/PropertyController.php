@@ -61,6 +61,7 @@ class PropertyController extends Controller
             })->when($property->listing_type == "Sale", function (PropertyBuilder $query) {
                 return $query->sale();
             })
+            ->whereNotIn('id', [$property->id])
             ->take(12)
             ->get();
 
