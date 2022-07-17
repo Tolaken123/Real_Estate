@@ -11,7 +11,7 @@ class Property extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['thumbnail', 'name', 'province_id', 'district_id', 'commune_id', 'village_id', 'listing_type', 'category_id', 'price', 'bedroom', 'bathroom', 'floor', 'landsize', 'dimension', 'maplocation', 'description',];
+    protected $fillable = ['name', 'province_id', 'district_id', 'commune_id', 'village_id', 'listing_type', 'category_id', 'price', 'bedroom', 'bathroom', 'floor', 'landsize', 'dimension', 'maplocation', 'description',];
 
     public function images()
     {
