@@ -67,7 +67,7 @@
                 <div class="row">
                     <div class="col-md-5">
                         <div class="container mt-1 ">
-                            <img src="../img/duongprofile (1).jpg" width="30%" ; height="Auto" ; alt="#"><a href="#"
+                            <img class="rounded-circle" alt="100x100" src="../img/nophoto.png" width="30%" ; height="Auto" ; alt="#"><a href="#"
                                                                                                             style="text-decoration: none;  font-size: 200%;">Duong
                                 Ret</a>
 

@@ -37,6 +37,6 @@ class User extends Authenticatable
  public function getAdminAttribute(){
     return $this->attributes['role']=='admin';
  }
-   
+
 }
 
