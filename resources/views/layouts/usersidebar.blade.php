@@ -72,7 +72,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('admin.user.index') }}" class="nav-link">
+                            <a href="{{ url('admin/user/{id}/edit') }}" class="nav-link">
                                 <i class="fas fa-user"></i>
                                 <p>
                                     Edit Profile
