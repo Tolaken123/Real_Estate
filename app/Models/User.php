@@ -36,11 +36,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-<<<<<<< HEAD
- public function getAdminAttribute(){
-    return $this->attributes['role']=='admin';
- }
-=======
+
+
 
     public function getAdminAttribute()
     {
@@ -51,7 +48,7 @@ class User extends Authenticatable
     {
         return $this->hasMany(Property::class);
     }
->>>>>>> d260ea115784996db5cef0e1161aa69ec370109a
+
 
 }
 
