@@ -14,7 +14,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','phone','sex','profile'
+        'name', 'email', 'password','phone','sex','profile','role_id','user_id'
     ];
 
     /**
@@ -34,9 +34,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    public function role()
-    {
-        return $this->belongsTo('App\Models\Role');
-    }
+ public function getAdminAttribute(){
+    return $this->attributes['role']=='admin';
+ }
+   
 }
 

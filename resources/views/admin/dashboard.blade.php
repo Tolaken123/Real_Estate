@@ -12,7 +12,7 @@
     <div class="container-fluid">
         <div class="col-sm-">
             <br>
-            <h1 class="m-0">{{ Auth::user()->name }} Using System Right Now!</h1>
+            <h1 class="m-0">{{ Auth::user()->name}} Using System Right Now!</h1>
         </div>
         <br>
         <div class="card w-100">
@@ -69,6 +69,7 @@
                         <!-- ./col -->
                         <div class="col-lg-3 col-6">
                             <!-- small box -->
+                            @admin
                             <div class="small-box bg-danger">
                                 <div class="inner">
                                     <h3>{{ $users_count }}</h3>
@@ -82,8 +83,8 @@
                                 <a href="{{ Route('admin.user.index') }}" class="small-box-footer">More info <i
                                         class="fas fa-arrow-circle-right"></i></a>
                             </div>
+                            @endadmin
                         </div>
-
                         <link rel="stylesheet" type="text/css"
                             href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
                         <hr>
@@ -128,7 +129,7 @@
                                                         <th><span>Created</span></th>
                                                         <th><span>Price</span></th>
                                                         <th><span>Type</span></th>
-                                                        <th><span>Industry Name</span></th>
+                                                        <th><span>Industry</span></th>
 
                                                         <th></th>
                                                     </tr>
@@ -152,8 +153,8 @@
                                                             <td class="align-middle">{{ $list->name }}</td>
                                                             <td class="align-middle">{{ $list->created_at }}</td>
                                                             <td class="align-middle">{{ $list->price }} </td>
-                                                            <td class="align-middle"> {{ $list->listing_type }} </td>
-                                                            <td class="align-middle"> {{ $list->user}} </td>
+                                                            <td class="align-middle">{{ $list->listing_type }} </td>
+                                                            <td class="align-middle">{{ $list->user->name }}</td>
 
 
 

@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Image;
+use App\Models\User;
+
 use App\Models\Property;
 use App\Models\location\CityProvince;
 use App\Models\location\District;
@@ -24,7 +26,7 @@ class PropertiesController extends Controller
 
 
         $properties = Property::all();
-
+       
         return redirect()->route('admin.dashboard')->with('properties', 'property Create succassfully');
 
     }
@@ -39,10 +41,11 @@ class PropertiesController extends Controller
         $categories = Category::query()
             ->select('id', 'name')
             ->get();
+            $user=User::get(['id','name']);
         $provinces = CityProvince::query()
             ->select('id', 'name')
             ->get();
-        return view('admin.properties.createproperty', compact("categories", "provinces"));
+        return view('admin.properties.createproperty', compact("categories", "provinces","user"));
     }
 
     /**

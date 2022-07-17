@@ -57,25 +57,6 @@ class AccountController extends Controller
             'password' => 'required|same:confirm-password',
 
         ]);
-<<<<<<< HEAD
-
-=======
->>>>>>> 1c23d6466fd95257f7f77930a460f0c1c794893f
-
-        $input = $request->all();
-        $input['password'] = Hash::make($input['password']);
-
-        $user = User::create($input);
-        $user->assignRole($request->input('roles'));
-
-        return redirect()->route('users.index')
-<<<<<<< HEAD
-                        ->with('success','User created successfully');
-=======
-            ->with('success', 'User created successfully');
->>>>>>> 1c23d6466fd95257f7f77930a460f0c1c794893f
-
-
         $user = User::create([
             'name' => $request->name,
             'sex' => $request->sex,
@@ -85,19 +66,9 @@ class AccountController extends Controller
 
         ]);
 
-        // $input = $request->all();
-        // $input['password'] = Hash::make($input['password']);
-
-        // $user = User::create($input);
-        // $user->assignRole($request->input('roles'));
-
-        // return redirect()->route('users.index')
-        //                 ->with('success','User created successfully');
-<<<<<<< HEAD
-
-=======
->>>>>>> 1c23d6466fd95257f7f77930a460f0c1c794893f
-
+        $input = $request->all();
+        $input['password'] = Hash::make($input['password']);
+       
 
         return redirect()->route('admin.user.index');
 
@@ -123,6 +94,7 @@ class AccountController extends Controller
      */
     public function edit($id)
     {
+        
         $users = User::find($id);
         return view('admin.Account.edituserform', compact("users"));
     }
@@ -145,21 +117,10 @@ class AccountController extends Controller
             'password' => 'same:confirm-password',
             'profile' => 'required'
         ]);
-<<<<<<< HEAD
 
         $users=User::findOrFail($id);
 
         return redirect()->route('admin.user.index') ->with('success','User updated successfully');
-=======
-
-        $users = User::findOrFail($id);
-
-        return redirect()->route('admin.user.index')->with('success', 'User updated successfully');
-
-        // $users=User::findOrFail($id);
-        // dd($users);
-        // return redirect()->route('admin.user.index') ->with('success','User updated successfully');
->>>>>>> 1c23d6466fd95257f7f77930a460f0c1c794893f
 
     }
 

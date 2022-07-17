@@ -7,7 +7,7 @@ use App\Http\Controllers\FileUpload;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\location\AddressSelectController;
-use App\Http\Controllers\Admin\RoleController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -28,9 +28,32 @@ Route::group(['as' => 'frontend.'], function () {
         Route::get('/', [\App\Http\Controllers\Frontend\PropertyController::class, 'index'])->name('index');
         Route::get('/{property}', [\App\Http\Controllers\Frontend\PropertyController::class, 'detail'])->name('detail');
     });
-    Route::group(['prefix', 'agents', 'as' => 'agent.'], function () {
-        Route::get('/{user}', [\App\Http\Controllers\Frontend\PropertyController::class, 'agent_properties'])->name('index');
-    });
+    // Route::group(['prefix', 'agents', 'as' => 'agent.'], function () {
+    //     Route::get('/{user}', [\App\Http\Controllers\Frontend\PropertyController::class, 'agent_properties'])->name('index');
+    // });
+});
+
+Auth::routes();
+Auth::routes(['verify' => true]);
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+Route::get('/layouts/Home_page', function () {
+    return view('layouts/Home_page');
+});
+Route::get('/layouts/industry_profile', function () {
+    return view('layouts/industry_profile');
+});
+
+Route::get('/homepage', function () {
+    return view('homepage');
+});
+
+Route::get('/layouts/property_detail', function () {
+    return view('layouts/property_detail');
+});
+
+Route::get('/layouts/contact_us', function () {
+    return view('layouts/contact_us');
 });
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'middleware' => 'auth'], function () {
@@ -42,113 +65,11 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'mi
     Route::resource('/user', AccountController::class);
     Route::resource('/rent', RentController::class);
     Route::resource('/sale', SaleController::class);
-    Route::resource('/roles', RoleController::class);
+    
 
     Route::group(['prefix' => 'location', 'as' => 'location.'], function () {
         Route::get('district', [AddressSelectController::class, 'districts'])->name('district');
         Route::get('commune', [AddressSelectController::class, 'communes'])->name('commune');
         Route::get('village', [AddressSelectController::class, 'villages'])->name('village');
     });
-});
-
-
-Route::get('/image', [FileUpload::class, 'createForm']);
-Route::post('/image', [FileUpload::class, 'fileUpload'])->name('imageUpload');
-Auth::routes();
-Auth::routes(['verify' => true]);
-Route::get('/home', [HomeController::class, 'index'])->name('home');
-// Route::group(['middleware' => ['auth']], function() {
-//     Route::resource('roles', RoleController::class);
-//     Route::resource('users', UserController::class);
-//     Route::resource('products', ProductController::class);
-// });
-// Route::get('/image', function () {
-//     return view('image.form');
-// });
-// Route::get('/layouts/property_detail', function () {
-//     return view('layouts/property_detail');
-// });
-// Route::get('/admin/Account/user_profile', function () {
-//     return view('admin/Account/user_profile');
-// });
-// Route::get('/fonte/home/Item', function () {
-//     return view('fonte.home.Item');
-// });
-Route::get('/layouts/Home_page', function () {
-    return view('layouts/Home_page');
-});
-Route::get('/layouts/industry_profile', function () {
-    return view('layouts/industry_profile');
-});
-
-// Route::get('/layouts/test', function () {
-//     return view('layouts/test');
-// });
-
-// // Route::get('/propertie',[PropertiesController::class,'index']);
-
-// Route::get('/livewire', function () {
-//     return view('livewire.index');
-// });
-
-// Route::get('/nav', function () {
-//     return view('fonte.index');
-// });
-// Route::get('/home/admin', function () {
-//     return view('Home.admin');
-// });
-// Route::get('/home/verify', function () {
-//     return view('Home.verify');
-// });
-// Route::get('/home/homepage', function () {
-// });
-// // Route::get('/admin/properties/createform', function () {
-// //     return view('admin.properties.createform');
-// // });
-
-
-// Route::get('/fonte/home/Item', function () {
-//     return view('fonte.home.Item');
-// });
-Route::get('/admin/hi', function () {
-    return view('admin.properties.editproperty');
-});
-// Route::get('/layouts/Home_page', function () {
-//     return view('layouts/Home_page');
-// });
-// Route::get('/layouts/test', function () {
-//     return view('layouts/test');
-// });
-
-Route::get('/homepage', function () {
-    return view('homepage');
-});
-
-
-// Route::get('/fonte/home/Item',function(){
-//     return view('fonte.home.Item');
-// });
-// Route::get('/layouts/Home_page',function(){
-//     return view('layouts/Home_page');
-// });
-// Route::get('/layouts/test',function(){
-//     return view('layouts/test');
-// });
-// Route::get('/admin/Account/Index', function () {
-//     return view('admin/Account/Index');
-// });
-// Route::get('/admin/Account/user_profile', function () {
-//     return view('admin/Account/user_profile');
-// });
-
-// Route::get('/auth/Account/userprofile', function () {
-//     return view('auth/Account/userprofile');
-// });
-
-Route::get('/layouts/property_detail', function () {
-    return view('layouts/property_detail');
-});
-
-Route::get('/layouts/contact_us', function () {
-    return view('layouts/contact_us');
 });

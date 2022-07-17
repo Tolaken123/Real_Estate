@@ -72,13 +72,14 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('admin.user.create') }}" class="nav-link">
+                            <a href="{{ route('admin.user.edit') }}" class="nav-link">
                                 <i class="fas fa-user"></i>
                                 <p>
                                     Edit Profile
                                 </p>
                             </a>
                         </li>
+                        @admin
               <li class="nav-item">
                 <a href="#" class="nav-link">
                 <i class="fas fa-user-lock"></i>
@@ -98,8 +99,10 @@
                   <p>Report</p>
                 </a>
               </li>
+              @endadmin
                 </ul>
-                <li class="nav-item">
+        @admin
+            <li class="nav-item">
             <a href="{{ Route('admin.user.index') }}" class="nav-link">
             <i class="fas fa-user"></i>
               <p>
@@ -107,6 +110,7 @@
               </p>
             </a>
           </li>
+          @endadmin
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('logout') }}"
                         onclick="event.preventDefault();

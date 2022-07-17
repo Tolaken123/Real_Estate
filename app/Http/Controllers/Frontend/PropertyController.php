@@ -53,6 +53,6 @@ class PropertyController extends Controller
 
     public function agent_properties()
     {
-        dd('here');
+        // dd('here');
     }
 }

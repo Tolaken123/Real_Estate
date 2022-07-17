@@ -3,11 +3,13 @@
 namespace App\Providers;
 
 use App\Models\Category;
-use App\Models\location\CityProvince;
 use App\Models\Property;
-use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\Schema;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\Auth;
+use App\Models\location\CityProvince;
+use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -62,6 +64,10 @@ class AppServiceProvider extends ServiceProvider
                 'min_price_ranges' => $min_price_ranges,
                 'max_price_ranges' => $max_price_ranges
             ]);
+        });
+
+        Blade::if('admin', function () {
+            return Auth::user()->admin;
         });
 
     }
