@@ -26,7 +26,10 @@ class PropertiesController extends Controller
 
 
         $properties = Property::all();
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2a8e5b50c5ec026a50f0c93f5c61e932b3d79313
         return redirect()->route('admin.dashboard')->with('properties', 'property Create succassfully');
 
     }
