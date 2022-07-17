@@ -17,7 +17,7 @@ class PropertyController extends Controller
             ->with([
                 'province:id,name',
                 'images:id,image,property_id',
-                'user:id,name,phone'
+                'user:id,name,phone,avatar'
             ])
             ->when($request->listing_type && $request->listing_type == 'Rent', function ($query) {
                 return $query->rent();
@@ -74,6 +74,6 @@ class PropertyController extends Controller
 
     public function agent_properties()
     {
-        // dd('here');
+         dd('here');
     }
 }
