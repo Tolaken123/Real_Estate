@@ -1,5 +1,7 @@
 <?php
+
 namespace App\Models;
+
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -14,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','phone','sex','profile','role_id','user_id'
+        'name', 'email', 'password', 'phone', 'sex', 'profile', 'role_id', 'user_id'
     ];
 
     /**
@@ -34,9 +36,16 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
- public function getAdminAttribute(){
-    return $this->attributes['role']=='admin';
- }
-   
+
+    public function getAdminAttribute()
+    {
+        return $this->attributes['role'] == 'admin';
+    }
+
+    public function properties()
+    {
+        return $this->hasMany(Property::class);
+    }
+
 }
 

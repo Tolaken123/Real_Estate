@@ -18,6 +18,11 @@ class Property extends Model
         return $this->hasMany(Image::class);
     }
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
     public function province()
     {
         return $this->belongsTo(CityProvince::class);

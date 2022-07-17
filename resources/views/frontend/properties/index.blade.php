@@ -27,6 +27,11 @@
         @endforeach
 
     </div>
+    <div class="row jumbotron m-5 ">
+        <div class="d-flex justify-content-center">
+            {{ $properties->links() }}
+        </div>
+    </div>
 @endsection
 
 @push('js')

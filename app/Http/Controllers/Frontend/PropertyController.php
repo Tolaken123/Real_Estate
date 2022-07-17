@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Builders\PropertyBuilder;
 use App\Http\Controllers\Controller;
 use App\Models\Property;
 use Illuminate\Http\Request;
@@ -15,7 +16,8 @@ class PropertyController extends Controller
         $properties = Property::query()
             ->with([
                 'province:id,name',
-                'images'
+                'images:id,image,property_id',
+                'user:id,name,phone'
             ])
             ->when($request->listing_type && $request->listing_type == 'Rent', function ($query) {
                 return $query->rent();
@@ -37,7 +39,8 @@ class PropertyController extends Controller
             ->when($max_price && $min_price, function ($query) use ($min_price, $max_price) {
                 return $query->whereBetween('price', [(int)$min_price, (int)$max_price]);
             })
-            ->paginate();
+            ->paginate(20);
+
         return view('frontend.properties.index', [
             'properties' => $properties
         ]);
@@ -45,9 +48,26 @@ class PropertyController extends Controller
 
     public function detail($id)
     {
-        $property = Property::query()->findOrFail($id);
+        $property = Property::query()
+            ->with([
+                'province:id,name',
+                'images:id,image,property_id',
+                'user:id,name,phone'
+            ])->findOrFail($id);
+
+        $related_properties = Property::query()
+            ->when($property->listing_type == "Rent", function (PropertyBuilder $query) {
+                return $query->rent();
+            })->when($property->listing_type == "Sale", function (PropertyBuilder $query) {
+                return $query->sale();
+            })
+            ->take(12)
+            ->get();
+
+
         return view('frontend.properties.detail', [
-            'property' => $property
+            'property' => $property,
+            'related_properties' => $related_properties
         ]);
     }
 
