@@ -125,7 +125,7 @@
                 <div class="card">
                     <div class="card-body bg-light">
                         <div class="text-center">
-                            <a href="javascript:void(0)">
+                            <a href="{{ route('frontend.properties.agent.index', $property->user->id) }}">
                                 @if(isset($property->user->avatar) && !empty($property->user->avatar))
                                     <img alt="img" class="thumb-lg img-circle"
                                          src="{{ asset('images/' . $property->user->avatar) }}">
@@ -133,9 +133,9 @@
                                     <img alt="img" class="thumb-lg img-circle"
                                          src="{{ asset('assets/images/users/agent.jpg') }}">
                                 @endif
+
+                                <h4 class="mt-2">{{ $property->user->name ?? '' }}</h4>
                             </a>
-                            <h4>{{ $property->user->name ?? '' }}</h4>
-                            {{--                            <h6>Agent of Property</h6></div>--}}
                         </div>
                         <div class="card-body border-top">
 
