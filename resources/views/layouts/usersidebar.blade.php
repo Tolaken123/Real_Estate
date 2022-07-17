@@ -2,7 +2,7 @@
     <!-- Brand Logo -->
     <a href="/" class="brand-link text-decoration-none">
         <img src="{{ asset('vendors/dist/img/camrealestatelogo.png')}}" alt="camrealestate"
-            class="brand-image img-circle elevation-3" style="opacity: .8">
+             class="brand-image img-circle elevation-3" style="opacity: .8">
         <span class="brand-text font-weight-light ">CamRealEstate</span>
     </a>
 
@@ -72,7 +72,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('admin.user.index') }}" class="nav-link">
+                            <a href="{{ url('admin/user/{id}/edit') }}" class="nav-link">
                                 <i class="fas fa-user"></i>
                                 <p>
                                     Edit Profile
@@ -80,40 +80,40 @@
                             </a>
                         </li>
                         @admin
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                <i class="fas fa-user-lock"></i>
-                  <p>Permissions</p>
-                </a>
-              </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="fas fa-user-lock"></i>
+                                    <p>Permissions</p>
+                                </a>
+                            </li>
 
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                    <i class="fas fa-trash"></i>
-                  <p>Trash</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-table"></i>
-                  <p>Report</p>
-                </a>
-              </li>
-              @endadmin
-                </ul>
-        @admin
-            <li class="nav-item">
-            <a href="{{ Route('admin.user.index') }}" class="nav-link">
-            <i class="fas fa-user"></i>
-              <p>
-                Account
-              </p>
-            </a>
-          </li>
-          @endadmin
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="fas fa-trash"></i>
+                                    <p>Trash</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="nav-icon fas fa-table"></i>
+                                    <p>Report</p>
+                                </a>
+                            </li>
+                        @endadmin
+                    </ul>
+                    @admin
+                        <li class="nav-item">
+                            <a href="{{ Route('admin.user.index') }}" class="nav-link">
+                                <i class="fas fa-user"></i>
+                                <p>
+                                    Account
+                                </p>
+                            </a>
+                        </li>
+                @endadmin
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('logout') }}"
-                        onclick="event.preventDefault();
+                       onclick="event.preventDefault();
                       document.getElementById('logout-form').submit();">
                         {{-- <i class="fas fa-sign-out-alt">logout</i> --}}
                         logout

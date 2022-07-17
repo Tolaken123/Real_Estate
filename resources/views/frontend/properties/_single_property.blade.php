@@ -41,10 +41,16 @@
             </div>
             <div class="card-body border-top">
                 <div class="d-flex no-block align-items-center">
-                    <img alt="img " class="rounded-circle border border-5 border-white "
-                         src="../img/nophoto.png" width="50px" height="50px">
+                    @if(isset($property->user->avatar) && !empty($property->user->avatar))
+                        <img alt="img " class="rounded-circle border border-5 border-white "
+                             src="{{ asset('images/' . $property->user->avatar) }}" width="50px" height="50px">
+                    @else
+                        <img alt="img " class="rounded-circle border border-5 border-white "
+                             src="{{ asset('img/nophoto.png') }}" width="50px" height="50px">
+
+                    @endif
                     <div>
-                        <h5 class="card-title m-b-0">Duong</h5>
+                        <h5 class="card-title m-b-0">{{ $property->user->name ?? "Unknown" }}</h5>
                         <h6 class="text-muted"></h6>
                     </div>
                 </div>
