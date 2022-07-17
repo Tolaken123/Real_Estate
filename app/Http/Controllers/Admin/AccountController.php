@@ -94,7 +94,6 @@ class AccountController extends Controller
      */
     public function edit($id)
     {
-        
         $users = User::find($id);
         return view('admin.Account.edituserform', compact("users"));
     }
@@ -119,7 +118,6 @@ class AccountController extends Controller
         ]);
 
         $users=User::findOrFail($id);
-
         return redirect()->route('admin.user.index') ->with('success','User updated successfully');
 
     }

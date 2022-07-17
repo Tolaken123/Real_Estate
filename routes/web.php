@@ -62,7 +62,6 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'mi
     Route::resource('/', AdminController::class);
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('/properties', PropertiesController::class);
-    Route::resource('/user', AccountController::class);
     Route::resource('/rent', RentController::class);
     Route::resource('/sale', SaleController::class);
     
@@ -71,5 +70,9 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'mi
         Route::get('district', [AddressSelectController::class, 'districts'])->name('district');
         Route::get('commune', [AddressSelectController::class, 'communes'])->name('commune');
         Route::get('village', [AddressSelectController::class, 'villages'])->name('village');
+    });
+    Route::middleware('admin')->group( function(){
+        Route::resource('/user', AccountController::class);
+
     });
 });

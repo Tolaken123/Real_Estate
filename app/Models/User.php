@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'phone', 'sex', 'profile', 'role_id', 'user_id'
+        'name', 'email', 'password','phone','sex','profile','role_id',
     ];
 
     /**
@@ -37,6 +37,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+
+
     public function getAdminAttribute()
     {
         return $this->attributes['role'] == 'admin';
@@ -46,6 +48,7 @@ class User extends Authenticatable
     {
         return $this->hasMany(Property::class);
     }
+
 
 }
 

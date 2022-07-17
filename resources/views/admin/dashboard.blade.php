@@ -15,6 +15,7 @@
             <h1 class="m-0">{{ Auth::user()->name}} Using System Right Now!</h1>
         </div>
         <br>
+        @admin
         <div class="card w-100">
             <section class="content">
                 <div class="container-fluid">
@@ -67,6 +68,7 @@
                             </div>
                         </div>
                         <!-- ./col -->
+                        @endadmin
                         <div class="col-lg-3 col-6">
                             <!-- small box -->
                             @admin
@@ -85,6 +87,7 @@
                             </div>
                             @endadmin
                         </div>
+                       
                         <link rel="stylesheet" type="text/css"
                             href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
                         <hr>

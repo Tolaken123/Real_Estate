@@ -30,7 +30,7 @@ class RoleController extends Controller
     {
         $datas = $request->all();
         // $lang_ = session()->get('locale')?session()->get('locale'):1;
-    
+
         // if($request->hasFile('feature_image')){
         //     $datas['feature_image'] = $this->uploadImage($request);
         // }
@@ -40,9 +40,9 @@ class RoleController extends Controller
     }
 
     public function index()
-    {  
+    {
         //  $lang_ = session()->get('locale')?session()->get('locale'):1;
-        
+
 
         $roles = Role::orderBy('id', 'desc')->paginate(20);
         return view('admin.role.index', ['roles'=> $roles]);
