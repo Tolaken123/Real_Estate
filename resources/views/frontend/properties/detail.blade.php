@@ -90,10 +90,7 @@
                     </div>
                 </div>
             </div>
-<<<<<<< HEAD
 
-=======
->>>>>>> 2a8e5b50c5ec026a50f0c93f5c61e932b3d79313
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                 <div class="card">
                     <div class="card-body">
@@ -101,10 +98,7 @@
                         <div class="table-responsive">
                             <table class="table no-border">
                                 <tbody class="text-dark">
-<<<<<<< HEAD
 
-=======
->>>>>>> 2a8e5b50c5ec026a50f0c93f5c61e932b3d79313
                                 <tr>
                                     <td>Price</td>
                                     <td>{{ format_currency($property->price) }}</td>
