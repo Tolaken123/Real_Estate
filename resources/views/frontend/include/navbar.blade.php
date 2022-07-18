@@ -46,6 +46,11 @@
                         </a>
                     </li>
                 @endauth
+                <li class="nav-item ">
+                    <a href="{{ url('layouts/contact_us') }}" class="nav-link">
+                        <h5 class="text-capitalize">About Us</h5>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

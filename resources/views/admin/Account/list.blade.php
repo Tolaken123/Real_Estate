@@ -31,7 +31,7 @@
                     <a href="{{ route('admin.user.create') }}">
                         <button type="button" class="btn btn-primary">
 
-                            Create New Property
+                            Create New Industry
                         </button>
                     </a>
                     <br><br>

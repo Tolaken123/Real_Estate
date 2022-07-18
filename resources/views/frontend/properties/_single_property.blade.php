@@ -7,7 +7,7 @@
                     class="badge badge-danger badge-pill bg-danger text-white">For {{ $property->listing_type }}</span>
             </div>
             <div class="card-body bg-light ">
-                <h5 class="card-title">{{ \Illuminate\Support\Str::limit( $property->name,25)  }}</h5>
+                <h5 class="card-title">{{ \Illuminate\Support\Str::limit( $property->name,50)  }}</h5>
                 <h5 class="text-danger">{{ format_currency($property->price) }}</h5>
             </div>
             <div class="card-body border-top">
