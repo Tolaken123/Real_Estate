@@ -14,6 +14,12 @@ class SaleController extends Controller
      */
     public function index()
     {
+        $sale=Property::query()
+        ->orderBy('id','DESC')
+        ->when(\request('q'),function($query){
+            $query->where('name','like', '%' . request('q','%'));
+        })
+        ->paginate($this->default_paginate);
         $sales_property = Property::where('listing_type', '=', 'Sale')->get();
       return view('admin.properties.salelist',['sales_property'=> $sales_property]);
 
