@@ -116,8 +116,8 @@ class AccountController extends Controller
             'password' => 'same:confirm-password',
             'profile' => 'required'
         ]);
-
-        $users=User::findOrFail($id);
+        
+          $users=User::findOrFail($id);
         return redirect()->route('admin.user.index') ->with('success','User updated successfully');
 
     }
