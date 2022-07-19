@@ -132,8 +132,9 @@
                                                         <th><span>Created</span></th>
                                                         <th><span>Price</span></th>
                                                         <th><span>Type</span></th>
+                                                        @admin
                                                         <th><span>Industry</span></th>
-
+                                                        @endadmin
                                                         <th></th>
                                                     </tr>
                                                 </thead>
@@ -157,8 +158,9 @@
                                                             <td class="align-middle">{{ $list->created_at }}</td>
                                                             <td class="align-middle">{{ $list->price }} </td>
                                                             <td class="align-middle">{{ $list->listing_type }} </td>
-                                                            <td class="align-middle">{{Auth::user()->name }}</td>
-
+                                                            @admin
+                                                            <td class="align-middle">{{$list->user->name}}</td>
+                                                            @endadmin
 
 
                                                             <td style="width: 30%;"

@@ -41,7 +41,7 @@
                 @endguest
                 @auth
                     <li class="nav-item ">
-                        <a href="{{ url('/home') }}" class="nav-link">
+                        <a href="{{ url('/admin/dashboard') }}" class="nav-link">
                             <h5 class="text-capitalize">Home</h5>
                         </a>
                     </li>

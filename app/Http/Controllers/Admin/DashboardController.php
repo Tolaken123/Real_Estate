@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Models\User;
 use App\Models\Property;
 use Illuminate\Http\Request;
-use App\Models\User;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
@@ -20,6 +21,9 @@ class DashboardController extends Controller
             ->orderBy('id', 'DESC')
             ->when(\request('q'), function ($query) {
                 $query->where('name', 'like', '%' . request('q', '%'));
+            })
+            ->when(!Auth::user()->admin,function($q){
+                $q->WhereIn('user_id',[Auth::user()->id]);
             })
             ->paginate($this->default_paginate);
         // $cat=Inventery::get("id",'inventery');

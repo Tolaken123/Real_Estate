@@ -99,9 +99,9 @@
                                     <p>Report</p>
                                 </a>
                             </li>
-                        @endadmin
+                        
                     </ul>
-                    @admin
+                    
                         <li class="nav-item">
                             <a href="{{ Route('admin.user.index') }}" class="nav-link">
                                 <i class="fas fa-user"></i>

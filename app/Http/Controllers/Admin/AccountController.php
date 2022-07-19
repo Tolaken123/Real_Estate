@@ -26,7 +26,6 @@ class AccountController extends Controller
                 $query->where('name', 'like', '%' . request('q', '%'));
             })
             ->paginate($this->default_paginate);
-        // $users = User::paginate(15)->fragment('users');
         return view('admin.Account.list', ['users' => $users]);
     }
 
@@ -55,22 +54,19 @@ class AccountController extends Controller
             'phone' => 'required',
             'sex' => 'required',
             'password' => 'required|same:confirm-password',
+            'avatar'=>'required',
+            'role'=>'required',
 
         ]);
-        $user = User::create([
-            'name' => $request->name,
-            'sex' => $request->sex,
-            'password' => bcrypt($request->password),
-            'email' => $request->email,
-            'phone' => $request->phone
-
-        ]);
-
+      
         $input = $request->all();
+        $file=$request->file('avatar')->store('avatars');
         $input['password'] = Hash::make($input['password']);
-       
+       $input['avatar']=$file;
+    //    dd($user);
+       $user=User::craete($input);
 
-        return redirect()->route('admin.user.index');
+       return redirect()->route('admin.user.index');
 
     }
 
@@ -114,10 +110,10 @@ class AccountController extends Controller
             'sex' => 'required',
             'email' => 'required|email|unique:users,email,' . $id,
             'password' => 'same:confirm-password',
-            'profile' => 'required'
+            'avatar' => 'required'
         ]);
-
-        $users=User::findOrFail($id);
+        
+          $users=User::findOrFail($id);
         return redirect()->route('admin.user.index') ->with('success','User updated successfully');
 
     }
