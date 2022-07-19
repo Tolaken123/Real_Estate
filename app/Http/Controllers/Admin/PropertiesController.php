@@ -24,7 +24,7 @@ class PropertiesController extends Controller
     public function index()
     {
 
-        $properties = Property::all();
+        //$properties = Property::all();
 
         return redirect()->route('admin.dashboard')->with('properties', 'property Create succassfully');
 
@@ -40,11 +40,11 @@ class PropertiesController extends Controller
         $categories = Category::query()
             ->select('id', 'name')
             ->get();
-            $user=User::get(['id','name']);
+        $user = User::get(['id', 'name']);
         $provinces = CityProvince::query()
             ->select('id', 'name')
             ->get();
-        return view('admin.properties.createproperty', compact("categories", "provinces","user"));
+        return view('admin.properties.createproperty', compact("categories", "provinces", "user"));
     }
 
     /**
