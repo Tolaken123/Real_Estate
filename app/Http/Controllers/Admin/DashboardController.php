@@ -22,25 +22,22 @@ class DashboardController extends Controller
             ->when(\request('q'), function ($query) {
                 $query->where('name', 'like', '%' . request('q', '%'));
             })
-            ->when(!Auth::user()->admin,function($q){
-                $q->WhereIn('user_id',[Auth::user()->id]);
-            })
             ->paginate($this->default_paginate);
         // $cat=Inventery::get("id",'inventery');
 
         $users_counts = User::count();
         $sales_property_count = Property::query()->sale()->count();
         $rents_property_count = Property::query()->rent()->count();
-        $user=User::get(['id','name']);
-       
+        $user = User::get(['id', 'name']);
+
         return view('admin.dashboard', [
             'properties' => $properties,
             'users_count' => $users_counts,
             'sales_property_count' => $sales_property_count,
             'rents_property_count' => $rents_property_count,
             'property_count' => $sales_property_count + $rents_property_count,
-            'user'=>$user,
-          
+            'user' => $user,
+
         ]);
 
     }
