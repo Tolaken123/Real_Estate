@@ -45,7 +45,7 @@
         <div class="col-lg-4 col-md-4">
 
         </div>
-        <div class="col-lg-4 col-md-4 bg-light text-dark">
+        <div class="col-lg-4 col-md-4 bg-light text-dark p-3">
             <table>
                 <tr>
                     <th>tel:</th>
@@ -67,13 +67,11 @@
         @foreach($properties as $property)
             @include('frontend.properties._single_property',['property' => $property])
         @endforeach
-
-    </div>
-    <div class="row jumbotron m-5 ">
         <div class="d-flex justify-content-center">
             {{ $properties->links() }}
         </div>
     </div>
+
 @endsection
 
 

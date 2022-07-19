@@ -127,7 +127,7 @@
                 <div class="card">
                     <div class="card-body bg-light">
                         <div class="text-center">
-                            <a href="{{ route('frontend.properties.agent.index', $property->user->id) }}">
+                            <a href="{{ route('frontend.agent.index', $property->user->id) }}">
                                 @if(isset($property->user->avatar) && !empty($property->user->avatar))
                                     <img alt="img" class="thumb-lg img-circle"
                                          src="{{ asset('images/' . $property->user->avatar) }}">
