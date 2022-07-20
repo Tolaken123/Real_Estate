@@ -35,7 +35,7 @@
                                     <table class="table rent-list">
                                         <thead>
                                         <tr class="bg-primary">
-                                            <th><span>ID</span></th>
+                                            <th><span>N0</span></th>
                                             <th><span>Thumbnail</span></th>
                                             <th><span>Title</span></th>
                                             <th><span>User</span></th>

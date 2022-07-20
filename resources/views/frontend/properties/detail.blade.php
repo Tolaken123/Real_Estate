@@ -123,6 +123,10 @@
                                     <td>Land Size</td>
                                     <td class="text-danger">{{ $property->landsize}}</td>
                                 </tr>
+                                <tr>
+                                    <td>ID</td>
+                                    <td class="text-danger">{{ $property->id}}</td>
+                                </tr>
                                 </tbody>
                             </table>
                         </div>
