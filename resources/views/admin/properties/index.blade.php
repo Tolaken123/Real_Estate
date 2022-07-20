@@ -9,7 +9,7 @@
 
 @section('content')
 
-    <div class="card w-100">
+    <div class="card w-100 pt-4">
         <section class="content">
             <div class="container-fluid">
                 <div class="bootstrap snippets bootdey mt-3 mb-3">

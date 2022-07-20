@@ -9,7 +9,7 @@
 
 
 @section('content')
-    <div class="container-fluid">
+    <div class="container-fluid pt-4">
         <div class="card ">
             <div class="card card-primary">
                 <div class="card-header">
