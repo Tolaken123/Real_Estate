@@ -2,17 +2,18 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use App\Models\Category;
-use Illuminate\Http\Request;
-use App\Models\Image;
 use App\Models\User;
-
+use App\Models\Image;
+use App\Models\Category;
 use App\Models\Property;
-use App\Models\location\CityProvince;
-use App\Models\location\District;
+use Illuminate\Http\Request;
+
 use App\Models\location\Commune;
 use App\Models\location\Village;
+use App\Models\location\District;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use App\Models\location\CityProvince;
 
 class PropertiesController extends Controller
 {
@@ -24,8 +25,7 @@ class PropertiesController extends Controller
     public function index()
     {
 
-
-        $properties = Property::all();
+        //$properties = Property::all();
 
         return redirect()->route('admin.dashboard')->with('properties', 'property Create succassfully');
 
@@ -41,11 +41,11 @@ class PropertiesController extends Controller
         $categories = Category::query()
             ->select('id', 'name')
             ->get();
-            $user=User::get(['id','name']);
+        $user = User::get(['id', 'name']);
         $provinces = CityProvince::query()
             ->select('id', 'name')
             ->get();
-        return view('admin.properties.createproperty', compact("categories", "provinces","user"));
+        return view('admin.properties.createproperty', compact("categories", "provinces", "user"));
     }
 
     /**
@@ -93,6 +93,7 @@ class PropertiesController extends Controller
             'description' => $request->description,
             'filename.*' => $request->filename,
             'listing_type' => $request->listing_type,
+            'user_id'=>Auth::id()
         ]);
 
         if ($request->hasfile('thumbnail')) {
@@ -216,6 +217,7 @@ class PropertiesController extends Controller
             'dimension',
             'maplocation',
             'description',
+            'user_id'
         ]));
 
 
@@ -260,4 +262,5 @@ class PropertiesController extends Controller
         $properties->delete();
         return redirect()->route('admin.dashboard')->with('properties', 'property delete succassfully');
     }
+    
 }

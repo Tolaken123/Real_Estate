@@ -79,38 +79,38 @@
                                 </p>
                             </a>
                         </li>
-                        @admin
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="fas fa-user-lock"></i>
-                                    <p>Permissions</p>
-                                </a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="fas fa-trash"></i>
-                                    <p>Trash</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="nav-icon fas fa-table"></i>
-                                    <p>Report</p>
-                                </a>
-                            </li>
-                        
-                    </ul>
                     
-                        <li class="nav-item">
-                            <a href="{{ Route('admin.user.index') }}" class="nav-link">
-                                <i class="fas fa-user"></i>
-                                <p>
-                                    Account
-                                </p>
-                            </a>
-                        </li>
-                @endadmin
+                                @admin
+                                    {{-- <li class="nav-item">
+                                        <a href="#" class="nav-link">
+                                            <i class="fas fa-user-lock"></i>
+                                            <p>Permissions</p>
+                                        </a>
+                                    </li> --}}
+
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link">
+                                            <i class="fas fa-trash"></i>
+                                            <p>Trash</p>
+                                        </a>
+                                    </li>
+                                    {{-- <li class="nav-item">
+                                        <a href="#" class="nav-link">
+                                            <i class="nav-icon fas fa-table"></i>
+                                            <p>Report</p>
+                                        </a>
+                                    </li> --}}
+                                <li class="nav-item">
+                                    <a href="{{ Route('admin.user.index') }}" class="nav-link">
+                                        <i class="fas fa-user"></i>
+                                        <p>
+                                            Account
+                                        </p>
+                                    </a>
+                                </li>
+                        @endadmin
+                    </ul>
+                </li>    
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('logout') }}"
                        onclick="event.preventDefault();

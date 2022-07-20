@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\User;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Arr;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Role;
-use Illuminate\Support\Facades\Hash;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
+use League\CommonMark\Extension\CommonMark\Node\Inline\Strong;
 
 class AccountController extends Controller
 {
@@ -47,26 +49,47 @@ class AccountController extends Controller
      */
     public function store(Request $request)
     {
-
+        // dd($request);
         $this->validate($request, [
-            'name' => 'required',
-            'email' => 'required|email|unique:users,email',
-            'phone' => 'required',
-            'sex' => 'required',
-            'password' => 'required|same:confirm-password',
+            // 'name' => 'required',
+            // 'email' => 'required|email|unique:users,email',
+            // 'phone' => 'required',
+            // // 'sex' => 'required',
+            // 'password' => 'required|same:confirm-password',
             'avatar'=>'required',
-            'role'=>'required',
+            // 'role'=>'required',
 
         ]);
-      
-        $input = $request->all();
-        $file=$request->file('avatar')->store('avatars');
-        $input['password'] = Hash::make($input['password']);
-       $input['avatar']=$file;
-    //    dd($user);
-       $user=User::craete($input);
+      $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'password' => Hash::make($request['password']),
+        ]);
+        if ($request->hasfile('avatar')) {
+            $file = $request->file('avatar');
+            $destinationPath = public_path() . '/images/';
+            $file_name = date('m-d-Y') . '-' . time() . uniqid() . "." . $file->getClientOriginalExtension();
 
-       return redirect()->route('admin.user.index');
+            $file->move($destinationPath, $file_name);
+
+            $user->update([
+                'avatar' => $file_name
+            ]);
+        }
+        // dd($user);
+        return redirect()->route('admin.user.index');
+        // dd($file_name);
+      
+        // $input = $request->all();
+      
+    //     $input['password'] = Hash::make($input['password']);
+    //    $input['avatar']=$file;
+      
+    //    $user=User::craete($input);
+      
+    //    return view('admin.Account.list', ['users' => $user]);
+
 
     }
 
@@ -90,7 +113,7 @@ class AccountController extends Controller
      */
     public function edit($id)
     {
-        $users = User::find($id);
+        $users= User::find($id);
         return view('admin.Account.edituserform', compact("users"));
     }
 
@@ -103,18 +126,30 @@ class AccountController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $user = User::findOrFail($id);
+        $user->update($request->only([
+            'name' ,
+            'email',
+            'phone',
+            'password', //=> Hash::make($request['password']),
+        ]));
 
-        $this->validate($request, [
-            'name' => 'required',
-            'phone' => 'required',
-            'sex' => 'required',
-            'email' => 'required|email|unique:users,email,' . $id,
-            'password' => 'same:confirm-password',
-            'avatar' => 'required'
-        ]);
-        
-          $users=User::findOrFail($id);
-        return redirect()->route('admin.user.index') ->with('success','User updated successfully');
+        if ($request->hasfile('avatar')) {
+            $file = $request->file('avatar');
+            $destinationPath = public_path() . '/images/';
+            $file_name = date('m-d-Y') . '-' . time() . uniqid() . "." . $file->getClientOriginalExtension();
+
+            $file->move($destinationPath, $file_name);
+
+            $user->sava([
+                'avatar' => $file_name
+            ]);
+        }
+        // dd($user);
+        return redirect()->route('admin.user.index')->with('success', 'User have been updated successfully');
+
+        // return redirect()->route('admin.user.index') ->with('success','User updated successfully');
+
 
     }
 
@@ -130,5 +165,13 @@ class AccountController extends Controller
         $users->delete();
         // $users=user::deleted($id);
         return redirect()->route('admin.user.index')->with('user', 'user delete succassfully');
+    }
+    private function uploadImage(Request $request)
+    {
+        $image = $request->file('avatar');
+        $name = time().'.'.$image->getClientOriginalName();
+        $destinationPath = public_path('images/');
+        $image->move($destinationPath, $name);
+        return 'images/'.$name;
     }
 }

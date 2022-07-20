@@ -1,13 +1,16 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-use App\Http\Controllers\Controller;
-use App\Models\Property;
-use App\Models\Category;
-use Illuminate\Http\Request;
+
 use App\Models\Rent;
 use App\Models\Image;
+use App\Models\Category;
+use App\Models\Property;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use App\Models\location\CityProvince;
+
 class RentController extends Controller
 {
     // function __construct()
@@ -24,16 +27,20 @@ class RentController extends Controller
      */
     public function index()
     {
-        $rent=Property::query()
-        ->orderBy('id','DESC')
-        ->when(\request('q'),function($query){
-            $query->where('name','like', '%' . request('q','%'));
-        })
-        ->paginate($this->default_paginate);
+        $rent = Property::query()
+            ->orderBy('id', 'DESC')
+            ->when(\request('q'), function ($query) {
+                $query->where('name', 'like', '%' . request('q', '%'));
+            })
+    
+            // ->when(!Auth::user()->admin,function($query){
+            //     $query->WhereIn('user_id',[Auth::id()]);
+            // })
+            ->paginate($this->default_paginate);
         // $cat=Inventery::get("id",'inventery');
-    //     return view('admin.properties.rentlist',['rent'=>$rent]);
-    $rents_property = Property::where('listing_type', '=', 'Rent')->get();
-    return view('admin.properties.rentlist',compact('rents_property','rent'));
+        //     return view('admin.properties.rentlist',['rent'=>$rent]);
+        $rents_property = Property::where('listing_type', '=', 'Rent')->get();
+        return view('admin.properties.rentlist', compact('rents_property', 'rent'));
 
     }
 
@@ -47,76 +54,73 @@ class RentController extends Controller
     {
 
         $categories = Category::query()
-        ->select('id','name')
-        ->get();
+            ->select('id', 'name')
+            ->get();
         $provinces = CityProvince::query()
-        ->select('id','name')
-        ->get();
+            ->select('id', 'name')
+            ->get();
 
-        return view('admin.properties.rentform',compact("categories","provinces"));
+        return view('admin.properties.rentform', compact("categories", "provinces"));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
 
         $this->validate($request, [
-            'name' =>'required|string|max:255',
-            'rentalprice'=>'required|string|max:255',
-            'bedroom'=>'required|string|max:255',
-            'bathroom'=>'required|string|max:255',
-            'landsize'=>'required|string|max:255',
-            'floor'=>'required|string|max:255',
-            'dimension'=>'required|string|max:255',
-            'maplocation'=>'required|string|max:255',
-            'description'=>'required|string|max:255',
+            'name' => 'required|string|max:255',
+            'rentalprice' => 'required|string|max:255',
+            'bedroom' => 'required|string|max:255',
+            'bathroom' => 'required|string|max:255',
+            'landsize' => 'required|string|max:255',
+            'floor' => 'required|string|max:255',
+            'dimension' => 'required|string|max:255',
+            'maplocation' => 'required|string|max:255',
+            'description' => 'required|string|max:255',
             // 'files' => 'required',
             // 'files.*' => 'array|required', 'files.*' => 'required|mimetypes:image/jpg,image/jpeg,image/bmp' ,
         ]);
 
         $rent = new Rent();
-        $rent->name=$request->name;
-        $rent->rentalprice=$request->rentalprice;
-        $rent->bedroom=$request->bedroom;
-        $rent->bathroom=$request->bathroom;
-        $rent->floor=$request->floor;
-        $rent->landsize=$request->landsize;
-        $rent->dimension=$request->dimension;
-        $rent->maplocation=$request->maplocation;
-        $rent->description=$request->description;
+        $rent->name = $request->name;
+        $rent->rentalprice = $request->rentalprice;
+        $rent->bedroom = $request->bedroom;
+        $rent->bathroom = $request->bathroom;
+        $rent->floor = $request->floor;
+        $rent->landsize = $request->landsize;
+        $rent->dimension = $request->dimension;
+        $rent->maplocation = $request->maplocation;
+        $rent->description = $request->description;
         $rent->save();
 
 
-        if($request->hasfile('filename'))
-        {
+        if ($request->hasfile('filename')) {
 
-           foreach($request->file('filename') as $image)
-           {
-               $name=$image->getClientOriginalName();
-               $image->move(public_path().'/images/', $name);
-               $data[] = $name;
-           }
+            foreach ($request->file('filename') as $image) {
+                $name = $image->getClientOriginalName();
+                $image->move(public_path() . '/images/', $name);
+                $data[] = $name;
+            }
         }
 
-        return redirect('admin/rent')->with('rent','rent create succassfully');
+        return redirect('admin/rent')->with('rent', 'rent create succassfully');
 
 
-
-}
+    }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
 
-     public function show($id)
+    public function show($id)
     {
         //
     }
@@ -124,72 +128,72 @@ class RentController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
 
-        $rents =Rent::find($id);
+        $rents = Rent::find($id);
 
         $categories = Category::query()
-        ->select('id','name')
-        ->get();
+            ->select('id', 'name')
+            ->get();
 
-        return view('admin.properties.editrentform',compact("rents","categories"));
+        return view('admin.properties.editrentform', compact("rents", "categories"));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
 
         $this->validate($request, [
-            'category_id' =>'required',
-            'location_id'=>'required',
-            'name' =>'required',
-            'rentalprice'=>'required',
-            'bedroom'=>'required',
-            'bathroom'=>'required',
-            'landsize'=>'required',
-            'floor'=>'required',
-            'dimension'=>'required',
-            'maplocation'=>'required',
-            'description'=>'required',
+            'category_id' => 'required',
+            'location_id' => 'required',
+            'name' => 'required',
+            'rentalprice' => 'required',
+            'bedroom' => 'required',
+            'bathroom' => 'required',
+            'landsize' => 'required',
+            'floor' => 'required',
+            'dimension' => 'required',
+            'maplocation' => 'required',
+            'description' => 'required',
         ]);
-    $rents =Rent::find($id);
-    $rents->name=$request->name;
-    $rents->category_id=$request->category_id;
-    $rents->location_id=$request->location_id;
-    $rents->rentalprice=$request->rentalprice;
-    $rents->bedroom=$request->bedroom;
-    $rents->bathroom=$request->bathroom;
-    $rents->floor=$request->floor;
-    $rents->landsize=$request->landsize;
-    $rents->dimension=$request->dimension;
-    $rents->maplocation=$request->maplocation;
-    $rents->description=$request->description;
-    $rents->update();
-        return redirect('admin/rent')->with('rent','rent update succassfully');
+        $rents = Rent::find($id);
+        $rents->name = $request->name;
+        $rents->category_id = $request->category_id;
+        $rents->location_id = $request->location_id;
+        $rents->rentalprice = $request->rentalprice;
+        $rents->bedroom = $request->bedroom;
+        $rents->bathroom = $request->bathroom;
+        $rents->floor = $request->floor;
+        $rents->landsize = $request->landsize;
+        $rents->dimension = $request->dimension;
+        $rents->maplocation = $request->maplocation;
+        $rents->description = $request->description;
+        $rents->update();
+        return redirect('admin/rent')->with('rent', 'rent update succassfully');
 
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id​
+     * @param int $id​
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $rent=Rent::findOrFail($id);
-        if ($rent->delete()){
-            return redirect('admin/rent')->with('Messege','deleted successfully');;
+        $rent = Rent::findOrFail($id);
+        if ($rent->delete()) {
+            return redirect('admin/rent')->with('Messege', 'deleted successfully');;
         }
         return abort(404);
     }

@@ -16,41 +16,41 @@
                 @csrf()
                 @method('put')
             <!-- <div class=" social-prof"> -->
-            <div class="profile">
-                <!-- <div class="wrapper"> -->
-                <div class="profilepic">
-                    <!-- <img src="/img/user2-160x160.jpg" alt="" class="user-profile"> -->
-                    <img id="output" src="/img/user2-160x160.jpg" alt="" class="profilepic__image" height="160px"
-                        width="130px">
-                    <div class="profilepic__content">
-                        <label for="file">
-                            <span class="profilepic__icon"><i class="fas fa-camera"></i></span>
-                            <input id="file" type="file" class="profilepic__text" onchange="loadFile(event)"
-                                name="profile" style="display: none;visibility:none;">Edit</input>
+                <div class="profile">
+                    <!-- <div class="wrapper"> -->
+                    <div class="profilepic">
+                        <!-- <img src="/img/user2-160x160.jpg" alt="" class="user-profile"> -->
+                        <img id="output" src="/img/user2-160x160.jpg" alt="" class="profilepic__image" height="160px"
+                            width="130px">
+                        <div class="profilepic__content">
+                            <label for="file">
+                                <span class="profilepic__icon"><i class="fas fa-camera"></i></span>
+                                <input id="file" type="file" class="profilepic__text" onchange="loadFile(event)"
+                                    name="avatar" style="display: none;visibility:none;">Edit
 
-                        </label>
+                            </label>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-        </div>
+            
         <div class="container">
            
                 <div class="card-body">
                     <div class="form-group">
                         <label for="InputName">Name</label>
-                        <input type="name" class="form-control" value="{{$users->name}}" name="name" placeholder="Enter name">
+                        <input type="name" class="form-control" value="{{$users->name??''}}" name="name" placeholder="Enter name">
                     </div>
 
-                    <select class="form-select form-select-md mb-3" aria-label=".form-select-md example"value="{{$users->sex}}" name="sex">
+                     {{-- <select class="form-select form-select-md mb-3" aria-label=".form-select-md example"value="{{$users->sex}}" name="sex">
                             <option selected>Sex</option>
                             <option  @if($users->sex== "Male") selected @endif value="Rent" value="Male">Male</option>
                             <option  @if($users->sex == "Female")selected  @endif value="Rent"value="female">Female</option>
-                        </select>
-                        <select class="form-select form-select-md mb-3" aria-label=".form-select-md example">
+                        </select> --}}
+                        <select class="form-select form-select-md mb-3"value="{{$users->role}}" aria-label=".form-select-md example">
                             <option selected>Select Role</option>
-                            <option value="2">Amin</option>
-                            <option value="2">Industry</option>
+                            <option value="@if($users->role== "admin") selected @endif value="role" value="Admin">Admin</option>
+                            <option value="@if($users->role== "industry") selected @endif value="role" value="industry">Industry</option>
                         </select>
                         <div class="form-group">
                             <label for="InputName">Phone</label>

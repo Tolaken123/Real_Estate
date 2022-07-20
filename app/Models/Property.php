@@ -4,14 +4,20 @@ namespace App\Models;
 
 use App\Builders\PropertyBuilder;
 use App\Models\location\CityProvince;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Property extends Model
+class
+Property extends Model
 {
     use HasFactory;
 
+<<<<<<< HEAD
     protected $fillable = ['name', 'province_id', 'district_id', 'commune_id', 'village_id', 'listing_type', 'category_id', 'price', 'bedroom', 'bathroom', 'floor', 'landsize', 'dimension', 'maplocation', 'description','thumbnail','user_id'];
+=======
+    protected $fillable = ['name', 'province_id', 'district_id', 'commune_id', 'village_id', 'listing_type', 'category_id', 'price', 'bedroom', 'bathroom', 'floor', 'landsize', 'dimension', 'maplocation', 'description', 'thumbnail','user_id'];
+>>>>>>> b3d344964fec74433c68f37e4d74bf10697efaf1
 
     public function images()
     {
@@ -38,5 +44,16 @@ class Property extends Model
         return new PropertyBuilder($query);
     }
 
+
+    protected static function booted()
+    {
+        if (request()->is('admin/*')) {
+            if (auth()->check() && !auth()->user()->admin) {
+                static::addGlobalScope('tenant', function (Builder $query) {
+                    $query->where('user_id', auth()->id());
+                });
+            }
+        }
+    }
 
 }
