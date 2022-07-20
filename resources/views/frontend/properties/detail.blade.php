@@ -101,23 +101,27 @@
 
                                 <tr>
                                     <td>Price</td>
-                                    <td>{{ format_currency($property->price) }}</td>
+                                    <td class="text-danger" >{{ format_currency($property->price) }}</td>
                                 </tr>
                                 <tr>
                                     <td>Bedrooms</td>
-                                    <td>{{ $property->bedroom }}</td>
+                                    <td class="text-danger">{{ $property->bedroom }}</td>
                                 </tr>
                                 <tr>
                                     <td>Bathrooms</td>
-                                    <td>{{ $property->bathroom }}</td>
+                                    <td class="text-danger">{{ $property->bathroom }}</td>
                                 </tr>
                                 <tr>
                                     <td>Floor size</td>
-                                    <td><h5>{{ $property->floor }}</h5></td>
+                                    <td class="text-danger"><h5>{{ $property->floor }}</h5></td>
                                 </tr>
                                 <tr>
-                                    <td>Dimension</td>
-                                    <td>{{ $property->dimension }}</td>
+                                    <td>Land Dimension</td>
+                                    <td class="text-danger">{{ $property->dimension }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Land Size</td>
+                                    <td class="text-danger">{{ $property->landsize}}</td>
                                 </tr>
                                 </tbody>
                             </table>
