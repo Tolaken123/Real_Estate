@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-use App\Http\Controllers\Controller;
 use App\Models\Property;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class SaleController extends Controller
 {
@@ -19,6 +20,10 @@ class SaleController extends Controller
         ->when(\request('q'),function($query){
             $query->where('name','like', '%' . request('q','%'));
         })
+        
+        // ->when(!Auth::user()->admin,function($query){
+        //     $query->WhereIn('user_id',[Auth::id()]);
+        // })
         ->paginate($this->default_paginate);
         $sales_property = Property::where('listing_type', '=', 'Sale')->get();
       return view('admin.properties.salelist',['sales_property'=> $sales_property]);

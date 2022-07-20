@@ -22,6 +22,9 @@ class DashboardController extends Controller
             ->when(\request('q'), function ($query) {
                 $query->where('name', 'like', '%' . request('q', '%'));
             })
+            // ->when(!Auth::user()->admin,function($query){
+            //     $query->WhereIn('user_id',[Auth::id()]);
+            // })
             ->paginate($this->default_paginate);
         // $cat=Inventery::get("id",'inventery');
 

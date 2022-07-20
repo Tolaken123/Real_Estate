@@ -26,7 +26,7 @@
                         <label for="file">
                             <span class="profilepic__icon"><i class="fas fa-camera"></i></span>
                             <input id="file" type="file" class="profilepic__text" onchange="loadFile(event)"
-                                name="profile" style="display: none;visibility:none;">Edit</input>
+                                name="avatar" style="display: none;visibility:none;">Edit</input>
 
                         </label>
                     </div>
@@ -47,11 +47,11 @@
                             <option  @if($users->sex== "Male") selected @endif value="Rent" value="Male">Male</option>
                             <option  @if($users->sex == "Female")selected  @endif value="Rent"value="female">Female</option>
                         </select>
-                        <select class="form-select form-select-md mb-3" aria-label=".form-select-md example">
+                        {{-- <select class="form-select form-select-md mb-3" aria-label=".form-select-md example">
                             <option selected>Select Role</option>
                             <option value="2">Amin</option>
                             <option value="2">Industry</option>
-                        </select>
+                        </select> --}}
                         <div class="form-group">
                             <label for="InputName">Phone</label>
                             <input type="phone" class="form-control" value="{{$users->phone}}" name="phone" placeholder="Enter Phone">

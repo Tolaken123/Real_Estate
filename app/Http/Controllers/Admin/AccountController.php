@@ -107,12 +107,18 @@ class AccountController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'phone' => 'required',
-            'sex' => 'required',
+            // 'sex' => 'required',
             'email' => 'required|email|unique:users,email,' . $id,
             'password' => 'same:confirm-password',
             'avatar' => 'required'
         ]);
-        
+        $input = $request->all();
+        $file=$request->file('avatar')->store('avatars');
+        $input['password'] = Hash::make($input['password']);
+       $input['avatar']=$file;
+    //    dd($user);
+         
+    //    $user=User::update($input);
           $users=User::findOrFail($id);
         return redirect()->route('admin.user.index') ->with('success','User updated successfully');
 

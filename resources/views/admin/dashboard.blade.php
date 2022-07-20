@@ -159,7 +159,7 @@
                                                             <td class="align-middle">{{ $list->price }} </td>
                                                             <td class="align-middle">{{ $list->listing_type }} </td>
                                                             @admin
-                                                            <td class="align-middle">{{$list->user->name}}</td>
+                                                            <td class="align-middle">{{$list->user->name??''}}</td>
                                                             @endadmin
 
 

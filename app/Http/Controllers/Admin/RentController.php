@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use App\Models\Property;
-use App\Models\Category;
-use Illuminate\Http\Request;
 use App\Models\Rent;
 use App\Models\Image;
+use App\Models\Category;
+use App\Models\Property;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use App\Models\location\CityProvince;
 
 class RentController extends Controller
@@ -31,6 +32,10 @@ class RentController extends Controller
             ->when(\request('q'), function ($query) {
                 $query->where('name', 'like', '%' . request('q', '%'));
             })
+    
+            // ->when(!Auth::user()->admin,function($query){
+            //     $query->WhereIn('user_id',[Auth::id()]);
+            // })
             ->paginate($this->default_paginate);
         // $cat=Inventery::get("id",'inventery');
         //     return view('admin.properties.rentlist',['rent'=>$rent]);

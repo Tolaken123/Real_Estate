@@ -18,7 +18,7 @@ class AdminMiddleware
     public function handle(Request $request, Closure $next)
     {
     // dd($request);
-        if (Auth::user()->Admin) {
+        if (Auth::user()->Admin){
             // return redirect('home');
             return $next($request);
         }
