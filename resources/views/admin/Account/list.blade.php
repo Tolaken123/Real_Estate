@@ -1,7 +1,7 @@
 @extends('layouts.backend')
 
 @section('title')
-    Add New Property
+    User List
 @endsection
 
 @section('css')
