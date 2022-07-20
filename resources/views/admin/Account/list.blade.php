@@ -40,17 +40,19 @@
                             <th style="width: 5%">
                                 ID
                             </th>
-                            <th style="width: 20%">
+                            <th style="width: 10%">
+                                industry
+                            </th>
+                            <th style="width: 15%">
                                 Name
                             </th>
-                            <th style="width: 30%">
+                            <th style="width: 25%">
                                 Email
                             </th>
                             <th style="width: 20%">
                                 Profile
                             </th>
                             <th style="width: 20%">
-
                                 Action
                             </th>
                         </tr>
@@ -59,15 +61,24 @@
                         @foreach($users as $user)
                         <tr>
                             <td class="align-middle">{{$user->id}}</td>
+                            <td class="align-middle">{{$user->role}}</td>
                             <td class="align-middle">{{$user->name}}</td>
                             <td class="align-middle">{{$user->email}}</td>
                             <td class="align-middle">
-                            <img src="https://bootdey.com/img/Content/user_1.jpg" alt="">
+                                @if ($user->avatar)
+                                    <img src="{{ asset('images/' . $user->avatar) }}"
+                                    style="height:70px;" style="width:100px;"
+                                    alt="25">
+                                @else
+                                <img src="https://bootdey.com/img/Content/user_1.jpg" alt="">
+
+                                @endif
                             </td>
                             <td class="align-middle"> <a class="btn btn-primary btn-sm" href="#">
                                     <i class="fas fa-folder">
                                     </i>
                                     View
+                                   
                                 </a>
                                 &nbsp;
                                 <a class="btn btn-info btn-sm" href="/admin/user/{{$user->id}}/edit">
@@ -99,6 +110,13 @@
             </div>
         </div>
         @include('layouts.footer')
+        <script>
+            var loadFile = function (event) {
+                var image = document.getElementById("output");
+                image.src = URL.createObjectURL(event.target.files[0]);
+            };
+        
+        </script>
         @include('layouts.script')
 
     </div>

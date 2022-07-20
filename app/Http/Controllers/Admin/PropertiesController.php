@@ -262,4 +262,5 @@ class PropertiesController extends Controller
         $properties->delete();
         return redirect()->route('admin.dashboard')->with('properties', 'property delete succassfully');
     }
+    
 }

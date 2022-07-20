@@ -79,14 +79,14 @@
                                 </p>
                             </a>
                         </li>
-                    </ul>
+                    
                                 @admin
-                                    <li class="nav-item">
+                                    {{-- <li class="nav-item">
                                         <a href="#" class="nav-link">
                                             <i class="fas fa-user-lock"></i>
                                             <p>Permissions</p>
                                         </a>
-                                    </li>
+                                    </li> --}}
 
                                     <li class="nav-item">
                                         <a href="#" class="nav-link">
@@ -94,15 +94,12 @@
                                             <p>Trash</p>
                                         </a>
                                     </li>
-                                    <li class="nav-item">
+                                    {{-- <li class="nav-item">
                                         <a href="#" class="nav-link">
                                             <i class="nav-icon fas fa-table"></i>
                                             <p>Report</p>
                                         </a>
-                                    </li>
-                                
-                        
-                            
+                                    </li> --}}
                                 <li class="nav-item">
                                     <a href="{{ Route('admin.user.index') }}" class="nav-link">
                                         <i class="fas fa-user"></i>
@@ -112,7 +109,8 @@
                                     </a>
                                 </li>
                         @endadmin
-                </li>     
+                    </ul>
+                </li>    
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('logout') }}"
                        onclick="event.preventDefault();

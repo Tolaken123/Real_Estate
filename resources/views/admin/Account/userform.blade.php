@@ -41,12 +41,12 @@
                                     <input type="name" class="form-control" name="name" placeholder="Enter name">
                                 </div>
 
-                                <select class="form-select form-select-md mb-3" aria-label=".form-select-md example" name="sex">
+                                {{-- <select class="form-select form-select-md mb-3" aria-label=".form-select-md example" name="sex">
                                     <option selected>Sex</option>
                                     <option value="Male">Male</option>
                                     <option value="Female">Female</option>
-                                </select>
-                                <select class="form-select form-select-md mb-3" aria-label=".form-select-md example">
+                                </select> --}}
+                                <select class="form-select form-select-md mb-3" name="role" aria-label=".form-select-md example">
                                     <option selected>Select Role</option>
                                     <option value="Admin">Admin</option>
                                     <option value="Industry">Industry</option>
