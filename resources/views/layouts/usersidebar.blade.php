@@ -32,8 +32,6 @@
                         <i class="fas fa-home"></i>
                         <p>
                             Dashboard
-                            <!-- add new -->
-
                         </p>
                     </a>
                 </li>
@@ -47,7 +45,8 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="/admin/rent" class="nav-link ">
+                            <a href="{{ route('admin.properties.index',['listing_type' => 'Rent']) }}"
+                               class="nav-link ">
                                 <i class="fas fa-bed"></i>
                                 <p>Rent</p>
                             </a>
@@ -55,7 +54,8 @@
                     </ul>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="/admin/sale" class="nav-link ">
+                            <a href="{{ route('admin.properties.index',['listing_type' => 'Sale']) }}"
+                               class="nav-link ">
                                 <i class="fas fa-hand-holding-usd"></i>
                                 <p>Sale</p>
                             </a>
@@ -72,45 +72,27 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ url('admin/user/{id}/edit') }}" class="nav-link">
+                            <a href="#" class="nav-link">
                                 <i class="fas fa-user"></i>
                                 <p>
                                     Edit Profile
                                 </p>
                             </a>
                         </li>
-                    
-                                @admin
-                                    {{-- <li class="nav-item">
-                                        <a href="#" class="nav-link">
-                                            <i class="fas fa-user-lock"></i>
-                                            <p>Permissions</p>
-                                        </a>
-                                    </li> --}}
 
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link">
-                                            <i class="fas fa-trash"></i>
-                                            <p>Trash</p>
-                                        </a>
-                                    </li>
-                                    {{-- <li class="nav-item">
-                                        <a href="#" class="nav-link">
-                                            <i class="nav-icon fas fa-table"></i>
-                                            <p>Report</p>
-                                        </a>
-                                    </li> --}}
-                                <li class="nav-item">
-                                    <a href="{{ Route('admin.user.index') }}" class="nav-link">
-                                        <i class="fas fa-user"></i>
-                                        <p>
-                                            Account
-                                        </p>
-                                    </a>
-                                </li>
+                        @admin
+
+                        <li class="nav-item">
+                            <a href="{{ Route('admin.user.index') }}" class="nav-link">
+                                <i class="fas fa-user"></i>
+                                <p>
+                                    Account
+                                </p>
+                            </a>
+                        </li>
                         @endadmin
                     </ul>
-                </li>    
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('logout') }}"
                        onclick="event.preventDefault();

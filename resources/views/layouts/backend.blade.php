@@ -17,33 +17,33 @@
     @include('layouts.topnavbar')
     @include('layouts.usersidebar')
 
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet"/>
 
     @yield('css')
 </head>
 
 <body>
-    <div id="app">
-        <div class="content-wrapper">
-            @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
-            @yield('content')
-            <div>
+<div id="app">
+    <div class="content-wrapper">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
             </div>
+        @endif
+        @yield('content')
+        <div>
+        </div>
 
-            @include('layouts.footer')
-            @include('layouts.script')
-            <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+        @include('layouts.footer')
+        @include('layouts.script')
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
-            @yield('script')
-
+    </div>
+@yield('script')
 
 
 </body>

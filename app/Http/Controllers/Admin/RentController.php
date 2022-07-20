@@ -27,20 +27,13 @@ class RentController extends Controller
      */
     public function index()
     {
-        $rent = Property::query()
+        $properties = Property::query()
             ->orderBy('id', 'DESC')
             ->when(\request('q'), function ($query) {
                 $query->where('name', 'like', '%' . request('q', '%'));
             })
-    
-            // ->when(!Auth::user()->admin,function($query){
-            //     $query->WhereIn('user_id',[Auth::id()]);
-            // })
             ->paginate($this->default_paginate);
-        // $cat=Inventery::get("id",'inventery');
-        //     return view('admin.properties.rentlist',['rent'=>$rent]);
-        $rents_property = Property::where('listing_type', '=', 'Rent')->get();
-        return view('admin.properties.rentlist', compact('rents_property', 'rent'));
+        return view('admin.properties.index', compact('properties'));
 
     }
 
