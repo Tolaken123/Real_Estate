@@ -62,6 +62,36 @@
                         </li>
                     </ul>
                 </li>
+                @admin
+
+                <li class="nav-item menu-close">
+                    <a href="#" class="nav-link ">
+                        <i class="fas fa-list-ul"></i>
+                        <p>
+                            User
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('admin.user.index') }}"
+                               class="nav-link ">
+                                <i class="fas fa-bed"></i>
+                                <p>List</p>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="#"
+                               class="nav-link ">
+                                <i class="fas fa-hand-holding-usd"></i>
+                                <p>Add New</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                @endadmin
                 <li class="nav-item menu-close">
                     <a href="#" class="nav-link ">
                         <i class="fas fa-cog"></i>
