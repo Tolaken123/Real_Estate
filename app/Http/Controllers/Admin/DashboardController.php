@@ -32,7 +32,7 @@ class DashboardController extends Controller
         $sales_property_count = Property::query()->sale()->count();
         $rents_property_count = Property::query()->rent()->count();
         $user=User::get(['id','name']);
-       
+
         return view('admin.dashboard', [
             'properties' => $properties,
             'users_count' => $users_counts,
@@ -40,7 +40,7 @@ class DashboardController extends Controller
             'rents_property_count' => $rents_property_count,
             'property_count' => $sales_property_count + $rents_property_count,
             'user'=>$user,
-          
+
         ]);
 
     }

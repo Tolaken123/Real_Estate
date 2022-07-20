@@ -42,7 +42,7 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="phone" class="form-control @error('phone') is-invalid @enderror"
+                        <input type="text" class="form-control @error('phone') is-invalid @enderror"
                         name="phone" value="{{ old('phone') }}" required autocomplete="phone" placeholder="phone" >
                         @error('phone')
                         <span class="invalid-feedback" role="alert">
