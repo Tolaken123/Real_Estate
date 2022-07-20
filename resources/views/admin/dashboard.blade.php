@@ -26,7 +26,8 @@
                             <div class="icon">
                                 <i class="ion ion-bag"></i>
                             </div>
-                            <a href="#" class="small-box-footer">More info <i
+                            <a href="{{ route('admin.properties.index',['listing_type' => 'Sale']) }}"
+                               class="small-box-footer">More info <i
                                     class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
@@ -42,7 +43,8 @@
                             <div class="icon">
                                 <i class="ion ion-stats-bars"></i>
                             </div>
-                            <a href="#" class="small-box-footer">More info <i
+                            <a href="{{ route('admin.properties.index',['listing_type' => 'Rent']) }}"
+                               class="small-box-footer">More info <i
                                     class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
@@ -57,7 +59,8 @@
                             <div class="icon">
                                 <i class="ion ion-person-add"></i>
                             </div>
-                            <a href="#" class="small-box-footer">More info <i
+                            <a href="{{ route('admin.properties.index') }}"
+                               class="small-box-footer">More info <i
                                     class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
@@ -165,7 +168,7 @@
                                 </table>
                                 <br>
                                 <div class="mx-auto d-flex justify-content-center">
-                                    {{$properties->withQueryString()->links() }}
+
                                 </div>
                             </div>
                         </div>

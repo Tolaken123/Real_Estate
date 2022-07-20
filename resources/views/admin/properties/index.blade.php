@@ -15,7 +15,7 @@
                 <div class="bootstrap snippets bootdey mt-3 mb-3">
                     <div class="d-flex justify-content-between">
                         <div class="">
-                            <h1 class="m-0">Rent Listing</h1>
+                            <h1 class="m-0">Property List</h1>
                         </div>
                         <div>
                             <a href="{{ route('admin.properties.create') }}">
