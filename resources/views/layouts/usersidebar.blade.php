@@ -83,7 +83,7 @@
                     </ul>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#"
+                            <a href="{{ route('admin.user.create') }}"
                                class="nav-link ">
                                <i class="nav-icon fas fa-plus"></i>
                                 <p>Add New</p>
