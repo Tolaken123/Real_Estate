@@ -56,7 +56,21 @@ class AccountController extends Controller
             'sex' => 'required',
             'password' => 'required|same:confirm-password',
 
+
         ]);
+
+
+        $input = $request->all();
+        $input['password'] = Hash::make($input['password']);
+
+        $user = User::create($input);
+        $user->assignRole($request->input('roles'));
+
+        return redirect()->route('users.index')
+                        ->with('success','User created successfully');
+
+    
+                        
         $user = User::create([
             'name' => $request->name,
             'sex' => $request->sex,
@@ -65,6 +79,17 @@ class AccountController extends Controller
             'phone' => $request->phone
 
         ]);
+        
+       
+        // $input = $request->all();
+        // $input['password'] = Hash::make($input['password']);
+    
+        // $user = User::create($input);
+        // $user->assignRole($request->input('roles'));
+    
+        // return redirect()->route('users.index')
+        //                 ->with('success','User created successfully');
+
 
         $input = $request->all();
         $input['password'] = Hash::make($input['password']);
@@ -117,8 +142,19 @@ class AccountController extends Controller
             'profile' => 'required'
         ]);
 
+
+        
+        $users=User::findOrFail($id);
+
+
         $users=User::findOrFail($id);
         return redirect()->route('admin.user.index') ->with('success','User updated successfully');
+
+
+        // $users=User::findOrFail($id);
+        // dd($users);
+        // return redirect()->route('admin.user.index') ->with('success','User updated successfully');
+
 
     }
 
