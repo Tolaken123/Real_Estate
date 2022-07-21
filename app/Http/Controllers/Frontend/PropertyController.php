@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Builders\PropertyBuilder;
 use App\Http\Controllers\Controller;
 use App\Models\Property;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class PropertyController extends Controller
@@ -17,7 +18,7 @@ class PropertyController extends Controller
             ->with([
                 'province:id,name',
                 'images:id,image,property_id',
-                'user:id,name,phone'
+                'user:id,name,phone,avatar'
             ])
             ->when($request->listing_type && $request->listing_type == 'Rent', function ($query) {
                 return $query->rent();
@@ -72,8 +73,15 @@ class PropertyController extends Controller
         ]);
     }
 
-    public function agent_properties()
+    public function agent_properties($id)
     {
-        // dd('here');
+        $user = User::query()->findOrFail($id);
+        $properties = Property::query()
+            ->where('user_id', $user->id)
+            ->paginate(20);
+        return view('frontend.properties.agent-property', [
+            'user' => $user,
+            'properties' => $properties
+        ]);
     }
 }

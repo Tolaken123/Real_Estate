@@ -1,106 +1,136 @@
+@extends('layouts.backend')
 
-<style>
+@section('title')
+    User List
+@endsection
 
-    img{
-        border-radius: 50%;
-    border-top-left-radius: 50%;
-    border-top-right-radius: 50%;
-    border-bottom-right-radius: 50%;
-    border-bottom-left-radius: 50%;
-    width: 2.5rem;
-    }
-</style>
+@section('css')
+    <style>
 
-<body class="hold-transition light-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
-    <div class="wrapper">
-
-    @include('layouts.style')
-@include('layouts.lightmode')
-<!-- Navbar -->
-@include('layouts.topnavbar')
-@include('layouts.usersidebar')
-<!-- /.navbar -->
-        <div class="content-wrapper">
+        img {
+            border-radius: 50%;
+            border-top-left-radius: 50%;
+            border-top-right-radius: 50%;
+            border-bottom-right-radius: 50%;
+            border-bottom-left-radius: 50%;
+            width: 2.5rem;
+        }
+    </style>
+@endsection
 
 
-            <br>
-            <h1>&nbsp;&nbsp;User List</h1>
+@section('content')
 
+    <div class="card w-100 pt-4">
+        <section class="content">
             <div class="container-fluid">
-                <table class="table table-bordered table-sm table-hover  border-primary">
-                    <a href="{{ route('admin.user.create') }}">
-                        <button type="button" class="btn btn-primary">
+                <div class="bootstrap snippets bootdey mt-3 mb-3">
+                    <div class="d-flex justify-content-between">
+                        <div class="">
+                            <h1 class="m-0">User List</h1>
+                        </div>
+                        <div>
+                            <a href="{{ route('admin.user.create') }}">
+                                <button type="button" class="btn btn-primary">
+                                    Create New User
+                                </button>
+                            </a>
+                        </div>
 
-                            Create New Property
-                        </button>
-                    </a>
-                    <br><br>
-                    <thead class="table-active bg-primary">
-                        <tr>
-                            <th style="width: 5%">
-                                ID
-                            </th>
-                            <th style="width: 20%">
-                                Name
-                            </th>
-                            <th style="width: 30%">
-                                Email
-                            </th>
-                            <th style="width: 20%">
-                                Profile
-                            </th>
-                            <th style="width: 20%">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="main-box no-header clearfix">
+                            <div class="main-box-body clearfix">
+                                <div class="table-responsive">
 
-                                Action
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($users as $user)
-                        <tr>
-                            <td class="align-middle">{{$user->id}}</td>
-                            <td class="align-middle">{{$user->name}}</td>
-                            <td class="align-middle">{{$user->email}}</td>
-                            <td class="align-middle">
-                            <img src="https://bootdey.com/img/Content/user_1.jpg" alt="">
-                            </td>
-                            <td class="align-middle"> <a class="btn btn-primary btn-sm" href="#">
-                                    <i class="fas fa-folder">
-                                    </i>
-                                    View
-                                </a>
-                                &nbsp;
-                                <a class="btn btn-info btn-sm" href="/admin/user/{{$user->id}}/edit">
-                                    <i class="fas fa-pencil-alt">
-                                    </i>
-                                    Edit
-                                </a>
-                                &nbsp;
+                                    <table class="table table-bordered table-sm table-hover  border-primary">
 
-                                <form method="POST" action="/admin/user/{{ $user->id }}" style="display:inline" >
-                                     {{-- {{ csrf_field() }}
-                                    <input name="_method" type="hidden" value="DELETE"> --}}
-                                    @csrf
-                                    @method('delete')
+                                        <thead class="table-active bg-primary">
+                                        <tr>
+                                            <th>
+                                                N0
+                                            </th>
+                                            <th>
+                                                Profile
+                                            </th>
+                                            <th>
+                                                Role
+                                            </th>
+                                            <th>
+                                                Name
+                                            </th>
+                                            <th>
+                                                Email
+                                            </th>
 
-                                      <button type="submit" class="btn btn-danger" onclick="return confirm('Do you want to delete?')">
-                                    <i class="fas fa-trash">
-                                    </i>
-                                      </button>
-                                </form>
-                            </td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-                <div class="mx-auto d-flex justify-content-center">
-                    {{ $users->links() }}
-             </div>
+                                            <th>
+                                                Action
+                                            </th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        @foreach($users as $user)
+                                            <tr class="h-auto">
+                                                <td class="align-middle">{{ ++$loop->index }}</td>
+                                                <td class="align-middle">
+                                                    @if ($user->avatar)
+                                                        <img src="{{ asset('images/' . $user->avatar) }}"
+                                                             alt="25" style="width: 50px;">
+                                                    @else
+                                                        <img src="https://bootdey.com/img/Content/user_1.jpg" alt="">
+                                                    @endif
+                                                </td>
+                                                <td class="align-middle">{{$user->role}}</td>
+                                                <td class="align-middle">{{$user->name}}</td>
+                                                <td class="align-middle">{{$user->email}}</td>
+
+                                                <td class="align-middle"><a class="btn btn-primary btn-sm" href="#">
+                                                        <i class="fas fa-eye">
+                                                        </i>
+                                                    </a>
+                                                    &nbsp;
+                                                    <a class="btn btn-info btn-sm"
+                                                       href="/admin/user/{{$user->id}}/edit">
+                                                        <i class="fas fa-pencil-alt">
+                                                        </i>
+                                                    </a>
+                                                    &nbsp;
+
+                                                    <form method="POST" action="/admin/user/{{ $user->id }}"
+                                                          style="display:inline">
+                                                        @csrf
+                                                        @method('delete')
+
+                                                        <button type="submit" class="btn btn-sm btn-danger"
+                                                                onclick="return confirm('Do you want to delete?')">
+                                                            <i class="fas fa-trash">
+                                                            </i>
+                                                        </button>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                        </tbody>
+                                    </table>
+
+                                    <br>
+                                    <div class="mx-auto d-flex justify-content-center">
+                                        {{$users->withQueryString()->links() }}
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        @include('layouts.footer')
-        @include('layouts.script')
-
+        </section>
     </div>
 
+@endsection
 
+@section('script')
+
+@endsection

@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Models\User;
 use App\Models\Property;
 use Illuminate\Http\Request;
-use App\Models\User;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
@@ -18,25 +19,21 @@ class DashboardController extends Controller
     {
         $properties = Property::query()
             ->orderBy('id', 'DESC')
-            ->when(\request('q'), function ($query) {
-                $query->where('name', 'like', '%' . request('q', '%'));
-            })
-            ->paginate($this->default_paginate);
+            ->take(10)
+            ->get();
         // $cat=Inventery::get("id",'inventery');
 
         $users_counts = User::count();
         $sales_property_count = Property::query()->sale()->count();
         $rents_property_count = Property::query()->rent()->count();
-        $user=User::get(['id','name']);
-       
+
+
         return view('admin.dashboard', [
             'properties' => $properties,
             'users_count' => $users_counts,
             'sales_property_count' => $sales_property_count,
             'rents_property_count' => $rents_property_count,
             'property_count' => $sales_property_count + $rents_property_count,
-            'user'=>$user,
-          
         ]);
 
     }

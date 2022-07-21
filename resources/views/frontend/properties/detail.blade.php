@@ -1,6 +1,6 @@
 @extends('frontend.layouts.frontend')
 
-@section('title','Property Detail')
+@section('title', 'Property Detail')
 
 @push('css')
     <link href="{{ asset('dist/css/style.min.css') }}" rel="stylesheet">
@@ -34,34 +34,31 @@
                     <div class="card-body">
                         <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
                             <ol class="carousel-indicators">
-                                <li data-target="#carouselExampleIndicators2" data-slide-to="1"
-                                    class="active"></li>
-                                @foreach($property->images as $image)
+                                <li data-target="#carouselExampleIndicators2" data-slide-to="1" class="active"></li>
+                                @foreach ($property->images as $image)
                                     <li data-target="#carouselExampleIndicators2" data-slide-to="{{ $loop->index }}"
                                         class=""></li>
                                 @endforeach
                             </ol>
                             <div class="carousel-inner" role="listbox">
                                 <div class="carousel-item active">
-                                    <img class="img-responsive"
-                                         src="{{ asset("images/" . $property->thumbnail) }}"
-                                         alt="Property Image">
+                                    <img class="img-responsive" src="{{ asset('images/' . $property->thumbnail) }}"
+                                        alt="Property Image">
                                 </div>
-                                @foreach($property->images as $image)
+                                @foreach ($property->images as $image)
                                     <div class="carousel-item">
-                                        <img class="img-responsive"
-                                             src="{{ asset("images/" . $image->image) }}"
-                                             alt="Property Image">
+                                        <img class="img-responsive" src="{{ asset('images/' . $image->image) }}"
+                                            alt="Property Image">
                                     </div>
                                 @endforeach
                             </div>
                             <a class="carousel-control-prev" href="#carouselExampleIndicators2" role="button"
-                               data-slide="prev">
+                                data-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="sr-only">Previous</span>
                             </a>
                             <a class="carousel-control-next" href="#carouselExampleIndicators2" role="button"
-                               data-slide="next">
+                                data-slide="next">
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="sr-only">Next</span>
                             </a>
@@ -69,7 +66,7 @@
                         <div class="p-t-20 p-b-20">
                             <h4 class="card-title">{{ $property->name }}</h4>
                             <h5 class="m-b-0"><span class="text-muted"><i class="fa fa-map-marker text-danger m-r-10"
-                                                                          aria-hidden="true"></i>{{ $property->province->name ?? '' }}</span>
+                                        aria-hidden="true"></i>{{ $property->province->name ?? '' }}</span>
                             </h5>
                         </div>
                         <hr class="m-0">
@@ -90,25 +87,7 @@
                     </div>
                 </div>
             </div>
-<<<<<<< HEAD
-            <!-- end slide -->
 
-            <!-- description -->
-            <div class="row">
-                <p></p>
-            </div>
-
-            <div class="col-md-12" style="background-color: #ffffff; ">
-                <div class="row">
-                    <div class="col-md-5">
-                        <div class="container mt-1 ">
-                            <img class="rounded-circle" alt="100x100" src="../img/nophoto.png" width="30%" ; height="Auto" ; alt="#"><a href="#"
-                                                                                                            style="text-decoration: none;  font-size: 200%;">Duong
-                                Ret</a>
-
-                            <table class="table table-striped ">
-                                <thead>
-=======
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                 <div class="card">
                     <div class="card-body">
@@ -116,27 +95,37 @@
                         <div class="table-responsive">
                             <table class="table no-border">
                                 <tbody class="text-dark">
->>>>>>> d260ea115784996db5cef0e1161aa69ec370109a
-                                <tr>
-                                    <td>Price</td>
-                                    <td>{{ format_currency($property->price) }}</td>
-                                </tr>
-                                <tr>
-                                    <td>Bedrooms</td>
-                                    <td>{{ $property->bedroom }}</td>
-                                </tr>
-                                <tr>
-                                    <td>Bathrooms</td>
-                                    <td>{{ $property->bathroom }}</td>
-                                </tr>
-                                <tr>
-                                    <td>Floor size</td>
-                                    <td><h5>{{ $property->floor }}</h5></td>
-                                </tr>
-                                <tr>
-                                    <td>Dimension</td>
-                                    <td>{{ $property->dimension }}</td>
-                                </tr>
+
+                                    <tr>
+                                        <td>Price</td>
+                                        <td class="text-danger">{{ format_currency($property->price) }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Bedrooms</td>
+                                        <td class="text-danger">{{ $property->bedroom }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Bathrooms</td>
+                                        <td class="text-danger">{{ $property->bathroom }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Floor size</td>
+                                        <td class="text-danger">
+                                            <h5>{{ $property->floor }}</h5>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Land Dimension</td>
+                                        <td class="text-danger">{{ $property->dimension }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Land Size</td>
+                                        <td class="text-danger">{{ $property->landsize }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ID</td>
+                                        <td class="text-danger">{{ $property->id }}</td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -145,28 +134,27 @@
                 <div class="card">
                     <div class="card-body bg-light">
                         <div class="text-center">
-                            <a href="javascript:void(0)">
-                                @if(isset($property->user->avatar) && !empty($property->user->avatar))
+                            <a href="{{ route('frontend.agent.index', $property->user->id) }}">
+                                @if (isset($property->user->avatar) && !empty($property->user->avatar))
                                     <img alt="img" class="thumb-lg img-circle"
-                                         src="{{ asset('images/' . $property->user->avatar) }}">
+                                        src="{{ asset('images/' . $property->user->avatar) }}">
                                 @else
                                     <img alt="img" class="thumb-lg img-circle"
-                                         src="{{ asset('assets/images/users/agent.jpg') }}">
+                                        src="{{ asset('assets/images/users/agent.jpg') }}">
                                 @endif
+
+                                <h4 class="mt-2">{{ $property->user->name ?? '' }}</h4>
                             </a>
-                            <h4>{{ $property->user->name ?? '' }}</h4>
-                            {{--                            <h6>Agent of Property</h6></div>--}}
                         </div>
                         <div class="card-body border-top">
 
                             <div class="text-center">
-                                @if(!empty($property->user->phone))
+                                @if (!empty($property->user->phone))
                                     <i class="fa fa-phone text-danger p-r-10" aria-hidden="true"></i>
                                     {{ $property->user->phone ?? '' }}
                                     <br>
                                 @endif
-                                @if(!empty($property->user->email))
-
+                                @if (!empty($property->user->email))
                                     <i class="fa fa-envelope-o text-danger p-r-10 m-t-10" aria-hidden="true"></i>
                                     {{ $property->user->email ?? '' }}
                                 @endif
@@ -175,8 +163,6 @@
                     </div>
                 </div>
             </div>
-
-
         </div>
     </div>
     <div class="row">
@@ -187,8 +173,8 @@
     </div>
     <div class="row jumbotron m-5 ">
 
-        @foreach($related_properties as $property)
-            @include('frontend.properties._single_property',['property' => $property])
+        @foreach ($related_properties as $property)
+            @include('frontend.properties._single_property', ['property' => $property])
         @endforeach
 
     </div>

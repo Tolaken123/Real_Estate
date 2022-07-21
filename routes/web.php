@@ -28,9 +28,10 @@ Route::group(['as' => 'frontend.'], function () {
         Route::get('/', [\App\Http\Controllers\Frontend\PropertyController::class, 'index'])->name('index');
         Route::get('/{property}', [\App\Http\Controllers\Frontend\PropertyController::class, 'detail'])->name('detail');
     });
-    // Route::group(['prefix', 'agents', 'as' => 'agent.'], function () {
-    //     Route::get('/{user}', [\App\Http\Controllers\Frontend\PropertyController::class, 'agent_properties'])->name('index');
-    // });
+
+    Route::group(['prefix' => 'agents', 'as' => 'agent.'], function () {
+        Route::get('/{user}', [\App\Http\Controllers\Frontend\PropertyController::class, 'agent_properties'])->name('index');
+    });
 });
 
 Auth::routes();
@@ -64,14 +65,14 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'mi
     Route::resource('/properties', PropertiesController::class);
     Route::resource('/rent', RentController::class);
     Route::resource('/sale', SaleController::class);
-    
+
 
     Route::group(['prefix' => 'location', 'as' => 'location.'], function () {
         Route::get('district', [AddressSelectController::class, 'districts'])->name('district');
         Route::get('commune', [AddressSelectController::class, 'communes'])->name('commune');
         Route::get('village', [AddressSelectController::class, 'villages'])->name('village');
     });
-    Route::middleware('admin')->group( function(){
+    Route::middleware('admin')->group(function () {
         Route::resource('/user', AccountController::class);
 
     });

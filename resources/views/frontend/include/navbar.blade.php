@@ -25,32 +25,32 @@
                         </ul>
                     </div>
                 </li>
-                @if (Route::has('login'))
-
-                    <li class="nav-item">
-
-                        @auth
-                            <a href="{{ url('/home') }}"
-                               class="text-decoration-none text-white nav-item">Home</a>
-                        @endauth
-                    </li>
-                @else
+                @guest()
                     <li class="nav-item ">
-
                         <a href="{{ route('login') }}" class="nav-link">
                             <h5 class="text-capitalize">Login</h5>
                         </a>
-                        <!-- {{-- class="text-sm text-gray-700 dark:text-gray-500 underline" --}} -->
                     </li>
-                    <li class="nav-item">
-                        @if (Route::has('register'))
+                    @if (Route::has('register'))
+                        <li class="nav-item">
                             <a href="{{ route('register') }}" class="nav-link">
                                 <h5 class="text-capitalize">Register</h5>
                             </a>
-                        @endif
+                        </li>
+                    @endif
+                @endguest
+                @auth
+                    <li class="nav-item ">
+                        <a href="{{ url('/admin/dashboard') }}" class="nav-link">
+                            <h5 class="text-capitalize">Home</h5>
+                        </a>
                     </li>
-
-                @endif
+                @endauth
+                <li class="nav-item ">
+                    <a href="{{ url('layouts/contact_us') }}" class="nav-link">
+                        <h5 class="text-capitalize">About Us</h5>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

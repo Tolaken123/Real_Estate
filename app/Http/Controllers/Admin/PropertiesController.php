@@ -2,17 +2,18 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use App\Models\Category;
-use Illuminate\Http\Request;
-use App\Models\Image;
 use App\Models\User;
-
+use App\Models\Image;
+use App\Models\Category;
 use App\Models\Property;
-use App\Models\location\CityProvince;
-use App\Models\location\District;
+use Illuminate\Http\Request;
+
 use App\Models\location\Commune;
 use App\Models\location\Village;
+use App\Models\location\District;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use App\Models\location\CityProvince;
 
 class PropertiesController extends Controller
 {
@@ -21,13 +22,38 @@ class PropertiesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-
-
-        $properties = Property::all();
-       
-        return redirect()->route('admin.dashboard')->with('properties', 'property Create succassfully');
+        $min_price = $request->input('min_price') ?? null;
+        $max_price = $request->input('max_price') ?? null;
+        $properties = Property::query()
+            ->with([
+                'province:id,name',
+                'images:id,image,property_id',
+                'user:id,name,phone,avatar'
+            ])
+            ->when($request->listing_type && $request->listing_type == 'Rent', function ($query) {
+                return $query->rent();
+            })->when($request->listing_type && $request->listing_type == 'Sale', function ($query) {
+                return $query->sale();
+            })
+            ->when($request->input('category_id'), function ($query) use ($request) {
+                return $query->where('category_id', $request->input('category_id'));
+            })
+            ->when($request->input('province_id'), function ($query) use ($request) {
+                return $query->where('province_id', $request->input('province_id'));
+            })
+            ->when($min_price && empty($max_price), function ($query) use ($min_price) {
+                return $query->where('price', '<=', (int)$min_price);
+            })
+            ->when($max_price && empty($min_price), function ($query) use ($max_price) {
+                return $query->where('price', '>=', (int)$max_price);
+            })
+            ->when($max_price && $min_price, function ($query) use ($min_price, $max_price) {
+                return $query->whereBetween('price', [(int)$min_price, (int)$max_price]);
+            })
+            ->paginate($this->default_paginate);
+        return view('admin.properties.index', compact('properties'));
 
     }
 
@@ -41,11 +67,11 @@ class PropertiesController extends Controller
         $categories = Category::query()
             ->select('id', 'name')
             ->get();
-            $user=User::get(['id','name']);
+        $user = User::get(['id', 'name']);
         $provinces = CityProvince::query()
             ->select('id', 'name')
             ->get();
-        return view('admin.properties.createproperty', compact("categories", "provinces","user"));
+        return view('admin.properties.createproperty', compact("categories", "provinces", "user"));
     }
 
     /**
@@ -70,7 +96,7 @@ class PropertiesController extends Controller
             'floor' => 'required|string|max:255',
             'dimension' => 'required|string|max:255',
             'maplocation' => 'required|string|max:255',
-            'description' => 'required|string|max:255',
+            'description' => 'required|string',
             'filesname.*' => 'array|required', 'files.*' => 'required|mimetypes:image/jpg,image/jpeg,image/bmp',
         ]);
 
@@ -93,6 +119,7 @@ class PropertiesController extends Controller
             'description' => $request->description,
             'filename.*' => $request->filename,
             'listing_type' => $request->listing_type,
+            'user_id' => Auth::id()
         ]);
 
         if ($request->hasfile('thumbnail')) {
@@ -193,7 +220,7 @@ class PropertiesController extends Controller
             'floor' => 'required|string|max:255',
             'dimension' => 'required|string|max:255',
             'maplocation' => 'required|string|max:255',
-            'description' => 'required|string|max:255',
+            'description' => 'required|string',
             'filesname.*' => 'array|required', 'files.*' => 'required|mimetypes:image/jpg,image/jpeg,image/bmp',
         ]);
 
@@ -216,6 +243,7 @@ class PropertiesController extends Controller
             'dimension',
             'maplocation',
             'description',
+            'user_id'
         ]));
 
 
@@ -260,4 +288,5 @@ class PropertiesController extends Controller
         $properties->delete();
         return redirect()->route('admin.dashboard')->with('properties', 'property delete succassfully');
     }
+
 }

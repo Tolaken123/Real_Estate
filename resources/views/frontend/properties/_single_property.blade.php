@@ -7,21 +7,21 @@
                     class="badge badge-danger badge-pill bg-danger text-white">For {{ $property->listing_type }}</span>
             </div>
             <div class="card-body bg-light ">
-                <h5 class="card-title">{{ \Illuminate\Support\Str::limit( $property->name,25)  }}</h5>
+                <h5 class="card-title">{{ \Illuminate\Support\Str::limit( $property->name,50)  }}</h5>
                 <h5 class="text-danger">{{ format_currency($property->price) }}</h5>
             </div>
             <div class="card-body border-top">
 
                 <div class="d-flex no-block align-items-center">
                         <span class="p-10 text-muted">
-                            <li>Bathroom:{{ $property->bathroom }}</li>
+                            <li>Bathroom: {{ $property->bathroom }}</li>
                         </span>
                     <span class="ml-auto badge badge-pill badge-secondary pull-right">{{ $property->bathroom }}</span>
                 </div>
 
                 <div class="d-flex no-block align-items-center">
                         <span class="p-10 text-muted">
-                            <li>Bedroom:{{ $property->bedroom }}</li>
+                            <li>Bedroom: {{ $property->bedroom }}</li>
 
                         </span>
                     <span class="ml-auto badge badge-pill badge-secondary pull-right">
@@ -31,13 +31,22 @@
 
                 <div class="d-flex no-block align-items-center">
                         <span class="p-10 text-muted">
-                            <li>Land Size:{{ $property->landsize }}</li>
+                            <li>Land Size: {{ $property->landsize }}</li>
 
                         </span>
                     <span class="ml-auto badge badge-pill badge-secondary pull-right">
                         {{ $property->landsize }}
                     </span>
                 </div>
+                <div class="d-flex no-block align-items-center">
+                    <span class="p-10 text-muted">
+                        <li>ID: {{ $property->id }}</li>
+
+                    </span>
+                <span class="ml-auto badge badge-pill badge-secondary pull-right">
+                    {{ $property->id }}
+                </span>
+            </div>
             </div>
             <div class="card-body border-top">
                 <div class="d-flex no-block align-items-center">
