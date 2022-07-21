@@ -27,7 +27,7 @@
                 <div class="bootstrap snippets bootdey mt-3 mb-3">
                     <div class="d-flex justify-content-between">
                         <div class="">
-                            <h1 class="m-0">Property List</h1>
+                            <h1 class="m-0">User List</h1>
                         </div>
                         <div>
                             <a href="{{ route('admin.user.create') }}">
@@ -50,7 +50,7 @@
                                         <thead class="table-active bg-primary">
                                         <tr>
                                             <th>
-                                                ID
+                                                N0
                                             </th>
                                             <th>
                                                 Profile

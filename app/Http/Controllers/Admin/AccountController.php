@@ -58,13 +58,38 @@ class AccountController extends Controller
             'avatar' => 'required',
             // 'role'=>'required',
 
+
         ]);
+
+
+        $input = $request->all();
+        $input['password'] = Hash::make($input['password']);
+
+        $user = User::create($input);
+        $user->assignRole($request->input('roles'));
+
+        return redirect()->route('users.index')
+                        ->with('success','User created successfully');
+
+    
+                        
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'phone' => $request->phone,
             'password' => Hash::make($request['password']),
         ]);
+        
+       
+        // $input = $request->all();
+        // $input['password'] = Hash::make($input['password']);
+    
+        // $user = User::create($input);
+        // $user->assignRole($request->input('roles'));
+    
+        // return redirect()->route('users.index')
+        //                 ->with('success','User created successfully');
+
 
         if ($request->hasfile('avatar')) {
             $file = $request->file('avatar');
@@ -127,6 +152,15 @@ class AccountController extends Controller
             ]);
         }
 
+<<<<<<< HEAD
+
+        
+        $users=User::findOrFail($id);
+
+
+        $users=User::findOrFail($id);
+        return redirect()->route('admin.user.index') ->with('success','User updated successfully');
+=======
         if ($request->hasfile('avatar')) {
             $file = $request->file('avatar');
             $destinationPath = public_path() . '/images/';
@@ -139,6 +173,13 @@ class AccountController extends Controller
             ]);
         }
         return redirect()->route('admin.user.index')->with('success', 'User have been updated successfully');
+>>>>>>> 7dcd2ca0e8297ccee07d2d46b2658cb72fe1676c
+
+
+        // $users=User::findOrFail($id);
+        // dd($users);
+        // return redirect()->route('admin.user.index') ->with('success','User updated successfully');
+
 
     }
 
