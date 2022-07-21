@@ -72,13 +72,12 @@
                                         </thead>
                                         <tbody>
                                         @foreach($users as $user)
-                                            <tr>
+                                            <tr class="h-auto">
                                                 <td class="align-middle">{{ ++$loop->index }}</td>
                                                 <td class="align-middle">
                                                     @if ($user->avatar)
                                                         <img src="{{ asset('images/' . $user->avatar) }}"
-                                                             style="height:70px; width:100px;"
-                                                             alt="25">
+                                                             alt="25" style="width: 50px;">
                                                     @else
                                                         <img src="https://bootdey.com/img/Content/user_1.jpg" alt="">
                                                     @endif
@@ -101,12 +100,10 @@
 
                                                     <form method="POST" action="/admin/user/{{ $user->id }}"
                                                           style="display:inline">
-                                                        {{-- {{ csrf_field() }}
-                                                       <input name="_method" type="hidden" value="DELETE"> --}}
                                                         @csrf
                                                         @method('delete')
 
-                                                        <button type="submit" class="btn btn-danger"
+                                                        <button type="submit" class="btn btn-sm btn-danger"
                                                                 onclick="return confirm('Do you want to delete?')">
                                                             <i class="fas fa-trash">
                                                             </i>
