@@ -48,11 +48,11 @@
         <div class="col-lg-4 col-md-4 bg-light text-dark p-3">
             <table>
                 <tr>
-                    <th>tel:</th>
+                    <th>Tel : +885</th>
                     <td>{{ $user->phone }}</td>
                 </tr>
                 <tr>
-                    <th>Email:</th>
+                    <th>Email :</th>
                     <td>{{ $user->email }}</td>
                 </tr>
             </table>
