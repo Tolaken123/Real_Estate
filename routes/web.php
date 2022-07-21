@@ -7,7 +7,7 @@ use App\Http\Controllers\FileUpload;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\location\AddressSelectController;
-
+use App\Http\Controllers\Admin\ProfielController;
 
 /*
 |--------------------------------------------------------------------------
@@ -65,8 +65,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'mi
     Route::resource('/properties', PropertiesController::class);
     Route::resource('/rent', RentController::class);
     Route::resource('/sale', SaleController::class);
-
-
+   
+   
     Route::group(['prefix' => 'location', 'as' => 'location.'], function () {
         Route::get('district', [AddressSelectController::class, 'districts'])->name('district');
         Route::get('commune', [AddressSelectController::class, 'communes'])->name('commune');
@@ -74,6 +74,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'mi
     });
     Route::middleware('admin')->group(function () {
         Route::resource('/user', AccountController::class);
-
+        Route::get('/profile',[ProfielController::class,'profile']);
+        Route::patch('/profile/update',[ProfielController::class,'update']);
     });
 });

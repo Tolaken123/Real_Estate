@@ -11,8 +11,8 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-
-                <img src="https://bootdey.com/img/Content/user_1.jpg" class="img-circle elevation-2" alt="User Image">
+                <img src="{{ asset('images/'.Auth::user()->avatar) }}" style="height:70px; width:100px;" alt="25">
+                {{-- <img src="https://bootdey.com/img/Content/user_1.jpg" class="img-circle elevation-2" alt="User Image"> --}}
             </div>
             <div class="info">
                 <a href="#" class="d-block text-decoration-none">{{ Auth::user()->name }}</a>
@@ -76,7 +76,7 @@
                         <li class="nav-item">
                             <a href="{{ route('admin.user.index') }}"
                                class="nav-link ">
-                                <i class="fas fa-bed"></i>
+                               <i class="nav-icon fas fa-bars"></i>
                                 <p>List</p>
                             </a>
                         </li>
@@ -85,7 +85,7 @@
                         <li class="nav-item">
                             <a href="#"
                                class="nav-link ">
-                                <i class="fas fa-hand-holding-usd"></i>
+                               <i class="nav-icon fas fa-plus"></i>
                                 <p>Add New</p>
                             </a>
                         </li>
@@ -102,7 +102,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ url('admin/profile') }}" class="nav-link">
                                 <i class="fas fa-user"></i>
                                 <p>
                                     Edit Profile
@@ -112,14 +112,14 @@
 
                         @admin
 
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a href="{{ Route('admin.user.index') }}" class="nav-link">
                                 <i class="fas fa-user"></i>
                                 <p>
                                     Account
                                 </p>
                             </a>
-                        </li>
+                        </li> --}}
                         @endadmin
                     </ul>
                 </li>
