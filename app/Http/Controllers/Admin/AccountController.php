@@ -152,15 +152,6 @@ class AccountController extends Controller
             ]);
         }
 
-<<<<<<< HEAD
-
-        
-        $users=User::findOrFail($id);
-
-
-        $users=User::findOrFail($id);
-        return redirect()->route('admin.user.index') ->with('success','User updated successfully');
-=======
         if ($request->hasfile('avatar')) {
             $file = $request->file('avatar');
             $destinationPath = public_path() . '/images/';
@@ -172,8 +163,7 @@ class AccountController extends Controller
                 'avatar' => $file_name
             ]);
         }
-        return redirect()->route('admin.user.index')->with('success', 'User have been updated successfully');
->>>>>>> 7dcd2ca0e8297ccee07d2d46b2658cb72fe1676c
+        return redirect()->route('admin.user.index') ->with('success','User updated successfully');
 
 
         // $users=User::findOrFail($id);
