@@ -65,7 +65,9 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'mi
     Route::resource('/properties', PropertiesController::class);
     Route::resource('/rent', RentController::class);
     Route::resource('/sale', SaleController::class);
-   
+    Route::resource('/user', AccountController::class);
+    Route::get('/profile',[ProfielController::class,'profile']);
+    Route::patch('/profile/update',[ProfielController::class,'update']);
    
     Route::group(['prefix' => 'location', 'as' => 'location.'], function () {
         Route::get('district', [AddressSelectController::class, 'districts'])->name('district');
@@ -74,7 +76,6 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'mi
     });
     Route::middleware('admin')->group(function () {
         Route::resource('/user', AccountController::class);
-        Route::get('/profile',[ProfielController::class,'profile']);
-        Route::patch('/profile/update',[ProfielController::class,'update']);
+       
     });
 });
