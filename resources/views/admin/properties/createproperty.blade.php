@@ -12,16 +12,15 @@
     <div class="container-fluid pt-4">
         <div class="card ">
             <div class="card card-primary">
-                <div class="card-header">
-                    <h3 class="card-title">Property Information</h3>
-                </div>
+                    <div class="card-header">
+                        <h3 class="card-title">Property Information</h3>
+                    </div>
                 <!-- /.card-header -->
                 <form action="{{ url('admin/properties') }}" method="POST" enctype="multipart/form-data">
                     @csrf
 
                     <div class="card-body">
-                        <div class="row">
-                        </div>
+                       
                         <br>
                         <div class="form group">
                             <select class="form-select form-select-md form-control mb-3" name="listing_type"
@@ -92,61 +91,62 @@
                                    name="bedroom">
                         </div>
 
-                        <div class="form-group">
-                            <label for="example-number-input" class="form-control-label">How many Bathrooms?</label>
+                            <div class="form-group">
+                                <label for="example-number-input" class="form-control-label">How many Bathrooms?</label>
 
-                            <input class="form-control" type="text" value="" id="example-number-input"
-                                   name="bathroom">
+                                <input class="form-control" type="text" value="" id="example-number-input"
+                                    name="bathroom">
 
-                        </div>
+                            </div>
 
-                        <div class="form-group">
-                            <label for="example-number-input" class="form-control-label">FloorSize</label>
+                            <div class="form-group">
+                                <label for="example-number-input" class="form-control-label">FloorSize</label>
 
-                            <input class="form-control" type="text" value="" id="example-number-input"
-                                   name="floor">
+                                <input class="form-control" type="text" value="" id="example-number-input"
+                                    name="floor">
 
-                        </div>
+                            </div>
 
-                        <div class="form-group">
-                            <label for="example-number-input" class="form-control-label">LandSize</label>
-                            <input class="form-control" type="text" value="" id="example-number-input"
-                                   name="landsize">
-                        </div>
+                            <div class="form-group">
+                                <label for="example-number-input" class="form-control-label">LandSize</label>
+                                <input class="form-control" type="text" value="" id="example-number-input"
+                                    name="landsize">
+                            </div>
 
-                        <div class="form-group">
-                            <label for="example-number-input" class="form-control-label">Land
-                                Dimension</label>
-                            <input class="form-control" type="text" value="" id="example-number-input"
-                                   name="dimension">
-                        </div>
+                            <div class="form-group">
+                                <label for="example-number-input" class="form-control-label">Land
+                                    Dimension</label>
+                                <input class="form-control" type="text" value="" id="example-number-input"
+                                    name="dimension">
+                            </div>
 
-                        <div class="form-group">
-                            <label for="example-number-input" class="form-control-label">Link
-                                Location</label>
-                            <input class="form-control" type="text" value="" id="example-number-input"
-                                   name="maplocation">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleFormControlTextarea1" class="form-label">Descrioption</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                                      name="description"></textarea>
-                        </div>
+                            <div class="form-group">
+                                <label for="example-number-input" class="form-control-label">Link
+                                    Location</label>
+                                <input class="form-control" type="text" value="" id="example-number-input"
+                                    name="maplocation">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1" class="form-label">Descrioption</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                                        name="description"></textarea>
+                            </div>
 
-                        <div class="form-group">
-                            <label for="exampleFormControlTextarea1" class="form-label">Thumbnail</label>
-                            <input type="file" name="thumbnail">
-                        </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1" class="form-label">Thumbnail</label>
+                            <input type="file" id="file" name="thumbnail">
+                            </div>
 
-                        <div id="image_picker" class="row" name="filename[]">
-                            @if ($errors->has('files_name'))
-                                @foreach ($errors->get('files_name') as $error)
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $error }}</strong>
-                                    </span>
-                                @endforeach
-                            @endif
-                        </div>
+                        
+                            <div id="image_picker" class="row" name="filename[]">
+                                @if ($errors->has('files_name'))
+                                    @foreach ($errors->get('files_name') as $error)
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $error }}</strong>
+                                        </span>
+                                    @endforeach
+                                @endif
+                            </div>
                         <br>
                         <button type="submit" class="btn btn-primary">Submit</button>
                         <br> <br>

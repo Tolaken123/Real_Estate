@@ -54,7 +54,6 @@ class AccountController extends Controller
             // 'name' => 'required',
             // 'email' => 'required|email|unique:users,email',
             // 'phone' => 'required',
-            // // 'sex' => 'required',
             // 'password' => 'required|same:confirm-password',
             'avatar'=>'required',
             // 'role'=>'required',
@@ -64,6 +63,7 @@ class AccountController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'phone' => $request->phone,
+            'role'=>$request->role,
             'password' => Hash::make($request['password']),
         ]);
         if ($request->hasfile('avatar')) {
@@ -118,6 +118,7 @@ class AccountController extends Controller
             'name',
             'email',
             'phone',
+            'role'
         ]));
 
         if ($request->password) {
@@ -137,6 +138,7 @@ class AccountController extends Controller
                 'avatar' => $file_name
             ]);
         }
+        dd($user);
         return redirect()->route('admin.user.index') ->with('success','User updated successfully');
 
 

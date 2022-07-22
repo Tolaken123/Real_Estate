@@ -2,6 +2,7 @@
 @section('content') --}}
 {{-- @include('layouts.script') --}}
 @include('layouts.style')
+<link rel="stylesheet" type="text/css" href="{{ asset('css/user_profile.css') }}"/>
 <body class="hold-transition light-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
 

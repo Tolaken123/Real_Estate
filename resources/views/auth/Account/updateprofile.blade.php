@@ -18,12 +18,14 @@
                             <img id="output" src="/img/user2-160x160.jpg" alt="" class="profilepic__image" height="160px"
                                 width="130px">
                             <div class="profilepic__content">
+                                <label class="border-2 bg-danger border rounded-circle overflow-hidden " for="avatar"
+                                style="width: 100px; height: 100px; cursor: pointer">
                                 <label for="file">
-                                    <span class="profilepic__icon"><i class="fas fa-camera"></i></span>
-                                    <input id="file" type="file" class="profilepic__text" onchange="loadFile(event)"
-                                        name="avatar" style="display: none;visibility:none;">Edit
-
+                                    <span  class="profilepic__icon"><i class="fas fa-camera"></i></span>
+                                    <input id="file"  type="file" class="profilepic__text" onchange="loadFile(event)" name="avatar" style="display: none;visibility:none;">Edit
+                                    
                                 </label>
+                         </label>
                             </div>
                         </div>
                     </div>
