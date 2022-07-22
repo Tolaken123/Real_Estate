@@ -16,17 +16,12 @@
                         <span class="p-10 text-muted">
                             <li>Bathroom: {{ $property->bathroom }}</li>
                         </span>
-                    <span class="ml-auto badge badge-pill badge-secondary pull-right">{{ $property->bathroom }}</span>
                 </div>
 
                 <div class="d-flex no-block align-items-center">
                         <span class="p-10 text-muted">
                             <li>Bedroom: {{ $property->bedroom }}</li>
-
                         </span>
-                    <span class="ml-auto badge badge-pill badge-secondary pull-right">
-                        {{ $property->bedroom }}
-                    </span>
                 </div>
 
                 <div class="d-flex no-block align-items-center">
@@ -34,18 +29,12 @@
                             <li>Land Size: {{ $property->landsize }}</li>
 
                         </span>
-                    <span class="ml-auto badge badge-pill badge-secondary pull-right">
-                        {{ $property->landsize }}
-                    </span>
                 </div>
                 <div class="d-flex no-block align-items-center">
                     <span class="p-10 text-muted">
                         <li>ID: {{ $property->id }}</li>
 
                     </span>
-                <span class="ml-auto badge badge-pill badge-secondary pull-right">
-                    {{ $property->id }}
-                </span>
             </div>
             </div>
             <div class="card-body border-top">

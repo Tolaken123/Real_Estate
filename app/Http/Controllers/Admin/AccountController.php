@@ -49,17 +49,18 @@ class AccountController extends Controller
      */
     public function store(Request $request)
     {
+    
         $this->validate($request, [
             // 'name' => 'required',
             // 'email' => 'required|email|unique:users,email',
             // 'phone' => 'required',
             // // 'sex' => 'required',
             // 'password' => 'required|same:confirm-password',
-            'avatar' => 'required',
+            'avatar'=>'required',
             // 'role'=>'required',
 
-
         ]);
+<<<<<<< HEAD
 
 
         $input = $request->all();
@@ -73,12 +74,15 @@ class AccountController extends Controller
 
 
 
+=======
+>>>>>>> 6dc5d7b09d40fb0d81cfe3ed646963f4726cee47
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'phone' => $request->phone,
             'password' => Hash::make($request['password']),
         ]);
+<<<<<<< HEAD
 
 
         // $input = $request->all();
@@ -91,17 +95,18 @@ class AccountController extends Controller
         //                 ->with('success','User created successfully');
 
 
+=======
+>>>>>>> 6dc5d7b09d40fb0d81cfe3ed646963f4726cee47
         if ($request->hasfile('avatar')) {
             $file = $request->file('avatar');
             $destinationPath = public_path() . '/images/';
             $file_name = date('m-d-Y') . '-' . time() . uniqid() . "." . $file->getClientOriginalExtension();
-
             $file->move($destinationPath, $file_name);
-
             $user->update([
                 'avatar' => $file_name
             ]);
         }
+        // dd($user);
         return redirect()->route('admin.user.index');
 
     }
@@ -152,6 +157,7 @@ class AccountController extends Controller
             ]);
         }
 
+<<<<<<< HEAD
 
 
 
@@ -161,6 +167,8 @@ class AccountController extends Controller
         $users=User::findOrFail($id);
         return redirect()->route('admin.user.index') ->with('success','User updated successfully');
 
+=======
+>>>>>>> 6dc5d7b09d40fb0d81cfe3ed646963f4726cee47
         if ($request->hasfile('avatar')) {
             $file = $request->file('avatar');
             $destinationPath = public_path() . '/images/';
@@ -172,8 +180,12 @@ class AccountController extends Controller
                 'avatar' => $file_name
             ]);
         }
+<<<<<<< HEAD
         return redirect()->route('admin.user.index')->with('success', 'User have been updated successfully');
 
+=======
+        return redirect()->route('admin.user.index') ->with('success','User updated successfully');
+>>>>>>> 6dc5d7b09d40fb0d81cfe3ed646963f4726cee47
 
 
         // $users=User::findOrFail($id);
