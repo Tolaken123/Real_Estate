@@ -10,8 +10,8 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <div class="profilepic">
-                <img src="{{ asset('images/'.Auth::user()->avatar) }}" style="height:120px; width:120px;" alt="25">
+                <div class="profileAdmin">
+                <img src="{{ asset('images/'.Auth::user()->avatar) }}" style="height:100px; width:100px;" alt="25">
                 </div>
                 <div class="info">
                     <h4><a href="#" class="d-block text-decoration-none">{{ Auth::user()->name }}</a></h4>
