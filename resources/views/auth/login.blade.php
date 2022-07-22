@@ -1,5 +1,7 @@
 @include('layouts.style')
-
+@section('title')
+    Login
+@endsection
 <body class="hold-transition login-page">
     <div class="login-box">
         <!-- /.login-logo -->

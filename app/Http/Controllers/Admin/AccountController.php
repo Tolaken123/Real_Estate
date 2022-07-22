@@ -49,7 +49,7 @@ class AccountController extends Controller
      */
     public function store(Request $request)
     {
-    
+
         $this->validate($request, [
             // 'name' => 'required',
             // 'email' => 'required|email|unique:users,email',
@@ -59,6 +59,21 @@ class AccountController extends Controller
             // 'role'=>'required',
 
         ]);
+
+
+
+        $input = $request->all();
+        $input['password'] = Hash::make($input['password']);
+
+        $user = User::create($input);
+        $user->assignRole($request->input('roles'));
+
+        return redirect()->route('users.index')
+                        ->with('success','User created successfully');
+
+
+
+
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
@@ -66,6 +81,20 @@ class AccountController extends Controller
             'role'=>$request->role,
             'password' => Hash::make($request['password']),
         ]);
+
+
+
+        // $input = $request->all();
+        // $input['password'] = Hash::make($input['password']);
+
+        // $user = User::create($input);
+        // $user->assignRole($request->input('roles'));
+
+        // return redirect()->route('users.index')
+        //                 ->with('success','User created successfully');
+
+
+
         if ($request->hasfile('avatar')) {
             $file = $request->file('avatar');
             $destinationPath = public_path() . '/images/';
@@ -127,6 +156,8 @@ class AccountController extends Controller
             ]);
         }
 
+
+
         if ($request->hasfile('avatar')) {
             $file = $request->file('avatar');
             $destinationPath = public_path() . '/images/';
@@ -138,8 +169,9 @@ class AccountController extends Controller
                 'avatar' => $file_name
             ]);
         }
-        dd($user);
+
         return redirect()->route('admin.user.index') ->with('success','User updated successfully');
+
 
 
         // $users=User::findOrFail($id);
