@@ -13,23 +13,23 @@ class ProfielController extends Controller
 
     }
     public function Profile(){
-         $user = Auth::user();
+        $user = Auth::user();
         return view('Auth.Account.updateprofile',array('user'=>Auth::user()));
     }
-   public function update(Request $request, $id)
+   public function update(Request $request)
     {
-        $users = User::findOrFail($id);
-        $users->update($request->only([
-            'name',
-            'email',
-            'phone',
-        ]));
+        $user = Auth::user();
 
-        if ($request->password) {
-            $users->update([
-                'password' => Hash::make($request['password'])
-            ]);
-        }
+        $data = $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+        ]);
+
+        $user->name = $data['name'];
+        $user->email = $data['email'];
+        $user->phone = $data['phone'];
+
 
         if ($request->hasfile('avatar')) {
             $file = $request->file('avatar');
@@ -38,12 +38,13 @@ class ProfielController extends Controller
 
             $file->move($destinationPath, $file_name);
 
-            $users->update([
+            $user->update([
                 'avatar' => $file_name
             ]);
         }
-        dd($users);
-        return redirect()->route('admin.user.index')->with('success', 'User have been updated successfully');
+        // dd($user);
+        // return redirect('/admin/profile/'.Auth::user()->id)->with('success', 'User has been updated!!');
+        return redirect()->route('admin.dashboard');
 
     }
 }

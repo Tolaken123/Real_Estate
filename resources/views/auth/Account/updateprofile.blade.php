@@ -7,14 +7,14 @@
     <div class="content-wrapper">
         <div class="container mt-6">
             <hr />
-            <form action="{{ url('admin/user',$user) }}" method="POST"  enctype="multipart/form-data">
+            <form action="{{ url('admin/profile/update') }}" method="POST"  enctype="multipart/form-data">
                 @csrf
                 @method('patch')
             <!-- <div class=" social-prof"> -->
                     <div class="profile">
-                        <!-- <div class="wrapper"> -->
+                     
                         <div class="profilepic">
-                            <!-- <img src="/img/user2-160x160.jpg" alt="" class="user-profile"> -->
+                            
                             <img id="output" src="/img/user2-160x160.jpg" alt="" class="profilepic__image" height="160px"
                                 width="130px">
                             <div class="profilepic__content">

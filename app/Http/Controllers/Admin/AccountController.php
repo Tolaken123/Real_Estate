@@ -49,59 +49,33 @@ class AccountController extends Controller
      */
     public function store(Request $request)
     {
+    
         $this->validate($request, [
             // 'name' => 'required',
             // 'email' => 'required|email|unique:users,email',
             // 'phone' => 'required',
             // // 'sex' => 'required',
             // 'password' => 'required|same:confirm-password',
-            'avatar' => 'required',
+            'avatar'=>'required',
             // 'role'=>'required',
 
-
         ]);
-
-
-        $input = $request->all();
-        $input['password'] = Hash::make($input['password']);
-
-        $user = User::create($input);
-        $user->assignRole($request->input('roles'));
-
-        return redirect()->route('users.index')
-                        ->with('success','User created successfully');
-
-    
-                        
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'phone' => $request->phone,
             'password' => Hash::make($request['password']),
         ]);
-        
-       
-        // $input = $request->all();
-        // $input['password'] = Hash::make($input['password']);
-    
-        // $user = User::create($input);
-        // $user->assignRole($request->input('roles'));
-    
-        // return redirect()->route('users.index')
-        //                 ->with('success','User created successfully');
-
-
         if ($request->hasfile('avatar')) {
             $file = $request->file('avatar');
             $destinationPath = public_path() . '/images/';
             $file_name = date('m-d-Y') . '-' . time() . uniqid() . "." . $file->getClientOriginalExtension();
-
             $file->move($destinationPath, $file_name);
-
             $user->update([
                 'avatar' => $file_name
             ]);
         }
+        // dd($user);
         return redirect()->route('admin.user.index');
 
     }
