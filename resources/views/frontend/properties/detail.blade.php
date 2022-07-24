@@ -78,11 +78,11 @@
                         <div class="card p-l-0 p-r-0 p-b-10">
                             <div class="card-body">
                                 <h5 class="card-title fw-500 p-l-20">Location</h5>
-                                <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d117506.98606137399!2d72.5797426!3d23.020345749999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1476988114677"
-                                    width="100%" height="244" frameborder="0" style="border:0"
-                                    allowfullscreen=""></iframe>
-                            </div>
+                                <a target="_blank" href="{{$property->maplocation}}">Click to see</a>
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3881.941025086571!2d103.84322031413902!3d13.353943209987856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe8164ece554e2a32!2zMTPCsDIxJzE0LjIiTiAxMDPCsDUwJzQzLjUiRQ!5e0!3m2!1skm!2skh!4v1658549325372!5m2!1skm!2skh"
+                                width="100%" height="244" frameborder="0" style="border:0" allowfullscreen="">
+                                </iframe>
+                                </div>
                         </div>
                     </div>
                 </div>
