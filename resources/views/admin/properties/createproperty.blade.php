@@ -25,7 +25,7 @@
                         <br>
                         <div class="form group">
                             <select class="form-select form-select-md form-control mb-3" name="listing_type"
-                                    aria-label=".form-select-md example">
+                                aria-label=".form-select-md example">
                                 <option selected>Select Listing Type</option>
                                 <option value="Rent">Rent</option>
                                 <option value="Sale">Sale</option>
@@ -35,7 +35,7 @@
                         <br>
                         <div class="form group">
                             <select class="form-select form-select-md mb-3 form-control " id="province_id"
-                                    name="province_id" aria-label=".form-select-md example">
+                                name="province_id" aria-label=".form-select-md example">
                                 <option>Select Province</option>
                                 @foreach ($provinces as $CityProvince)
                                     <option value="{{ $CityProvince->id }}">{{ $CityProvince->name }}
@@ -46,24 +46,24 @@
 
                         <br>
                         <select class="form-select form-select-md mb-3" id="district_id" name="district_id"
-                                aria-label=".form-select-md example">
+                            aria-label=".form-select-md example">
                             <option>Select District</option>
                         </select>
                         <br>
                         <select class="form-select form-select-md mb-3" id="commune_id" name="commune_id"
-                                aria-label=".form-select-md example">
+                            aria-label=".form-select-md example">
                             <option>Select Commune</option>
 
                         </select>
                         <br>
                         <select class="form-select form-select-md mb-3" id="village_id" name="village_id"
-                                aria-label=".form-select-md example">
+                            aria-label=".form-select-md example">
                             <option selected>Select Village</option>
 
                         </select>
                         <br>
                         <select class="form-select form-select-md mb-3" name="category_id"
-                                aria-label=".form-select-md example">
+                            aria-label=".form-select-md example">
                             <option>Select Property Type</option>
                             @foreach ($categories as $category)
                                 <option value="{{ $category->id }}">{{ $category->name }}
@@ -89,14 +89,14 @@
                             <label for="example-number-input" class="form-control-label">How many Bedrooms?</label>
 
                             <input class="form-control" type="text" value="" id="example-number-input"
-                                   name="bedroom">
+                                name="bedroom">
                         </div>
 
                         <div class="form-group">
                             <label for="example-number-input" class="form-control-label">How many Bathrooms?</label>
 
                             <input class="form-control" type="text" value="" id="example-number-input"
-                                   name="bathroom">
+                                name="bathroom">
 
                         </div>
 
@@ -104,38 +104,39 @@
                             <label for="example-number-input" class="form-control-label">FloorSize</label>
 
                             <input class="form-control" type="text" value="" id="example-number-input"
-                                   name="floor">
+                                name="floor">
 
                         </div>
 
                         <div class="form-group">
                             <label for="example-number-input" class="form-control-label">LandSize</label>
                             <input class="form-control" type="text" value="" id="example-number-input"
-                                   name="landsize">
+                                name="landsize">
                         </div>
 
                         <div class="form-group">
                             <label for="example-number-input" class="form-control-label">Land
                                 Dimension</label>
                             <input class="form-control" type="text" value="" id="example-number-input"
-                                   name="dimension">
+                                name="dimension">
                         </div>
 
                         <div class="form-group">
                             <label for="example-number-input" class="form-control-label">Link
                                 Location</label>
                             <input class="form-control" type="text" value="" id="example-number-input"
-                                   name="maplocation">
+                                name="maplocation">
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlTextarea1" class="form-label">Descrioption</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                                      name="description"></textarea>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleFormControlTextarea1" class="form-label">Thumbnail</label>
-                            <input type="file" name="thumbnail">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="customFile" name="thumbnail">
+                                <label class="custom-file-label" for="customFile">Thambnail</label>
+                            </div>
                         </div>
 
                         <div id="image_picker" class="row" name="filename[]">
@@ -163,7 +164,7 @@
 
 @section('script')
     <script type="text/javascript"
-            src="{{ asset('spartan-multi-image-picker/dist/js/spartan-multi-image-picker-min.js') }}"></script>
+        src="{{ asset('spartan-multi-image-picker/dist/js/spartan-multi-image-picker-min.js') }}"></script>
 
     <script type="text/javascript">
         $("#image_picker").spartanMultiImagePicker({
@@ -173,22 +174,22 @@
             groupClassName: 'col-3',
             maxFileSize: '',
             dropFileLabel: "Drop Here",
-            onAddRow: function (index) {
+            onAddRow: function(index) {
                 console.log(index);
                 console.log('add new row');
             },
-            onRenderedPreview: function (index) {
+            onRenderedPreview: function(index) {
                 console.log(index);
                 console.log('preview rendered');
             },
-            onRemoveRow: function (index) {
+            onRemoveRow: function(index) {
                 console.log(index);
             },
-            onExtensionErr: function (index, file) {
+            onExtensionErr: function(index, file) {
                 console.log(index, file, 'extension err');
                 alert('Please only input png or jpg type file')
             },
-            onSizeErr: function (index, file) {
+            onSizeErr: function(index, file) {
                 console.log(index, file, 'file size too big');
                 alert('File size too big');
             }
@@ -196,9 +197,9 @@
     </script>
 
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             // Select Province Get District
-            $('#province_id').on('change', function () {
+            $('#province_id').on('change', function() {
                 var province_id = $(this).val();
 
                 if (province_id) {
@@ -209,12 +210,12 @@
                         data: {
                             province_id: province_id
                         },
-                        success: function (data) {
+                        success: function(data) {
                             console.log('district data', data.data)
                             $('#district_id').empty();
                             $('#district_id').append(
                                 '<option value="">Select District</option>');
-                            $.each(data.data, function (key, value) {
+                            $.each(data.data, function(key, value) {
                                 $('#district_id').append('<option value="' + value.id +
                                     '">' + value.name + '</option>');
                             });
@@ -230,7 +231,7 @@
             // Select District Get Commune
 
 
-            $('#district_id').on('change', function () {
+            $('#district_id').on('change', function() {
                 var district_id = $(this).val();
 
                 if (district_id) {
@@ -241,11 +242,11 @@
                         data: {
                             district_id: district_id
                         },
-                        success: function (data) {
+                        success: function(data) {
                             console.log('commune data', data.data)
                             $('#commune_id').empty();
                             $('#commune_id').append('<option value="">Select Commune</option>');
-                            $.each(data.data, function (key, value) {
+                            $.each(data.data, function(key, value) {
                                 $('#commune_id').append('<option value="' + value.id +
                                     '">' + value.name + '</option>');
                             });
@@ -259,7 +260,7 @@
 
             /// Select Commune to get village
 
-            $('#commune_id').on('change', function () {
+            $('#commune_id').on('change', function() {
                 var commune_id = $(this).val();
 
                 if (commune_id) {
@@ -270,11 +271,11 @@
                         data: {
                             commune_id: commune_id
                         },
-                        success: function (data) {
+                        success: function(data) {
                             console.log('village data', data.data)
                             $('#village_id').empty();
                             $('#village_id').append('<option value="">Select village</option>');
-                            $.each(data.data, function (key, value) {
+                            $.each(data.data, function(key, value) {
                                 $('#village_id').append('<option value="' + value.id +
                                     '">' + value.name + '</option>');
                             });

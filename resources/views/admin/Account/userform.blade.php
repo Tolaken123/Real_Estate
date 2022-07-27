@@ -34,7 +34,7 @@
 
                 </div>
                 <div class="container">
-                    
+
                         <div class="card-body">
                                 <div class="form-group">
                                     <label for="InputName">Name</label>
@@ -67,16 +67,16 @@
                                 <div class="btn">
                                     <button type="submit" class="btn btn-primary btn-lg">Submit</button>
 
-                                </div>    
+                                </div>
 
 
-                         
+
                         </div>
                 </div>
 
-             
-            </form>  
-            
+
+            </form>
+
         </div>
     </div>
 </main>

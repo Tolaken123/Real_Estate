@@ -162,8 +162,10 @@
 
 
                         <div class="form-group">
-                            <label for="exampleFormControlTextarea1" class="form-label">Thumbnail</label>
-                            <input type="file" name="thumbnail" value="{{$properties->thumbnail}}">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="customFile" name="thumbnail">
+                                <label class="custom-file-label" for="customFile">Thambnail</label>
+                            </div>
                         </div>
 
 

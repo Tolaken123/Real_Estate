@@ -6,7 +6,7 @@
 <div class="container mt-6" >
 <hr/>
         <!-- <div class=" social-prof"> -->
-          <div class="profile"> 
+          <div class="profile">
                 <!-- <div class="wrapper"> -->
                 <div class="profilepic">
                     <!-- <img src="/img/user2-160x160.jpg" alt="" class="user-profile"> -->
@@ -15,16 +15,16 @@
                       <label for="file">
                         <span  class="profilepic__icon"><i class="fas fa-camera"></i></span>
                         <input id="file"  type="file" class="profilepic__text" onchange="loadFile(event)" name="Edit Profile" style="display: none;visibility:none;">Edit</input>
-                        
+
                     </label>
                     </div>
                 </div>
           </div>
-          
+
         </div>
       <div class="container" >
-        <form> 
-        
+        <form>
+
                 <div class="card-body">
                     <div class="form-group">
                         <label for="InputName">Name</label>
@@ -38,16 +38,16 @@
                     <label for="exampleInputEmail1">Email address</label>
                     <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
                   </div>
-                  
+
                   <div class="btn">
                       <button type="button" class="btn btn-primary btn-lg">Save</button>
-                     
-                      
+
+
                   </div>
-                  
+
         </form>
-       
-        </div> 
+
+        </div>
     </div>
   </div>
 </main>
