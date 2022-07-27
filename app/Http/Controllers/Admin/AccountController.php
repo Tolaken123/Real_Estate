@@ -49,51 +49,22 @@ class AccountController extends Controller
      */
     public function store(Request $request)
     {
-
+// dd($request);
         $this->validate($request, [
             // 'name' => 'required',
             // 'email' => 'required|email|unique:users,email',
             // 'phone' => 'required',
-            // // 'sex' => 'required',
             // 'password' => 'required|same:confirm-password',
             'avatar'=>'required',
             // 'role'=>'required',
 
         ]);
-
-
-
-        $input = $request->all();
-        $input['password'] = Hash::make($input['password']);
-
-        $user = User::create($input);
-        $user->assignRole($request->input('roles'));
-
-        return redirect()->route('users.index')
-                        ->with('success','User created successfully');
-
-
-
-
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'phone' => $request->phone,
             'password' => Hash::make($request['password']),
         ]);
-
-
-
-        // $input = $request->all();
-        // $input['password'] = Hash::make($input['password']);
-
-        // $user = User::create($input);
-        // $user->assignRole($request->input('roles'));
-
-        // return redirect()->route('users.index')
-        //                 ->with('success','User created successfully');
-
-
 
         if ($request->hasfile('avatar')) {
             $file = $request->file('avatar');
@@ -147,6 +118,7 @@ class AccountController extends Controller
             'name',
             'email',
             'phone',
+            
         ]));
 
         if ($request->password) {
@@ -154,8 +126,6 @@ class AccountController extends Controller
                 'password' => Hash::make($request['password'])
             ]);
         }
-
-
 
         if ($request->hasfile('avatar')) {
             $file = $request->file('avatar');
@@ -168,7 +138,6 @@ class AccountController extends Controller
                 'avatar' => $file_name
             ]);
         }
-
 
         return redirect()->route('admin.user.index') ->with('success','User updated successfully');
 

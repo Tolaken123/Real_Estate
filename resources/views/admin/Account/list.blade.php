@@ -56,7 +56,7 @@
                                                 Profile
                                             </th>
                                             <th>
-                                                Role
+                                               date
                                             </th>
                                             <th>
                                                 Name
@@ -82,7 +82,7 @@
                                                         <img src="https://bootdey.com/img/Content/user_1.jpg" alt="">
                                                     @endif
                                                 </td>
-                                                <td class="align-middle">{{$user->role}}</td>
+                                                <td class="align-middle">{{$user->created_at->format('m-d-y')}}</td>
                                                 <td class="align-middle">{{$user->name}}</td>
                                                 <td class="align-middle">{{$user->email}}</td>
 

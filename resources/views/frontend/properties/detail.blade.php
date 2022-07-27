@@ -78,10 +78,18 @@
                         <div class="card p-l-0 p-r-0 p-b-10">
                             <div class="card-body">
                                 <h5 class="card-title fw-500 p-l-20">Location</h5>
+<<<<<<< HEAD
                                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5248.773841109313!2d103.84900963508335!3d13.350230273216226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31101703ece55631%3A0xc33e7bb7e0ac1e57!2z4Z6f4Z624Z6A4Z6b4Z6c4Z634Z6R4Z-S4Z6Z4Z624Z6b4Z-Q4Z6ZIOGelOGfgOGem-GelOGfkuGemuGetuGemSDhnp_hnrbhnoHhnrbhnoHhn4Hhno_hn5Lhno_hnp_hn4DhnpjhnprhnrbhnpQ!5e1!3m2!1sen!2skh!4v1658495849817!5m2!1sen!2skh"
                                 width="100%" height="244" frameborder="0" style="border:0" allowfullscreen="">
                                 </iframe>
                             </div>
+=======
+                                <a target="_blank" href="{{$property->maplocation}}">Click to see</a>
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3881.941025086571!2d103.84322031413902!3d13.353943209987856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe8164ece554e2a32!2zMTPCsDIxJzE0LjIiTiAxMDPCsDUwJzQzLjUiRQ!5e0!3m2!1skm!2skh!4v1658549325372!5m2!1skm!2skh"
+                                width="100%" height="244" frameborder="0" style="border:0" allowfullscreen="">
+                                </iframe>
+                                </div>
+>>>>>>> c58eaf8e03897fd5c931373635f22d79f4392b0b
                         </div>
                     </div>
                 </div>

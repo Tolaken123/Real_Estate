@@ -45,14 +45,12 @@
                                        placeholder="Enter name">
                             </div>
 
-                            <select class="form-select form-select-md mb-3" value="{{$users->role}}"
+                            {{-- <select class="form-select form-select-md mb-3" value="{{$users->role}}"
                                     aria-label=".form-select-md example">
                                 <option selected>Select Role</option>
-                                <option value="@if($users->role== "admin") selected @endif value=" role
-                                " value="Admin">Admin</option>
-                                <option value="@if($users->role== "industry") selected @endif value=" role
-                                " value="industry">Industry</option>
-                            </select>
+                                <option value="@if($users->role== "admin") selected @endif value="role" value="Admin">Admin</option>
+                                <option value="@if($users->role== "industry") selected @endif value="role" value="industry">Industry</option>
+                            </select> --}}
 
                             <div class="form-group">
                                 <label for="InputName">Phone</label>
