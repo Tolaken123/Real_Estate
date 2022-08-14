@@ -32,6 +32,20 @@
                         </div>
 
                         <br>
+                        {{-- <div class="form group">
+                            <select class="form-select form-select-md form-control mb-3" name="listing_type"
+                                aria-label=".form-select-md example">
+                                <option selected>Stock</option>
+                                <option value="sold">Sold </option>
+                                <option value="Sold out">Sold out</option>
+                            </select>
+                        </div> --}}
+                        {{-- <select class="form-select form-select-md form-control mb-3" name="listing_type"
+                        aria-label=".form-select-md example">
+                        <option selected>Stock</option>
+                        <option @if($properties->stock == "sold") selected @endif value="sold">sold</option>
+                        <option  @if($properties->stock == "sold out") selected @endif value="Sale">sold out</option>
+                    </select> --}}
                         <div class="form group">
                             <select class="form-select form-select-md mb-3 form-control " id="province_id"
                                 name="province_id" aria-label=".form-select-md example">
@@ -93,31 +107,15 @@
 
                             <div class="form-group">
                                 <label for="example-number-input" class="form-control-label">How many Bathrooms?</label>
-
-<<<<<<< HEAD
                             <input class="form-control" type="text" value="" id="example-number-input"
                                 name="bathroom">
-=======
-                                <input class="form-control" type="text" value="" id="example-number-input"
-                                    name="bathroom">
->>>>>>> c58eaf8e03897fd5c931373635f22d79f4392b0b
-
                             </div>
 
                             <div class="form-group">
                                 <label for="example-number-input" class="form-control-label">FloorSize</label>
-
-<<<<<<< HEAD
-                            <input class="form-control" type="text" value="" id="example-number-input"
-                                name="floor">
-=======
                                 <input class="form-control" type="text" value="" id="example-number-input"
-                                    name="floor">
->>>>>>> c58eaf8e03897fd5c931373635f22d79f4392b0b
-
+                                  name="floor">
                             </div>
-
-<<<<<<< HEAD
                         <div class="form-group">
                             <label for="example-number-input" class="form-control-label">LandSize</label>
                             <input class="form-control" type="text" value="" id="example-number-input"
@@ -137,18 +135,6 @@
                             <input class="form-control" type="text" value="" id="example-number-input"
                                 name="maplocation">
                         </div>
-                        <div class="form-group">
-                            <label for="exampleFormControlTextarea1" class="form-label">Descrioption</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="customFile" name="thumbnail">
-                                <label class="custom-file-label" for="customFile">Thambnail</label>
-                            </div>
-                        </div>
-=======
                             <div class="form-group">
                                 <label for="example-number-input" class="form-control-label">LandSize</label>
                                 <input class="form-control" type="text" value="" id="example-number-input"
@@ -178,7 +164,6 @@
                                 <label for="exampleFormControlTextarea1" class="form-label">Thumbnail</label>
                             <input type="file" id="file" name="thumbnail">
                             </div>
->>>>>>> c58eaf8e03897fd5c931373635f22d79f4392b0b
 
                         
                             <div id="image_picker" class="row" name="filename[]">

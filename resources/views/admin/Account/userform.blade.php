@@ -46,11 +46,11 @@
                                     <option value="Male">Male</option>
                                     <option value="Female">Female</option>
                                 </select> --}}
-                                {{-- <select class="form-select form-select-md mb-3" name="role" aria-label=".form-select-md example">
+                                <select class="form-select form-select-md mb-3" name="role" aria-label=".form-select-md example">
                                     <option selected>Select Role</option>
                                     <option value="Admin">Admin</option>
                                     <option value="Industry">Industry</option>
-                                </select> --}}
+                                </select>
                                 <div class="form-group">
                                     <label for="InputName">Phone</label>
                                     <input type="phone" class="form-control" name="phone" placeholder="Enter Phone">

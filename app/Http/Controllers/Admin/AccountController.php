@@ -51,17 +51,20 @@ class AccountController extends Controller
     {
 // dd($request);
         $this->validate($request, [
-            // 'name' => 'required',
+           // 'name' => 'required',
             // 'email' => 'required|email|unique:users,email',
             // 'phone' => 'required',
+            // // 'sex' => 'required',
             // 'password' => 'required|same:confirm-password',
-            'avatar'=>'required',
+            // 'avatar' => 'required',
             // 'role'=>'required',
+
 
         ]);
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
+            'role'=>$request->role,
             'phone' => $request->phone,
             'password' => Hash::make($request['password']),
         ]);
@@ -75,7 +78,6 @@ class AccountController extends Controller
                 'avatar' => $file_name
             ]);
         }
-        // dd($user);
         return redirect()->route('admin.user.index');
 
     }

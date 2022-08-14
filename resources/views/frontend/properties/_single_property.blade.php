@@ -32,10 +32,17 @@
                 </div>
                 <div class="d-flex no-block align-items-center">
                     <span class="p-10 text-muted">
+                        <li>Stock: {{ $property->stock }}</li>
+
+                    </span>
+            </div>
+                <div class="d-flex no-block align-items-center">
+                    <span class="p-10 text-muted">
                         <li>ID: {{ $property->id }}</li>
 
                     </span>
             </div>
+
             </div>
             <div class="card-body border-top">
                 <div class="d-flex no-block align-items-center">

@@ -7,7 +7,6 @@ use App\Models\Image;
 use App\Models\Category;
 use App\Models\Property;
 use Illuminate\Http\Request;
-
 use App\Models\location\Commune;
 use App\Models\location\Village;
 use App\Models\location\District;
@@ -103,7 +102,6 @@ class PropertiesController extends Controller
 
         $properties = Property::create([
             'name' => $request->name,
-
             'bedroom' => $request->bedroom,
             'province_id' => $request->province_id,
             'district_id' => $request->district_id,
@@ -111,6 +109,7 @@ class PropertiesController extends Controller
             'village_id' => $request->village_id,
             'category_id' => $request->category_id,
             'bathroom' => $request->bathroom,
+            // 'stock' => $request->stock,
             'price' => $request->price,
             'floor' => $request->floor,
             'landsize' => $request->landsize,
@@ -206,6 +205,7 @@ class PropertiesController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // dd($request);
         $this->validate($request, [
             'listing_type' => 'required|string|max:255',
             'province_id' => 'required|string|max:255',
@@ -213,6 +213,7 @@ class PropertiesController extends Controller
             'commune_id' => 'required|string|max:255',
             'village_id' => 'required|string|max:255',
             'name' => 'required|string|max:255',
+            'stock' => 'required|string|max:255',
             'price' => 'required|string|max:255',
             'bedroom' => 'required|string|max:255',
             'bathroom' => 'required|string|max:255',
@@ -223,10 +224,7 @@ class PropertiesController extends Controller
             'description' => 'required|string',
             'filesname.*' => 'array|required', 'files.*' => 'required|mimetypes:image/jpg,image/jpeg,image/bmp',
         ]);
-
-
         $properties = Property::findOrFail($id);
-
         $properties->update($request->only([
             'name',
             'listing_type',
@@ -243,6 +241,7 @@ class PropertiesController extends Controller
             'dimension',
             'maplocation',
             'description',
+            'stock',
             'user_id'
         ]));
 

@@ -31,6 +31,14 @@
                                 <option  @if($properties->listing_type == "Sale") selected @endif value="Sale">Sale</option>
                             </select>
                         </div>
+                        {{-- <div class="form group">
+                            <select class="form-select form-select-md form-control mb-3" name="stock"
+                                aria-label=".form-select-md example">
+                                <option selected>Stock</option>
+                                <option @if($properties->stock == "sold") selected @endif value="sold">sold</option>
+                                <option  @if($properties->stock == "soldout") selected @endif value="sodlout">sold out</option>
+                            </select>
+                        </div> --}}
 
                         <br>
                         <div class="form group">
@@ -175,7 +183,7 @@
                         </div>
                         <br>
                         <button type="submit" class="btn btn-primary">Submit</button>
-                        <br> <br>
+                        <br><br>
 
                 </form>
 
